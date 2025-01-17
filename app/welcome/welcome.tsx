@@ -1,6 +1,6 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
-
+// import logoDark from "./logo-dark.svg";
+// import logoLight from "./logo-light.svg";
+import logoAllWebSD from "../../public/logo-allwebsd.png";
 export function Welcome() {
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
@@ -8,15 +8,15 @@ export function Welcome() {
         <header className="flex flex-col items-center gap-9">
           <div className="w-[500px] max-w-[100vw] p-4">
             <img
-              src={logoLight}
-              alt="React Router"
-              className="block w-full dark:hidden"
+              src={logoAllWebSD}
+              alt="AllWebSD Just a web developer storytelling out of America's Finest City!"
+              className="block w-full"
             />
-            <img
-              src={logoDark}
+            {/* <img
+              src={logoAllWebSD}
               alt="React Router"
               className="hidden w-full dark:block"
-            />
+            /> */}
           </div>
         </header>
         <div className="max-w-[300px] w-full space-y-6 px-4">
