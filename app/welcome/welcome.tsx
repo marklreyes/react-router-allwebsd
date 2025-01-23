@@ -21,7 +21,7 @@ export function Welcome() {
               Thanks for stopping by! But what now?
             </p>
 						<p>
-							The "OG" site was a single <code>index.html</code> file styled with Bootstrap 4 with navigation tabs that would turn into an accordion for mobile screens. It was also a PWA that you could bookmark to your home screen.
+							The "OG" site was a single <code>index.html</code> file styled with Bootstrap 4 with navigation tabs that would turn into an accordion for mobile. It was also a PWA that you could bookmark to your phone's home screen.
 						</p>
 						<p>
 							This new site is aimed at leveraging a React Router setup housed within GitHub and then deployed to Netlify.
