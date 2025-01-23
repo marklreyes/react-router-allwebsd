@@ -26,6 +26,9 @@ export function Welcome() {
 						<p>
 							This new site is aimed at becoming a React app through a React Router setup housed within GitHub and then deployed to Netlify.
 						</p>
+						<p>
+							Until then, please feel free to click the links below to listen to the podcast or contact me. Thanks and Aloha!
+						</p>
             <ul>
               {resources.map(({ href, text, icon }) => (
                 <li key={href}>
