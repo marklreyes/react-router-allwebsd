@@ -21,13 +21,16 @@ export function Welcome() {
               Thanks for stopping by! But what now?
             </p>
 						<p>
-							The "OG" site was a single <code>index.html</code> file styled with Bootstrap 4 with navigation tabs that would turn into an accordion for mobile. It was also a PWA that you could bookmark to your phone's home screen.
+							The "OG" site was a single <code>index.html</code> file styled with Bootstrap 4 with navigation tabs that would turn into an accordion for mobile. It was also a PWA that you could bookmark to your phone's home screen. 📲
 						</p>
 						<p>
-							This new site is aimed at leveraging a React Router setup housed within GitHub and then deployed to Netlify.
+							This new site is aimed at leveraging a React Router setup housed within GitHub and then deployed to Netlify. 🚀
 						</p>
 						<p>
-							Until then, please feel free to click the links below to listen to the podcast or contact me. Thanks and Aloha!
+							But...what does that mean?! 😂
+						</p>
+						<p>
+							Click the links below to listen to the podcast or contact me. Thanks and Aloha! 🤙
 						</p>
             <ul>
               {resources.map(({ href, text, icon }) => (
