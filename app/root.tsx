@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 import {
   isRouteErrorResponse,
   Links,
@@ -9,6 +11,7 @@ import {
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
+import Loading from "./components/Loading";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -25,7 +28,17 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    // Cleanup the timer to avoid memory leaks
+    return () => clearTimeout(timer);
+  }, []);
+
+	return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
@@ -34,9 +47,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+				{isLoading ? <Loading /> : children}
+				<ScrollRestoration />
+				<Scripts />
       </body>
     </html>
   );
