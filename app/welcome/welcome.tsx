@@ -30,6 +30,9 @@ export function Welcome() {
 							But...what does that mean?! 😂
 						</p>
 						<p>
+							The site is <em>Under Construction</em>. 🚧
+						</p>
+						<p>
 							Click the links below to listen to the podcast or contact me. Thanks and Aloha! 🤙
 						</p>
             <ul>
