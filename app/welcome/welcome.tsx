@@ -36,7 +36,7 @@ export function Welcome() {
 							Click the links below to listen or get ahold of me. Thanks and Aloha! 🤙
 						</p>
 						<div>
-						<iframe src="//castbox.fm/app/castbox/player/id2933770?v=8.22.10&autoplay=0" frameborder="0" width="100%" height="500"></iframe>
+							<iframe src="//castbox.fm/app/castbox/player/id2933770?v=8.22.10&autoplay=0" width="100%" height="500"></iframe>
 						</div>
             <ul>
               {resources.map(({ href, text, icon }) => (
