@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import {
   isRouteErrorResponse,
   Links,
@@ -12,6 +11,8 @@ import {
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
 import Loading from "./components/Loading";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -29,16 +30,17 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
 
     // Cleanup the timer to avoid memory leaks
     return () => clearTimeout(timer);
   }, []);
 
-	return (
+  return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
@@ -47,9 +49,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-				{isLoading ? <Loading /> : children}
-				<ScrollRestoration />
-				<Scripts />
+        {isLoading ? <Loading /> : (
+          <>
+            <Header />
+            <main className="container mx-auto p-4">
+              {children}
+            </main>
+            <Footer />
+          </>
+        )}
+        <ScrollRestoration />
+        <Scripts />
       </body>
     </html>
   );
