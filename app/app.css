@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background-primary: #3D2F26;
+}
+
 html,
 body {
   /* @apply bg-white dark:bg-gray-950; */
-
+  background-color: var(--background-primary);
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
