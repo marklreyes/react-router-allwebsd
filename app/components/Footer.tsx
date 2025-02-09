@@ -5,13 +5,13 @@ export default function Footer() {
     <footer className="bg-white text-base-100 p-4">
       <div className="container mx-auto">
         {/* Image Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-2">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-1">
           <div className="flex justify-center items-center">
             <a href="//itunes.apple.com/app/castbox-radio/id1243410543" target="_blank" rel="noopener noreferrer">
               <img
                 src="/images/appstore_apple.png"
                 alt="AllWebSD on Apple Podcasts"
-                className="w-32 h-32 object-contain hover:opacity-80 transition-opacity"
+                className="w-40 h-40 object-contain hover:opacity-80 transition-opacity"
               />
             </a>
           </div>
@@ -20,7 +20,7 @@ export default function Footer() {
               <img
                 src="/images/appstore_google.png"
                 alt="AllWebSD on Google Podcasts"
-                className="w-32 h-32 object-contain hover:opacity-80 transition-opacity"
+                className="w-40 h-40 object-contain hover:opacity-80 transition-opacity"
               />
             </a>
           </div>
@@ -29,7 +29,7 @@ export default function Footer() {
               <img
                 src="/images/castbox.png"
                 alt="AllWebSD on Castbox"
-                className="w-32 h-32 object-contain hover:opacity-80 transition-opacity"
+                className="w-40 h-40 object-contain hover:opacity-80 transition-opacity"
               />
             </a>
           </div>
