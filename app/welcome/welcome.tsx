@@ -33,7 +33,7 @@ export function Welcome() {
 						<div className="alert alert-info p-2 md:p-4">
 							<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-2">
 								<span className="text-xs sm:text-sm md:text-base whitespace-normal break-words">
-								🎙️ Refactoring to React Router with Tailwind &amp; DaisyUI!
+								🎙️ Refactoring with React Router Template! 
 								&nbsp;
 									<a
 										href="https://github.com/marklreyes/react-router-allwebsd/commits/main/"
