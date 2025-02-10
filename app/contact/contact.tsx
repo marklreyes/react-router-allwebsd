@@ -1,7 +1,7 @@
-export function Contact() {
-return (
-	<>
-	Contact Page
-	</>
-);
+export default function Contact() {
+	return (
+		<>
+		Contact Page
+		</>
+	);
 }

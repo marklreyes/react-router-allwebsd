@@ -1,7 +1,7 @@
-export function Sponsors() {
+export default function Sponsors() {
 	return (
 		<>
 		Sponsors Page
 		</>
 	);
-	}
+}
