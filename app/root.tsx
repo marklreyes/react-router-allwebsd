@@ -1,72 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import {
-  isRouteErrorResponse,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "react-router";
-
+import { isRouteErrorResponse } from "react-router";
 import type { Route } from "./+types/root";
+import { Layout } from "./components/Layout";
 import stylesheet from "./app.css?url";
-import Loading from "./components/Loading";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-  { rel: "stylesheet", href: stylesheet },
+	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
+	{
+	  rel: "preconnect",
+	  href: "https://fonts.gstatic.com",
+	  crossOrigin: "anonymous",
+	},
+	{
+	  rel: "stylesheet",
+	  href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+	},
+	{ rel: "stylesheet", href: stylesheet },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-
-    // Cleanup the timer to avoid memory leaks
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        {isLoading ? <Loading /> : (
-          <>
-            <Header />
-            <main className="container mx-auto p-4">
-              {children}
-            </main>
-            <Footer />
-          </>
-        )}
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
 export default function App() {
-  return <Outlet />;
+  return <Layout />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
