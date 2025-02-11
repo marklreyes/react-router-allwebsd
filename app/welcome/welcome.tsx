@@ -28,7 +28,7 @@ export function Welcome() {
   return (
     <div className="flex items-center justify-center pt-4 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-        <div className="max-w-[600px] w-full space-y-6 px-4">
+        <div className="max-w-[768px] w-full space-y-6 px-4">
 				<Toast showToast={showToast} setShowToast={setShowToast} />
 					<nav className="rounded-3xl border border-white p-6 dark:border-white space-y-4">
 						<iframe title="AllWebSD Castbox Player" src="//castbox.fm/app/castbox/player/id2933770?v=8.22.10&autoplay=0" width="100%" height="500"></iframe>
