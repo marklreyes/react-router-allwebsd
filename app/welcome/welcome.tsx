@@ -33,16 +33,15 @@ export function Welcome() {
 						<div className="alert alert-info p-2 md:p-4">
 							<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-2">
 								<span className="text-xs sm:text-sm md:text-base whitespace-normal break-words">
-								🎙️ Refactoring with React Router Template! 
-								&nbsp;
+								🎙️ In progress with&nbsp;
 									<a
 										href="https://github.com/marklreyes/react-router-allwebsd/commits/main/"
 										target="_blank"
 										rel="noreferrer"
 										className="underline hover:text-white"
 									>
-										View Commits
-									</a>
+										React Router Template
+									</a>!
 								</span>
 								<button
 									className="btn btn-circle btn-xs md:btn-sm self-end sm:self-auto"
