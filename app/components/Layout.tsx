@@ -34,9 +34,7 @@ export function Layout() {
           <>
             <Header />
             <main className="container mx-auto p-4">
-              {/* {children} */}
-			  <Outlet />
-
+			  			<Outlet />
             </main>
             <Footer />
           </>
