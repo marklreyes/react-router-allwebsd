@@ -9,7 +9,7 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
   if (!showToast) return null;
 
   return (
-    <div className="toast toast-center toast-middle w-full max-w-xs md:max-w-md">
+    <div className="toast toast-end w-full max-w-xs md:max-w-md">
       <div className="alert alert-info p-2 md:p-4 relative bg-[#FFC426]">
         <button
           className="btn btn-circle btn-xs md:btn-sm absolute top-2 right-2"
