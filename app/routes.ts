@@ -1,13 +1,10 @@
-import { type RouteConfig, index, route } from "@react-router/dev/routes";
-import { Layout } from "./components/Layout";
+import { type RouteConfig, index, route, layout } from "@react-router/dev/routes";
+
 export default [
-  {
-    element: <Layout />,
-    children: [
-      index("routes/home"),
-      route("guests", "guests/Guests"),
-      route("sponsors", "sponsors/Sponsors"),
-      route("contact", "contact/Contact"),
-    ]
-  }
+	layout("./components/Layout.tsx", [
+		index("routes/home.tsx"),
+		route("guests", "guests/guests.tsx"),
+		route("sponsors", "sponsors/sponsors.tsx"),
+		route("contact", "contact/contact.tsx"),
+	]),
 ] satisfies RouteConfig;
