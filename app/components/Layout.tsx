@@ -10,6 +10,7 @@ import {
 	Scripts,
 	ScrollRestoration,
   } from "react-router";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 export function Layout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,6 +29,7 @@ export function Layout() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+		<GoogleAnalytics />
       </head>
       <body>
 				{isLoading ? <Loading /> : (
