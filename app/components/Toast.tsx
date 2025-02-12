@@ -20,7 +20,7 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
         <div className="flex items-center gap-2 pr-8">
           <LuConstruction className="flex-shrink-0" />
           <span className="text-left text-xs sm:text-sm md:text-base whitespace-normal break-words">
-		 	 Rebuilding with&nbsp;
+		 	 Rebuilding with{" "}
             <a
               href="https://github.com/marklreyes/react-router-allwebsd/commits/main/"
               target="_blank"
