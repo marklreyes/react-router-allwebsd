@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CiHeadphones } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
-import { Toast } from "../components/Toast";
+import { Toast } from "../../components/Toast";
 
 const linkStyles = "group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC426] hover:underline";
 
