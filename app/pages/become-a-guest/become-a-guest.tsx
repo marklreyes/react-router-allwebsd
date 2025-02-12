@@ -10,7 +10,7 @@ export function BecomeAGuest() {
 					<div className="mb-8 max-w-[250px] mx-auto">
 						<img
 							src="/images/allwebsd_shirt.jpg"
-							alt="Recording podcast episode"
+							alt="Become A Guest, Receive A Shirt!"
 							className="w-[250px] h-[250px] rounded-full shadow-lg object-cover"
 						/>
 					</div>
