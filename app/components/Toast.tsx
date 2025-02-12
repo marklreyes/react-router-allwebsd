@@ -12,7 +12,7 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
     <div className="toast toast-end w-full max-w-xs md:max-w-md">
       <div className="alert alert-info p-2 md:p-4 relative bg-[#FFC426]">
         <button
-          className="btn btn-circle btn-xs md:btn-sm absolute top-1 right-2"
+          className="btn btn-circle btn-xs md:btn-sm absolute top-1 right-2 bg-[#3D2F26]"
           onClick={() => setShowToast(false)}
         >
           ✕
