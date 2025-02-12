@@ -39,7 +39,7 @@ export function Layout() {
 									<Outlet />
 								</main>
 								<aside className="col-span-1 lg:col-span-3 bg-[#3D2F26] rounded-lg p-4">
-									<div className="w-[330px] h-[250px] mx-auto mb-4">
+									<div className="w-[330px] mx-auto mb-4">
 										<a
 											href="https://sdfutures.org/support-sdff"
 											target="_blank"
