@@ -22,17 +22,17 @@ export function AboutMe() {
 					<p className="text-white text-lg leading-relaxed mb-6">
 						On any given day, once the caffeine kicks in, my mind is buzzing with questions:
 					</p>
-					<ul className="text-white text-lg leading-relaxed mb-6 space-y-4 list-disc">
-						<li className="flex items-start">
+					<ul className="text-white text-lg leading-relaxed mb-6 space-y-4">
+						<li>
 							🧐{" "}Is this new technology truly groundbreaking or just a passing trend?
 						</li>
-						<li className="flex items-start">
+						<li>
 							🧐{" "}How do idioms from various programming languages influence my approach?
 						</li>
-						<li className="flex items-start">
+						<li>
 							🧐{" "}How big is my bug queue, and did we groom our backlog?
 						</li>
-						<li className="flex items-start">
+						<li>
 							🧐{" "}Are my estimates accurate, and will my solution scale?
 						</li>
 					</ul>
@@ -43,15 +43,15 @@ export function AboutMe() {
 						I’ve had the privilege of working with renowned organizations such as Sony Electronics, The Active Network, Bridgepoint Education, and Thermo Fisher Scientific. My contributions have even been spotlighted on <em><a href="https://javascriptweekly.com/" rel="noreferrer noopener" target="_blank">JavaScript Weekly</a></em> and <em><a href="https://www.marklreyes.com/sleepscore-animated-aura/" target="_blank">Today with Hoda & Jenna</a></em>.
 					</p>
 					<h2 className="text-2xl md:text-3xl font-semibold text-white mb-4 mt-8">Recent Experience</h2>
-					<ul className="text-white text-lg leading-relaxed mb-6 space-y-4 list-disc">
-						<li className="flex items-start">
-							👨🏾‍💻{" "}<strong>SleepScore Labs:</strong>{" "}Developed web applications to help users understand and improve their sleep.
+					<ul className="text-white text-lg leading-relaxed mb-6 space-y-4">
+						<li>
+							💻{" "}<strong>SleepScore Labs:</strong>{" "}Developed web applications to help users understand and improve their sleep.
 						</li>
-						<li className="flex items-start">
-							👨🏾‍💻{" "}<strong>MTM:</strong>{" "}Collaborated with cross-functional teams to create web apps that connect patients and healthcare providers with innovative, cost-effective solutions.
+						<li>
+							💻{" "}<strong>MTM:</strong>{" "}Collaborated with cross-functional teams to create web apps that connect patients and healthcare providers with innovative, cost-effective solutions.
 						</li>
-						<li className="flex items-start">
-							👨🏾‍💻{" "}<strong>Kinectify:</strong>{" "}As Principal Front-End Engineer, I led front-end development across multiple teams, supporting AML software for the Gaming & Sports Betting industries.
+						<li>
+							💻{" "}<strong>Kinectify:</strong>{" "}As Principal Front-End Engineer, I led front-end development across multiple teams, supporting AML software for the Gaming & Sports Betting industries.
 						</li>
 					</ul>
 					<h2 className="text-2xl md:text-3xl font-semibold text-white mb-4 mt-8">Beyond the Code</h2>
