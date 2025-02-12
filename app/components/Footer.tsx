@@ -1,4 +1,4 @@
-import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -32,6 +32,14 @@ export default function Footer() {
 					</p>
 				</div>
 				<div className="flex justify-center gap-4">
+					<a
+							href="//youtube.com/@allwebsd"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-600 hover:text-gray-800 transition-colors"
+						>
+							<FaYoutube size={24} />
+          </a>					
 						<a
 							href="//github.com/marklreyes/react-router-allwebsd"
 							target="_blank"
