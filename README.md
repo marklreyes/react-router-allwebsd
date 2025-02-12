@@ -1,4 +1,6 @@
-# React Router Netlify Template
+# AllWebSD.com
+
+<a href="https://www.allwebsd.com" rel="AllWebSD.com">![Image of AllWebSD](https://github.com/marklreyes/react-router-allwebsd/blob/main/public/logo-allwebsd.png)</a>
 
 A modern, production-ready template for building full-stack React applications using React Router,
 deployed to Netlify.
@@ -11,6 +13,7 @@ deployed to Netlify.
 - 🔄 Data loading and mutations
 - 🔒 TypeScript by default
 - 🎉 TailwindCSS for styling
+- 🌼 daisyUI for component library
 - 📖 [React Router docs](https://reactrouter.com/)
 - 💻 Configured for deployment to Netlify
 
