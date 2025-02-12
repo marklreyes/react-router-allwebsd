@@ -47,7 +47,7 @@ export default function Header() {
         </nav>
 
         {isOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-white lg:hidden">
+          <div className="absolute top-16 left-0 right-0 bg-[#FFC426] lg:hidden">
             <nav className="flex flex-col items-center p-4 space-y-4">
               <NavLink
                 to="/"
