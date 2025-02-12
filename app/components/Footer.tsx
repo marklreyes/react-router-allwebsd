@@ -49,7 +49,7 @@ export default function Footer() {
 							<FaGithub size={24} />
 						</a>
 						<a
-							href="//discord.gg/FpKpTPAc"
+							href="//discord.gg/YfaCq2aK"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-gray-600 hover:text-gray-800 transition-colors"
