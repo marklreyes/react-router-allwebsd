@@ -83,7 +83,7 @@ export function AboutMe() {
 						>
 							appearances
 						</NavLink>
-						{" "}on this show, please send me an
+						{" "}on this show, please send me an{" "}
 						<a
 							href="mailto:mr@marklreyes.com?subject=ALLWEBSD Appearances"
 							className="text-[#FFC426] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFC426] focus:ring-opacity-50"
