@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { LuConstruction } from "react-icons/lu";
 
 interface ToastProps {
@@ -6,6 +7,18 @@ interface ToastProps {
 }
 
 export function Toast({ showToast, setShowToast }: ToastProps) {
+  useEffect(() => {
+    const toastState = sessionStorage.getItem('toastClosed');
+    if (toastState === 'true') {
+      setShowToast(false);
+    }
+  }, [setShowToast]);
+
+  const handleClose = () => {
+    setShowToast(false);
+    sessionStorage.setItem('toastClosed', 'true');
+  };
+
   if (!showToast) return null;
 
   return (
@@ -13,7 +26,7 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
       <div className="alert alert-info p-2 md:p-4 relative bg-[#FFC426]">
         <button
           className="btn btn-circle btn-xs md:btn-sm absolute top-1 right-2 bg-[#3D2F26]"
-          onClick={() => setShowToast(false)}
+          onClick={handleClose}
         >
           ✕
         </button>
