@@ -25,7 +25,7 @@ export default function Ads() {
 	  }, []);
 
 	return (
-		<div className="w-[330px] mx-auto mb-4">
+		<div className="w-[330px] mx-auto mb-8">
 			<div className="carousel w-[330px] mx-auto mb-4">
 				<div id="slide1" className="carousel-item w-full">
 					<a

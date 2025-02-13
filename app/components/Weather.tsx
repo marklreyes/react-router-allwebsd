@@ -46,7 +46,7 @@ export default function Weather() {
   if (!weather) return null;
 
   return (
-    <div className="w-[330px] mt-16 mx-auto">
+		<div className="w-[330px] mx-auto mb-8">
       <h5 className="text-white text-xl mb-4 font-semibold">
         San Diego Weather:
       </h5>
