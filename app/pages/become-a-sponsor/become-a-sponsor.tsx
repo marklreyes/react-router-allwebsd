@@ -12,14 +12,14 @@ export function BecomeASponsor() {
 						<div className="bg-white rounded-lg p-6 shadow-lg">
 							<h2 className="text-2xl font-bold mb-4 text-[#3D2F26]">Season Package</h2>
 							<ul className="space-y-3">
-							<li>⭐ 5 Episode Package</li>
-							<li>⭐ Social Media Posts</li>
-							<li>⭐ Website Ad Space</li>
-							<li>⭐ Show Notes Links</li>
+							<li className="text-[#3D2F26]">⭐ 5 Episode Package</li>
+							<li className="text-[#3D2F26]">⭐ Social Media Posts</li>
+							<li className="text-[#3D2F26]">⭐ Website Ad Space</li>
+							<li className="text-[#3D2F26]">⭐ Show Notes Links</li>
 							<li className="pt-4">
 								<a
 								href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - Season Package"
-								className="text-[#FFC426] hover:text-[#3D2F26] underline hover:no-underline transition-colors duration-200"
+								className="btn btn-outline hover:bg-[#3D2F26] hover:text-[#FFF] bg-[#FFC426] text-[#3D2F26] transition-colors duration-200 border-0"
 								>
 								Learn More
 								</a>
@@ -31,14 +31,14 @@ export function BecomeASponsor() {
 						<div className="bg-white rounded-lg p-6 shadow-lg">
 							<h2 className="text-2xl font-bold mb-4 text-[#3D2F26]">À La Carte</h2>
 							<ul className="space-y-3">
-							<li>⭐ Single Episode</li>
-							<li>⭐ Social Media Post</li>
-							<li>⭐ Website Ad Space</li>
-							<li>⭐ Custom Package</li>
+							<li className="text-[#3D2F26]">⭐ Single Episode</li>
+							<li className="text-[#3D2F26]">⭐ Social Media Post</li>
+							<li className="text-[#3D2F26]">⭐ Website Ad Space</li>
+							<li className="text-[#3D2F26]">⭐ Custom Package</li>
 							<li className="pt-4">
 								<a
 								href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - À La Carte"
-								className="text-[#FFC426] hover:text-[#3D2F26] underline hover:no-underline transition-colors duration-200"
+								className="btn btn-outline hover:bg-[#3D2F26] hover:text-[#FFF] bg-[#FFC426] text-[#3D2F26] transition-colors duration-200 border-0"
 								>
 								Learn More
 								</a>
@@ -50,16 +50,16 @@ export function BecomeASponsor() {
 						<div className="bg-white rounded-lg p-6 shadow-lg">
 							<h2 className="text-2xl font-bold mb-4 text-[#3D2F26]">Support</h2>
 							<ul className="space-y-3">
-							<li>☕ Buy Me A Coffee</li>
-							<li>☕ Monthly Support</li>
-							<li>☕ One-Time Support</li>
-							<li>☕ Special Thanks</li>
+							<li className="text-[#3D2F26]">☕ Buy Me A Coffee</li>
+							<li className="text-[#3D2F26]">☕ Monthly Support</li>
+							<li className="text-[#3D2F26]">☕ One-Time Support</li>
+							<li className="text-[#3D2F26]">☕ Special Thanks</li>
 							<li className="pt-4">
 								<a
 								href="//www.buymeacoffee.com/markreyes"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-[#FFC426] hover:text-[#3D2F26] underline hover:no-underline transition-colors duration-200"
+								className="btn btn-outline hover:bg-[#3D2F26] hover:text-[#FFF] bg-[#FFC426] text-[#3D2F26] transition-colors duration-200 border-0"
 								>
 								Support Now
 								</a>
