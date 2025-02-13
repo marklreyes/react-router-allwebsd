@@ -1,4 +1,5 @@
 import { FaDiscord, FaGithub, FaYoutube } from "react-icons/fa";
+import { SiBuymeacoffee } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -33,6 +34,14 @@ export default function Footer() {
 				</div>
 				<div className="flex justify-center gap-4">
 						<a
+							href="//buymeacoffee.com/markreyes"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-600 hover:text-gray-800 transition-colors"
+						>
+							<SiBuymeacoffee size={24} />
+						</a>
+						<a
 								href="//youtube.com/@allwebsd"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -41,20 +50,20 @@ export default function Footer() {
 								<FaYoutube size={24} />
 						</a>
 						<a
-							href="//github.com/marklreyes/react-router-allwebsd"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-gray-600 hover:text-gray-800 transition-colors"
-						>
-							<FaGithub size={24} />
-						</a>
-						<a
 							href="//discord.gg/YfaCq2aK"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-gray-600 hover:text-gray-800 transition-colors"
 						>
 							<FaDiscord size={24} />
+						</a>
+						<a
+							href="//github.com/marklreyes/react-router-allwebsd"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-600 hover:text-gray-800 transition-colors"
+						>
+							<FaGithub size={24} />
 						</a>
 				</div>
       </div>
