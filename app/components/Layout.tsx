@@ -13,6 +13,7 @@ import {
 import GoogleAnalytics from "./GoogleAnalytics";
 import Ads from "./Ads";
 import Subscribe from "./Subscribe";
+import Weather from "./Weather";
 
 export function Layout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,25 +35,26 @@ export function Layout() {
 		<GoogleAnalytics />
       </head>
       <body>
-				{isLoading ? <Loading /> : (
-					<>
-						<Header />
-						<div className="container mx-auto p-4">
-							<div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-								<main className="col-span-1 lg:col-span-9">
-									<Outlet />
-								</main>
-								<aside className="col-span-1 lg:col-span-3 bg-[#3D2F26] rounded-lg p-4">
-									<Ads />
-									<Subscribe />
-								</aside>
-							</div>
+			{isLoading ? <Loading /> : (
+				<>
+					<Header />
+					<div className="container mx-auto p-4">
+						<div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+							<main className="col-span-1 lg:col-span-9">
+								<Outlet />
+							</main>
+							<aside className="col-span-1 lg:col-span-3 lg:sticky lg:top-4 bg-[#3D2F26] rounded-lg p-4 h-fit">
+								<Ads />
+								<Weather />
+								<Subscribe />
+							</aside>
 						</div>
-						<Footer />
-					</>
-				)}
-        <ScrollRestoration />
-        <Scripts />
+					</div>
+					<Footer />
+				</>
+			)}
+			<ScrollRestoration />
+			<Scripts />
       </body>
     </html>
   );
