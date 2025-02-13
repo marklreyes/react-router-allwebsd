@@ -4,6 +4,8 @@
 
 Just a web developer storytelling out of America's Finest City.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cdacf90b-85f2-43ec-9490-d6290ee48524/deploy-status)](https://app.netlify.com/sites/eclectic-liger-1fa28e/deploys)
+
 ## Features
 
 A modern, production-ready template for building full-stack React applications using React Router,
