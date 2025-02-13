@@ -40,10 +40,10 @@ export default function Header() {
 				</button>
 
         <nav className="hidden lg:block">
-          <NavLink to="/" className={({ isActive }) => isActive ? "mr-4 font-bold" : "mr-4"}>Home</NavLink>
-          <NavLink to="/guests" className={({ isActive }) => isActive ? "mr-4 font-bold" : "mr-4"}>Guests</NavLink>
-          <NavLink to="/sponsors" className={({ isActive }) => isActive ? "mr-4 font-bold" : "mr-4"}>Sponsors</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? "mr-4 font-bold" : "mr-4"}>Contact</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#3D2F26]" : "mr-4 text-[#3D2F26]"}>Home</NavLink>
+          <NavLink to="/guests" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#3D2F26]" : "mr-4 text-[#3D2F26]"}>Guests</NavLink>
+          <NavLink to="/sponsors" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#3D2F26]" : "mr-4 text-[#3D2F26]"}>Sponsors</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#3D2F26]" : "mr-4 text-[#3D2F26]"}>Contact</NavLink>
         </nav>
 
         {isOpen && (
