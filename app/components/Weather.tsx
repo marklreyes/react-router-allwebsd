@@ -67,17 +67,29 @@ export default function Weather() {
 				<p className="text-lg font-semibold text-[#3D2F26]">
 					{Math.round(weather.current.temperature_2m)}°F
 				</p>
-				<p className="flex items-center gap-2 text-[#3D2F26]">
-					<GiThink />Feels like: {Math.round(weather.current.apparent_temperature)}{weather.current_units.apparent_temperature}
+				<p className="flex items-center justify-between text-[#3D2F26]">
+					<span className="flex items-center gap-2">
+						<GiThink />Feels like:
+					</span>
+					<span>{Math.round(weather.current.apparent_temperature)}{weather.current_units.apparent_temperature}</span>
 				</p>
-				<p className="flex items-center gap-2 text-[#3D2F26]">
-					<WiRain />Rain: {weather.current.rain}{weather.current_units.rain}
+				<p className="flex items-center justify-between text-[#3D2F26]">
+					<span className="flex items-center gap-2">
+						<WiRain />Rain:
+					</span>
+					<span>{weather.current.rain}{weather.current_units.rain}</span>
 				</p>
-				<p className="flex items-center gap-2 text-[#3D2F26]">
-					<WiHumidity />Humidity: {weather.current.relative_humidity_2m}{weather.current_units.relative_humidity_2m}
+				<p className="flex items-center justify-between text-[#3D2F26]">
+					<span className="flex items-center gap-2">
+						<WiHumidity />Humidity:
+					</span>
+					<span>{weather.current.relative_humidity_2m}{weather.current_units.relative_humidity_2m}</span>
 				</p>
-				<p className="flex items-center gap-2 text-[#3D2F26]">
-					<WiStrongWind />Wind: {Math.round(weather.current.wind_speed_10m)}{weather.current_units.wind_speed_10m}
+				<p className="flex items-center justify-between text-[#3D2F26]">
+					<span className="flex items-center gap-2">
+						<WiStrongWind />Wind:
+					</span>
+					<span>{Math.round(weather.current.wind_speed_10m)}{weather.current_units.wind_speed_10m}</span>
 				</p>
 			</div>
     </div>
