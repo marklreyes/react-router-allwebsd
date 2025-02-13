@@ -30,7 +30,7 @@ export function Welcome() {
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <div className="max-w-[1024px] w-full px-4">
 				<Toast showToast={showToast} setShowToast={setShowToast} />
-					<nav className="rounded-3xl border border-white p-6 dark:border-white space-y-4">
+					<nav className="rounded-lg border border-white p-6 dark:border-white space-y-4">
 						<iframe title="AllWebSD Castbox Player" src="//castbox.fm/app/castbox/player/id2933770?v=8.22.10&autoplay=0" width="100%" height="500"></iframe>
             <ul>
               {resources.map(({ href, text, icon }) => (
