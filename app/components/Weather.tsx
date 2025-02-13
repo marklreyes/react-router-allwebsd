@@ -11,6 +11,13 @@ interface WeatherData {
     wind_speed_10m: number;
 		rain: number;
   };
+  current_units: {
+    temperature_2m: string;
+    relative_humidity_2m: string;
+    apparent_temperature: string;
+    wind_speed_10m: string;
+		rain: string;
+  };
 }
 
 export default function Weather() {
@@ -61,16 +68,16 @@ export default function Weather() {
 					{Math.round(weather.current.temperature_2m)}°F
 				</p>
 				<p className="flex items-center gap-2 text-[#3D2F26]">
-					<GiThink />Feels like: {Math.round(weather.current.apparent_temperature)}°F
+					<GiThink />Feels like: {Math.round(weather.current.apparent_temperature)}{weather.current_units.apparent_temperature}
 				</p>
 				<p className="flex items-center gap-2 text-[#3D2F26]">
-					<WiRain />Rain: {weather.current.rain}%
+					<WiRain />Rain: {weather.current.rain}{weather.current_units.rain}
 				</p>
 				<p className="flex items-center gap-2 text-[#3D2F26]">
-					<WiHumidity />Humidity: {weather.current.relative_humidity_2m}%
+					<WiHumidity />Humidity: {weather.current.relative_humidity_2m}{weather.current_units.relative_humidity_2m}
 				</p>
 				<p className="flex items-center gap-2 text-[#3D2F26]">
-					<WiStrongWind />Wind: {Math.round(weather.current.wind_speed_10m)} mph
+					<WiStrongWind />Wind: {Math.round(weather.current.wind_speed_10m)}{weather.current_units.wind_speed_10m}
 				</p>
 			</div>
     </div>
