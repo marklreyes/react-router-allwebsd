@@ -37,7 +37,7 @@ export function AboutMe() {
 						</li>
 					</ul>
 					<p className="text-white text-lg leading-relaxed mb-6">
-					With <span>{calculateYearsSince(2007)}</span> years of experience in the web <span>{calculateYearsSince(2009)}</span> of those focused on front-end development—I bring a deep understanding of the presentation layer of your web experience. However, before writing a single line of code, I prioritize understanding your core business objectives to ensure my work aligns with your goals.
+					With <span>{calculateYearsSince(2007)}</span> years of experience in the industry—<span>{calculateYearsSince(2009)}</span> of those focused on front-end development—I bring a deep understanding of the presentation layer of your web experience. However, before writing a single line of code, I prioritize understanding your core business objectives to ensure my work aligns with your goals.
 					</p>
 					<p className="text-white text-lg leading-relaxed mb-6">
 						I’ve had the privilege of working with renowned organizations such as Sony Electronics, The Active Network, Bridgepoint Education, and Thermo Fisher Scientific. My contributions have even been spotlighted on <em><a href="https://javascriptweekly.com/" rel="noreferrer noopener" target="_blank">JavaScript Weekly</a></em> and <em><a href="https://www.marklreyes.com/sleepscore-animated-aura/" target="_blank">Today with Hoda & Jenna</a></em>.
