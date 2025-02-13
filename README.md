@@ -2,10 +2,12 @@
 
 <a href="https://www.allwebsd.com" rel="AllWebSD.com">![Image of AllWebSD](https://github.com/marklreyes/react-router-allwebsd/blob/main/public/logo-allwebsd.png)</a>
 
-A modern, production-ready template for building full-stack React applications using React Router,
-deployed to Netlify.
+Just a web developer storytelling out of America's Finest City.
 
 ## Features
+
+A modern, production-ready template for building full-stack React applications using React Router,
+deployed to Netlify.
 
 - 🚀 Server-side rendering
 - ⚡️ Hot Module Replacement (HMR)
