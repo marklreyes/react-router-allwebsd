@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { TbLoader3 } from "react-icons/tb";
 import { GiSadCrab, GiThink } from "react-icons/gi";
-import { WiHumidity, WiStrongWind, WiRain } from "react-icons/wi";
+import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm, WiFog,  WiHumidity, WiStrongWind } from "react-icons/wi";
 
 interface WeatherData {
   current: {
@@ -10,6 +10,7 @@ interface WeatherData {
     apparent_temperature: number;
     wind_speed_10m: number;
 		rain: number;
+		weather_code: number;
   };
   current_units: {
     temperature_2m: string;
@@ -17,8 +18,43 @@ interface WeatherData {
     apparent_temperature: string;
     wind_speed_10m: string;
 		rain: string;
+		weather_code: string;
   };
 }
+
+const getWeatherIcon = (code: number) => {
+  switch (code) {
+    case 0:
+    case 1:
+      return <WiDaySunny className="text-3xl" />;
+    case 2:
+    case 3:
+      return <WiCloudy className="text-3xl" />;
+    case 51:
+    case 53:
+    case 55:
+    case 61:
+    case 63:
+    case 65:
+      return <WiRain className="text-3xl" />;
+    case 71:
+    case 73:
+    case 75:
+    case 77:
+    case 85:
+    case 86:
+      return <WiSnow className="text-3xl" />;
+    case 95:
+    case 96:
+    case 99:
+      return <WiThunderstorm className="text-3xl" />;
+    case 45:
+    case 48:
+      return <WiFog className="text-3xl" />;
+    default:
+      return <WiDaySunny className="text-3xl" />;
+  }
+};
 
 export default function Weather() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -64,8 +100,11 @@ export default function Weather() {
         San Diego Weather:
       </h5>
 			<div className="bg-[#FFC426] p-4 rounded-lg shadow">
-				<p className="text-lg font-semibold text-[#3D2F26]">
-					{Math.round(weather.current.temperature_2m)}°F
+      	<p className="text-lg font-semibold text-[#3D2F26] flex items-center gap-2">
+        {getWeatherIcon(weather.current.weather_code)}
+					<span>
+						{Math.round(weather.current.temperature_2m)}{weather.current_units.temperature_2m}
+					</span>
 				</p>
 				<p className="flex items-center justify-between text-[#3D2F26]">
 					<span className="flex items-center gap-2">
