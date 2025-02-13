@@ -46,9 +46,9 @@ export default function Ads() {
 				</div>
 			</div>
 			<div className="flex w-full justify-center gap-2 py-2">
-				<a href="#slide1" className="btn btn-xs">1</a>
-				<a href="#slide2" className="btn btn-xs">2</a>
-				<a href="#slide3" className="btn btn-xs">3</a>
+				<a href="#slide1" className="btn btn-xs bg-[#FFC426] text-[#3D2F26] hover:bg-[#FFFFFF] hover:text-[#3D2F26] transition-colors duration-200">1</a>
+				<a href="#slide2" className="btn btn-xs bg-[#FFC426] text-[#3D2F26] hover:bg-[#FFFFFF] hover:text-[#3D2F26] transition-colors duration-200">2</a>
+				<a href="#slide3" className="btn btn-xs bg-[#FFC426] text-[#3D2F26] hover:bg-[#FFFFFF] hover:text-[#3D2F26] transition-colors duration-200">3</a>
 			</div>
 		</div>
 	);
