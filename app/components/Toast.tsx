@@ -23,7 +23,7 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
 
   return (
     <div className="toast toast-end w-full max-w-xs md:max-w-md">
-      <div className="alert alert-info p-2 md:p-4 relative bg-[#FFC426]">
+      <div className="alert alert-info p-2 md:p-4 relative bg-[#FFC426] text-[#3D2F26]">
         <button
           className="btn btn-circle btn-xs md:btn-sm absolute top-1 right-2 text-white bg-[#3D2F26] hover:bg-[#FFC426] hover:text-[#3D2F26]"
           onClick={handleClose}
@@ -33,14 +33,14 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
         <div className="flex items-center gap-2 pr-8">
           <LuConstruction className="flex-shrink-0" />
           <span className="text-left text-xs sm:text-sm md:text-base whitespace-normal break-words">
-		 	 Rebuilding with{" "}
+		 	 			Rebuilt with React Router Template.{" "}
             <a
               href="https://github.com/marklreyes/react-router-allwebsd/commits/main/"
               target="_blank"
               rel="noreferrer"
               className="underline hover:text-white"
             >
-              React Router Template
+              See More
             </a>!
           </span>
         </div>
