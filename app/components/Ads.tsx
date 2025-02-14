@@ -73,33 +73,45 @@ export default function Ads() {
 			<div className="flex w-full justify-center gap-2 py-2">
 				<a
 					href="#slide1"
-					onClick={() => setActiveSlide(1)}
+					onClick={(e) => {
+					e.preventDefault();
+					setActiveSlide(1);
+					document.getElementById('slide1')?.scrollIntoView({ behavior: 'smooth' });
+					}}
 					className={`btn btn-xs ${
-						activeSlide === 1
-						? 'bg-[#3D2F26] text-[#FFC426]'
-						: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
+					activeSlide === 1
+					? 'bg-[#3D2F26] text-[#FFC426]'
+					: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
 					}`}
 				>
 					1
 				</a>
 				<a
 					href="#slide2"
-					onClick={() => setActiveSlide(2)}
+					onClick={(e) => {
+					e.preventDefault();
+					setActiveSlide(2);
+					document.getElementById('slide2')?.scrollIntoView({ behavior: 'smooth' });
+					}}
 					className={`btn btn-xs ${
-						activeSlide === 2
-						? 'bg-[#3D2F26] text-[#FFC426]'
-						: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
+					activeSlide === 2
+					? 'bg-[#3D2F26] text-[#FFC426]'
+					: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
 					}`}
 				>
 					2
 				</a>
 				<a
 					href="#slide3"
-					onClick={() => setActiveSlide(3)}
+					onClick={(e) => {
+					e.preventDefault();
+					setActiveSlide(3);
+					document.getElementById('slide3')?.scrollIntoView({ behavior: 'smooth' });
+					}}
 					className={`btn btn-xs ${
-						activeSlide === 3
-						? 'bg-[#3D2F26] text-[#FFC426]'
-						: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
+					activeSlide === 3
+					? 'bg-[#3D2F26] text-[#FFC426]'
+					: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
 					}`}
 				>
 					3
