@@ -97,7 +97,7 @@ export default function Weather() {
   return (
 		<div className="w-[330px] mx-auto mb-8">
       <h5 className="text-white text-xl mb-4 font-semibold">
-        San Diego Weather:
+        Currently in San Diego:
       </h5>
 			<div className="bg-[#FFC426] p-4 rounded-lg shadow">
       	<p className="text-lg font-semibold text-[#3D2F26] flex items-center gap-2">
