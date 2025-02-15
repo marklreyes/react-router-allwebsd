@@ -21,10 +21,10 @@ export function BecomeASponsor() {
 							<li className="text-[#2F241D]">⭐ Show Notes Links</li>
 							<li className="pt-4">
 								<a
-								href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - Gold Sponsor"
-								className={`btn btn-outline ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0`}
+									href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - Gold Sponsor"
+									className={`btn btn-outline w-full ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0`}
 								>
-								Learn More
+									Learn More
 								</a>
 							</li>
 							</ul>
@@ -40,10 +40,10 @@ export function BecomeASponsor() {
 							<li className="text-[#2F241D]">⭐ Custom Package</li>
 							<li className="pt-4">
 								<a
-								href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - À La Carte"
-								className={`btn btn-outline ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0`}
+									href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - À La Carte"
+									className={`btn btn-outline w-full ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0`}
 								>
-								Learn More
+									Learn More
 								</a>
 							</li>
 							</ul>
@@ -59,12 +59,12 @@ export function BecomeASponsor() {
 							<li className="text-[#2F241D]">☕ Special Thanks</li>
 							<li className="pt-4">
 								<a
-								href="//www.buymeacoffee.com/markreyes"
-								target="_blank"
-								rel="noopener noreferrer"
-								className={`btn btn-outline ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0`}
+									href="//www.buymeacoffee.com/markreyes"
+									target="_blank"
+									rel="noopener noreferrer"
+									className={`btn btn-outline w-full ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0`}
 								>
-								Support Now
+									Support Now
 								</a>
 							</li>
 							</ul>
