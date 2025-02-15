@@ -1,24 +1,8 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { CiHeadphones } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { Toast } from "../../components/Toast";
-
-const resources = [
-  {
-    href: "https://www.marklreyes.com/allwebsd-podcast/",
-    text: "Listen on MarkLReyes.com",
-    icon: (
-			<CiHeadphones />
-    ),
-  },
-  {
-    href: "mailto:mr@marklreyes.com",
-    text: "Contact Me",
-    icon: (
-			<CiMail />
-    ),
-  },
-];
 
 export function Welcome() {
 	const [showToast, setShowToast] = useState(true);
@@ -31,19 +15,26 @@ export function Welcome() {
 					<nav className="rounded-lg border border-white p-6 dark:border-white space-y-4">
 						<iframe title="AllWebSD Castbox Player" src="//castbox.fm/app/castbox/player/id2933770?v=8.22.10&autoplay=0" width="100%" height="500"></iframe>
             <ul>
-              {resources.map(({ href, text, icon }) => (
-                <li key={href}>
-                  <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC425] hover:text-white underline hover:no-underline"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                    {text}
-                  </a>
-                </li>
-              ))}
+							<li>
+								<a
+									className="group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC425] hover:text-white underline hover:no-underline"
+									href="https://www.marklreyes.com/allwebsd-podcast/"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<CiHeadphones />
+									Listen on MarkLReyes.com
+                </a>
+							</li>
+							<li>
+								<NavLink
+									to="/contact"
+									className="group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC425] hover:text-white underline hover:no-underline"
+								>
+									<CiMail />
+									Contact Me
+								</NavLink>
+							</li>
             </ul>
           </nav>
         </div>
