@@ -32,10 +32,10 @@ export default function Header() {
           </nav>
           <button
             onClick={toggleTheme}
-						className={`${theme.primary} ${theme.accent} p-2 rounded-full`}
+						className={`${isDarkMode ? `${theme.primary}` : `${theme.primary}`} p-2 rounded-full`}
             aria-label="Toggle theme"
           >
-            {isDarkMode ? <FaSun className={`${theme.text}`} /> : <FaMoon className={`${theme.text}`} />}
+            {isDarkMode ? <FaSun className="text-white" /> : <FaMoon className="text-white" />}
           </button>
         </div>
 
@@ -43,10 +43,10 @@ export default function Header() {
         <div className="flex lg:hidden items-center gap-2">
           <button
             onClick={toggleTheme}
-						className={`${theme.primary} ${theme.accent} p-2 rounded-full`}
+						className={`${isDarkMode ? `${theme.primary}` : `${theme.primary}`} p-2 rounded-full`}
             aria-label="Toggle theme"
           >
-            {isDarkMode ? <FaSun className={`${theme.text}`} /> : <FaMoon className={`${theme.text}`} />}
+            {isDarkMode ? <FaSun className="text-white" /> : <FaMoon className="text-white" />}
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
