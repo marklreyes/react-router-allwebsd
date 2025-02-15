@@ -3,8 +3,6 @@ import { CiHeadphones } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { Toast } from "../../components/Toast";
 
-const linkStyles = "group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC426] hover:underline";
-
 const resources = [
   {
     href: "https://www.marklreyes.com/allwebsd-podcast/",
@@ -36,7 +34,7 @@ export function Welcome() {
               {resources.map(({ href, text, icon }) => (
                 <li key={href}>
                   <a
-                    className={linkStyles}
+                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC425] hover:text-white underline hover:no-underline"
                     href={href}
                     target="_blank"
                     rel="noreferrer"
