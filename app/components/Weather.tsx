@@ -116,7 +116,7 @@ export default function Weather() {
   if (!weather) return null;
 
   return (
-		<div className={`${theme.primary} ${theme.text} mx-auto mb-8 `}>
+		<div className={`${theme.primary} ${theme.text} mx-auto`}>
       <h5 className={`${theme.text} text-xl mb-1 font-semibold`}>
         Currently in San Diego:
       </h5>
