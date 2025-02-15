@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
 
 export default function Ads() {
@@ -58,18 +59,16 @@ export default function Ads() {
 					</a>
 				</div>
 				<div id="slide3" className="carousel-item w-full">
-					<a
-						href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - Gold (Ad Banner)"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="w-full border"
+					<NavLink
+						to="/sponsors"
+						className="w-full border cursor-pointer"
 					>
 						<img
-							src="/images/ALLWEBSD_banner.jpg"
-							alt="Advertise your business here and become a gold sponsor today!"
-							className="w-full h-full object-cover"
+						src="/images/ALLWEBSD_banner.jpg"
+						alt="Advertise your business here and become a gold sponsor today!"
+						className="w-full h-full object-cover"
 						/>
-					</a>
+					</NavLink>
 				</div>
 			</div>
 			<div className="flex w-full justify-center gap-2 py-2">
