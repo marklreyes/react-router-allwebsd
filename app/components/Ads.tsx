@@ -12,14 +12,14 @@ export default function Ads() {
 			entries.forEach((entry) => {
 			  if (entry.isIntersecting) {
 				const slideId = entry.target.id;
-				setActiveSlide(Number(slideId.replace('slide', '')));
+				setActiveSlide(Number(slideId.replace("slide", "")));
 			  }
 			});
 		  },
 		  { threshold: 0.5 }
 		);
 
-		const slides = document.querySelectorAll('.carousel-item');
+		const slides = document.querySelectorAll(".carousel-item");
 		slides.forEach((slide) => observer.observe(slide));
 
 		return () => {
@@ -77,7 +77,7 @@ export default function Ads() {
 					onClick={(e) => {
 					e.preventDefault();
 					setActiveSlide(1);
-					document.getElementById('slide1')?.scrollIntoView({ behavior: 'smooth' });
+					document.getElementById("slide1")?.scrollIntoView({ behavior: "smooth" });
 					}}
 					className={`btn btn-xs ${
 					activeSlide === 1
@@ -92,7 +92,7 @@ export default function Ads() {
 					onClick={(e) => {
 					e.preventDefault();
 					setActiveSlide(2);
-					document.getElementById('slide2')?.scrollIntoView({ behavior: 'smooth' });
+					document.getElementById("slide2")?.scrollIntoView({ behavior: "smooth" });
 					}}
 					className={`btn btn-xs ${
 					activeSlide === 2
@@ -107,7 +107,7 @@ export default function Ads() {
 					onClick={(e) => {
 					e.preventDefault();
 					setActiveSlide(3);
-					document.getElementById('slide3')?.scrollIntoView({ behavior: 'smooth' });
+					document.getElementById("slide3")?.scrollIntoView({ behavior: "smooth" });
 					}}
 					className={`btn btn-xs ${
 					activeSlide === 3

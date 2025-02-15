@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { LuConstruction } from "react-icons/lu";
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from "../context/ThemeContext";
 
 interface ToastProps {
   showToast: boolean;
@@ -11,15 +11,15 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
   const { theme } = useTheme();
 
 	useEffect(() => {
-    const toastState = sessionStorage.getItem('toastClosed');
-    if (toastState === 'true') {
+    const toastState = sessionStorage.getItem("toastClosed");
+    if (toastState === "true") {
       setShowToast(false);
     }
   }, [setShowToast]);
 
   const handleClose = () => {
     setShowToast(false);
-    sessionStorage.setItem('toastClosed', 'true');
+    sessionStorage.setItem("toastClosed", "true");
   };
 
   if (!showToast) return null;

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logoAllWebSD from "../../public/logo-allwebsd.png";
-import { useTheme } from '../context/ThemeContext';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { useTheme } from "../context/ThemeContext";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Header() {
   const { isDarkMode, theme, toggleTheme } = useTheme();
@@ -77,7 +77,7 @@ export default function Header() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `block w-full text-center py-2 ${isActive ? 'font-bold' : ''}`
+                  `block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
                 }
                 onClick={() => setIsOpen(false)}
               >
@@ -86,7 +86,7 @@ export default function Header() {
               <NavLink
                 to="/guests"
                 className={({ isActive }) =>
-                  `block w-full text-center py-2 ${isActive ? 'font-bold' : ''}`
+                  `block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
                 }
                 onClick={() => setIsOpen(false)}
               >
@@ -95,7 +95,7 @@ export default function Header() {
               <NavLink
                 to="/sponsors"
                 className={({ isActive }) =>
-                  `block w-full text-center py-2 ${isActive ? 'font-bold' : ''}`
+                  `block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
                 }
                 onClick={() => setIsOpen(false)}
               >
@@ -104,7 +104,7 @@ export default function Header() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  `block w-full text-center py-2 ${isActive ? 'font-bold' : ''}`
+                  `block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
                 }
                 onClick={() => setIsOpen(false)}
               >

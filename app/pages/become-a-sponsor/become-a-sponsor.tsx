@@ -1,7 +1,7 @@
 import { useTheme } from "~/context/ThemeContext";
 
 export function BecomeASponsor() {
-	const { isDarkMode, theme, toggleTheme } = useTheme();
+	const { theme } = useTheme();
 
 	return (
 		<div className="flex items-center justify-center">
