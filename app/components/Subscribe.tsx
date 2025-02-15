@@ -4,7 +4,7 @@ export default function Subscribe() {
 	const { theme } = useTheme();
 
 	return (
-		<div className="mx-auto mb-8">
+		<div className="mx-auto">
 			<h5 className={`${theme.text} text-xl mb-1 font-semibold`}>
 				Subscribe Now:
 			</h5>
