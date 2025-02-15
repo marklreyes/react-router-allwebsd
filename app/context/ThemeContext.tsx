@@ -15,9 +15,9 @@ type ThemeContextType = {
 const lightTheme = {
   background: "bg-[#2F241D]", // brown
   text: "text-[#2F241D]", // brown
-  primary: "bg-[#FFC425]", // yellow
+  primary: "bg-[#FFC425]", // gold
   secondary: "bg-[#2F241D]", // brown
-  accent: "bg-[#FFC425]" // yellow
+  accent: "bg-[#FFC425]" // gold
 };
 
 const darkTheme = {
@@ -25,7 +25,7 @@ const darkTheme = {
   text: "text-[#2F241D]", // brown
   primary: "bg-[#71BEA9]", // mint
   secondary: "bg-[#F03D86]", // pink
-  accent: "bg-[#FFC425]" // yellow
+  accent: "bg-[#FFC425]" // gold
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
