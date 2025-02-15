@@ -11,9 +11,9 @@ export function BecomeASponsor() {
 						Become A Sponsor
 					</h1>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-						{/* Season Package */}
+						{/* Gold Sponsor */}
 						<div className="bg-white rounded-lg p-6 shadow-lg">
-							<h2 className="text-2xl font-bold mb-4 text-[#2F241D]">Season Package</h2>
+							<h2 className="text-2xl font-bold mb-4 text-[#2F241D]">Gold Sponsor</h2>
 							<ul className="space-y-3">
 							<li className="text-[#2F241D]">⭐ 5 Episode Package</li>
 							<li className="text-[#2F241D]">⭐ Social Media Posts</li>
@@ -21,7 +21,7 @@ export function BecomeASponsor() {
 							<li className="text-[#2F241D]">⭐ Show Notes Links</li>
 							<li className="pt-4">
 								<a
-								href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - Season Package"
+								href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - Gold Sponsor"
 								className={`btn btn-outline ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0`}
 								>
 								Learn More
