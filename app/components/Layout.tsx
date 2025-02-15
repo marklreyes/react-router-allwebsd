@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Loading from "./Loading";
-
+import { useTheme } from "../context/ThemeContext";
 import {
 	Links,
 	Meta,
@@ -16,6 +16,7 @@ import Subscribe from "./Subscribe";
 import Weather from "./Weather";
 
 export function Layout() {
+  const { isDarkMode, theme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export function Layout() {
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="en" className={isDarkMode ? "dark" : ""}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,7 +35,7 @@ export function Layout() {
         <Links />
 		<GoogleAnalytics />
       </head>
-      <body>
+      <body className={`${theme.background} ${theme.text} transition-colors duration-200`}>
 			{isLoading ? <Loading /> : (
 				<>
 					<Header />
@@ -43,7 +44,7 @@ export function Layout() {
 							<main className="col-span-1 lg:col-span-9">
 								<Outlet />
 							</main>
-							<aside className="col-span-1 lg:col-span-3 lg:sticky lg:top-4 bg-[#3D2F26] rounded-lg p-4 h-fit">
+							<aside className={`col-span-1 lg:col-span-3 lg:sticky lg:top-4 ${theme.primary} ${theme.text} rounded-lg p-4 h-fit`}>
 								<Ads />
 								<Weather />
 								<Subscribe />

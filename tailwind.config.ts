@@ -2,8 +2,14 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+	darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        primary: '#FFC425',
+        secondary: '#2F241D',
+        darkBg: '#71BEA9',
+      },
       fontFamily: {
         sans: [
           '"Inter"',
@@ -19,7 +25,7 @@ export default {
     },
   },
   plugins: [
-		require('daisyui'),
+		require("daisyui"),
 	],
 	daisyui: {
     themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
