@@ -1,7 +1,10 @@
 import { FaDiscord, FaGithub, FaYoutube } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
+import { useTheme } from "~/context/ThemeContext";
 
 export default function Footer() {
+	  const { isDarkMode, theme } = useTheme();
+
   return (
     <footer className="bg-white text-base-100 p-4">
       <div className="container mx-auto">
@@ -37,15 +40,15 @@ export default function Footer() {
 							href="//buymeacoffee.com/markreyes"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-[#2F241D] hover:text-[#FFC425] transition-colors"
-						>
+							className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
+							>
 							<SiBuymeacoffee size={24} />
 						</a>
 						<a
 								href="//youtube.com/@allwebsd"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-[#2F241D] hover:text-[#FFC425] transition-colors"
+								className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
 								>
 								<FaYoutube size={24} />
 						</a>
@@ -53,7 +56,7 @@ export default function Footer() {
 							href="//discord.gg/YfaCq2aK"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-[#2F241D] hover:text-[#FFC425] transition-colors"
+							className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
 						>
 							<FaDiscord size={24} />
 						</a>
@@ -61,7 +64,7 @@ export default function Footer() {
 							href="//github.com/marklreyes/react-router-allwebsd"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-[#2F241D] hover:text-[#FFC425] transition-colors"
+							className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
 						>
 							<FaGithub size={24} />
 						</a>
