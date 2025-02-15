@@ -5,7 +5,7 @@ export function AboutMe() {
 		return new Date().getFullYear() - startYear;
 	};
 	return (
-		<div className="flex items-center justify-center pt-4 pb-4">
+		<div className="flex items-center justify-center">
 			<div className="flex-1 flex flex-col items-center gap-16 min-h-0">
 				<div className="max-w-[1024px] w-full px-4">
 					<h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
