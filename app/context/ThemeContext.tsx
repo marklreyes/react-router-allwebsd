@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
 
 type ThemeContextType = {
   isDarkMode: boolean;
@@ -31,15 +31,50 @@ const darkTheme = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const theme = isDarkMode ? darkTheme : lightTheme;
+  const [isDarkMode, setIsDarkMode] = useState(false); // Default value for SSR
+
+  useEffect(() => {
+    // Run localStorage operations after mounting
+    const savedTheme = typeof window !== 'undefined'
+      ? localStorage.getItem('theme')
+      : null;
+
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+    }
+  }, []);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
+    setIsDarkMode(prev => {
+      const newTheme = !prev;
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+      }
+      return newTheme;
+    });
   };
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+      if (!localStorage.getItem('theme')) {
+        setIsDarkMode(mediaQuery.matches);
+      }
+
+      const handler = (e: MediaQueryListEvent) => {
+        if (!localStorage.getItem('theme')) {
+          setIsDarkMode(e.matches);
+        }
+      };
+
+      mediaQuery.addEventListener('change', handler);
+      return () => mediaQuery.removeEventListener('change', handler);
+    }
+  }, []);
+
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme, theme }}>
+    <ThemeContext.Provider value={{ isDarkMode, toggleTheme, theme: isDarkMode ? darkTheme : lightTheme }}>
       {children}
     </ThemeContext.Provider>
   );
