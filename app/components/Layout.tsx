@@ -46,7 +46,9 @@ export function Layout() {
 							</main>
 							<aside className={`col-span-1 lg:col-span-3 lg:sticky lg:top-4 ${theme.primary} ${theme.text} rounded-lg p-4 h-fit`}>
 								<Ads />
+								<hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
 								<Weather />
+								<hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
 								<Subscribe />
 							</aside>
 						</div>
