@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export function BecomeAGuest() {
 
 	return (
@@ -20,12 +22,12 @@ export function BecomeAGuest() {
 					<p className="text-white text-lg leading-relaxed mb-6">
 						Software Engineers, Data Scientists, UX/UI Designers, Technical Product Owners, Business Analysts, Small Business Owners and more will always be welcome to AllWebSD.
 						To make an appearance, please{" "}
-						<a
-							href="mailto:mr@marklreyes.com?subject=ALLWEBSD Appearances"
+						<NavLink
+							to="/contact"
 							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
 						>
 							contact me
-						</a>{" "}
+						</NavLink>{" "}
 						today!
 					</p>
 				</div>
