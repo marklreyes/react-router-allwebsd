@@ -40,7 +40,7 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
             <a
               href="https://github.com/marklreyes/react-router-allwebsd/commits/main/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="underline hover:text-white"
             >
               See More
