@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { TbLoader3 } from "react-icons/tb";
 import { GiSadCrab, GiThink } from "react-icons/gi";
 import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm, WiFog,  WiHumidity, WiStrongWind } from "react-icons/wi";
+import { useTheme } from "~/context/ThemeContext";
 
 interface WeatherData {
   current: {
@@ -57,6 +58,8 @@ const getWeatherIcon = (code: number) => {
 };
 
 export default function Weather() {
+	const { theme } = useTheme();
+
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -90,41 +93,41 @@ export default function Weather() {
     return () => clearInterval(intervalId);
   }, []);
 
-  if (loading) return <div className="text-white"><TbLoader3 />Loading weather...</div>;
-  if (error) return <div className="text-white"><GiSadCrab />Error: {error}</div>;
+  if (loading) return <div className={`${theme.primary} ${theme.text}`}><TbLoader3 />Loading weather...</div>;
+  if (error) return <div className={`${theme.primary} ${theme.text}`}><GiSadCrab />Error: {error}</div>;
   if (!weather) return null;
 
   return (
-		<div className="w-[330px] mx-auto mb-8">
-      <h5 className="text-white text-xl mb-4 font-semibold">
+		<div className={`${theme.primary} ${theme.text} mx-auto mb-8 `}>
+      <h5 className={`${theme.text} text-xl mb-1 font-semibold`}>
         Currently in San Diego:
       </h5>
-			<div className="bg-[#FFC426] p-4 rounded-lg shadow">
-      	<p className="text-lg font-semibold text-[#3D2F26] flex items-center gap-2">
+			<div className={`${theme.primary} ${theme.text} pt-2`}>
+      	<p className="text-2xl font-semibold text-[#2F241D] flex items-center gap-2">
         {getWeatherIcon(weather.current.weather_code)}
 					<span>
 						{Math.round(weather.current.temperature_2m)}{weather.current_units.temperature_2m}
 					</span>
 				</p>
-				<p className="flex items-center justify-between text-[#3D2F26]">
+				<p className="flex items-center justify-between text-[#2F241D]">
 					<span className="flex items-center gap-2">
 						<GiThink />Feels like:
 					</span>
 					<span>{Math.round(weather.current.apparent_temperature)}{weather.current_units.apparent_temperature}</span>
 				</p>
-				<p className="flex items-center justify-between text-[#3D2F26]">
+				<p className="flex items-center justify-between text-[#2F241D]">
 					<span className="flex items-center gap-2">
 						<WiRain />Rain:
 					</span>
 					<span>{weather.current.rain}{weather.current_units.rain}</span>
 				</p>
-				<p className="flex items-center justify-between text-[#3D2F26]">
+				<p className="flex items-center justify-between text-[#2F241D]">
 					<span className="flex items-center gap-2">
 						<WiHumidity />Humidity:
 					</span>
 					<span>{weather.current.relative_humidity_2m}{weather.current_units.relative_humidity_2m}</span>
 				</p>
-				<p className="flex items-center justify-between text-[#3D2F26]">
+				<p className="flex items-center justify-between text-[#2F241D]">
 					<span className="flex items-center gap-2">
 						<WiStrongWind />Wind:
 					</span>

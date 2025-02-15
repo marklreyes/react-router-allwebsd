@@ -1,10 +1,14 @@
+import { useTheme } from "~/context/ThemeContext";
+
 export default function Subscribe() {
+	const { theme } = useTheme();
+
 	return (
-		<div className="w-[330px] mx-auto mb-8">
-			<h5 className="text-white text-xl mb-4 font-semibold">
+		<div className="mx-auto mb-8">
+			<h5 className={`${theme.text} text-xl mb-1 font-semibold`}>
 				Subscribe Now:
 			</h5>
-			<div className="w-[330] gap-4 grid grid-cols-1 md:grid-cols-2">
+			<div className="gap-4 grid grid-cols-1 md:grid-cols-2">
 				<a
 				href="//itunes.apple.com/app/castbox-radio/id1243410543"
 				target="_blank"

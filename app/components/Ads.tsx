@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useTheme } from "~/context/ThemeContext";
 
 export default function Ads() {
+	const { theme } = useTheme();
 	const [activeSlide, setActiveSlide] = useState(1);
 
 	useEffect(() => {
@@ -25,8 +27,8 @@ export default function Ads() {
 	  }, []);
 
 	return (
-		<div className="w-[330px] mx-auto mb-8">
-			<div className="carousel w-[330px] mx-auto mb-4">
+		<div className="mx-auto mb-8">
+			<div className="carousel mx-auto mb-4">
 				<div id="slide1" className="carousel-item w-full">
 					<a
 						href="https://sdfutures.org/support-sdff"
@@ -37,7 +39,7 @@ export default function Ads() {
 						<img
 							src="/images/SDFF_banner.jpg"
 							alt="San Diego Futures Foundation join the movement and bridge the digital divide"
-							className="w-full h-full object-cover rounded"
+							className="w-full h-full object-cover"
 						/>
 					</a>
 				</div>
@@ -51,7 +53,7 @@ export default function Ads() {
 						<img
 							src="/images/AIX_banner.jpg"
 							alt="Learn the secrets to an ai-powered business."
-							className="w-full h-full object-cover rounded"
+							className="w-full h-full object-cover"
 						/>
 					</a>
 				</div>
@@ -60,12 +62,12 @@ export default function Ads() {
 						href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - Gold (Ad Banner)"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="w-full border rounded"
+						className="w-full border"
 					>
 						<img
 							src="/images/ALLWEBSD_banner.jpg"
 							alt="Advertise your business here and become a gold sponsor today!"
-							className="w-full h-full object-cover rounded"
+							className="w-full h-full object-cover"
 						/>
 					</a>
 				</div>
@@ -80,8 +82,8 @@ export default function Ads() {
 					}}
 					className={`btn btn-xs ${
 					activeSlide === 1
-					? 'bg-[#3D2F26] text-[#FFC426]'
-					: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
+					? `${theme.secondary} text-white`
+					: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
 					}`}
 				>
 					1
@@ -95,8 +97,8 @@ export default function Ads() {
 					}}
 					className={`btn btn-xs ${
 					activeSlide === 2
-					? 'bg-[#3D2F26] text-[#FFC426]'
-					: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
+					? `${theme.secondary} text-white`
+					: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
 					}`}
 				>
 					2
@@ -110,8 +112,8 @@ export default function Ads() {
 					}}
 					className={`btn btn-xs ${
 					activeSlide === 3
-					? 'bg-[#3D2F26] text-[#FFC426]'
-					: 'bg-[#FFC426] text-[#3D2F26] hover:bg-[#3D2F26] hover:text-[#FFC426]'
+					? `${theme.secondary} text-white`
+					: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
 					}`}
 				>
 					3
