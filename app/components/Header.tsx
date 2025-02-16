@@ -50,7 +50,7 @@ export default function Header() {
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-500 hover:text-gray-700"
+            className={`${theme.text} hover:text-[#2F241D]`}
           >
             <svg
               className="w-6 h-6"
@@ -72,7 +72,7 @@ export default function Header() {
       </div>
 
         {isOpen && (
-          <div className={`${theme.primary} absolute top-16 left-0 right-0 lg:hidden`}>
+          <div className={`${theme.primary} ${theme.text} absolute top-16 left-0 right-0 lg:hidden`}>
             <nav className="flex flex-col items-center p-4 space-y-4">
               <NavLink
                 to="/"
