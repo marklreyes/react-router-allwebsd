@@ -7,9 +7,18 @@ interface SponsorCardProps {
 	linkUrl: string;
 	linkText: string;
 	subject?: string;
-  }
+	animate?: boolean;
+}
 
-  export function SponsorCard({ title, benefits, icon, linkUrl, linkText, subject }: SponsorCardProps) {
+export function SponsorCard({
+	title,
+	benefits,
+	icon,
+	linkUrl,
+	linkText,
+	subject,
+	animate = false
+  }: SponsorCardProps) {
 	const { theme } = useTheme();
 
 	return (
@@ -26,7 +35,9 @@ interface SponsorCardProps {
 			  href={subject ? `mailto:mr@marklreyes.com?subject=${subject}` : linkUrl}
 			  target={!subject ? "_blank" : undefined}
 			  rel={!subject ? "noopener noreferrer" : undefined}
-			  className={`btn btn-outline w-full ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0`}
+			  className={`btn btn-outline w-full ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0 ${
+				animate ? 'animate-shake' : ''
+			  }`}
 			>
 			  {linkText}
 			</a>

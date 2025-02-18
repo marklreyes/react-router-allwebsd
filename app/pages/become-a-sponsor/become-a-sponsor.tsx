@@ -16,7 +16,8 @@ export function BecomeASponsor() {
 			icon: "⭐",
 			subject: "ALLWEBSD Sponsorship - Gold Sponsor",
 			linkText: "Learn More",
-			linkUrl: "mailto:mr@markreyes.com?subject=ALLWEBSD Sponsorship - Gold Sponsor"
+			linkUrl: "mailto:mr@markreyes.com?subject=ALLWEBSD Sponsorship - Gold Sponsor",
+			animate: true
 		},
 		{
 			title: "À La Carte",

@@ -22,6 +22,18 @@ export default {
           '"Noto Color Emoji"',
         ],
       },
+      keyframes: {
+        shake: {
+          '0%': { transform: 'translateX(0)' },
+          '25%': { transform: 'translateX(-1px)' },
+          '50%': { transform: 'translateX(0)' },
+          '75%': { transform: 'translateX(1px)' },
+          '100%': { transform: 'translateX(0)' }
+        }
+      },
+      animation: {
+        shake: 'shake 1s ease-in-out infinite'
+      }
     },
   },
   plugins: [
