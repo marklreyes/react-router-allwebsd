@@ -18,6 +18,7 @@ deployed to Netlify.
 - 🔒 TypeScript by default
 - 🎉 TailwindCSS for styling
 - 🌼 daisyUI for component library
+- 🌓 Light/Dark Mode aka "City Connect"
 - 📖 [React Router docs](https://reactrouter.com/)
 - 💻 Configured for deployment to Netlify
 
