@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { LuConstruction } from "react-icons/lu";
+import { SiBuymeacoffee } from "react-icons/si";
 import { useTheme } from "../context/ThemeContext";
 
 interface ToastProps {
@@ -34,16 +34,16 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
           ✕
         </button>
         <div className="flex items-center gap-2 pr-8">
-          <LuConstruction className="flex-shrink-0" />
+          <SiBuymeacoffee className="flex-shrink-0" />
           <span className="text-left text-xs sm:text-sm md:text-base whitespace-normal break-words">
-		 	 			Rebuilt with React Router Template.{" "}
+		 	 			This independent podcast is powered by grit and caffeine.{" "}
             <a
-              href="https://github.com/marklreyes/react-router-allwebsd/commits/main/"
+              href="//buymeacoffee.com/markreyes"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-white"
             >
-              See More
+              Buy cups now
             </a>!
           </span>
         </div>
