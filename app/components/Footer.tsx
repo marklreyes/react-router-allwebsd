@@ -3,7 +3,7 @@ import { SiBuymeacoffee } from "react-icons/si";
 import { useTheme } from "~/context/ThemeContext";
 
 export default function Footer() {
-	  const { isDarkMode, theme } = useTheme();
+	  const { isDarkMode } = useTheme();
 
   return (
     <footer className="bg-white text-base-100 p-4">
