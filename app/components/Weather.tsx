@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { TbLoader3 } from "react-icons/tb";
 import { GiSadCrab, GiThink } from "react-icons/gi";
+import { SiTheweatherchannel } from "react-icons/si";
 import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm, WiFog,  WiHumidity, WiStrongWind, WiTime8 } from "react-icons/wi";
 import { useTheme } from "~/context/ThemeContext";
 
@@ -117,9 +118,9 @@ export default function Weather() {
 
   return (
 		<div className={`${theme.primary} ${theme.text} mx-auto`}>
-      <h5 className={`${theme.text} text-xl mb-1 font-semibold`}>
-        Currently in San Diego:
-      </h5>
+			<h5 className={`${theme.text} text-xl mb-1 font-semibold flex items-center gap-2`}>
+				<SiTheweatherchannel className="text-2xl" />Currently in San Diego
+			</h5>
 			<div className={`${theme.primary} ${theme.text} pt-2`}>
 				<p className={`${theme.text} text-3xl font-semibold flex items-center justify-center gap-2`}>
 					{getWeatherIcon(weather.current.weather_code)}

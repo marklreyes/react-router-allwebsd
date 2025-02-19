@@ -1,12 +1,13 @@
 import { useTheme } from "~/context/ThemeContext";
+import { GiHeadphones } from "react-icons/gi";
 
 export default function Subscribe() {
 	const { theme } = useTheme();
 
 	return (
 		<div className="mx-auto">
-			<h5 className={`${theme.text} text-xl mb-1 font-semibold`}>
-				Subscribe Now:
+			<h5 className={`${theme.text} text-xl mb-1 font-semibold flex items-center gap-2`}>
+				<GiHeadphones className="text-2xl" />Listen Anywhere
 			</h5>
 			<div className="gap-4 grid grid-cols-1 md:grid-cols-2">
 				<a
