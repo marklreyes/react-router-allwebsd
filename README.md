@@ -8,8 +8,7 @@ Just a web developer storytelling out of America's Finest City.
 
 ## Features
 
-A modern, production-ready template for building full-stack React applications using React Router,
-deployed to Netlify.
+A modern, production-ready template for building full-stack React applications using React Router, deployed to Netlify.
 
 - 🚀 Server-side rendering
 - ⚡️ Hot Module Replacement (HMR)
@@ -19,6 +18,7 @@ deployed to Netlify.
 - 🎉 TailwindCSS for styling
 - 🌼 daisyUI for component library
 - 🌓 Light/Dark Mode aka "City Connect"
+- ⛅️ Weather data from Open-Meteo
 - 📖 [React Router docs](https://reactrouter.com/)
 - 💻 Configured for deployment to Netlify
 
