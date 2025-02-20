@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useTheme } from "~/context/ThemeContext";
 import { Episode } from "~/components/Episode";
 import { MdFrontLoader } from "react-icons/md";
@@ -75,7 +76,11 @@ export function EpisodesList() {
 						title: item.title,
 						created: new Date(item.pubDate).getTime(),
 						content: item["content:encoded"] || item.description,
-						enclosures: item.enclosure ? [item.enclosure] : [],
+						enclosures: item.enclosure ? [{
+							'@_length': item.enclosure['@_length'],
+							'@_type': item.enclosure['@_type'],
+							'@_url': item.enclosure['@_url']
+						}] : [],
 						itunes_duration: item["itunes:duration"]
 					}))
 				};
@@ -116,9 +121,9 @@ export function EpisodesList() {
 					<button
 						onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
 						disabled={currentPage === 1}
-						className="px-4 py-2 rounded disabled:opacity-50"
+						className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
 					>
-						Previous
+					<FaChevronLeft className="inline-block" /> Previous
 					</button>
 					<span className="px-4 py-2">
 						Page {currentPage} of {Math.ceil(rssData.items.length / itemsPerPage)}
@@ -126,9 +131,9 @@ export function EpisodesList() {
 					<button
 						onClick={() => setCurrentPage(prev => prev + 1)}
 						disabled={currentPage >= Math.ceil(rssData.items.length / itemsPerPage)}
-						className="px-4 py-2 rounded disabled:opacity-50"
+						className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
 					>
-						Next
+					Next <FaChevronRight className="inline-block" />
 					</button>
 				</div>
 				</>
