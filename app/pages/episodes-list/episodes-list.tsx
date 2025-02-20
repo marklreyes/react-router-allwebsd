@@ -26,7 +26,7 @@ interface RSSFeed {
 export function EpisodesList() {
 	const PROXY = window.location.hostname === "localhost" ? "https://allwebsd.com" : "/cors-proxy";
 	const RSS_URL = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.xml";
-	const PROXY_URL = `${PROXY}/${RSS_URL}`;
+	const PROXY_URL = `/cors-proxy/${RSS_URL}`;
 	const [isLoading, setIsLoading] = useState(true);
 	const [rssData, setRssData] = useState<RSSFeed | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -55,8 +55,6 @@ export function EpisodesList() {
 
 			try {
 				const rss = await parse(PROXY_URL);
-				console.log("PROXY_URL", PROXY_URL);
-				console.log("rss", rss);
 				setRssData(rss);
 				localStorage.setItem('rssCache', JSON.stringify(rss));
 				localStorage.setItem('rssCacheTimestamp', Date.now().toString());
