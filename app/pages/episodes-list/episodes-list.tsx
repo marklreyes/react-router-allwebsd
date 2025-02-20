@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "~/context/ThemeContext";
-import parse from "rss-to-json";
 import { Episode } from "~/components/Episode";
 import { MdFrontLoader } from "react-icons/md";
+import { XMLParser } from "fast-xml-parser";
 
 interface RSSFeed {
 	title: any;
@@ -23,7 +23,7 @@ interface RSSFeed {
 }
 
 export function EpisodesList() {
-	const RSS_URL = '/.netlify/functions/fetch-rss';
+	const RSS_URL = "/.netlify/functions/fetch-rss";
 	const [isLoading, setIsLoading] = useState(true);
 	const [rssData, setRssData] = useState<RSSFeed | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -40,11 +40,11 @@ export function EpisodesList() {
 		const fetchRSS = async () => {
 			setIsLoading(true);
 
-			const cachedData = localStorage.getItem('rssCache');
-			const cacheTimestamp = localStorage.getItem('rssCacheTimestamp');
+			const cachedData = localStorage.getItem("rssCache");
+			const cacheTimestamp = localStorage.getItem("rssCacheTimestamp");
 			const cacheAge = cacheTimestamp ? Date.now() - parseInt(cacheTimestamp) : 0;
 
-			// Use cache if it's less than 1 hour old
+			// Use cache if it"s less than 1 hour old
 			if (cachedData && cacheAge < 3600000) {
 				setRssData(JSON.parse(cachedData));
 				return;
@@ -52,28 +52,38 @@ export function EpisodesList() {
 
 			try {
 				const response = await fetch(RSS_URL);
-
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
-
 				const xmlData = await response.text();
-				console.log('Response status:', response.status);
-				console.log('Response headers:', response.headers);
-				console.log('Raw XML:', xmlData.substring(0, 500)); // Log first 500 chars
 
-				if (!xmlData || xmlData.includes('could not be found')) {
-					throw new Error('Invalid XML response');
-				}
+				// Initialize XML parser
+				const parser = new XMLParser({
+					ignoreAttributes: false,
+					attributeNamePrefix: "@_"
+				});
 
-				const rss = await parse(xmlData);
-				console.log('RSS:',rss);
+				// Parse XML to JSON
+				const result = parser.parse(xmlData);
+
+				// Transform parsed data to match RSSFeed interface
+				const rss = {
+					title: result.rss.channel.title,
+					description: result.rss.channel.description,
+					link: result.rss.channel.link,
+					image: result.rss.channel.image,
+					category: result.rss.channel.category,
+					items: result.rss.channel.item.map((item: any) => ({
+						title: item.title,
+						created: new Date(item.pubDate).getTime(),
+						content: item["content:encoded"] || item.description,
+						enclosures: item.enclosure ? [item.enclosure] : [],
+						itunes_duration: item["itunes:duration"]
+					}))
+				};
+
 				setRssData(rss);
-				localStorage.setItem('rssCache', JSON.stringify(rss));
-				localStorage.setItem('rssCacheTimestamp', Date.now().toString());
+				localStorage.setItem("rssCache", JSON.stringify(rss));
+				localStorage.setItem("rssCacheTimestamp", Date.now().toString());
 			} catch (error) {
-				console.error("Error fetching RSS:", error);
-				setIsLoading(false);
+				console.error("Error fetching/parsing RSS:", error);
 			} finally {
 				setIsLoading(false);
 			}
@@ -123,7 +133,7 @@ export function EpisodesList() {
 				</>
 			) : (
 				<div className={`${theme.primary} rounded-lg p-4`}>
-					<h2 className={`${theme.text} flex items-center justify-center text-center font-semibold mb-4 text-xl`}><MdFrontLoader />{" "}Loading Episodes...</h2>
+					<h2 className={`${theme.text} flex items-center justify-center text-center font-semibold mb-4 text-xl`}><MdFrontLoader />&nbsp;Loading Episodes...</h2>
 					<iframe title="I'm Ron Burgandy?" className="mx-auto mb-4" width="100%" height="315" src="//www.youtube.com/embed/X3zfP14pLxc?si=6gR_iQ7eKhy5i3Yt&autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 					<p className={`${theme.text} flex items-center justify-center text-center`}>Until then...<em>you stay classy, San Diego!</em></p>
 				</div>
