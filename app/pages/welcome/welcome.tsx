@@ -24,7 +24,7 @@ export function Welcome() {
 												className="group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC425] hover:text-white underline hover:no-underline"
 											>
 												<CiHeadphones />
-												Listen to All Episodes
+												View All Episodes
 											</NavLink>
 										</li>
 										<li>
