@@ -24,6 +24,7 @@ interface RSSFeed {
 
 export function EpisodesList() {
 	const RSS_URL = import.meta.env.VITE_CASTBOX_RSS_URL;
+	const PROXY_URL = `/cors-proxy/${RSS_URL}`;
 	const [isLoading, setIsLoading] = useState(true);
 	const [rssData, setRssData] = useState<RSSFeed | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -51,7 +52,7 @@ export function EpisodesList() {
 			}
 
 			try {
-				const rss = await parse(RSS_URL);
+				const rss = await parse(PROXY_URL);
 				setRssData(rss);
 				localStorage.setItem('rssCache', JSON.stringify(rss));
 				localStorage.setItem('rssCacheTimestamp', Date.now().toString());
