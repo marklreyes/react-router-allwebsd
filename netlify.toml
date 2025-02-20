@@ -6,8 +6,8 @@ publish = "build/client"
 command = "react-router dev"
 
 [[redirects]]
-from = "/cors-proxy/*"
-to = ":splat"
+from = "/episodes"
+to = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.xml:splat"
 status = 200
 force = true
 headers = {Access-Control-Allow-Origin = "*"}
