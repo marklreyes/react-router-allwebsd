@@ -15,8 +15,9 @@ interface RSSFeed {
 		created: number;
 		content: string;
 		enclosures: {
-			url: string;
+			length: string;
 			type: string;
+			url: string;
 		}[];
 		itunes_duration: string;
 	}[];
@@ -74,7 +75,11 @@ export function EpisodesList() {
 						title: item.title,
 						created: new Date(item.pubDate).getTime(),
 						content: item["content:encoded"] || item.description,
-						enclosures: item.enclosure ? [item.enclosure] : [],
+						enclosures: item.enclosure ? [{
+							'@_url': item.enclosure['@_url'],
+							'@_type': item.enclosure['@_type'],
+							'@_length': item.enclosure['@_length']
+						}] : [],
 						itunes_duration: item["itunes:duration"]
 					}))
 				};
