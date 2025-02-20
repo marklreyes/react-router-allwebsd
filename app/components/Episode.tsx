@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "~/context/ThemeContext";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -53,6 +53,11 @@ const formatDuration = (duration: string) => {
 export function Episode({ title, created, content, enclosure, itunesDuration, currentPage, index }: EpisodeProps) {
   const { theme, isDarkMode } = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // Reset expanded state when page changes
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [currentPage]);
 
   return (
     <div className={`${theme.primary} ${theme.text} mb-4 rounded-lg p-6 dark:border-white space-y-4`}>
