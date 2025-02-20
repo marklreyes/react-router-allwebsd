@@ -43,6 +43,16 @@ npm run dev
 
 Your application will be available at `http://localhost:5173`.
 
+### Test Netlify Functions
+
+Start the development server with HMR:
+
+```bash
+netlify dev
+```
+
+Your application will be available at `http://localhost:8888`.
+
 ## Building for Production
 
 Create a production build:

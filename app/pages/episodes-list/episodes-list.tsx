@@ -51,12 +51,29 @@ export function EpisodesList() {
 			}
 
 			try {
-				const rss = await parse(RSS_URL);
+				const response = await fetch(RSS_URL);
+
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+
+				const xmlData = await response.text();
+				console.log('Response status:', response.status);
+				console.log('Response headers:', response.headers);
+				console.log('Raw XML:', xmlData.substring(0, 500)); // Log first 500 chars
+
+				if (!xmlData || xmlData.includes('could not be found')) {
+					throw new Error('Invalid XML response');
+				}
+
+				const rss = await parse(xmlData);
+				console.log('RSS:',rss);
 				setRssData(rss);
 				localStorage.setItem('rssCache', JSON.stringify(rss));
 				localStorage.setItem('rssCacheTimestamp', Date.now().toString());
 			} catch (error) {
 				console.error("Error fetching RSS:", error);
+				setIsLoading(false);
 			} finally {
 				setIsLoading(false);
 			}
