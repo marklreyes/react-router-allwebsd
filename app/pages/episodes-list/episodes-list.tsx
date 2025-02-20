@@ -105,7 +105,11 @@ export function EpisodesList() {
 				</div>
 				</>
 			) : (
-				<p className="flex items-center justify-center gap-2 text-center"><MdFrontLoader />Loading...</p>
+				<div className={`${theme.primary} rounded-lg p-4`}>
+					<h2 className={`${theme.text} flex items-center justify-center text-center font-semibold mb-4 text-xl`}><MdFrontLoader />{" "}Loading Episodes...</h2>
+					<iframe title="I'm Ron Burgandy?" className="mx-auto mb-4" width="100%" height="315" src="//www.youtube.com/embed/X3zfP14pLxc?si=6gR_iQ7eKhy5i3Yt&autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+					<p className={`${theme.text} flex items-center justify-center text-center`}>Until then...<em>you stay classy, San Diego!</em></p>
+				</div>
 			)}
 		</div>
 	);
