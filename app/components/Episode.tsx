@@ -62,9 +62,6 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
   return (
     <div className={`${theme.primary} ${theme.text} mb-4 rounded-lg p-6 dark:border-white space-y-4`}>
 		<h2 className="font-semibold" dangerouslySetInnerHTML={{ __html: title }} />
-		<p className="text-sm"><span className="font-semibold">Published:{" "}</span>{formatDate(created)}</p>
-		<p className="text-sm"><span className="font-semibold">Duration:{" "}</span>{formatDuration(itunesDuration)}</p>
-		<hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
 		<div className="mt-4 mb-4">
 		{enclosure && (
 			<audio
@@ -78,6 +75,9 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 			</audio>
 		)}
 		</div>
+		<p className="text-sm"><span className="font-semibold">Published:{" "}</span>{formatDate(created)}</p>
+		<p className="text-sm"><span className="font-semibold">Duration:{" "}</span>{formatDuration(itunesDuration)}</p>
+		<hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
       {/* Expandable Content Section */}
       <div>
 	  	<button
