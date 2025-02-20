@@ -75,11 +75,7 @@ export function EpisodesList() {
 						title: item.title,
 						created: new Date(item.pubDate).getTime(),
 						content: item["content:encoded"] || item.description,
-						enclosures: item.enclosure ? [{
-							'@_url': item.enclosure['@_url'],
-							'@_type': item.enclosure['@_type'],
-							'@_length': item.enclosure['@_length']
-						}] : [],
+						enclosures: item.enclosure ? [item.enclosure] : [],
 						itunes_duration: item["itunes:duration"]
 					}))
 				};
