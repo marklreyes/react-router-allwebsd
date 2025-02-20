@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useTheme } from "~/context/ThemeContext";
 import parse from "rss-to-json";
@@ -24,9 +23,7 @@ interface RSSFeed {
 }
 
 export function EpisodesList() {
-	const RSS_URL = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.xml";
-	const PROXY = window.location.hostname === "localhost" ? "https://allwebsd.com" : "/cors-proxy";
-	const PROXY_URL = `${PROXY}/${RSS_URL}`;
+	const RSS_URL = '/.netlify/functions/fetch-rss';
 	const [isLoading, setIsLoading] = useState(true);
 	const [rssData, setRssData] = useState<RSSFeed | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -54,7 +51,7 @@ export function EpisodesList() {
 			}
 
 			try {
-				const rss = await parse(PROXY_URL);
+				const rss = await parse(RSS_URL);
 				setRssData(rss);
 				localStorage.setItem('rssCache', JSON.stringify(rss));
 				localStorage.setItem('rssCacheTimestamp', Date.now().toString());
