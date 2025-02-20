@@ -7,7 +7,7 @@ functions = "netlify/functions"
 command = "react-router dev"
 
 [[redirects]]
-from = "/.netlify/functions/*"
-to = "/.netlify/functions/:splat"
+from = "/functions/*"
+to = "/functions/:splat"
 status = 200
 force = true
