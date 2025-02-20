@@ -19,15 +19,13 @@ export function Welcome() {
 						<iframe title="AllWebSD Castbox Player" src="//castbox.fm/app/castbox/player/id2933770?v=8.22.10&autoplay=0" width="100%" height="500"></iframe>
 						<ul>
 										<li>
-											<a
+											<NavLink
+												to="/episodes"
 												className="group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC425] hover:text-white underline hover:no-underline"
-												href="https://www.marklreyes.com/allwebsd-podcast/"
-												target="_blank"
-												rel="noopener noreferrer"
 											>
 												<CiHeadphones />
-												Listen on MarkLReyes.com
-							</a>
+												Listen to All Episodes
+											</NavLink>
 										</li>
 										<li>
 											<NavLink
