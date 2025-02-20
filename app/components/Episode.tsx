@@ -5,8 +5,9 @@ interface EpisodeProps {
   created: number;
   content: string;
   enclosure?: {
-    url: string;
-    type: string;
+    '@_length': string;
+    '@_type': string;
+    '@_url': string;  // Update interface to match XML parser output
   };
   itunesDuration: string;
   currentPage: number;
@@ -64,7 +65,7 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 				preload="none"
 				key={`${currentPage}-${index}`}
 			>
-			<source src={enclosure.url} type="audio/mp3" />
+			<source src={enclosure["@_url"]} type={enclosure["@_type"]} />
 			Your browser does not support the audio element.
 			</audio>
 		)}
