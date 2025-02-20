@@ -26,6 +26,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-4">
           <nav>
             <NavLink to="/" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Home</NavLink>
+            <NavLink to="/episodes" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Episodes</NavLink>
             <NavLink to="/guests" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Guests</NavLink>
             <NavLink to="/sponsors" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Sponsors</NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? "font-bold text-[#2F241D]" : "text-[#2F241D]"}>Contact</NavLink>
