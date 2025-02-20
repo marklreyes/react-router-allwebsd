@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useTheme } from "~/context/ThemeContext";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 interface EpisodeProps {
   title: string;
@@ -50,6 +52,7 @@ const formatDuration = (duration: string) => {
 
 export function Episode({ title, created, content, enclosure, itunesDuration, currentPage, index }: EpisodeProps) {
   const { theme, isDarkMode } = useTheme();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className={`${theme.primary} ${theme.text} mb-4 rounded-lg p-6 dark:border-white space-y-4`}>
@@ -70,14 +73,38 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 			</audio>
 		)}
 		</div>
-		<div
-			dangerouslySetInnerHTML={{ __html: content }}
-			className={`${theme.text} max-w-none ${
-			isDarkMode
-			? 'prose-a:text-[#F03D86] prose-a:hover:text-[#F03D86]'
-			: 'prose-a:text-[#2F241D] prose-a:hover:text-[#2F241D]'
-			} prose-a:transition-colors prose-a:duration-200 prose-a:underline`}
-		/>
+      {/* Expandable Content Section */}
+      <div>
+	  	<button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className={`${theme.text} font-semibold focus:outline-none mb-2 flex items-center gap-2`}
+        >
+          {isExpanded ? (
+            <>
+              View Less <FaChevronUp className="inline-block" />
+            </>
+          ) : (
+            <>
+              View More <FaChevronDown className="inline-block" />
+            </>
+          )}
+        </button>
+
+        <div
+          className={`transition-all duration-300 ease-in-out overflow-hidden ${
+            isExpanded ? 'max-h-[2000px]' : 'max-h-0'
+          }`}
+        >
+          <div
+            dangerouslySetInnerHTML={{ __html: content }}
+            className={`${theme.text} max-w-none ${
+              isDarkMode
+                ? 'prose-a:text-[#F03D86] prose-a:hover:text-[#F03D86]'
+                : 'prose-a:text-[#2F241D] prose-a:hover:text-[#2F241D]'
+            } prose-a:transition-colors prose-a:duration-200 prose-a:underline`}
+          />
+        </div>
+      </div>
     </div>
   );
 }
