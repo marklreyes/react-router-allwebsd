@@ -85,6 +85,15 @@ export default function Header() {
                 Home
               </NavLink>
               <NavLink
+                to="/episodes"
+                className={({ isActive }) =>
+                  `block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
+                }
+                onClick={() => setIsOpen(false)}
+              >
+                Episodes
+              </NavLink>
+              <NavLink
                 to="/guests"
                 className={({ isActive }) =>
                   `block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
