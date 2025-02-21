@@ -18,8 +18,7 @@ A modern, production-ready template for building full-stack React applications u
 - 🎉 TailwindCSS for styling
 - 🌼 daisyUI for component library
 - 🌓 Light/Dark Mode aka "City Connect"
-- ⛅️ Weather data fetched from Open-Meteo
-- 📡 RSS Feed fetched from Castbox
+- ☁️  Netlify Functions (Weather data fetched from Open-Meteo, RSS Feed fetched from Castbox)
 - 📖 [React Router docs](https://reactrouter.com/)
 - 💻 Configured for deployment to Netlify
 
@@ -51,7 +50,7 @@ Start the development server with HMR:
 netlify dev
 ```
 
-Your application will be available at `http://localhost:8888`.
+Your application will be available at `http://localhost:8888` and `http://localhost:5173`.
 
 ## Building for Production
 
