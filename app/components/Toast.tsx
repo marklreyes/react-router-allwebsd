@@ -25,7 +25,7 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
   if (!showToast) return null;
 
   return (
-    <div className="toast toast-end w-full max-w-xs md:max-w-md">
+    <div className="toast toast-end w-full max-w-xs md:max-w-md z-50">
       <div className={`${theme.primary} ${theme.text} alert alert-info p-2 md:p-4 relative`}>
         <button
           className={`${theme.background} ${theme.text} hover:bg-[#2F241D] hover:text-white btn btn-circle btn-xs md:btn-sm absolute top-1 right-2 text-white`}
