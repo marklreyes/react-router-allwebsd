@@ -102,7 +102,7 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
         >
           <div
             dangerouslySetInnerHTML={{ __html: content }}
-            className={`${theme.text} max-w-none ${
+						className={`${theme.text} max-w-none overflow-y-auto max-h-[60vh] md:max-h-none px-2 ${
               isDarkMode
                 ? 'prose-a:text-[#F03D86] prose-a:hover:text-[#F03D86]'
                 : 'prose-a:text-[#2F241D] prose-a:hover:text-[#2F241D]'
