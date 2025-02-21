@@ -73,8 +73,8 @@ export default function Header() {
       </div>
 
         {isOpen && (
-          <div className={`${theme.primary} ${theme.text} absolute top-16 left-0 right-0 lg:hidden`}>
-            <nav className="flex flex-col items-center p-4 space-y-4">
+          <div className={`${theme.primary} ${theme.text} absolute top-16 left-0 right-0 lg:hidden z-50`}>
+            <nav className={`${isDarkMode ? `border-[#F03D86]` : `border-[#2F241D]`} flex flex-col items-center p-4 space-y-4 border-b`}>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
