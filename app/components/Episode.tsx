@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "~/context/ThemeContext";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface EpisodeProps {
   title: string;
@@ -50,7 +51,7 @@ const formatDuration = (duration: string) => {
 	return duration;
 };
 
-export function Episode({ title, created, content, enclosure, itunesDuration, currentPage, index }: EpisodeProps) {
+export function Episode({ title, created, content, enclosure, guid, itunesDuration, currentPage, index }: EpisodeProps) {
   const { theme, isDarkMode } = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -61,7 +62,12 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 
   return (
     <div className={`${theme.primary} ${theme.text} mb-4 rounded-lg p-6 dark:border-white space-y-4`}>
-		<h2 className="font-semibold" dangerouslySetInnerHTML={{ __html: title }} />
+		<Link to={`/episodes/${encodeURIComponent(guid?.['#text'] || '')}`}>
+			<h2
+				className="font-semibold hover:underline cursor-pointer"
+				dangerouslySetInnerHTML={{ __html: title }}
+			/>
+		</Link>
 		<div className="mt-4 mb-4">
 		{enclosure && (
 			<audio
