@@ -20,6 +20,10 @@ interface RSSFeed {
 			type: string;
 			url: string;
 		}[];
+		guids: {
+			["#text"]: string;
+			["@_isPermaLink"]: string;
+		}[];
 		itunes_duration: string;
 	}[];
 }
@@ -81,6 +85,10 @@ export function EpisodesList() {
 							'@_type': item.enclosure['@_type'],
 							'@_url': item.enclosure['@_url']
 						}] : [],
+						guids: item.guid ? [{
+							'@_isPermaLink': item.guid['@_isPermaLink'],
+							'#text': item.guid['#text']
+						}] : [],
 						itunes_duration: item["itunes:duration"]
 					}))
 				};
@@ -112,6 +120,7 @@ export function EpisodesList() {
 						created={item.created}
 						content={item.content}
 						enclosure={item.enclosures?.[0]}
+						guid={item.guids?.[0]}
 						itunesDuration={item.itunes_duration}
 						currentPage={currentPage}
 						index={index}
