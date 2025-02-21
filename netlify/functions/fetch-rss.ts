@@ -2,7 +2,17 @@ import type { Handler } from "@netlify/functions";
 import fetch from "node-fetch";
 
 export const handler: Handler = async () => {
-  const RSS_URL = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.xml";
+  const RSS_URL = process.env.VITE_RSS_URL;
+
+  if (!RSS_URL) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: "RSS URL not configured",
+        details: "Missing VITE_RSS_URL environment variable"
+      })
+    };
+	}
 
   try {
     const response = await fetch(RSS_URL);
