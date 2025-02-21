@@ -60,6 +60,20 @@ export default function EpisodeDetails() {
 
   useEffect(() => {
     const fetchEpisode = async () => {
+      setLoading(true);
+
+      // Check cache first
+      const cachedEpisode = localStorage.getItem(`episode-${id}`);
+      const cacheTimestamp = localStorage.getItem(`episode-${id}-timestamp`);
+      const cacheAge = cacheTimestamp ? Date.now() - parseInt(cacheTimestamp) : 0;
+
+      // Use cache if it's less than 1 hour old
+      if (cachedEpisode && cacheAge < 3600000) {
+        setEpisode(JSON.parse(cachedEpisode));
+        setLoading(false);
+        return;
+      }
+
       try {
         const response = await fetch("/.netlify/functions/fetch-rss");
         const xmlData = await response.text();
@@ -79,17 +93,24 @@ export default function EpisodeDetails() {
           throw new Error("Episode not found");
         }
 
-        setEpisode({
-			title: episodeData.title,
-			content: episodeData["content:encoded"] || episodeData.description,
-			created: new Date(episodeData.pubDate).getTime(),
-			enclosures: episodeData.enclosure ? [{
-			  '@_length': episodeData.enclosure['@_length'],
-			  '@_type': episodeData.enclosure['@_type'],
-			  '@_url': episodeData.enclosure['@_url']
-			}] : [],
-			itunes_duration: episodeData["itunes:duration"]
-		  });
+        const processedEpisode = {
+          title: episodeData.title,
+          content: episodeData["content:encoded"] || episodeData.description,
+          created: new Date(episodeData.pubDate).getTime(),
+          enclosures: episodeData.enclosure ? [{
+            "@_length": episodeData.enclosure["@_length"],
+            "@_type": episodeData.enclosure["@_type"],
+            "@_url": episodeData.enclosure["@_url"]
+          }] : [],
+          itunes_duration: episodeData["itunes:duration"]
+        };
+
+        setEpisode(processedEpisode);
+
+        // Cache the episode data
+        localStorage.setItem(`episode-${id}`, JSON.stringify(processedEpisode));
+        localStorage.setItem(`episode-${id}-timestamp`, Date.now().toString());
+
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to fetch episode");
       } finally {
