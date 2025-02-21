@@ -77,19 +77,18 @@ const formatDateTime = (isoString: string) => {
 };
 
 export default function Weather() {
-	const { theme } = useTheme();
-
+  const { theme } = useTheme();
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-	const url = "https://api.open-meteo.com/v1/forecast?latitude=32.7157&longitude=-117.1611&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch";
-  const REFRESH_INTERVAL = 900000; // 15 minutes in milliseconds
 
+  const NETLIFY_FUNCTION_URL = "/.netlify/functions/fetch-weather";
+  const REFRESH_INTERVAL = 900000; // 15 minutes
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(NETLIFY_FUNCTION_URL);
         if (!response.ok) {
           throw new Error("Weather data not available");
         }
@@ -102,13 +101,8 @@ export default function Weather() {
       }
     };
 
-    // Initial fetch
     fetchWeather();
-
-    // Set up interval for subsequent fetches
     const intervalId = setInterval(fetchWeather, REFRESH_INTERVAL);
-
-    // Cleanup on unmount
     return () => clearInterval(intervalId);
   }, []);
 
