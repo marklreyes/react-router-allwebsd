@@ -106,8 +106,8 @@ export default function Weather() {
     return () => clearInterval(intervalId);
   }, []);
 
-  if (loading) return <div className={`${theme.primary} ${theme.text}`}><TbLoader3 />Loading weather...</div>;
-  if (error) return <div className={`${theme.primary} ${theme.text}`}><GiSadCrab />Error: {error}</div>;
+  if (loading) return <div className={`${theme.primary} ${theme.text} flex items-center gap-2`}><TbLoader3 />Loading weather...</div>;
+  if (error) return <div className={`${theme.primary} ${theme.text} flex items-center gap-2`}><GiSadCrab />Error: {error}</div>;
   if (!weather) return null;
 
   return (
