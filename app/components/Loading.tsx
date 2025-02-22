@@ -1,20 +1,15 @@
-import "./Loading.css";
+import { TbLoader3 } from "react-icons/tb";
+import { useTheme } from "~/context/ThemeContext";
 
 export default function Loading() {
-	return (
-		<div className="flex items-center justify-center min-h-screen">
-			<div className="loader">
-				<div className="loader-inner">
-					<div className="loader-block"></div>
-					<div className="loader-block"></div>
-					<div className="loader-block"></div>
-					<div className="loader-block"></div>
-					<div className="loader-block"></div>
-					<div className="loader-block"></div>
-					<div className="loader-block"></div>
-					<div className="loader-block"></div>
-				</div>
-			</div>
-		</div>
-	);
+  const { theme } = useTheme();
+
+  return (
+    <div className={`fixed inset-0 ${theme.background} flex items-center justify-center z-50 min-h-screen w-full`}>
+      <div className={`${theme.primary} ${theme.text} p-4 rounded-lg flex items-center gap-2`}>
+        <TbLoader3 className="w-6 h-6 animate-spin" />
+        <span>Loading...</span>
+      </div>
+    </div>
+  );
 }
