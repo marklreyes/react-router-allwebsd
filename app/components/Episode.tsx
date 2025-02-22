@@ -51,6 +51,17 @@ const formatDuration = (duration: string) => {
 	return duration;
 };
 
+// Add slug creation helper
+const createSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/<[^>]*>/g, "") // Remove HTML tags
+    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Remove consecutive hyphens
+    .trim(); // Remove leading/trailing spaces
+};
+
 export function Episode({ title, created, content, enclosure, guid, itunesDuration, currentPage, index }: EpisodeProps) {
   const { theme, isDarkMode } = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -62,7 +73,7 @@ export function Episode({ title, created, content, enclosure, guid, itunesDurati
 
   return (
     <div className={`${theme.primary} ${theme.text} mb-4 rounded-lg p-6 dark:border-white space-y-4`}>
-		<Link to={`/episodes/${encodeURIComponent(guid?.['#text'] || '')}`}>
+		<Link to={`/episodes/${createSlug(title)}`}>
 			<h2
 				className="font-semibold hover:underline cursor-pointer"
 				dangerouslySetInnerHTML={{ __html: title }}

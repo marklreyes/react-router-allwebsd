@@ -52,6 +52,17 @@ const formatDuration = (duration: string) => {
 	return duration;
 };
 
+// Add slug creation helper (same as in Episode.tsx)
+const createSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/<[^>]*>/g, "") // Remove HTML tags
+    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Remove consecutive hyphens
+    .trim(); // Remove leading/trailing spaces
+};
+
 // Update loader function with proper URL handling
 export async function loader({ params }: LoaderFunctionArgs) {
   try {
@@ -89,9 +100,10 @@ export async function loader({ params }: LoaderFunctionArgs) {
       throw new Error("Episode ID is required");
     }
 
-    const episodeData = params.id ? episodes.find(
-      (episode: any) => episode.guid["#text"] === decodeURIComponent(params.id as string)
-    ) : undefined;
+    // Find episode by matching slugified title with URL param
+    const episodeData = episodes.find((episode: any) =>
+      createSlug(episode.title) === params.id
+    );
 
     if (!episodeData) {
       throw new Error("Episode not found");
@@ -178,8 +190,10 @@ export default function EpisodeDetails() {
 
         const result = parser.parse(xmlData);
         const episodes = result.rss.channel.item;
+
+        // Changed this line to match by slug instead of GUID
         const episodeData = episodes.find(
-          (episode: any) => episode.guid["#text"] === decodeURIComponent(id!)
+          (episode: any) => createSlug(episode.title) === id
         );
 
         if (!episodeData) {
