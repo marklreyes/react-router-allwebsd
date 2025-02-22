@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, type LoaderFunctionArgs } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
 import { useEffect, useState } from "react";
 import { GiSadCrab } from "react-icons/gi";
@@ -10,9 +10,9 @@ interface EpisodeData {
   content: string;
   created: number;
   enclosures: {
-    '@_length': string;
-    '@_type': string;
-    '@_url': string;
+    "@_length": string;
+    "@_type": string;
+    "@_url": string;
   }[];
   itunes_duration: string;
 }
@@ -51,6 +51,98 @@ const formatDuration = (duration: string) => {
 	return duration;
 };
 
+// Update loader function with proper URL handling
+export async function loader({ params }: LoaderFunctionArgs) {
+  try {
+    // Get base URL for development or production
+    const baseUrl = process.env.NODE_ENV === "development"
+      ? "http://localhost:8888"  // Default Netlify dev server port
+      : "";
+
+    const response = await fetch(`${baseUrl}/.netlify/functions/fetch-rss`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const xmlData = await response.text();
+
+    // Validate XML data
+    if (!xmlData || !xmlData.includes("<rss")) {
+      throw new Error("Invalid XML response");
+    }
+
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "@_"
+    });
+
+    const result = parser.parse(xmlData);
+
+    if (!result?.rss?.channel?.item) {
+      throw new Error("Invalid RSS feed structure");
+    }
+
+    const episodes = result.rss.channel.item;
+    if (!params.id) {
+      throw new Error("Episode ID is required");
+    }
+
+    const episodeData = params.id ? episodes.find(
+      (episode: any) => episode.guid["#text"] === decodeURIComponent(params.id as string)
+    ) : undefined;
+
+    if (!episodeData) {
+      throw new Error("Episode not found");
+    }
+
+    return {
+      title: episodeData.title,
+      content: episodeData["content:encoded"] || episodeData.description,
+      created: new Date(episodeData.pubDate).getTime(),
+      enclosures: episodeData.enclosure ? [{
+        "@_length": episodeData.enclosure["@_length"],
+        "@_type": episodeData.enclosure["@_type"],
+        "@_url": episodeData.enclosure["@_url"]
+      }] : [],
+      itunes_duration: episodeData["itunes:duration"]
+    };
+  } catch (error) {
+    console.error("Error in loader:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
+    throw new Response(errorMessage, { status: 404 });
+  }
+}
+
+// Update meta function to use loader data
+export function meta({ data, params }: { data: EpisodeData | undefined; params: { id: string } }) {
+  // If no data, return default meta
+  if (!data) {
+    return [
+      { title: "Episode Not Found | All WebSD Podcast" },
+      { name: "description", content: "The requested episode could not be found." }
+    ];
+  }
+
+  // Clean content for meta description (remove HTML tags and limit length)
+  const cleanContent = data.content
+    .replace(/<[^>]*>/g, "")
+    .substring(0, 160);
+
+  return [
+    { title: `${data.title} | All WebSD Podcast` },
+    { name: "description", content: cleanContent },
+    { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:title", content: data.title },
+    { property: "og:type", content: "article" },
+    { property: "og:url", content: `https://allwebsd.com/episodes/${params.id}` },
+    { property: "og:description", content: cleanContent },
+    { name: "twitter:title", content: data.title },
+    { name: "twitter:description", content: cleanContent },
+    { name: "article:published_time", content: new Date(data.created).toISOString() }
+  ];
+}
+
 export default function EpisodeDetails() {
   const { id } = useParams();
   const { theme, isDarkMode } = useTheme();
@@ -86,7 +178,7 @@ export default function EpisodeDetails() {
         const result = parser.parse(xmlData);
         const episodes = result.rss.channel.item;
         const episodeData = episodes.find(
-          (episode: any) => episode.guid['#text'] === decodeURIComponent(id!)
+          (episode: any) => episode.guid["#text"] === decodeURIComponent(id!)
         );
 
         if (!episodeData) {
@@ -163,13 +255,13 @@ export default function EpisodeDetails() {
 		<p className="text-sm"><span className="font-semibold">Published:{" "}</span>{formatDate(episode.created)}</p>
 		<p className="text-sm"><span className="font-semibold">Duration:{" "}</span>{formatDuration(episode.itunes_duration)}</p>
 
-		<hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
+		<hr className={`${isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"} mx-auto mt-4 mb-4`} />
 
 		<div
 			className={`${theme.text} prose max-w-none ${
 			isDarkMode
-			? 'prose-a:text-[#F03D86] prose-a:hover:text-[#F03D86] prose-strong:text-[#2F241D] prose-ol:text-[#2F241D] prose-li:marker:text-[#2F241D]'
-			: 'prose-a:text-[#2F241D] prose-a:hover:text-[#2F241D] prose-strong:text-[#2F241D] prose-ol:text-[#2F241D] prose-li:marker:text-[#2F241D]'
+			? "prose-a:text-[#F03D86] prose-a:hover:text-[#F03D86] prose-strong:text-[#2F241D] prose-ol:text-[#2F241D] prose-li:marker:text-[#2F241D]"
+			: "prose-a:text-[#2F241D] prose-a:hover:text-[#2F241D] prose-strong:text-[#2F241D] prose-ol:text-[#2F241D] prose-li:marker:text-[#2F241D]"
 		} prose-a:transition-colors prose-a:duration-200 prose-a:underline prose-p:text-[#2F241D]`}
 		dangerouslySetInnerHTML={{ __html: episode.content }}
 		/>
