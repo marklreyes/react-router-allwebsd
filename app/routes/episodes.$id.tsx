@@ -56,8 +56,8 @@ export async function loader({ params }: LoaderFunctionArgs) {
   try {
     // Get base URL for development or production
     const baseUrl = process.env.NODE_ENV === "development"
-      ? "http://localhost:8888"  // Default Netlify dev server port
-      : "";
+      ? "http://localhost:8888"
+      : "https://allwebsd.com"; // Replace with your Netlify domain
 
     const response = await fetch(`${baseUrl}/.netlify/functions/fetch-rss`);
 
