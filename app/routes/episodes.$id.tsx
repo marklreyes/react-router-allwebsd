@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { GiSadCrab } from "react-icons/gi";
 import { TbLoader3 } from "react-icons/tb";
 import { XMLParser } from "fast-xml-parser";
+import { ShareButtons } from '~/components/ShareButtons';
 
 interface EpisodeData {
   title: string;
@@ -254,6 +255,11 @@ export default function EpisodeDetails() {
 
 		<p className="text-sm"><span className="font-semibold">Published:{" "}</span>{formatDate(episode.created)}</p>
 		<p className="text-sm"><span className="font-semibold">Duration:{" "}</span>{formatDuration(episode.itunes_duration)}</p>
+
+		<ShareButtons
+			title={episode.title}
+			url={window.location.href}
+		/>
 
 		<hr className={`${isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"} mx-auto mt-4 mb-4`} />
 
