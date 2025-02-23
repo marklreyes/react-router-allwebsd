@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logoAllWebSD from "../../public/logo-allwebsd.png";
 import { useTheme } from "../context/ThemeContext";
 import { FaMoon, FaSun } from "react-icons/fa";
+import Search from "./Search";  // Add this import
 
 export default function Header() {
   const { isDarkMode, theme, toggleTheme } = useTheme();
@@ -24,13 +25,16 @@ export default function Header() {
 
         {/* Desktop Navigation and Theme Toggle */}
         <div className="hidden lg:flex items-center gap-4">
-          <nav>
+          <nav className="flex items-center">
             <NavLink to="/" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Home</NavLink>
             <NavLink to="/episodes" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Episodes</NavLink>
             <NavLink to="/guests" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Guests</NavLink>
             <NavLink to="/sponsors" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Sponsors</NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? "font-bold text-[#2F241D]" : "text-[#2F241D]"}>Contact</NavLink>
           </nav>
+          <div className="flex items-center"> {/* Updated container for search */}
+            <Search />
+          </div>
           <button
             onClick={toggleTheme}
 						className={`${isDarkMode ? `${theme.primary}` : `${theme.primary}`} p-2 rounded-full`}
@@ -42,6 +46,9 @@ export default function Header() {
 
         {/* Mobile Theme Toggle and Menu Button */}
         <div className="flex lg:hidden items-center gap-2">
+          <div className="flex items-center"> {/* Updated container for search */}
+            <Search />
+          </div>
           <button
             onClick={toggleTheme}
 						className={`${isDarkMode ? `${theme.primary}` : `${theme.primary}`} p-2 rounded-full`}
