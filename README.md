@@ -73,4 +73,4 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 
 ---
 
-Built with ❤️ using React Router.
+Built with ❤️ using [React Router Netlify Template](https://github.com/netlify/react-router-template).
