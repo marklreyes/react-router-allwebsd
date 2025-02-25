@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { SiBuymeacoffee } from "react-icons/si";
 import { useTheme } from "../context/ThemeContext";
+import { NavLink } from "react-router-dom";
 
 interface ToastProps {
   showToast: boolean;
@@ -36,15 +37,13 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
         <div className="flex items-center gap-2 pr-8">
           <SiBuymeacoffee className="flex-shrink-0" />
           <span className="text-left text-xs sm:text-sm md:text-base whitespace-normal break-words">
-		 	 			This independent podcast is powered by grit and caffeine.{" "}
-            <a
-              href="//buymeacoffee.com/markreyes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-white"
-            >
-              Buy cups now
-            </a>!
+		 	 			Podcast powered by grit and caffeine.{" "}
+						<NavLink
+							to="/sponsors"
+							className="underline hover:text-white"
+						>
+							Please support now
+						</NavLink>!
           </span>
         </div>
       </div>
