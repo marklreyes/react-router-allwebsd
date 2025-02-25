@@ -5,6 +5,7 @@ import { Episode } from "~/components/Episode";
 import { MdFrontLoader } from "react-icons/md";
 import { XMLParser } from "fast-xml-parser";
 import { Pagination } from "~/components/Pagination";
+import { useSearchParams } from "react-router-dom";
 
 interface RSSFeed {
 	title: any;
@@ -30,12 +31,20 @@ interface RSSFeed {
 }
 
 export function EpisodesList() {
+	const [searchParams, setSearchParams] = useSearchParams();
 	const RSS_URL = "/.netlify/functions/fetch-rss";
 	const [isLoading, setIsLoading] = useState(true);
 	const [rssData, setRssData] = useState<RSSFeed | null>(null);
-	const [currentPage, setCurrentPage] = useState(1);
 	const itemsPerPage = 5;
 	const { theme } = useTheme();
+
+	// Get current page from URL or default to 1
+	const currentPage = Number(searchParams.get("page")) || 1;
+
+	// Update the setCurrentPage function to use searchParams
+	const handlePageChange = (page: number) => {
+		setSearchParams({ page: page.toString() });
+	};
 
 	const getCurrentItems = () => {
 		if (!rssData) return [];
@@ -131,7 +140,7 @@ export function EpisodesList() {
 					currentPage={currentPage}
 					totalItems={rssData.items.length}
 					itemsPerPage={itemsPerPage}
-					onPageChange={setCurrentPage}
+					onPageChange={handlePageChange}
 				/>
 				</>
 			) : (
