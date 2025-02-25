@@ -4,6 +4,7 @@ import { useTheme } from "~/context/ThemeContext";
 import { Episode } from "~/components/Episode";
 import { MdFrontLoader } from "react-icons/md";
 import { XMLParser } from "fast-xml-parser";
+import { Pagination } from "~/components/Pagination";
 
 interface RSSFeed {
 	title: any;
@@ -126,25 +127,12 @@ export function EpisodesList() {
 						index={index}
 					/>
 				))}
-				<div className={`${theme.primary} flex justify-center gap-2 rounded-lg p-1`}>
-					<button
-						onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-						disabled={currentPage === 1}
-						className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
-					>
-					<FaChevronLeft className="inline-block" /> Previous
-					</button>
-					<span className="px-4 py-2">
-						Page {currentPage} of {Math.ceil(rssData.items.length / itemsPerPage)}
-					</span>
-					<button
-						onClick={() => setCurrentPage(prev => prev + 1)}
-						disabled={currentPage >= Math.ceil(rssData.items.length / itemsPerPage)}
-						className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
-					>
-					Next <FaChevronRight className="inline-block" />
-					</button>
-				</div>
+				<Pagination
+					currentPage={currentPage}
+					totalItems={rssData.items.length}
+					itemsPerPage={itemsPerPage}
+					onPageChange={setCurrentPage}
+				/>
 				</>
 			) : (
 				<div className={`${theme.primary} rounded-lg p-4`}>
