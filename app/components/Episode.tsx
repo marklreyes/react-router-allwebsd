@@ -2,65 +2,8 @@ import { useState, useEffect } from "react";
 import { useTheme } from "~/context/ThemeContext";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-interface EpisodeProps {
-  title: string;
-  created: number;
-  content: string;
-  enclosure?: {
-    '@_length': string;
-    '@_type': string;
-    '@_url': string;  // Update interface to match XML parser output
-  };
-  itunesDuration: string;
-  currentPage: number;
-  index: number;
-}
-
-// Add date formatting helper
-const formatDate = (timestamp: number) => {
-	const date = new Date(timestamp);
-	return new Intl.DateTimeFormat("en-US", {
-	  weekday: "long",
-	  year: "numeric",
-	  month: "long",
-	  day: "numeric",
-	  hour: "numeric",
-	  minute: "2-digit",
-	  hour12: true,
-	  timeZone: "America/Los_Angeles"
-	}).format(date);
-};
-
-// Add duration formatting helper
-const formatDuration = (duration: string) => {
-	// Handle byte length format
-	if (/^\d+$/.test(duration)) {
-		const seconds = Math.floor(parseInt(duration) / 1000);
-		const minutes = Math.floor(seconds / 60);
-		const remainingSeconds = seconds % 60;
-		return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
-	}
-
-	// Handle HH:MM:SS format
-	const timeComponents = duration.split(":");
-	if (timeComponents.length === 3 && timeComponents[0] === "00") {
-		return `${parseInt(timeComponents[1])}:${timeComponents[2]}`;
-	}
-
-	return duration;
-};
-
-// Add slug creation helper
-const createSlug = (title: string): string => {
-  return title
-    .toLowerCase()
-    .replace(/<[^>]*>/g, "") // Remove HTML tags
-    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
-    .replace(/-+/g, "-") // Remove consecutive hyphens
-    .trim(); // Remove leading/trailing spaces
-};
+import type { EpisodeProps } from "~/types/episode";
+import { createSlug, formatDate, formatDuration } from "~/utils/formatters";
 
 export function Episode({ title, created, content, enclosure, guid, itunesDuration, currentPage, index }: EpisodeProps) {
   const { theme, isDarkMode } = useTheme();

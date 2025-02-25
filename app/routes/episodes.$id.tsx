@@ -1,67 +1,12 @@
 import { useParams, type LoaderFunctionArgs } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
-import { useEffect, useState } from "react";
 import { GiSadCrab } from "react-icons/gi";
 import { TbLoader3 } from "react-icons/tb";
+import { ShareButtons } from "~/components/ShareButtons";
+import { createSlug, formatDate, formatDuration } from "~/utils/formatters";
+import { useRSSFeed } from "~/hooks/useRSSFeed";
+import type { EpisodeMetaProps } from "~/types/episode";
 import { XMLParser } from "fast-xml-parser";
-import { ShareButtons } from '~/components/ShareButtons';
-
-interface EpisodeData {
-  title: string;
-  content: string;
-  created: number;
-  enclosures: {
-    "@_length": string;
-    "@_type": string;
-    "@_url": string;
-  }[];
-  itunes_duration: string;
-}
-
-// Add date formatting helper
-const formatDate = (timestamp: number) => {
-	const date = new Date(timestamp);
-	return new Intl.DateTimeFormat("en-US", {
-	  weekday: "long",
-	  year: "numeric",
-	  month: "long",
-	  day: "numeric",
-	  hour: "numeric",
-	  minute: "2-digit",
-	  hour12: true,
-	  timeZone: "America/Los_Angeles"
-	}).format(date);
-};
-
-// Add duration formatting helper
-const formatDuration = (duration: string) => {
-	// Handle byte length format
-	if (/^\d+$/.test(duration)) {
-		const seconds = Math.floor(parseInt(duration) / 1000);
-		const minutes = Math.floor(seconds / 60);
-		const remainingSeconds = seconds % 60;
-		return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
-	}
-
-	// Handle HH:MM:SS format
-	const timeComponents = duration.split(":");
-	if (timeComponents.length === 3 && timeComponents[0] === "00") {
-		return `${parseInt(timeComponents[1])}:${timeComponents[2]}`;
-	}
-
-	return duration;
-};
-
-// Add slug creation helper (same as in Episode.tsx)
-const createSlug = (title: string): string => {
-  return title
-    .toLowerCase()
-    .replace(/<[^>]*>/g, "") // Remove HTML tags
-    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
-    .replace(/-+/g, "-") // Remove consecutive hyphens
-    .trim(); // Remove leading/trailing spaces
-};
 
 // Update loader function with proper URL handling
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -127,9 +72,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
   }
 }
 
-// Update meta function to use loader data
-export function meta({ data, params }: { data: EpisodeData | undefined; params: { id: string } }) {
-  // If no data, return default meta
+export function meta({ data, params }: EpisodeMetaProps) {
   if (!data) {
     return [
       { title: "Episode Not Found | All WebSD Podcast" },
@@ -137,7 +80,6 @@ export function meta({ data, params }: { data: EpisodeData | undefined; params: 
     ];
   }
 
-  // Clean content for meta description (remove HTML tags and limit length)
   const cleanContent = data.content
     .replace(/<[^>]*>/g, "")
     .substring(0, 160);
@@ -157,76 +99,9 @@ export function meta({ data, params }: { data: EpisodeData | undefined; params: 
 }
 
 export default function EpisodeDetails() {
-  const { id } = useParams();
+	const { id } = useParams();
   const { theme, isDarkMode } = useTheme();
-  const [episode, setEpisode] = useState<EpisodeData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchEpisode = async () => {
-      setLoading(true);
-
-      // Check cache first
-      const cachedEpisode = localStorage.getItem(`episode-${id}`);
-      const cacheTimestamp = localStorage.getItem(`episode-${id}-timestamp`);
-      const cacheAge = cacheTimestamp ? Date.now() - parseInt(cacheTimestamp) : 0;
-
-      // Use cache if it's less than 1 hour old
-      if (cachedEpisode && cacheAge < 3600000) {
-        setEpisode(JSON.parse(cachedEpisode));
-        setLoading(false);
-        return;
-      }
-
-      try {
-        const response = await fetch("/.netlify/functions/fetch-rss");
-        const xmlData = await response.text();
-
-        const parser = new XMLParser({
-          ignoreAttributes: false,
-          attributeNamePrefix: "@_"
-        });
-
-        const result = parser.parse(xmlData);
-        const episodes = result.rss.channel.item;
-
-        // Changed this line to match by slug instead of GUID
-        const episodeData = episodes.find(
-          (episode: any) => createSlug(episode.title) === id
-        );
-
-        if (!episodeData) {
-          throw new Error("Episode not found");
-        }
-
-        const processedEpisode = {
-          title: episodeData.title,
-          content: episodeData["content:encoded"] || episodeData.description,
-          created: new Date(episodeData.pubDate).getTime(),
-          enclosures: episodeData.enclosure ? [{
-            "@_length": episodeData.enclosure["@_length"],
-            "@_type": episodeData.enclosure["@_type"],
-            "@_url": episodeData.enclosure["@_url"]
-          }] : [],
-          itunes_duration: episodeData["itunes:duration"]
-        };
-
-        setEpisode(processedEpisode);
-
-        // Cache the episode data
-        localStorage.setItem(`episode-${id}`, JSON.stringify(processedEpisode));
-        localStorage.setItem(`episode-${id}-timestamp`, Date.now().toString());
-
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Failed to fetch episode");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEpisode();
-  }, [id]);
+  const { episode, loading, error } = useRSSFeed(id);
 
   if (loading) {
     return (
