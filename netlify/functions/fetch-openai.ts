@@ -38,18 +38,17 @@ export const handler: Handler = async (event) => {
       content: msg.content.slice(0, MAX_MESSAGE_LENGTH)
     }));
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
-      messages: [
-        {
-          role: "system",
-          content: "You are SanDieGPT, an AI assistant focused on San Diego, California."
-        },
-        ...validatedMessages
-      ],
-      // Add max tokens limit
-      max_tokens: 500
-    });
+		const completion = await openai.chat.completions.create({
+			model: "gpt-4",
+			messages: [
+			{
+				role: "system",
+				content: "You are SanDieGPT, an AI assistant focused on San Diego, California."
+			},
+			...validatedMessages
+			],
+			max_tokens: 500
+		});
 
     return {
       statusCode: 200,
