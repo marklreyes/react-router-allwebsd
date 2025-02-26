@@ -127,7 +127,7 @@ export default function Chat() {
   };
 
   return (
-    <div className={`${theme.primary} ${theme.text} container mx-auto p-4 space-y-4 rounded-lg p-6 min-h-[600px]`}>
+	<div className={`${theme.primary} ${theme.text} container mx-auto p-4 space-y-4 rounded-lg p-6 min-h-[500px] md:min-h-[600px]`}>
 		<Toast
 			showToast={showToast}
 			setShowToast={setShowToast}
