@@ -8,5 +8,6 @@ export default [
 		route("guests", "routes/guests.tsx"),
 		route("sponsors", "routes/sponsors.tsx"),
 		route("contact", "routes/contact.tsx"),
+		route("chat", "routes/chat.tsx"),
 	]),
 ] satisfies RouteConfig;

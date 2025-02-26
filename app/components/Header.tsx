@@ -4,6 +4,7 @@ import logoAllWebSD from "../../public/logo-allwebsd.png";
 import { useTheme } from "../context/ThemeContext";
 import { FaMoon, FaSun } from "react-icons/fa";
 import Search from "./Search";  // Add this import
+import { RiRobot2Fill } from "react-icons/ri";
 
 export default function Header() {
   const { isDarkMode, theme, toggleTheme } = useTheme();
@@ -31,6 +32,17 @@ export default function Header() {
             <NavLink to="/guests" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Guests</NavLink>
             <NavLink to="/sponsors" className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}>Sponsors</NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? "font-bold text-[#2F241D]" : "text-[#2F241D]"}>Contact</NavLink>
+            <NavLink
+              to="/chat"
+              className={({ isActive }) => `flex items-center gap-2 ml-4 ${isActive ? "font-bold text-[#2F241D]" : "text-[#2F241D]"}`}
+            >
+              <RiRobot2Fill
+                className={`w-5 h-5 ${
+                  isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'
+                } transition-all duration-200`}
+              />
+              <span>SanDieGPT</span>
+            </NavLink>
           </nav>
           <div className="flex items-center"> {/* Updated container for search */}
             <Search />
@@ -126,6 +138,20 @@ export default function Header() {
                 onClick={() => setIsOpen(false)}
               >
                 Contact
+              </NavLink>
+              <NavLink
+                to="/chat"
+                className={({ isActive }) =>
+                  `flex items-center justify-center gap-2 w-full py-2 ${isActive ? "font-bold" : ""}`
+                }
+                onClick={() => setIsOpen(false)}
+              >
+              <RiRobot2Fill
+                className={`w-5 h-5 ${
+                  isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'
+                } transition-all duration-200`}
+              />
+              <span>SanDieGPT</span>
               </NavLink>
             </nav>
           </div>
