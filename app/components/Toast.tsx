@@ -1,14 +1,25 @@
 import { useEffect } from "react";
-import { SiBuymeacoffee } from "react-icons/si";
 import { useTheme } from "../context/ThemeContext";
 import { NavLink } from "react-router-dom";
 
 interface ToastProps {
   showToast: boolean;
   setShowToast: (show: boolean) => void;
+  icon?: React.ReactNode;
+  message: string | React.ReactNode;
+  link?: {
+    to: string;
+    text: string;
+  };
 }
 
-export function Toast({ showToast, setShowToast }: ToastProps) {
+export function Toast({
+  showToast,
+  setShowToast,
+  icon,
+  message,
+  link
+}: ToastProps) {
   const { theme } = useTheme();
 
 	useEffect(() => {
@@ -35,15 +46,18 @@ export function Toast({ showToast, setShowToast }: ToastProps) {
           ✕
         </button>
         <div className="flex items-center gap-2 pr-8">
-          <SiBuymeacoffee className="flex-shrink-0" />
+          {icon && <span className="flex-shrink-0">{icon}</span>}
           <span className="text-left text-xs sm:text-sm md:text-base whitespace-normal break-words">
-		 	 			Podcast powered by grit and caffeine.{" "}
-						<NavLink
-							to="/sponsors"
-							className="underline hover:text-white"
-						>
-							Please support now
-						</NavLink>!
+            {message}{" "}
+            {link && (
+              <NavLink
+                to={link.to}
+                className="underline hover:text-white"
+              >
+                {link.text}
+              </NavLink>
+            )}
+            {link && "!"}
           </span>
         </div>
       </div>
