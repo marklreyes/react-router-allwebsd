@@ -97,14 +97,16 @@ export default function Chat() {
     if (!userMessage.trim()) return;
 
     try {
-      setLastMessageTime(now);
-      setErrorMessage(null);
-      setIsLoading(true);
+	  setLastMessageTime(now);
+	  setErrorMessage(null);
+	  setIsLoading(true);
 
-      // Keep only recent messages to prevent memory issues
-      const recentMessages = messages.slice(-MAX_STORED_MESSAGES);
+	  // Keep only recent messages to prevent memory issues
+	  const recentMessages = messages.slice(-MAX_STORED_MESSAGES);
+	  const newUserMessage: Message = { role: 'user', content: sanitizedMessage };
+	  setMessages(prev => [...prev, newUserMessage]);
 
-      const response = await fetch('/.netlify/functions/fetch-openai', {
+	  const response = await fetch('/.netlify/functions/fetch-openai', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -217,7 +219,12 @@ export default function Chat() {
 			type="text"
 			value={inputMessage}
 			onChange={(e) => setInputMessage(e.target.value)}
-			onKeyPress={(e) => e.key === "Enter" && handleSendMessage(inputMessage)}
+			onKeyPress={(e) => {
+				if (e.key === "Enter") {
+					handleSendMessage(inputMessage);
+					setInputMessage(""); // Clear input after sending
+				}
+			}}
 			placeholder="Type your message..."
 			maxLength={MAX_MESSAGE_LENGTH}
 			disabled={isLoading}
@@ -228,7 +235,10 @@ export default function Chat() {
 			} border focus:outline-none focus:ring-1 ${isLoading ? "opacity-50" : ""}`}
 			/>
 			<button
-			onClick={() => handleSendMessage(inputMessage)}
+			onClick={() => {
+				handleSendMessage(inputMessage);
+				setInputMessage(""); // Clear input after sending
+			}}
 			disabled={isLoading || !inputMessage.trim()}
 			aria-busy={isLoading}
 			aria-label={isLoading ? "Sending message..." : "Send message"}
