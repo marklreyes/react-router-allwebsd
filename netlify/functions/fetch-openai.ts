@@ -5,6 +5,9 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY // Netlify environment variable
 });
 
+const MAX_MESSAGE_LENGTH = 1000;
+const MAX_HISTORY_LENGTH = 10;
+
 export const handler: Handler = async (event) => {
   // Only allow POST requests
   if (event.httpMethod !== "POST") {
@@ -21,9 +24,19 @@ export const handler: Handler = async (event) => {
 
     const { messages } = JSON.parse(event.body || "{}");
 
+    // Validate message format and length
     if (!messages || !Array.isArray(messages)) {
       throw new Error("Invalid messages format");
     }
+
+    // Take only the last N messages to limit memory usage
+    const recentMessages = messages.slice(-MAX_HISTORY_LENGTH);
+
+    // Validate each message length
+    const validatedMessages = recentMessages.map(msg => ({
+      role: msg.role,
+      content: msg.content.slice(0, MAX_MESSAGE_LENGTH)
+    }));
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4-turbo-preview",
@@ -32,8 +45,10 @@ export const handler: Handler = async (event) => {
           role: "system",
           content: "You are SanDieGPT, an AI assistant focused on San Diego, California."
         },
-        ...messages
-      ]
+        ...validatedMessages
+      ],
+      // Add max tokens limit
+      max_tokens: 500
     });
 
     return {

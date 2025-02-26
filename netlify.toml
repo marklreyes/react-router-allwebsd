@@ -3,6 +3,13 @@ command = "react-router build"
 publish = "build/client"
 functions = "netlify/functions"
 
+[functions]
+node_bundler = "esbuild"
+
+[functions.fetch-openai]
+memory_size = 1024
+timeout = 30
+
 [build.environment]
 VITE_RSS_URL = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.xml"
 

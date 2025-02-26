@@ -12,6 +12,7 @@ interface Message {
 }
 
 const MAX_MESSAGE_LENGTH = 1000;
+const MAX_STORED_MESSAGES = 10;
 
 const sanitizeInput = (input: string): string => {
   return input
@@ -99,28 +100,38 @@ export default function Chat() {
       setLastMessageTime(now);
       setErrorMessage(null);
       setIsLoading(true);
-      setMessages(prev => [...prev, { role: "user", content: sanitizedMessage }]);
-      setInputMessage("");
 
-      const response = await fetch("/.netlify/functions/fetch-openai", {
-        method: "POST",
+      // Keep only recent messages to prevent memory issues
+      const recentMessages = messages.slice(-MAX_STORED_MESSAGES);
+
+      const response = await fetch('/.netlify/functions/fetch-openai', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          messages: [...messages, { role: "user", content: sanitizedMessage }]
+          messages: [...recentMessages, { role: 'user', content: sanitizedMessage }]
         })
       });
 
+      // Add retry logic for 502 errors
+      if (response.status === 502) {
+        setErrorMessage("The server is busy. Please try again in a moment.");
+        return;
+      }
+
       if (!response.ok) {
-        throw new Error("Failed to fetch response");
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch response');
       }
 
       const data = await response.json();
-      setMessages(prev => [...prev, data.message]);
+
+      // Update messages with length limit
+      setMessages(prev => [...prev.slice(-MAX_STORED_MESSAGES), data.message]);
     } catch (error) {
-      console.error("Error:", error);
-      setErrorMessage("Failed to get response. Please try again.");
+      console.error('Error:', error);
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to get response');
     } finally {
       setIsLoading(false);
     }
