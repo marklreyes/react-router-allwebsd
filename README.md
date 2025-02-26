@@ -18,7 +18,7 @@ A modern, production-ready template for building full-stack React applications u
 - 🎉 TailwindCSS for styling
 - 🌼 daisyUI for component library
 - 🌓 Light/Dark Mode aka "City Connect"
-- ☁️  Netlify Functions (Weather data fetched from Open-Meteo, RSS Feed fetched from Castbox)
+- ☁️  Netlify Functions (Weather data fetched from Open-Meteo, RSS Feed fetched from Castbox, OpenAI)
 - 📖 [React Router docs](https://reactrouter.com/)
 - 💻 Configured for deployment to Netlify
 
