@@ -161,7 +161,7 @@ export default function Chat() {
 				isDarkMode
 				? "text-[#F03D86]"
 				: "text-[#2F241D]"
-			} text-sm hover:underline transition-colors duration-200`}
+			} text-sm font-semibold hover:underline transition-colors duration-200`}
 			>
 			Clear Chat
 			</button>
@@ -174,7 +174,7 @@ export default function Chat() {
 
 		<hr className={`${isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"} mx-auto mt-4 mb-4`} />
 
-		<div className={`flex flex-col space-y-4 mb-4 overflow-y-auto rounded-lg p-4 bg-white border ${
+		<div className={`flex flex-col space-y-4 mb-4 overflow-y-auto rounded-lg p-4 bg-white border h-[400px] md:h-[500px] ${
 		isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"
 		}`}>
 		<div className="flex flex-col items-center">
