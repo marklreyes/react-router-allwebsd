@@ -157,9 +157,9 @@ export default function Chat() {
 			onClick={handleClearChat}
 			className={`${
 				isDarkMode
-				? "text-[#F03D86] hover:text-[#71BEA9]"
-				: "text-[#2F241D] hover:text-[#FFC425]"
-			} text-sm transition-colors duration-200`}
+				? "text-[#F03D86]"
+				: "text-[#2F241D]"
+			} text-sm hover:underline transition-colors duration-200`}
 			>
 			Clear Chat
 			</button>
