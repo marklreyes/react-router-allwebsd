@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
 import type { Route } from "./+types/contact";
 import ReactMarkdown from "react-markdown";
 import { RiRobot2Fill } from "react-icons/ri";
 import { Toast } from "../components/Toast";
+import { VisuallyHidden } from "~/components/VisuallyHidden";
 
 interface Message {
   role: "user" | "assistant" | "system";
@@ -139,9 +140,35 @@ export default function Chat() {
     }
   };
 
+  // Add ref for messages container
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Add auto-scroll effect
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === '/' && !isLoading) {
+        e.preventDefault();
+        document.querySelector('input')?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, [isLoading]);
+
   return (
-	<div className={`${theme.primary} ${theme.text} container mx-auto p-4 space-y-4 rounded-lg p-6 min-h-[500px] md:min-h-[600px]`}>
+	<div
+      className={`${theme.primary} ${theme.text} container mx-auto p-4 space-y-4 rounded-lg p-6 min-h-[500px] md:min-h-[600px]`}
+      role="main"
+      aria-label="Chat Interface"
+    >
 		<Toast
+			role="status"
+			aria-live="polite"
 			showToast={showToast}
 			setShowToast={setShowToast}
 			icon={<RiRobot2Fill />}
@@ -153,7 +180,7 @@ export default function Chat() {
 		/>
 
 		<div className="flex justify-between items-center mb-4">
-		<h1 className="text-2xl font-bold">SanDieGPT Chat</h1>
+		<h1 className="text-2xl font-bold" id="chat-title">SanDieGPT Chat</h1>
 		{messages.length > 0 && (
 			<button
 			onClick={handleClearChat}
@@ -162,6 +189,8 @@ export default function Chat() {
 				? "text-[#F03D86]"
 				: "text-[#2F241D]"
 			} text-sm font-semibold hover:underline transition-colors duration-200`}
+			aria-label="Clear chat history"
+            title="Clear all messages"
 			>
 			Clear Chat
 			</button>
@@ -174,11 +203,18 @@ export default function Chat() {
 
 		<hr className={`${isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"} mx-auto mt-4 mb-4`} />
 
-		<div className={`flex flex-col space-y-4 mb-4 overflow-y-auto rounded-lg p-4 bg-white border h-[400px] md:h-[500px] ${
+		<div
+        className={`flex flex-col space-y-4 mb-4 overflow-y-auto rounded-lg p-4 bg-white border h-[400px] md:h-[500px] ${
 		isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"
-		}`}>
+		}`}
+        role="log"
+        aria-label="Chat messages"
+        aria-live="polite"
+      >
 		<div className="flex flex-col items-center">
 			<RiRobot2Fill
+			role="img"
+            aria-label="AI Assistant Icon"
 			className={`w-12 h-12 ${
 				isDarkMode ? "text-[#F03D86]" : "text-[#2F241D]"
 			} mb-4 ${
@@ -190,7 +226,12 @@ export default function Chat() {
 			<div
 			key={index}
 			className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+			role="article"
+            aria-label={`${message.role === "user" ? "Your message" : "AI response"}`}
 			>
+			<VisuallyHidden>
+              {message.role === "user" ? "You:" : "AI Assistant:"}
+            </VisuallyHidden>
 			<div className={`max-w-[80%] break-words ${
 				message.role === "user"
 				? `${isDarkMode ? "bg-[#F03D86]" : "bg-[#2F241D]"} text-white rounded-l-2xl rounded-tr-2xl`
@@ -201,19 +242,31 @@ export default function Chat() {
 			</div>
 			</div>
 		))}
+		<div ref={messagesEndRef} aria-hidden="true" />
 		</div>
 
 		<hr className={`${isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"} mx-auto mt-4 mb-4`} />
 
 		{errorMessage && (
-		<div className={`${
+		<div
+          className={`${
 			isDarkMode ? "bg-[#F03D86]/10" : "bg-[#2F241D]/10"
-		} text-[#2F241D] p-2 rounded-lg text-sm text-center`}>
+		} text-[#2F241D] p-2 rounded-lg text-sm text-center`}
+          role="alert"
+          aria-live="assertive"
+        >
 			{errorMessage}
 		</div>
 		)}
 
-		<div className="flex flex-col gap-2">
+		<div
+        className="flex flex-col gap-2"
+        role="form"
+        aria-labelledby="chat-input-label"
+      >
+        <VisuallyHidden>
+          <label id="chat-input-label">Chat message input</label>
+        </VisuallyHidden>
 		<div className="flex flex-col sm:flex-row gap-2">
 			<input
 			type="text"
@@ -233,6 +286,9 @@ export default function Chat() {
 				? "border-[#F03D86] placeholder-[#2F241D] text-[#2F241D] focus:border-[#F03D86] focus:ring-[#F03D86]"
 				: "border-[#2F241D] placeholder-[#2F241D] text-[#2F241D] focus:border-[#2F241D] focus:ring-[#2F241D]"
 			} border focus:outline-none focus:ring-1 ${isLoading ? "opacity-50" : ""}`}
+			aria-label="Message input"
+            aria-describedby="char-count"
+            aria-disabled={isLoading}
 			/>
 			<button
 			onClick={() => {
@@ -266,6 +322,8 @@ export default function Chat() {
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
+				role="img"
+                aria-label="Loading indicator"
 				>
 				<circle
 				className="opacity-25"
@@ -288,7 +346,11 @@ export default function Chat() {
 			)}
 			</button>
 		</div>
-		<div className="text-xs text-right text-[#2F241D]">
+		<div
+          className="text-xs text-right text-[#2F241D]"
+          id="char-count"
+          aria-live="polite"
+        >
 			{MAX_MESSAGE_LENGTH - inputMessage.length} characters remaining
 		</div>
 		</div>

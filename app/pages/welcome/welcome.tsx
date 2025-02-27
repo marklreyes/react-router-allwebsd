@@ -16,6 +16,8 @@ export function Welcome() {
 			<div className="flex-1 flex flex-col items-center gap-16 min-h-0">
 				<div className="w-full">
 					<Toast
+						role="status"
+						aria-live="polite"
 						showToast={showToast}
 						setShowToast={setShowToast}
 						icon={<SiBuymeacoffee />}

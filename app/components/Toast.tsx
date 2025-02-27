@@ -3,11 +3,13 @@ import { useTheme } from "../context/ThemeContext";
 import { NavLink } from "react-router-dom";
 
 interface ToastProps {
+  role?: string;
+  "aria-live"?: string;
   showToast: boolean;
   setShowToast: (show: boolean) => void;
-  icon?: React.ReactNode;
-  message: string | React.ReactNode;
-  link?: {
+  icon: ReactElement;
+  message: string;
+  link: {
     to: string;
     text: string;
   };
