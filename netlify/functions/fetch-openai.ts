@@ -41,7 +41,7 @@ export const handler: Handler = async (event) => {
     // Take only essential messages to reduce context
     const recentMessages = messages
       .slice(-MAX_HISTORY_LENGTH)
-      .map(msg => ({
+      .map((msg: { role: any; content: string; }) => ({
         role: msg.role,
         content: msg.content.slice(0, MAX_MESSAGE_LENGTH).trim()
       }));
