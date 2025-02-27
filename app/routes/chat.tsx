@@ -5,14 +5,14 @@ import type { Route } from "./+types/contact";
 import ReactMarkdown from "react-markdown";
 import { RiRobot2Fill } from "react-icons/ri";
 import { Toast } from "../components/Toast";
-import { VisuallyHidden } from "~/components/VisuallyHidden";
+import { VisuallyHidden } from "../components/VisuallyHidden";
 
 interface Message {
   role: "user" | "assistant" | "system";
   content: string;
 }
 
-const MAX_MESSAGE_LENGTH = 1000;
+const MAX_MESSAGE_LENGTH = 800; // Reduced from 1000 to better align with 300 token limit
 const MAX_STORED_MESSAGES = 10;
 
 const sanitizeInput = (input: string): string => {
