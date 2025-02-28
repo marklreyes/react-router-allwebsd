@@ -15,13 +15,14 @@ interface Message {
 const MAX_MESSAGE_LENGTH = 800; // Reduced from 1000 to better align with 300 token limit
 const MAX_STORED_MESSAGES = 10;
 
-const sanitizeInput = (input: string): string => {
-  return input
-    .trim()
-    .slice(0, MAX_MESSAGE_LENGTH)
-    .replace(/<[^>]*>/g, "") // Remove HTML tags
-    .replace(/[^\w\s.,!?-]/g, "") // Only allow basic punctuation and alphanumeric
-    .trim();
+export const sanitizeInput = (input: string): string => {
+	if (!input) return "";
+	return input
+	  .trim()
+	  .slice(0, MAX_MESSAGE_LENGTH)
+	  .replace(/<[^>]*>/g, "") // Remove HTML tags
+	  .replace(/[^\w\s.,!?'"`@#$%^&*()-]/g, "") // Allow more punctuation and special characters
+	  .trim();
 };
 
 export function meta({}: Route.MetaArgs) {
