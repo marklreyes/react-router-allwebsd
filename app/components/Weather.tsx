@@ -106,53 +106,72 @@ export default function Weather() {
     return () => clearInterval(intervalId);
   }, []);
 
-  if (loading) return <div className={`${theme.primary} ${theme.text} flex items-center gap-2`}><TbLoader3 />Loading weather...</div>;
-  if (error) return <div className={`${theme.primary} ${theme.text} flex items-center gap-2`}><GiSadCrab />Error: {error}</div>;
+	<div
+		className={`${theme.primary} ${theme.text} flex items-center gap-2`}
+		role="status"
+		aria-live="polite"
+	>
+		<TbLoader3 className="animate-spin" aria-hidden="true" />
+		<span>Loading weather data...</span>
+	</div>;
+  if (error) return (
+    <div
+      className={`${theme.primary} ${theme.text} flex items-center gap-2`}
+      role="alert"
+      aria-live="assertive"
+    >
+      <GiSadCrab aria-hidden="true" />
+      <span>Error: {error}</span>
+    </div>
+  );
   if (!weather) return null;
 
   return (
-		<div className={`${theme.primary} ${theme.text} mx-auto`}>
-			<h5 className={`${theme.text} text-xl mb-1 font-semibold flex items-center gap-2`}>
-				<SiTheweatherchannel className="text-2xl" />Currently in San Diego
-			</h5>
+		<div className={`${theme.primary} ${theme.text} mx-auto`} role="region" aria-label="Weather information">
+			<h2 className={`${theme.text} text-xl mb-1 font-semibold flex items-center gap-2`}>
+			<SiTheweatherchannel className="text-2xl" aria-hidden="true" />
+			Currently in San Diego
+			</h2>
 			<div className={`${theme.primary} ${theme.text} pt-2`}>
-				<p className={`${theme.text} text-3xl font-semibold flex items-center justify-center gap-2`}>
-					{getWeatherIcon(weather.current.weather_code)}
-					<span>
-						{Math.round(weather.current.temperature_2m)}{weather.current_units.temperature_2m}
-					</span>
-				</p>
-				<p className={`${theme.text} flex items-center justify-between`}>
-					<span className="flex items-center gap-2">
-						<GiThink />Feels like:
-					</span>
-					<span>{Math.round(weather.current.apparent_temperature)}{weather.current_units.apparent_temperature}</span>
-				</p>
-				<p className={`${theme.text} flex items-center justify-between`}>
-					<span className="flex items-center gap-2">
-						<WiRain />Rain:
-					</span>
-					<span>{weather.current.rain}{" "}{weather.current_units.rain}</span>
-				</p>
-				<p className={`${theme.text} flex items-center justify-between`}>
-					<span className="flex items-center gap-2">
-						<WiHumidity />Humidity:
-					</span>
-					<span>{weather.current.relative_humidity_2m}{weather.current_units.relative_humidity_2m}</span>
-				</p>
-				<p className={`${theme.text} flex items-center justify-between`}>
-					<span className="flex items-center gap-2">
-						<WiStrongWind />Wind:
-					</span>
-					<span>{Math.round(weather.current.wind_speed_10m)}{" "}{weather.current_units.wind_speed_10m}</span>
-				</p>
-				<p className={`${theme.text} flex items-center justify-between`}>
-					<span className="flex items-center gap-2">
-						<WiTime8 />Updated:
-					</span>
-					<span>{formatDateTime(weather.current.time)}</span>
-				</p>
+			<p className={`${theme.text} text-3xl font-semibold flex items-center justify-center gap-2`}>
+				{getWeatherIcon(weather.current.weather_code)}
+				<span aria-label="Temperature">
+				{Math.round(weather.current.temperature_2m)}{weather.current_units.temperature_2m}
+				</span>
+			</p>
+			<dl className={`${theme.text}`}>
+				<div className="flex items-center justify-between">
+				<dt className="flex items-center gap-2">
+					<GiThink aria-hidden="true" />Feels like
+				</dt>
+				<dd>{Math.round(weather.current.apparent_temperature)}{weather.current_units.apparent_temperature}</dd>
+				</div>
+				<div className="flex items-center justify-between">
+				<dt className="flex items-center gap-2">
+					<WiRain aria-hidden="true" />Rain
+				</dt>
+				<dd>{weather.current.rain} {weather.current_units.rain}</dd>
+				</div>
+				<div className="flex items-center justify-between">
+				<dt className="flex items-center gap-2">
+					<WiHumidity aria-hidden="true" />Humidity
+				</dt>
+				<dd>{weather.current.relative_humidity_2m}{weather.current_units.relative_humidity_2m}</dd>
+				</div>
+				<div className="flex items-center justify-between">
+				<dt className="flex items-center gap-2">
+					<WiStrongWind aria-hidden="true" />Wind
+				</dt>
+				<dd>{Math.round(weather.current.wind_speed_10m)} {weather.current_units.wind_speed_10m}</dd>
+				</div>
+				<div className="flex items-center justify-between">
+				<dt className="flex items-center gap-2">
+					<WiTime8 aria-hidden="true" />Updated
+				</dt>
+				<dd>{formatDateTime(weather.current.time)}</dd>
+				</div>
+			</dl>
 			</div>
-    </div>
+		</div>
   );
 }

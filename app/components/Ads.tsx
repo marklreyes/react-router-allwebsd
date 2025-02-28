@@ -29,13 +29,18 @@ export default function Ads() {
 
 	return (
 		<div className="mx-auto">
-			<div className="carousel mx-auto mb-4">
-				<div id="slide1" className="carousel-item w-full">
+			<div
+				className="carousel mx-auto mb-4"
+				role="region"
+				aria-label="Advertisement Carousel"
+			>
+				<div id="slide1" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide1-tab">
 					<a
 						href="https://sdfutures.org/support-sdff"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="w-full"
+						aria-label="Visit San Diego Futures Foundation"
 					>
 						<img
 							src="/images/SDFF_banner.jpg"
@@ -44,12 +49,13 @@ export default function Ads() {
 						/>
 					</a>
 				</div>
-				<div id="slide2" className="carousel-item w-full">
+				<div id="slide2" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide2-tab">
 					<a
 						href="//courses.theaiexchange.com/courses/prompting-for-ai-ops-bootcamp?ref=2b3231"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="w-full"
+						aria-label="Visit AI Exchange Courses"
 					>
 						<img
 							src="/images/AIX_banner.jpg"
@@ -58,65 +64,79 @@ export default function Ads() {
 						/>
 					</a>
 				</div>
-				<div id="slide3" className="carousel-item w-full">
+				<div id="slide3" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide3-tab">
 					<NavLink
 						to="/sponsors"
 						className="w-full border cursor-pointer"
+						aria-label="View sponsorship opportunities"
 					>
 						<img
-						src="/images/ALLWEBSD_banner.jpg"
-						alt="Advertise your business here and become a gold sponsor today!"
-						className="w-full h-full object-cover"
+							src="/images/ALLWEBSD_banner.jpg"
+							alt="Advertise your business here and become a gold sponsor today!"
+							className="w-full h-full object-cover"
 						/>
 					</NavLink>
 				</div>
 			</div>
-			<div className="flex w-full justify-center gap-2 py-2">
-				<a
-					href="#slide1"
+			<div
+				className="flex w-full justify-center gap-2 py-2"
+				role="tablist"
+				aria-label="Carousel navigation"
+			>
+				<button
+					id="slide1-tab"
 					onClick={(e) => {
-					e.preventDefault();
-					setActiveSlide(1);
-					document.getElementById("slide1")?.scrollIntoView({ behavior: "smooth" });
+						e.preventDefault();
+						setActiveSlide(1);
+						document.getElementById("slide1")?.scrollIntoView({ behavior: "smooth" });
 					}}
 					className={`btn btn-xs ${
-					activeSlide === 1
-					? `${theme.secondary} text-white`
-					: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
+						activeSlide === 1
+						? `${theme.secondary} text-white`
+						: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
 					}`}
+					role="tab"
+					aria-selected={activeSlide === 1}
+					aria-controls="slide1"
 				>
-					1
-				</a>
-				<a
-					href="#slide2"
+					<span className="sr-only">Slide </span>1
+				</button>
+				<button
+					id="slide2-tab"
 					onClick={(e) => {
-					e.preventDefault();
-					setActiveSlide(2);
-					document.getElementById("slide2")?.scrollIntoView({ behavior: "smooth" });
+						e.preventDefault();
+						setActiveSlide(2);
+						document.getElementById("slide2")?.scrollIntoView({ behavior: "smooth" });
 					}}
 					className={`btn btn-xs ${
-					activeSlide === 2
-					? `${theme.secondary} text-white`
-					: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
+						activeSlide === 2
+						? `${theme.secondary} text-white`
+						: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
 					}`}
+					role="tab"
+					aria-selected={activeSlide === 2}
+					aria-controls="slide2"
 				>
-					2
-				</a>
-				<a
-					href="#slide3"
+					<span className="sr-only">Slide </span>2
+				</button>
+				<button
+					id="slide3-tab"
 					onClick={(e) => {
-					e.preventDefault();
-					setActiveSlide(3);
-					document.getElementById("slide3")?.scrollIntoView({ behavior: "smooth" });
+						e.preventDefault();
+						setActiveSlide(3);
+						document.getElementById("slide3")?.scrollIntoView({ behavior: "smooth" });
 					}}
 					className={`btn btn-xs ${
-					activeSlide === 3
-					? `${theme.secondary} text-white`
-					: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
+						activeSlide === 3
+						? `${theme.secondary} text-white`
+						: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
 					}`}
+					role="tab"
+					aria-selected={activeSlide === 3}
+					aria-controls="slide3"
 				>
-					3
-				</a>
+					<span className="sr-only">Slide </span>3
+				</button>
 			</div>
 		</div>
 	);

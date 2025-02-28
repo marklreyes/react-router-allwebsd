@@ -35,49 +35,54 @@ export function ShareButtons({ title, url }: ShareButtonsProps) {
   } transition-colors`;
 
   return (
-    <div className="flex items-center gap-4 my-4">
-      <span className="text-sm font-semibold">Share:</span>
-      <div className="flex gap-2">
-        <a
-          href={shareLinks.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={buttonClasses}
-          title="Share on X (Twitter)"
-        >
-          <FaXTwitter className="w-5 h-5" />
-        </a>
-        <a
-          href={shareLinks.facebook}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={buttonClasses}
-          title="Share on Facebook"
-        >
-          <FaFacebook className="w-5 h-5" />
-        </a>
-        <a
-          href={shareLinks.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={buttonClasses}
-          title="Share on LinkedIn"
-        >
-          <FaLinkedin className="w-5 h-5" />
-        </a>
-        <button
-          onClick={handleCopyLink}
-          className={buttonClasses}
-          title="Copy link"
-        >
-          <FaCopy className="w-5 h-5" />
-          {copied && (
-            <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded">
-              Copied!
-            </span>
-          )}
-        </button>
-      </div>
-    </div>
+		<div className="flex items-center gap-4 my-4" role="region" aria-label="Share buttons">
+			<span className="text-sm font-semibold" id="share-label">Share:</span>
+			<div className="flex gap-2" aria-labelledby="share-label">
+			<a
+				href={shareLinks.twitter}
+				target="_blank"
+				rel="noopener noreferrer"
+				className={buttonClasses}
+				title="Share on X (Twitter)"
+				aria-label="Share on X (Twitter)"
+			>
+				<FaXTwitter className="w-5 h-5" aria-hidden="true" />
+			</a>
+			<a
+				href={shareLinks.facebook}
+				target="_blank"
+				rel="noopener noreferrer"
+				className={buttonClasses}
+				title="Share on Facebook"
+				aria-label="Share on Facebook"
+			>
+				<FaFacebook className="w-5 h-5" aria-hidden="true" />
+			</a>
+			<a
+				href={shareLinks.linkedin}
+				target="_blank"
+				rel="noopener noreferrer"
+				className={buttonClasses}
+				title="Share on LinkedIn"
+				aria-label="Share on LinkedIn"
+			>
+				<FaLinkedin className="w-5 h-5" aria-hidden="true" />
+			</a>
+			<button
+				onClick={handleCopyLink}
+				className={buttonClasses}
+				title="Copy link"
+				aria-label="Copy link to clipboard"
+				aria-pressed={copied}
+			>
+				<FaCopy className="w-5 h-5" aria-hidden="true" />
+				{copied && (
+				<span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded" role="status">
+					Copied!
+				</span>
+				)}
+			</button>
+			</div>
+		</div>
   );
 }

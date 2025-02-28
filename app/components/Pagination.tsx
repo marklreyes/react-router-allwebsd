@@ -7,24 +7,31 @@ export function Pagination({ currentPage, totalItems, itemsPerPage, onPageChange
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
-    <div className={`${theme.primary} flex justify-center gap-2 rounded-lg p-1`}>
-      <button
-        onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
-        disabled={currentPage === 1}
-        className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
-      >
-        <FaChevronLeft className="inline-block" /> Previous
-      </button>
-      <span className="px-4 py-2">
-        Page {currentPage} of {totalPages}
-      </span>
-      <button
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage >= totalPages}
-        className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
-      >
-        Next <FaChevronRight className="inline-block" />
-      </button>
-    </div>
+		<nav
+			className={`${theme.primary} flex justify-center gap-2 rounded-lg p-1`}
+			aria-label="Pagination navigation"
+		>
+			<button
+			onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
+			disabled={currentPage === 1}
+			className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
+			aria-label={`Go to page ${currentPage - 1}`}
+			>
+			<FaChevronLeft className="inline-block" aria-hidden="true" />
+			<span>Previous page</span>
+			</button>
+			<div className="px-4 py-2" role="status" aria-live="polite">
+			Page {currentPage} of {totalPages}
+			</div>
+			<button
+			onClick={() => onPageChange(currentPage + 1)}
+			disabled={currentPage >= totalPages}
+			className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
+			aria-label={`Go to page ${currentPage + 1}`}
+			>
+			<span>Next page</span>
+			<FaChevronRight className="inline-block" aria-hidden="true" />
+			</button>
+		</nav>
   );
 }

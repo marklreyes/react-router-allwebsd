@@ -27,38 +27,49 @@ export function Layout() {
   }, []);
 
   return (
-    <html lang="en" className={isDarkMode ? "dark" : ""}>
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
+	<html lang="en" className={isDarkMode ? "dark" : ""}>
+	  <head>
+		<meta charSet="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<Meta />
+		<Links />
 		<GoogleAnalytics />
-      </head>
-      <body className={`${theme.background} ${theme.text} transition-colors duration-200`}>
-			{isLoading ? <Loading /> : (
-				<>
-					<Header />
-					<div className="container mx-auto p-4">
-						<div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-							<main className="col-span-1 lg:col-span-9">
-								<Outlet />
-							</main>
-							<aside className={`col-span-1 lg:col-span-3 lg:sticky lg:top-4 ${theme.primary} ${theme.text} rounded-lg p-4 h-fit`}>
-								<Ads />
-								<hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
-								<Weather />
-								<hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
-								<Subscribe />
-							</aside>
-						</div>
-					</div>
-					<Footer />
-				</>
-			)}
-			<ScrollRestoration />
-			<Scripts />
-      </body>
-    </html>
+	  </head>
+	  <body className={`${theme.background} ${theme.text} transition-colors duration-200`}>
+		{isLoading ? (
+		  <Loading />
+		) : (
+		  <>
+			<Header />
+			<div className="container mx-auto p-4">
+			  <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+				<main className="col-span-1 lg:col-span-9" id="main-content">
+				  <Outlet />
+				</main>
+				<aside
+				  className={`col-span-1 lg:col-span-3 lg:sticky lg:top-4 ${theme.primary} ${theme.text} rounded-lg p-4 h-fit`}
+				  aria-label="Sidebar content"
+				>
+				  <section aria-label="Advertisement">
+					<Ads />
+				  </section>
+				  <hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
+				  <section aria-label="Weather information">
+					<Weather />
+				  </section>
+				  <hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} />
+				  <section aria-label="Newsletter subscription">
+					<Subscribe />
+				  </section>
+				</aside>
+			  </div>
+			</div>
+			<Footer />
+		  </>
+		)}
+		<ScrollRestoration />
+		<Scripts />
+	  </body>
+	</html>
   );
 }

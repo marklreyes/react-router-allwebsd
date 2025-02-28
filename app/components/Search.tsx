@@ -70,87 +70,100 @@ const createSlug = (title: string): string => {
   };
 
   return (
-    <div className="relative">
-      <div className={`flex items-center transition-all duration-300 ease-in-out ${
-        isExpanded ? 'w-48' : 'w-8'
-      }`}>
-        <div className={`absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ${
-          isExpanded ? 'opacity-100' : 'opacity-0'
-        }`}>
-          <FaMagnifyingGlass className={`${
-            isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'
-          } w-4 h-4`} />
-        </div>
+		<div className="relative">
+			<div className={`flex items-center transition-all duration-300 ease-in-out ${
+			isExpanded ? 'w-48' : 'w-8'
+			}`}>
+			<label htmlFor="search" className="sr-only">Search episodes</label>
+			<div className={`absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ${
+				isExpanded ? 'opacity-100' : 'opacity-0'
+			}`}>
+				<FaMagnifyingGlass
+				className={`${isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'} w-4 h-4`}
+				aria-hidden="true"
+				/>
+			</div>
 
-        <input
-          type="search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder={isExpanded ? "Search Episode" : ""}
-          className={`transition-all duration-300 ease-in-out ${
-            isExpanded
-              ? 'w-full pl-10 pr-3 py-2' // Added py-2 for vertical padding
-              : 'w-8 h-8 px-0 bg-opacity-0'
-          } border rounded-full ${
-            isDarkMode
-              ? 'bg-[#71BEA9] placeholder-[#2F241D] text-[#2F241D] focus:border-[#F03D86]'
-              : 'bg-[#FFC425] placeholder-[#2F241D] text-[#2F241D] focus:border-[#2F241D]'
-          } focus:outline-none focus:ring-1 ${
-            isDarkMode ? 'focus:ring-[#F03D86]' : 'focus:ring-[#2F241D]'
-          }`}
-          onFocus={() => setIsExpanded(true)}
-          onBlur={(e) => {
-            if (e.target.value === '') {
-              setIsExpanded(false);
-              setSearchTerm('');
-            }
-          }}
-        />
+			<input
+				type="search"
+				id="search"
+				value={searchTerm}
+				onChange={(e) => setSearchTerm(e.target.value)}
+				placeholder={isExpanded ? "Search Episode" : ""}
+				aria-expanded={isExpanded}
+				aria-controls="search-results"
+				aria-label="Search episodes"
+				className={`transition-all duration-300 ease-in-out ${
+				isExpanded
+					? 'w-full pl-10 pr-3 py-2'
+					: 'w-8 h-8 px-0 bg-opacity-0'
+				} border rounded-full ${
+				isDarkMode
+					? 'bg-[#71BEA9] placeholder-[#2F241D] text-[#2F241D] focus:border-[#F03D86]'
+					: 'bg-[#FFC425] placeholder-[#2F241D] text-[#2F241D] focus:border-[#2F241D]'
+				} focus:outline-none focus:ring-1 ${
+				isDarkMode ? 'focus:ring-[#F03D86]' : 'focus:ring-[#2F241D]'
+				}`}
+				onFocus={() => setIsExpanded(true)}
+				onBlur={(e) => {
+				if (e.target.value === '') {
+					setIsExpanded(false);
+					setSearchTerm('');
+				}
+				}}
+			/>
 
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className={`absolute right-0 w-8 h-8 rounded-full ${
-            isExpanded ? 'opacity-0' : 'opacity-100'
-          } ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'} flex items-center justify-center`}
-        >
-          <FaMagnifyingGlass className={`${
-            isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'
-          } w-4 h-4`} />
-        </button>
+			<button
+				onClick={() => setIsExpanded(!isExpanded)}
+				aria-label="Toggle search"
+				className={`absolute right-0 w-8 h-8 rounded-full ${
+				isExpanded ? 'opacity-0' : 'opacity-100'
+				} ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'} flex items-center justify-center`}
+			>
+				<FaMagnifyingGlass
+				className={`${isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'} w-4 h-4`}
+				aria-hidden="true"
+				/>
+			</button>
 
-        {/* Search Results Dropdown */}
-        {isExpanded && searchTerm.length >= 2 && (
-          <div className={`absolute top-full left-0 w-80 -ml-16 mt-1 rounded-lg shadow-lg overflow-hidden ${
-            isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'
-          } z-50`}>
-            {isLoading ? (
-              <div className="p-3 text-center text-[#2F241D]">Searching...</div>
-            ) : results.length > 0 ? (
-              <div className="max-h-60 overflow-y-auto">
-                {results.map((episode, index) => (
-                  <Link
-                    key={index}
-                    to={`/episodes/${createSlug(episode.title)}`}
-                    className={`block p-3 ${
-                      results.length === 1
-                        ? 'rounded-lg' // Single item
-                        : index === 0
-                        ? 'rounded-t-lg' // First item
-                        : index === results.length - 1
-                        ? 'rounded-b-lg' // Last item
-                        : '' // Middle items
-                    } hover:${isDarkMode ? 'bg-[#F03D86]' : 'bg-[#2F241D]'} hover:text-white`}
-                  >
-                    <div className="font-medium truncate">{episode.title}</div>
-                  </Link>
-                ))}
-              </div>
-            ) : searchTerm.length >= 2 && (
-              <div className="p-3 text-center text-[#2F241D]">No episodes found</div>
-            )}
-          </div>
-        )}
-      </div>
-    </div>
+			{/* Search Results Dropdown */}
+			{isExpanded && searchTerm.length >= 2 && (
+				<div
+				id="search-results"
+				role="region"
+				aria-label="Search results"
+				className={`absolute top-full left-0 w-80 -ml-16 mt-1 rounded-lg shadow-lg overflow-hidden ${
+					isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'
+				} z-50`}
+				>
+				{isLoading ? (
+					<div className="p-3 text-center text-[#2F241D]" role="status">Searching...</div>
+				) : results.length > 0 ? (
+					<div className="max-h-60 overflow-y-auto">
+					{results.map((episode, index) => (
+						<Link
+						key={index}
+						to={`/episodes/${createSlug(episode.title)}`}
+						className={`block p-3 ${
+							results.length === 1
+							? 'rounded-lg'
+							: index === 0
+							? 'rounded-t-lg'
+							: index === results.length - 1
+							? 'rounded-b-lg'
+							: ''
+						} hover:${isDarkMode ? 'bg-[#F03D86]' : 'bg-[#2F241D]'} hover:text-white`}
+						>
+						<div className="font-medium truncate">{episode.title}</div>
+						</Link>
+					))}
+					</div>
+				) : searchTerm.length >= 2 && (
+					<div className="p-3 text-center text-[#2F241D]" role="status">No episodes found</div>
+				)}
+				</div>
+			)}
+			</div>
+		</div>
   );
 }
