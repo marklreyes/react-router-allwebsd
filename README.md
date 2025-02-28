@@ -19,6 +19,7 @@ A modern, production-ready template for building full-stack React applications u
 - 🌼 daisyUI for component library
 - 🌓 Light/Dark Mode aka "City Connect"
 - ☁️  Netlify Functions (Weather data fetched from Open-Meteo, RSS Feed fetched from Castbox, OpenAI)
+- 🧪 Unit testing with [Vitest](https://vitest.dev/)
 - 📖 [React Router docs](https://reactrouter.com/)
 - 💻 Configured for deployment to Netlify
 
@@ -55,6 +56,8 @@ Your application will be available at `http://localhost:8888` and `http://localh
 ## Unit Testing
 
 Run a unit test:
+
+Use Next Generation testing framework, Vitest.
 
 ```bash
 npm test
