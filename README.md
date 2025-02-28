@@ -52,6 +52,14 @@ netlify dev
 
 Your application will be available at `http://localhost:8888` and `http://localhost:5173`.
 
+## Unit Testing
+
+Run a unit test:
+
+```bash
+npm test
+```
+
 ## Building for Production
 
 Create a production build:
