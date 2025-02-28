@@ -47,28 +47,30 @@ export function BecomeASponsor() {
 	];
 
 	return (
-		<div className="flex items-center justify-center">
+		<main className="flex items-center justify-center" role="main">
 			<div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-				<div className="w-full">
-					<h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
-						Become A Sponsor
-					</h1>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-					{sponsorCards.map((card, index) => (
-						<SponsorCard key={index} {...card} />
-					))}
-					</div>
-					<p className="text-white text-lg leading-relaxed mb-6">
-						Everything you see here is hand-rolled by me. From website maintenance, booking, content creation, pre/post production and more. Rest assured that a lot of <em>TLC</em> goes into making each episode.
-					</p>
-					<p className="text-white text-lg leading-relaxed mb-6">
-						Compliment this effort and consider purchasing a sponsorship for your local San Diego business now. All sponsorships are based on one season (5 episodes). If you're looking for an <em>à la carte</em> option, please <a href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - à la carte" >email me today</a>!
-					</p>
-					<p className="text-white text-lg leading-relaxed mb-6">
-						For general support of this podcast, a <a href="//www.buymeacoffee.com/markreyes" className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50" target="_blank">cup of coffee</a> is always appreciated!
-					</p>
-				</div>
+			<div className="w-full">
+				<h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+				Become A Sponsor
+				</h1>
+				<section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" aria-label="Sponsorship Options">
+				{sponsorCards.map((card, index) => (
+					<SponsorCard key={index} {...card} />
+				))}
+				</section>
+				<article className="text-white">
+				<p className="text-lg leading-relaxed mb-6">
+					Everything you see here is hand-rolled by me. From website maintenance, booking, content creation, pre/post production and more. Rest assured that a lot of <em>TLC</em> goes into making each episode.
+				</p>
+				<p className="text-lg leading-relaxed mb-6">
+					Compliment this effort and consider purchasing a sponsorship for your local San Diego business now. All sponsorships are based on one season (5 episodes). If you're looking for an <em>à la carte</em> option, please <a href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - à la carte" aria-label="Email about à la carte sponsorship options">email me today</a>!
+				</p>
+				<p className="text-lg leading-relaxed mb-6">
+					For general support of this podcast, a <a href="//www.buymeacoffee.com/markreyes" className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50" target="_blank" rel="noopener noreferrer" aria-label="Support on Buy Me a Coffee">cup of coffee</a> is always appreciated!
+				</p>
+				</article>
 			</div>
-		</div>
+			</div>
+		</main>
 	);
 }
