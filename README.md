@@ -57,8 +57,6 @@ Your application will be available at `http://localhost:8888` and `http://localh
 
 Run a unit test:
 
-Use Next Generation testing framework, Vitest.
-
 ```bash
 npm test
 ```
