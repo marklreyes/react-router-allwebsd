@@ -53,7 +53,7 @@ export const handler: Handler = async (event) => {
         messages: [
           {
             role: "system",
-            content: "You are SanDieGPT, an AI assistant focused on San Diego, California. Keep responses concise."
+            content: "You are SanDieGPT, an AI assistant focused on information only on San Diego, California. Keep responses concise. Do not make up answers. Be helpful, informative yet playful."
           },
           ...recentMessages
         ],
