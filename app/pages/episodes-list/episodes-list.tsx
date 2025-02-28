@@ -54,19 +54,21 @@ export function EpisodesList() {
 
 	useEffect(() => {
 		const fetchRSS = async () => {
-			setIsLoading(true);
-
-			const cachedData = localStorage.getItem("rssCache");
-			const cacheTimestamp = localStorage.getItem("rssCacheTimestamp");
-			const cacheAge = cacheTimestamp ? Date.now() - parseInt(cacheTimestamp) : 0;
-
-			// Use cache if it"s less than 1 hour old
-			if (cachedData && cacheAge < 3600000) {
-				setRssData(JSON.parse(cachedData));
-				return;
-			}
-
 			try {
+				// Check cache first
+				const cachedData = localStorage.getItem("rssCache");
+				const cacheTimestamp = localStorage.getItem("rssCacheTimestamp");
+				const cacheAge = cacheTimestamp ? Date.now() - parseInt(cacheTimestamp) : 0;
+
+				// Use cache if it's less than 1 hour old
+				if (cachedData && cacheAge < 3600000) {
+					setRssData(JSON.parse(cachedData));
+					setIsLoading(false); // Add this line
+					return;
+				}
+
+				setIsLoading(true); // Only set loading true if we need to fetch
+
 				const response = await fetch(RSS_URL);
 				const xmlData = await response.text();
 
@@ -110,7 +112,7 @@ export function EpisodesList() {
 		};
 
 		fetchRSS();
-	}, []);
+	}, []); // Keep the empty dependency array
 
 	return (
 		<main className="w-full" role="main">
