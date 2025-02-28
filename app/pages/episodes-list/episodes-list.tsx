@@ -18,9 +18,9 @@ interface RSSFeed {
 		created: number;
 		content: string;
 		enclosures: {
-			length: string;
-			type: string;
-			url: string;
+			["@_length"]: string;
+			["@_type"]: string;
+			["@_url"]: string;
 		}[];
 		guids: {
 			["#text"]: string;
@@ -90,11 +90,7 @@ export function EpisodesList() {
 						title: item.title,
 						created: new Date(item.pubDate).getTime(),
 						content: item["content:encoded"] || item.description,
-						enclosures: item.enclosure ? [{
-							'@_length': item.enclosure['@_length'],
-							'@_type': item.enclosure['@_type'],
-							'@_url': item.enclosure['@_url']
-						}] : [],
+						enclosures: item.enclosure ? [item.enclosure] : [],
 						guids: item.guid ? [{
 							'@_isPermaLink': item.guid['@_isPermaLink'],
 							'#text': item.guid['#text']
@@ -117,38 +113,50 @@ export function EpisodesList() {
 	}, []);
 
 	return (
-		<div className="w-full">
+		<main className="w-full" role="main">
 			<h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
-				View Episodes
+				Episodes List
 			</h1>
-			{rssData ? (
+			{isLoading ? (
+				<div className={`${theme.primary} rounded-lg p-4`} role="status" aria-live="polite">
+					<h2 className={`${theme.text} flex items-center justify-center text-center font-semibold mb-4 text-xl`}>
+						<MdFrontLoader aria-hidden="true" />&nbsp;Loading Episodes...
+					</h2>
+					<p className={`${theme.text} flex items-center justify-center text-center`}>
+						Until then...<em>you stay classy, San Diego!</em>
+					</p>
+				</div>
+			) : rssData ? (
 				<>
-				{getCurrentItems().map((item, index) => (
-					<Episode
-						key={index}
-						title={item.title}
-						created={item.created}
-						content={item.content}
-						enclosure={item.enclosures?.[0]}
-						guid={item.guids?.[0]}
-						itunesDuration={item.itunes_duration}
-						currentPage={currentPage}
-						index={index}
-					/>
-				))}
-				<Pagination
-					currentPage={currentPage}
-					totalItems={rssData.items.length}
-					itemsPerPage={itemsPerPage}
-					onPageChange={handlePageChange}
-				/>
+					<section aria-label="Episode List">
+						{getCurrentItems().map((item, index) => (
+							<Episode
+								key={item.guids?.[0]?.["#text"] || index}
+								title={item.title}
+								created={item.created}
+								content={item.content}
+								enclosure={item.enclosures?.[0]}
+								guid={item.guids?.[0]}
+								itunesDuration={item.itunes_duration}
+								currentPage={currentPage}
+								index={index}
+							/>
+						))}
+					</section>
+					<nav aria-label="Pagination">
+						<Pagination
+							currentPage={currentPage}
+							totalItems={rssData.items.length}
+							itemsPerPage={itemsPerPage}
+							onPageChange={handlePageChange}
+						/>
+					</nav>
 				</>
 			) : (
-				<div className={`${theme.primary} rounded-lg p-4`}>
-					<h2 className={`${theme.text} flex items-center justify-center text-center font-semibold mb-4 text-xl`}><MdFrontLoader />&nbsp;Loading Episodes...</h2>
-					<p className={`${theme.text} flex items-center justify-center text-center`}>Until then...<em>you stay classy, San Diego!</em></p>
+				<div className={`${theme.primary} rounded-lg p-4`} role="alert">
+					<p className={`${theme.text} text-center`}>Failed to load episodes. Please try again later.</p>
 				</div>
 			)}
-		</div>
+		</main>
 	);
 }
