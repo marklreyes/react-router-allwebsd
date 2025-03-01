@@ -18,6 +18,7 @@ A modern, production-ready template for building full-stack React applications u
 - 🎉 TailwindCSS for styling
 - 🌼 daisyUI for component library
 - 🌓 Light/Dark Mode aka "City Connect"
+- 🔍 Lexical Search for episodes
 - ☁️  Netlify Functions (Weather data fetched from Open-Meteo, RSS Feed fetched from Castbox, OpenAI)
 - 🧪 Unit testing with [Vitest](https://vitest.dev/)
 - 📖 [React Router docs](https://reactrouter.com/)

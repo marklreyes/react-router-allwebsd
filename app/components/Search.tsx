@@ -39,10 +39,18 @@ export default function Search() {
         const episodes = result.rss.channel.item;
 
         const filtered = episodes.filter((episode: any) => {
-          const title = episode.title.toLowerCase();
-          const description = episode.description.toLowerCase();
-          const term = searchTerm.toLowerCase();
-          return title.includes(term) || description.includes(term);
+          const searchTokens = searchTerm.toLowerCase().split(/\s+/);
+          const titleTokens = episode.title.toLowerCase().split(/\s+/);
+          const descriptionTokens = episode.description.toLowerCase().split(/\s+/);
+
+          return searchTokens.every(token =>
+            titleTokens.some(word =>
+              levenshteinDistance(word, token) <= 2
+            ) ||
+            descriptionTokens.some(word =>
+              levenshteinDistance(word, token) <= 2
+            )
+          );
         }).slice(0, 5); // Limit to 5 results
 
         setResults(filtered);
@@ -57,6 +65,31 @@ export default function Search() {
     const debounceTimer = setTimeout(searchEpisodes, 300);
     return () => clearTimeout(debounceTimer);
   }, [searchTerm]);
+
+  const levenshteinDistance = (a: string, b: string): number => {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+
+    const matrix = Array(b.length + 1).fill(null).map(() =>
+      Array(a.length + 1).fill(null)
+    );
+
+    for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
+    for (let j = 0; j <= b.length; j++) matrix[j][0] = j;
+
+    for (let j = 1; j <= b.length; j++) {
+      for (let i = 1; i <= a.length; i++) {
+        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+        matrix[j][i] = Math.min(
+          matrix[j][i - 1] + 1,
+          matrix[j - 1][i] + 1,
+          matrix[j - 1][i - 1] + cost
+        );
+      }
+    }
+
+    return matrix[b.length][a.length];
+  };
 
 // Add slug creation helper (same as in Episode.tsx)
 const createSlug = (title: string): string => {
