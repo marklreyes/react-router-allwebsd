@@ -51,7 +51,7 @@ export default function Search() {
               levenshteinDistance(word, token) <= 2
             )
           );
-        }).slice(0, 5); // Limit to 5 results
+        });
 
         setResults(filtered);
       } catch (error) {
@@ -165,19 +165,19 @@ const createSlug = (title: string): string => {
 				id="search-results"
 				role="region"
 				aria-label="Search results"
-				className={`absolute top-full left-0 w-80 -ml-16 mt-1 rounded-lg shadow-lg overflow-hidden ${
+				className={`absolute top-full left-0 w-96 -ml-24 mt-1 rounded-lg shadow-lg overflow-hidden ${
 					isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'
 				} z-50`}
 				>
 				{isLoading ? (
 					<div className="p-3 text-center text-[#2F241D]" role="status">Searching...</div>
 				) : results.length > 0 ? (
-					<div className="max-h-60 overflow-y-auto">
+					<div className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-[#2F241D] scrollbar-track-transparent">
 					{results.map((episode, index) => (
 						<Link
 						key={index}
 						to={`/episodes/${createSlug(episode.title)}`}
-						className={`block p-3 ${
+						className={`block p-3 border-b last:border-b-0 ${
 							results.length === 1
 							? 'rounded-lg'
 							: index === 0
@@ -185,7 +185,7 @@ const createSlug = (title: string): string => {
 							: index === results.length - 1
 							? 'rounded-b-lg'
 							: ''
-						} hover:${isDarkMode ? 'bg-[#F03D86]' : 'bg-[#2F241D]'} hover:text-white`}
+						} transition-colors duration-200 hover:${isDarkMode ? 'bg-[#F03D86]' : 'bg-[#2F241D]'} hover:text-white`}
 						>
 						<div className="font-medium truncate">{episode.title}</div>
 						</Link>
