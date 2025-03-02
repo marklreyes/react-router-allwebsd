@@ -2,15 +2,15 @@ import { BecomeAGuest } from "~/pages/become-a-guest/become-a-guest";
 import type { Route } from "./+types/guests";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Guests | Web Developer podcasting out of San Diego, California | AllWebSD.com" },
-	{ name: "description", content: "Just a web developer podcasting out of America's Finest City!" },
-	{ name: "twitter:card", content: "Just a web developer storytelling out of America's Finest City!" },
-	{ property: "og:title", content: "Just a web developer storytelling out of America's Finest City!" },
-	{ property: "og:type", content: "website" },
-	{ property: "og:url", content: "//www.allwebsd.com" },
-	{ property: "og:description", content: "Just a web developer storytelling out of America's Finest City!" },
-  ];
+	return [
+		{ title: "Guests | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
+		{ name: "description", content: "Become a guest, receive a shirt. Yep, it's just that easy!" },
+		{ name: "twitter:card", content: "Become a guest, receive a shirt. Yep, it's just that easy!" },
+		{ property: "og:title", content: "Episodes | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
+		{ property: "og:type", content: "website" },
+		{ property: "og:url", content: "//www.allwebsd.com/guests" },
+		{ property: "og:description", content: "Become a guest, receive a shirt. Yep, it's just that easy!" }
+	];
 }
 
 export default function Guests() {

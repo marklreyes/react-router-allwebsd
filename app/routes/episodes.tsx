@@ -3,13 +3,13 @@ import { EpisodesList } from "~/pages/episodes-list/episodes-list";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "Episodes | Web Developer podcasting out of San Diego, California | AllWebSD.com" },
-		{ name: "description", content: "Just a web developer podcasting out of America's Finest City!" },
-		{ name: "twitter:card", content: "Just a web developer storytelling out of America's Finest City!" },
-		{ property: "og:title", content: "Just a web developer storytelling out of America's Finest City!" },
+		{ title: "Episodes | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
+		{ name: "description", content: "Press play and listen to any and all episodes of The AllWebSD.com Podcast!" },
+		{ name: "twitter:card", content: "Press play and listen to any and all episodes of The AllWebSD.com Podcast!" },
+		{ property: "og:title", content: "Episodes | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
 		{ property: "og:type", content: "website" },
-		{ property: "og:url", content: "//www.allwebsd.com" },
-		{ property: "og:description", content: "Just a web developer storytelling out of America's Finest City!" },
+		{ property: "og:url", content: "//www.allwebsd.com/episodes" },
+		{ property: "og:description", content: "Press play and listen to any and all episodes of The AllWebSD.com Podcast!" }
 	];
 }
 
