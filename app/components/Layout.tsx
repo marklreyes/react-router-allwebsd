@@ -14,6 +14,7 @@ import GoogleAnalytics from "./GoogleAnalytics";
 import Ads from "./Ads";
 import Subscribe from "./Subscribe";
 import Weather from "./Weather";
+import { DefaultMeta } from "~/components/DefaultMeta";
 
 export function Layout() {
   const { isDarkMode, theme } = useTheme();
@@ -32,6 +33,7 @@ export function Layout() {
 		<meta charSet="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<Meta />
+		<DefaultMeta />
 		<Links />
 		<GoogleAnalytics />
 	  </head>
