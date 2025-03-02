@@ -2,7 +2,7 @@ import { isRouteErrorResponse } from "react-router";
 import type { Route } from "./+types/root";
 import { Layout } from "./components/Layout";
 import stylesheet from "./app.css?url";
-import { ThemeProvider } from './context/ThemeContext';
+import { ThemeProvider } from "./context/ThemeContext";
 
 
 export const links: Route.LinksFunction = () => [
