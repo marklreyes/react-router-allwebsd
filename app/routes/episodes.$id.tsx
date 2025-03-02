@@ -73,29 +73,35 @@ export async function loader({ params }: LoaderFunctionArgs) {
 }
 
 export function meta({ data, params }: EpisodeMetaProps) {
-  if (!data) {
-    return [
-      { title: "Episode Not Found | All WebSD Podcast" },
-      { name: "description", content: "The requested episode could not be found." }
-    ];
-  }
+	const baseUrl = process.env.NODE_ENV === 'development'
+		? 'http://localhost:8888'
+		: 'https://allwebsd.com';
 
-  const cleanContent = data.content
-    .replace(/<[^>]*>/g, "")
-    .substring(0, 160);
+	if (!data) {
+		return [
+			{ title: "Episode Not Found | Web Developer storytelling out of America's Finest City | AllWebSD.com", override: true },
+			{ name: "description", content: "The requested episode could not be found.", override: true },
+			{ property: "og:image", content: `${baseUrl}/images/allwebsd-share.jpg`, override: true },
+			{ name: "twitter:image", content: `${baseUrl}/images/allwebsd-share.jpg`, override: true }
+		];
+	}
 
-  return [
-    { title: `${data.title} | All WebSD Podcast` },
-    { name: "description", content: cleanContent },
-    { name: "twitter:card", content: "summary_large_image" },
-    { property: "og:title", content: data.title },
-    { property: "og:type", content: "article" },
-    { property: "og:url", content: `https://allwebsd.com/episodes/${params.id}` },
-    { property: "og:description", content: cleanContent },
-    { name: "twitter:title", content: data.title },
-    { name: "twitter:description", content: cleanContent },
-    { name: "article:published_time", content: new Date(data.created).toISOString() }
-  ];
+	const cleanContent = data.content
+		.replace(/<[^>]*>/g, "")
+		.substring(0, 160);
+
+	return [
+		{ title: `${data.title} | Web Developer storytelling out of America's Finest City | AllWebSD.com`, override: true },
+		{ name: "description", content: cleanContent, override: true },
+		{ property: "og:title", content: data.title, override: true },
+		{ property: "og:description", content: cleanContent, override: true },
+		{ property: "og:url", content: `${baseUrl}/episodes/${params.id}`, override: true },
+		{ property: "og:image", content: `${baseUrl}/images/allwebsd-share.jpg`, override: true },
+		{ name: "twitter:card", content: "summary_large_image", override: true },
+		{ name: "twitter:title", content: data.title, override: true },
+		{ name: "twitter:description", content: cleanContent, override: true },
+		{ name: "twitter:image", content: `${baseUrl}/images/allwebsd-share.jpg`, override: true }
+	];
 }
 
 export default function EpisodeDetails() {
