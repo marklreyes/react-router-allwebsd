@@ -36,7 +36,7 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 				</audio>
 			)}
 			</div>
-			<p className="text-sm"><time dateTime={created} aria-label="Publication date">Published: {formatDate(created)}</time></p>
+			<p className="text-sm"><time dateTime={String(created)} aria-label="Publication date">Published: {formatDate(created)}</time></p>
 			<p className="text-sm" aria-label="Episode duration">Duration: {formatDuration(itunesDuration)}</p>
 			<hr className={`${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'} mx-auto mt-4 mb-4`} role="separator" />
 			{/* Expandable Content Section */}
