@@ -122,7 +122,7 @@ export function EpisodesList() {
 			{isLoading ? (
 				<div className={`${theme.primary} rounded-lg p-4`} role="status" aria-live="polite">
 					<h2 className={`${theme.text} flex items-center justify-center text-center font-semibold mb-4 text-xl`}>
-						<MdFrontLoader aria-hidden="true" />&nbsp;Loading Episodes...
+						<MdFrontLoader aria-hidden="true" className="shake" />&nbsp;Loading Episodes...
 					</h2>
 					<p className={`${theme.text} flex items-center justify-center text-center`}>
 						Until then...<em>you stay classy, San Diego!</em>

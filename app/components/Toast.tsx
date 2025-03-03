@@ -22,7 +22,7 @@ export function Toast({
   message,
   link
 }: ToastProps) {
-  const { theme } = useTheme();
+  const { theme, isDarkMode } = useTheme();
 
 	useEffect(() => {
     const toastState = sessionStorage.getItem("toastClosed");
@@ -44,7 +44,17 @@ export function Toast({
 			role="alert"
 			aria-live="polite"
 		>
-			<div className={`${theme.primary} ${theme.text} alert alert-info p-2 md:p-4 relative`}>
+			<div className={`
+          ${theme.primary}
+          ${theme.text}
+          alert
+          alert-info
+          p-2
+          md:p-4
+          relative
+          border
+          ${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'}
+        `}>
 			<button
 				className={`${theme.background} ${theme.text} hover:bg-[#2F241D] hover:text-white btn btn-circle btn-xs md:btn-sm absolute top-1 right-2 text-white`}
 				onClick={handleClose}
@@ -54,7 +64,10 @@ export function Toast({
 			</button>
 			<div className="flex items-center gap-2 pr-8">
 				{icon && (
-				<span className="flex-shrink-0" aria-hidden="true">
+				<span
+					className="flex-shrink-0 animate-shake"
+					aria-hidden="true"
+				>
 					{icon}
 				</span>
 				)}
