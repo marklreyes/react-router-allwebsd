@@ -8,7 +8,7 @@ export function meta({}: Route.MetaArgs) {
 		{ name: "twitter:card", content: "Contact Mark to schedule time on air, sponsor the show, consultations or a coffee!" },
 		{ property: "og:title", content: "Contact Mark | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
 		{ property: "og:type", content: "website" },
-		{ property: "og:url", content: "//www.allwebsd.com/contact" },
+		{ property: "og:url", content: "https://www.allwebsd.com/contact" },
 		{ property: "og:description", content: "Contact Mark to schedule time on air, sponsor the show, consultations or a coffee!" }
 	];
 }

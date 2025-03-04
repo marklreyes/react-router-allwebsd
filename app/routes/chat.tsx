@@ -32,7 +32,7 @@ export function meta({}: Route.MetaArgs) {
 		{ name: "twitter:card", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." },
 		{ property: "og:title", content: "Chat with SanDieGPT | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
 		{ property: "og:type", content: "website" },
-		{ property: "og:url", content: "//www.allwebsd.com/chat" },
+		{ property: "og:url", content: "https://www.allwebsd.com/chat" },
 		{ property: "og:description", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." }
 	];
 }

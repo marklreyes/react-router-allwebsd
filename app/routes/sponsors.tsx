@@ -8,7 +8,7 @@ export function meta({}: Route.MetaArgs) {
 	{ name: "twitter:card", content: "Just a web developer storytelling out of America's Finest City!" },
 	{ property: "og:title", content: "Just a web developer storytelling out of America's Finest City!" },
 	{ property: "og:type", content: "website" },
-	{ property: "og:url", content: "//www.allwebsd.com" },
+	{ property: "og:url", content: "https://www.allwebsd.com" },
 	{ property: "og:description", content: "Just a web developer storytelling out of America's Finest City!" },
   ];
 }
