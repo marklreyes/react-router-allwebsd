@@ -35,3 +35,8 @@ export interface EpisodeProps {
 	currentPage: number;
 	index: number;
 }
+
+export interface AudioEnclosure {
+	"@_url": string;
+	"@_type": string;
+  }
