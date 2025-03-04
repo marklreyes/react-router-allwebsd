@@ -9,8 +9,7 @@ export function meta({}: Route.MetaArgs) {
 		{ property: "og:title", content: "Home | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
 		{ property: "og:type", content: "website" },
 		{ property: "og:url", content: "https://www.allwebsd.com" },
-		{ property: "og:description", content: "Just a web developer storytelling out of America's Finest City!" },
-		{ property: "og:image", content: "https://allwebsd.com/images/allwebsd-share.jpg" }
+		{ property: "og:description", content: "Just a web developer storytelling out of America's Finest City!" }
 	];
 }
 
