@@ -8,7 +8,7 @@ interface ShareButtonsProps {
   url: string;
 }
 
-export function ShareButtons({ title, url }: ShareButtonsProps) {
+export default function ShareButtons({ title, url }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const { isDarkMode } = useTheme();
 
