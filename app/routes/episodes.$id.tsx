@@ -1,12 +1,31 @@
+import { Suspense, lazy } from 'react';
 import { useParams, type LoaderFunctionArgs } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
 import { GiSadCrab } from "react-icons/gi";
 import { TbLoader3 } from "react-icons/tb";
-import { ShareButtons } from "~/components/ShareButtons";
 import { createSlug, formatDate, formatDuration } from "~/utils/formatters";
 import { useRSSFeed } from "~/hooks/useRSSFeed";
 import type { EpisodeMetaProps } from "~/types/episode";
 import { XMLParser } from "fast-xml-parser";
+
+// Lazy load components with error boundaries
+const ShareButtons = lazy(() =>
+  import("~/components/ShareButtons").then(module => ({
+    default: module.default
+  }))
+);
+
+const AudioPlayer = lazy(() =>
+  import("~/components/AudioPlayer").then(module => ({
+    default: module.default
+  }))
+);
+
+const EpisodeContent = lazy(() =>
+  import("~/components/EpisodeContent").then(module => ({
+    default: module.default
+  }))
+);
 
 // Update loader function with proper URL handling
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -105,7 +124,7 @@ export function meta({ data, params }: EpisodeMetaProps) {
 }
 
 export default function EpisodeDetails() {
-	const { id } = useParams();
+  const { id } = useParams();
   const { theme, isDarkMode } = useTheme();
   const { episode, loading, error } = useRSSFeed(id);
 
@@ -127,45 +146,47 @@ export default function EpisodeDetails() {
 
   return (
     <div className={`${theme.primary} ${theme.text} container mx-auto p-4 space-y-4 rounded-lg p-6`}>
-		<h1
-			className="text-2xl font-bold mb-4"
-			dangerouslySetInnerHTML={{ __html: episode.title }}
-		/>
+      <h1
+        className="text-2xl font-bold mb-4"
+        dangerouslySetInnerHTML={{ __html: episode.title }}
+      />
 
-		{episode.enclosures?.[0] && (
-			<div className="mb-4">
-			<audio
-				controls
-				className="w-full"
-				preload="none"
-			>
-				<source
-				src={episode.enclosures[0]["@_url"]}
-				type={episode.enclosures[0]["@_type"]}
-				/>
-				Your browser does not support the audio element.
-			</audio>
-			</div>
-		)}
+      {episode.enclosures?.[0] && (
+        <Suspense fallback={
+          <div className="loading-fallback">
+            <TbLoader3 className="animate-spin" /> Loading audio player...
+          </div>
+        }>
+          <AudioPlayer enclosure={episode.enclosures[0]} />
+        </Suspense>
+      )}
 
-		<p className="text-sm"><span className="font-semibold">Published:{" "}</span>{formatDate(episode.created)}</p>
-		<p className="text-sm"><span className="font-semibold">Duration:{" "}</span>{formatDuration(episode.itunes_duration)}</p>
+      <p className="text-sm">
+        <span className="font-semibold">Published: </span>
+        {formatDate(episode.created)}
+      </p>
+      <p className="text-sm">
+        <span className="font-semibold">Duration: </span>
+        {formatDuration(episode.itunes_duration)}
+      </p>
 
-		<ShareButtons
-			title={episode.title}
-			url={window.location.href}
-		/>
+      <Suspense fallback={
+        <div className="loading-fallback">
+          <TbLoader3 className="animate-spin" /> Loading share buttons...
+        </div>
+      }>
+        <ShareButtons title={episode.title} url={window.location.href} />
+      </Suspense>
 
-		<hr className={`${isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"} mx-auto mt-4 mb-4`} />
+      <hr className={`${isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"} mx-auto mt-4 mb-4`} />
 
-		<div
-			className={`${theme.text} prose max-w-none ${
-			isDarkMode
-			? "prose-a:text-[#F03D86] prose-a:hover:text-[#F03D86] prose-strong:text-[#2F241D] prose-ol:text-[#2F241D] prose-li:marker:text-[#2F241D]"
-			: "prose-a:text-[#2F241D] prose-a:hover:text-[#2F241D] prose-strong:text-[#2F241D] prose-ol:text-[#2F241D] prose-li:marker:text-[#2F241D]"
-		} prose-a:transition-colors prose-a:duration-200 prose-a:underline prose-p:text-[#2F241D] prose-p:mt-0 prose-p:mb-0`}
-		dangerouslySetInnerHTML={{ __html: episode.content }}
-		/>
+      <Suspense fallback={
+        <div className="loading-fallback">
+          <TbLoader3 className="animate-spin" /> Loading episode content...
+        </div>
+      }>
+        <EpisodeContent content={episode.content} />
+      </Suspense>
     </div>
   );
 }
