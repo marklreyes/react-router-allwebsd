@@ -12,4 +12,21 @@ export default defineConfig({
     },
   },
   plugins: [reactRouter(), tsconfigPaths(), netlifyPlugin()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('components/ShareButtons')) {
+            return 'share';
+          }
+          if (id.includes('components/AudioPlayer')) {
+            return 'audio';
+          }
+          if (id.includes('components/EpisodeContent')) {
+            return 'content';
+          }
+        }
+      }
+    }
+  }
 });
