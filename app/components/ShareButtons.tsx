@@ -77,7 +77,7 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 			>
 				<FaCopy className="w-5 h-5" aria-hidden="true" />
 				{copied && (
-				<span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded" role="status">
+				<span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded-sm" role="status">
 					Copied!
 				</span>
 				)}

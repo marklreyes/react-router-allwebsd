@@ -73,7 +73,7 @@ export function AboutMe() {
 						For questions,{" "}
 						<NavLink
 							to="/sponsors"
-							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
 							aria-label="Learn about sponsorship opportunities"
 						>
 							sponsorships
@@ -81,7 +81,7 @@ export function AboutMe() {
 						{" "}or{" "}
 						<NavLink
 							to="/guests"
-							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
 							aria-label="Information about becoming a guest"
 						>
 							appearances
@@ -89,7 +89,7 @@ export function AboutMe() {
 						{" "}on this show, please send me an{" "}
 						<a
 							href="mailto:mr@marklreyes.com?subject=ALLWEBSD Appearances"
-							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
 							aria-label="Send email about ALLWEBSD appearances"
 						>
 							email

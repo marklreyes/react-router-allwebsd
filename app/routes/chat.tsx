@@ -286,7 +286,7 @@ export default function Chat() {
 			isDarkMode
 				? "border-[#F03D86] placeholder-[#2F241D] text-[#2F241D] focus:border-[#F03D86] focus:ring-[#F03D86]"
 				: "border-[#2F241D] placeholder-[#2F241D] text-[#2F241D] focus:border-[#2F241D] focus:ring-[#2F241D]"
-			} border focus:outline-none focus:ring-1 ${isLoading ? "opacity-50" : ""}`}
+			} border focus:outline-hidden focus:ring-1 ${isLoading ? "opacity-50" : ""}`}
 			aria-label="Message input"
             aria-describedby="char-count"
             aria-disabled={isLoading}

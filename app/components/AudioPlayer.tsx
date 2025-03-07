@@ -20,7 +20,7 @@ export default function AudioPlayer({ enclosure, title }: AudioPlayerProps) {
             src={enclosure["@_url"]}
             type={enclosure["@_type"]}
           />
-          <p className="text-center p-4 bg-red-100 text-red-700 rounded">
+          <p className="text-center p-4 bg-red-100 text-red-700 rounded-sm">
             Your browser does not support the audio element.
             <a
               href={enclosure["@_url"]}

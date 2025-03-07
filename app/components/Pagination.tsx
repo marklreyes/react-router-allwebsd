@@ -14,7 +14,7 @@ export function Pagination({ currentPage, totalItems, itemsPerPage, onPageChange
 			<button
 			onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
 			disabled={currentPage === 1}
-			className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
+			className="px-4 py-2 rounded-sm disabled:opacity-50 flex items-center gap-2"
 			aria-label={`Go to page ${currentPage - 1}`}
 			>
 			<FaChevronLeft className="inline-block" aria-hidden="true" />
@@ -26,7 +26,7 @@ export function Pagination({ currentPage, totalItems, itemsPerPage, onPageChange
 			<button
 			onClick={() => onPageChange(currentPage + 1)}
 			disabled={currentPage >= totalPages}
-			className="px-4 py-2 rounded disabled:opacity-50 flex items-center gap-2"
+			className="px-4 py-2 rounded-sm disabled:opacity-50 flex items-center gap-2"
 			aria-label={`Go to page ${currentPage + 1}`}
 			>
 			<span>Next page</span>

@@ -20,7 +20,7 @@ export default function Subscribe() {
 				<img
 				src="/images/appstore_apple.png"
 				alt=""
-				className="w-full h-auto rounded"
+				className="w-full h-auto rounded-sm"
 				/>
 			</a>
 			<a
@@ -33,7 +33,7 @@ export default function Subscribe() {
 				<img
 				src="/images/appstore_google.png"
 				alt=""
-				className="w-full h-auto rounded"
+				className="w-full h-auto rounded-sm"
 				/>
 			</a>
 			<a
@@ -46,7 +46,7 @@ export default function Subscribe() {
 				<img
 				src="/images/castbox.png"
 				alt=""
-				className="w-full h-auto rounded"
+				className="w-full h-auto rounded-sm"
 				/>
 			</a>
 			</div>

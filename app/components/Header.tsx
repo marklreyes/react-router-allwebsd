@@ -14,7 +14,7 @@ export default function Header() {
 		<header className="bg-white text-base-100 p-4" role="banner">
 			<div className="container mx-auto flex justify-between items-center">
 			{/* Logo */}
-			<div className={`w-32 ${isDarkMode ? `${theme.background}` : `${theme.background}`} p-2 rounded`}>
+			<div className={`w-32 ${isDarkMode ? `${theme.background}` : `${theme.background}`} p-2 rounded-sm`}>
 				<NavLink to="/" aria-label="Home">
 				<img
 					src={logoAllWebSD}

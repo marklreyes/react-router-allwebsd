@@ -65,7 +65,7 @@ export function Toast({
 			<div className="flex items-center gap-2 pr-8">
 				{icon && (
 				<span
-					className="flex-shrink-0 animate-shake"
+					className="shrink-0 animate-shake"
 					aria-hidden="true"
 				>
 					{icon}

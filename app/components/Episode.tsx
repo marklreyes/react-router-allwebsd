@@ -43,7 +43,7 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 			<div>
 				<button
 					onClick={() => setIsExpanded(!isExpanded)}
-					className={`${theme.text} font-semibold focus:outline-none mb-2 flex items-center gap-2`}
+					className={`${theme.text} font-semibold focus:outline-hidden mb-2 flex items-center gap-2`}
 					aria-expanded={isExpanded}
 					aria-controls="episode-content"
 				>
@@ -68,8 +68,8 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 						dangerouslySetInnerHTML={{ __html: content }}
 						className={`${theme.text} max-w-none overflow-y-auto max-h-[60vh] md:max-h-none px-2 ${
 							isDarkMode
-								? 'prose-a:text-[#F03D86] prose-a:hover:text-[#F03D86]'
-								: 'prose-a:text-[#2F241D] prose-a:hover:text-[#2F241D]'
+								? 'prose-a:text-[#F03D86] hover:prose-a:text-[#F03D86]'
+								: 'prose-a:text-[#2F241D] hover:prose-a:text-[#2F241D]'
 						} prose-a:transition-colors prose-a:duration-200 prose-a:underline`}
 					/>
 				</div>

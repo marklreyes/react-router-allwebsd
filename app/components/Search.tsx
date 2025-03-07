@@ -134,7 +134,7 @@ const createSlug = (title: string): string => {
 				isDarkMode
 					? 'bg-[#71BEA9] placeholder-[#2F241D] text-[#2F241D] focus:border-[#F03D86]'
 					: 'bg-[#FFC425] placeholder-[#2F241D] text-[#2F241D] focus:border-[#2F241D]'
-				} focus:outline-none focus:ring-1 ${
+				} focus:outline-hidden focus:ring-1 ${
 				isDarkMode ? 'focus:ring-[#F03D86]' : 'focus:ring-[#2F241D]'
 				}`}
 				onFocus={() => setIsExpanded(true)}
