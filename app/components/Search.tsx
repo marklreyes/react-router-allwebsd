@@ -3,6 +3,7 @@ import { useTheme } from "~/context/ThemeContext";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { XMLParser } from "fast-xml-parser";
+import { createSlug } from "~/utils/formatters";
 
 interface SearchResult {
   title: string;
@@ -89,17 +90,6 @@ export default function Search() {
     }
 
     return matrix[b.length][a.length];
-  };
-
-// Add slug creation helper (same as in Episode.tsx)
-const createSlug = (title: string): string => {
-	return title
-	  .toLowerCase()
-	  .replace(/<[^>]*>/g, "") // Remove HTML tags
-	  .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
-	  .replace(/\s+/g, "-") // Replace spaces with hyphens
-	  .replace(/-+/g, "-") // Remove consecutive hyphens
-	  .trim(); // Remove leading/trailing spaces
   };
 
   return (

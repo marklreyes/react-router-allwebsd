@@ -30,10 +30,10 @@ export const formatDate = (timestamp: number) => {
 
   export const createSlug = (title: string): string => {
 	return title
-	  .toLowerCase()
-	  .replace(/<[^>]*>/g, "")
-	  .replace(/[^a-z0-9\s-]/g, "")
-	  .replace(/\s+/g, "-")
-	  .replace(/-+/g, "-")
-	  .trim();
+		.toLowerCase()
+		.replace(/<[^>]*>/g, "") // Remove HTML tags
+		.replace(/[^a-z0-9\s-]/g, "") // Remove special characters
+		.replace(/\s+/g, "-") // Replace spaces with hyphens
+		.replace(/-+/g, "-") // Remove consecutive hyphens
+		.trim(); // Remove leading/trailing spaces
   };
