@@ -37,3 +37,7 @@ export const formatDate = (timestamp: number) => {
 		.replace(/-+/g, "-") // Remove consecutive hyphens
 		.trim(); // Remove leading/trailing spaces
   };
+
+export const calculateYearsSince = (startYear: number): number => {
+	return new Date().getFullYear() - startYear;
+};

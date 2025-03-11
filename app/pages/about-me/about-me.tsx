@@ -1,13 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { PromoImage } from "../../components/PromoImage";
 import { useTheme } from "~/context/ThemeContext";
+import { calculateYearsSince } from "~/utils/formatters";
 
 export function AboutMe() {
 	const { isDarkMode } = useTheme();
 
-	const calculateYearsSince = (startYear: number): number => {
-		return new Date().getFullYear() - startYear;
-	};
 	return (
 		<main className="flex items-center justify-center">
 			<div className="flex-1 flex flex-col items-center gap-16 min-h-0">
