@@ -167,6 +167,9 @@ export default function Chat() {
       role="main"
       aria-label="Chat Interface"
     >
+		<h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+				SanDieGPT Chat
+		</h1>
 		<Toast
 			role="status"
 			aria-live="polite"
@@ -181,7 +184,6 @@ export default function Chat() {
 		/>
 
 		<div className="flex justify-between items-center mb-4">
-		<h1 className="text-2xl font-bold" id="chat-title">SanDieGPT Chat</h1>
 		{messages.length > 0 && (
 			<button
 			onClick={handleClearChat}
