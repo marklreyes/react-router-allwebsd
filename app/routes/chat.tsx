@@ -183,22 +183,6 @@ export default function Chat() {
 			}}
 		/>
 
-		<div className="flex justify-between items-center mb-4">
-		{messages.length > 0 && (
-			<button
-			onClick={handleClearChat}
-			className={`${
-				isDarkMode
-				? "text-[#F03D86]"
-				: "text-[#2F241D]"
-			} text-sm font-semibold hover:underline transition-colors duration-200`}
-			aria-label="Clear chat history"
-            title="Clear all messages"
-			>
-			Clear Chat
-			</button>
-		)}
-		</div>
 		<p className="text-[#2F241D] mb-6">
 		Ask me anything about San Diego! From local attractions and beaches to restaurants
 		and cultural events, I'm here to help you explore America's Finest City!
@@ -356,6 +340,22 @@ export default function Chat() {
         >
 			{MAX_MESSAGE_LENGTH - inputMessage.length} characters remaining
 		</div>
+		</div>
+		<div className="flex justify-center items-center mb-4">
+			{messages.length > 0 && (
+				<button
+				onClick={handleClearChat}
+				className={`${
+					isDarkMode
+					? "text-[#F03D86]"
+					: "text-[#2F241D]"
+				} text-sm font-semibold hover:underline transition-colors duration-200`}
+				aria-label="Clear chat history"
+				title="Clear all messages"
+				>
+				Clear Chat
+				</button>
+			)}
 		</div>
     </div>
   );
