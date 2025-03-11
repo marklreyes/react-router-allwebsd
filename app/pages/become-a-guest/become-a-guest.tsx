@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { PromoImage } from "../../components/PromoImage";
 
 export function BecomeAGuest() {
 
@@ -9,14 +10,12 @@ export function BecomeAGuest() {
 					<h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
 						Become A Guest, Receive A Shirt!
 					</h1>
-					<div className="mb-8 max-w-[250px] mx-auto" role="img" aria-labelledby="shirt-description">
-						<img
-							src="/images/allwebsd_shirt.jpg"
-							alt="AllWebSD promotional t-shirt"
-							className="w-[250px] h-[250px] rounded-full shadow-lg object-cover"
-						/>
-						<span id="shirt-description" className="sr-only">Join as a guest and receive a complimentary AllWebSD t-shirt</span>
-					</div>
+					<PromoImage
+						src="/images/allwebsd_shirt.jpg"
+						alt="AllWebSD promotional t-shirt"
+						ariaLabel="AllWebSD promotional t-shirt"
+						description="Join as a guest and receive a complimentary AllWebSD t-shirt"
+					/>
 					<p className="text-white text-lg leading-relaxed mb-6">
 						Yep, it's that easy! Tech enthusiasts across San Diego, this microphone is your home. When likes and shares aren't enough, stop by and let your voice be heard. I'm here to foster innovation through conversation.
 					</p>

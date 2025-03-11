@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { PromoImage } from "../../components/PromoImage";
 
 export function AboutMe() {
 	const calculateYearsSince = (startYear: number): number => {
@@ -11,14 +12,12 @@ export function AboutMe() {
 					<h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
 							👋🏾, I'm Mark!
 					</h1>
-					<div className="mb-8 max-w-[250px] mx-auto">
-						<img
-							src="https://avatars3.githubusercontent.com/u/1628070?s=460&v=4"
-							alt="Mark L. Reyes profile"
-							aria-label="Profile photo of Mark L. Reyes"
-							className="w-[250px] h-[250px] rounded-full shadow-lg object-cover"
-						/>
-					</div>
+					<PromoImage
+						src="https://avatars3.githubusercontent.com/u/1628070?s=460&v=4"
+						alt="Mark L. Reyes profilet"
+						ariaLabel="Profile photo of Mark L. Reyes"
+						description="Hi, I'm Mark! Web Developer, Podcast Producer of AllWebSD"
+					/>
 					<h2 className="text-2xl md:text-3xl font-semibold text-white mb-4 mt-8">Introduction</h2>
 					<p className="text-white text-lg leading-relaxed mb-6">
 						On any given day, once the caffeine kicks in, my mind is buzzing with questions:
