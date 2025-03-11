@@ -13,9 +13,9 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
   const { isDarkMode } = useTheme();
 
   const shareLinks = {
-    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
+	twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+	facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+	linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`
   };
 
   const handleCopyLink = async () => {
