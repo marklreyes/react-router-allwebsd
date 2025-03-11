@@ -341,7 +341,7 @@ export default function Chat() {
 			{MAX_MESSAGE_LENGTH - inputMessage.length} characters remaining
 		</div>
 		</div>
-		<div className="flex justify-center items-center mb-4">
+		<div className="flex justify-center items-center">
 			{messages.length > 0 && (
 				<button
 				onClick={handleClearChat}
