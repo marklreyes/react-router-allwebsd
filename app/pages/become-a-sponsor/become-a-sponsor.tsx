@@ -1,8 +1,6 @@
-import { useTheme } from "~/context/ThemeContext";
 import { SponsorCard } from "~/components/SponsorCard";
 
 export function BecomeASponsor() {
-	const { theme } = useTheme();
 
 	const sponsorCards = [
 		{
