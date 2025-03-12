@@ -52,9 +52,31 @@ Object.defineProperty(window, "localStorage", {
 
 // Mock fetch
 global.fetch = vi.fn(() =>
-  Promise.resolve({
-    text: () => Promise.resolve("<rss></rss>")
-  })
+	Promise.resolve({
+		text: () => Promise.resolve(`
+			<rss version="2.0">
+				<channel>
+					<title>Test Podcast</title>
+					<description>Test podcast description</description>
+					<link>https://example.com</link>
+					<item>
+						<title>Episode 1</title>
+						<description>Episode 1 description</description>
+						<pubDate>Mon, 01 Jan 2024 12:00:00 GMT</pubDate>
+						<link>https://example.com/episode1</link>
+						<guid>https://example.com/episode1</guid>
+					</item>
+					<item>
+						<title>Episode 2</title>
+						<description>Episode 2 description</description>
+						<pubDate>Tue, 02 Jan 2024 12:00:00 GMT</pubDate>
+						<link>https://example.com/episode2</link>
+						<guid>https://example.com/episode2</guid>
+					</item>
+				</channel>
+			</rss>
+		`)
+	})
 ) as any;
 
 describe("EpisodesList Component", () => {
