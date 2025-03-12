@@ -7,7 +7,7 @@ import { createSlug, formatDate, formatDuration } from "~/utils/formatters";
 import { useRSSFeed } from "~/hooks/useRSSFeed";
 import type { EpisodeMetaProps } from "~/types/episode";
 import { XMLParser } from "fast-xml-parser";
-import sanitizeHtml from 'sanitize-html';
+import sanitizeHtml from "sanitize-html";
 
 // Lazy load components with error boundaries
 const ShareButtons = lazy(() =>
