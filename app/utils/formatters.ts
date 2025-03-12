@@ -46,7 +46,10 @@ export const formatDuration = (duration: string) => {
 };
 
 export const createSlug = (title: string): string => {
-	return sanitizeHtml(title)
+	return sanitizeHtml(title, {
+		allowedTags: [],
+		allowedAttributes: {}
+	})
 		.toLowerCase()
 		.replace(/<[^>]*>/g, "") // Remove HTML tags
 		.replace(/[^a-z0-9\s-]/g, "") // Remove special characters
