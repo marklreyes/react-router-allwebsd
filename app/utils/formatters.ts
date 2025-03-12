@@ -1,3 +1,5 @@
+import sanitizeHtml from 'sanitize-html';
+
 export const formatDate = (timestamp: number) => {
 	const date = new Date(timestamp);
 	return new Intl.DateTimeFormat("en-US", {
@@ -44,9 +46,13 @@ export const formatDuration = (duration: string) => {
 };
 
 export const createSlug = (title: string): string => {
-	return title
+	return sanitizeHtml(title, {
+		allowedTags: [],
+		allowedAttributes: {},
+		disallowedTagsMode: 'recursiveEscape'
+	})
 		.toLowerCase()
-		.replace(/<[^>]*>/g, "") // Remove HTML tags
+		.replace(/&lt;[^&]*&gt;/g, "") // Remove escaped HTML tags
 		.replace(/[^a-z0-9\s-]/g, "") // Remove special characters
 		.replace(/\s+/g, "-") // Replace spaces with hyphens
 		.replace(/-+/g, "-") // Remove consecutive hyphens
