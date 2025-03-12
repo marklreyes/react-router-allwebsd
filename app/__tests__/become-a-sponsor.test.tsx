@@ -8,7 +8,7 @@ vi.mock("~/components/SponsorCard", () => ({
 }));
 
 describe("BecomeASponsor Component", () => {
-  it("renders an h1 tag with the correct content and styles", () => {
+  it("renders an h1 tag with the correct content", () => {
     // Render the component
     render(<BecomeASponsor />);
 
