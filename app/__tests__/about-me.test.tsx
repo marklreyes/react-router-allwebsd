@@ -44,6 +44,7 @@ describe("AboutMe Component", () => {
     // Assert that the h1 exists
     expect(heading).toBeDefined();
 
+    // Assert that the h1 contains the expected text
 		expect(heading.textContent).toBe("👋🏾, I'm Mark!");
 
   });

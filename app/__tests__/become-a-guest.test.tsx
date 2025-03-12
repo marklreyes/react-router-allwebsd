@@ -1,7 +1,7 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { BecomeAGuest } from '../pages/become-a-guest/become-a-guest';
-import React from 'react';
+import { describe, it, expect, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { BecomeAGuest } from "../pages/become-a-guest/become-a-guest";
+import React from "react";
 
 // Mock dependencies
 vi.mock("~/context/ThemeContext", () => ({
@@ -11,12 +11,12 @@ vi.mock("~/context/ThemeContext", () => ({
 	}))
 }));
 
-vi.mock('react-router-dom', () => ({
-  NavLink: ({ children, to, className, 'aria-label': ariaLabel }: {
+vi.mock("react-router-dom", () => ({
+  NavLink: ({ children, to, className, "aria-label": ariaLabel }: {
     children: React.ReactNode;
     to: string;
     className?: string;
-    'aria-label'?: string;
+    "aria-label"?: string;
   }) => (
     <a href={to} className={className} aria-label={ariaLabel}>
       {children}
@@ -24,7 +24,7 @@ vi.mock('react-router-dom', () => ({
   ),
 }));
 
-vi.mock('../../components/PromoImage', () => ({
+vi.mock("../../components/PromoImage", () => ({
   PromoImage: ({ src, alt, ariaLabel, description }: {
     src: string;
     alt: string;
@@ -38,18 +38,18 @@ vi.mock('../../components/PromoImage', () => ({
   ),
 }));
 
-describe('BecomeAGuest Component', () => {
-  it('renders an h1 tag with the correct content', () => {
+describe("BecomeAGuest Component", () => {
+  it("renders an h1 tag with the correct content", () => {
     // Render the component
     render(<BecomeAGuest />);
 
     // Find the h1 element
-    const heading = screen.getByRole('heading', { level: 1 });
+    const heading = screen.getByRole("heading", { level: 1 });
 
     // Assert that the h1 exists
     expect(heading).toBeDefined();
 
     // Assert that the h1 contains the expected text
-    expect(heading.textContent).toBe('Become A Guest, Receive A Shirt!');
+    expect(heading.textContent).toBe("Become A Guest, Receive A Shirt!");
   });
 });
