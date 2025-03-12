@@ -7,15 +7,21 @@ vi.mock('dompurify', () => ({
   default: {
     sanitize: vi.fn(input => {
       // More accurate simulation of DOMPurify's behavior
-      let output = input
-        // Remove script tags and their content
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-        // Remove custom unsafe elements
-        .replace(/<(\/?)unsafe>/gi, '')
-        // Remove href attributes with javascript: or data: URLs completely
-        .replace(/href\s*=\s*["']?\s*(javascript|data|vbscript|file):[^"'>]*["']?/gi, '')
-        // Clean up any leftover attributes
-        .replace(/<a\s+>/gi, '<a>');
+      let output;
+      let previous;
+      do {
+        previous = input;
+        output = input
+          // Remove script tags and their content
+		  .replace(/<script\b[^>]*>([\s\S]*?)<\/script\s*[^>]*>/gi, '')
+          // Remove custom unsafe elements
+          .replace(/<(\/?)unsafe>/gi, '')
+          // Remove href attributes with javascript: or data: URLs completely
+          .replace(/href\s*=\s*["']?\s*(javascript|data|vbscript|file):[^"'>]*["']?/gi, '')
+          // Clean up any leftover attributes
+          .replace(/<a\s+>/gi, '<a>');
+        input = output;
+      } while (input !== previous);
 
       return output;
     })
