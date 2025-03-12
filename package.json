@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm install --force && react-router build",
+    "build": "npm install --force && npm test && react-router build",
     "test": "vitest",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
