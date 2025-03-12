@@ -5,9 +5,11 @@ import { CiMail } from "react-icons/ci";
 import { Toast } from "../../components/Toast";
 import { HeroBanner } from "../../components/HeroBanner";
 import { SiBuymeacoffee } from "react-icons/si";
+import { useTheme } from "../../context/ThemeContext";
 
 export function Welcome() {
 	const [showToast, setShowToast] = useState(true);
+  const { theme } = useTheme();
 
 return (
 	<>
@@ -29,7 +31,7 @@ return (
 					/>
 					<nav
 						aria-label="Main navigation"
-						className="rounded-lg border border-white p-6 dark:border-white space-y-4"
+						className={`rounded-lg ${theme.primary} ${theme.text} p-6 dark:border-white space-y-4`}
 					>
 						<iframe
 							title="AllWebSD Castbox Player"
@@ -42,7 +44,7 @@ return (
 							<li>
 								<NavLink
 									to="/episodes"
-									className="group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC425] hover:text-white underline hover:no-underline"
+									className={`group flex items-center gap-3 self-stretch p-3 leading-normal ${theme.text} underline hover:no-underline`}
 									aria-label="View all podcast episodes"
 								>
 									<CiHeadphones aria-hidden="true" />
@@ -52,7 +54,7 @@ return (
 							<li>
 								<NavLink
 									to="/contact"
-									className="group flex items-center gap-3 self-stretch p-3 leading-normal text-[#FFC425] hover:text-white underline hover:no-underline"
+									className={`group flex items-center gap-3 self-stretch p-3 leading-normal ${theme.text} underline hover:no-underline`}
 									aria-label="Contact page"
 								>
 									<CiMail aria-hidden="true" />
