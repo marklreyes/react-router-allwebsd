@@ -11,8 +11,11 @@ export default defineConfig({
       plugins: [autoprefixer],
     },
   },
-  plugins: [reactRouter(), tsconfigPaths(), netlifyPlugin(), tailwindcss()],
-  build: {
+  plugins: [!process.env.VITEST && reactRouter(), tsconfigPaths(), netlifyPlugin(), tailwindcss()],
+  test: {
+    environment: 'happy-dom'
+  },
+	build: {
     rollupOptions: {
       output: {
         manualChunks: (id) => {
