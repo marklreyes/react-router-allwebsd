@@ -1,5 +1,5 @@
 [build]
-command = "npm install --force && npm test && react-router build"
+command = "npm install && npm test && react-router build"
 publish = "build/client"
 functions = "netlify/functions"
 
