@@ -14,7 +14,7 @@
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.0.2",
     "@tailwindcss/vite": "^4.0.12",
-    "fast-xml-parser": "^5.0.6",
+    "fast-xml-parser": "^5.0.8",
     "isbot": "^5.1.17",
     "node-fetch": "^2.7.0",
     "openai": "^4.85.4",
