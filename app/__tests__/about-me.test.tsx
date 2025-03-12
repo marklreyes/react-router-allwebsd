@@ -41,7 +41,10 @@ describe("AboutMe Component", () => {
     // Find the h1 element
     const heading = screen.getByRole("heading", { level: 1 });
 
-    // Check that it exists with the expected content
+    // Assert that the h1 exists
     expect(heading).toBeDefined();
+
+		expect(heading.textContent).toBe("👋🏾, I'm Mark!");
+
   });
 });
