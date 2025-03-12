@@ -7,6 +7,7 @@ import { createSlug, formatDate, formatDuration } from "~/utils/formatters";
 import { useRSSFeed } from "~/hooks/useRSSFeed";
 import type { EpisodeMetaProps } from "~/types/episode";
 import { XMLParser } from "fast-xml-parser";
+import sanitizeHtml from 'sanitize-html';
 
 // Lazy load components with error boundaries
 const ShareButtons = lazy(() =>
@@ -105,9 +106,10 @@ export function meta({ data, params }: EpisodeMetaProps) {
 		];
 	}
 
-	const cleanContent = data.content
-		.replace(/<[^>]*>/g, "")
-		.substring(0, 160);
+	const cleanContent = sanitizeHtml(data.content, {
+		allowedTags: [],
+		allowedAttributes: {}
+	}).substring(0, 160);
 
 	return [
 		{ title: `${data.title} | Web Developer storytelling out of America's Finest City | AllWebSD.com`, override: true },
