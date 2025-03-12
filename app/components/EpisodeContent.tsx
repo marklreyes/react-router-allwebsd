@@ -1,8 +1,5 @@
 import { useTheme } from "~/context/ThemeContext";
-
-interface EpisodeContentProps {
-  content: string;
-}
+import type { EpisodeContentProps } from "~/types/episode";
 
 export default function EpisodeContent({ content }: EpisodeContentProps) {
   const { isDarkMode, theme } = useTheme();

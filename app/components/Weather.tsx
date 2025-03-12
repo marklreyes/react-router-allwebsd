@@ -4,28 +4,8 @@ import { GiSadCrab, GiThink } from "react-icons/gi";
 import { SiTheweatherchannel } from "react-icons/si";
 import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm, WiFog,  WiHumidity, WiStrongWind, WiTime8 } from "react-icons/wi";
 import { useTheme } from "~/context/ThemeContext";
-
-interface WeatherData {
-  current: {
-    temperature_2m: number;
-    relative_humidity_2m: number;
-    apparent_temperature: number;
-    wind_speed_10m: number;
-		rain: number;
-		weather_code: number;
-		time: string
-  };
-  current_units: {
-    temperature_2m: string;
-    relative_humidity_2m: string;
-    apparent_temperature: string;
-    wind_speed_10m: string;
-		rain: string;
-		weather_code: string;
-		time: string
-
-  };
-}
+import type { WeatherData } from "~/types/weather";
+import { formatDateTime } from "~/utils/formatters";
 
 const getWeatherIcon = (code: number) => {
   switch (code) {
@@ -59,21 +39,6 @@ const getWeatherIcon = (code: number) => {
     default:
       return <WiDaySunny />;
   }
-};
-
-const formatDateTime = (isoString: string) => {
-  const date = new Date(isoString);
-  return new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/Los_Angeles",
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-    timeZoneName: "short"
-
-  }).format(date);
 };
 
 export default function Weather() {

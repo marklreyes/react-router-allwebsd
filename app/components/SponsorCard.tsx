@@ -1,14 +1,5 @@
 import { useTheme } from "~/context/ThemeContext";
-
-interface SponsorCardProps {
-	title: string;
-	benefits: string[];
-	icon: string;
-	linkUrl: string;
-	linkText: string;
-	subject?: string;
-	animate?: boolean;
-}
+import type { SponsorCardProps } from "~/types/sponsorCard";
 
 export function SponsorCard({
 	title,

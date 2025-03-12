@@ -4,13 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { XMLParser } from "fast-xml-parser";
 import { createSlug } from "~/utils/formatters";
-
-interface SearchResult {
-  title: string;
-  description: string;
-  link: string;
-  pubDate: string;
-}
+import type { SearchResult } from "~/types/episode";
 
 export default function Search() {
   const { isDarkMode } = useTheme();

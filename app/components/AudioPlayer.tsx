@@ -1,9 +1,4 @@
-import { type AudioEnclosure } from '~/types/episode';
-
-interface AudioPlayerProps {
-  enclosure: AudioEnclosure;
-  title?: string; // Add optional title prop
-}
+import type { AudioPlayerProps } from '~/types/episode';
 
 export default function AudioPlayer({ enclosure, title }: AudioPlayerProps) {
   return (

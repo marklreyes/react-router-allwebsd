@@ -1,34 +1,12 @@
 import { useEffect, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useTheme } from "~/context/ThemeContext";
 import { Episode } from "~/components/Episode";
 import { MdFrontLoader } from "react-icons/md";
 import { XMLParser } from "fast-xml-parser";
 import { Pagination } from "~/components/Pagination";
 import { useSearchParams } from "react-router-dom";
+import type { RSSFeed } from "~/types/episode";
 
-interface RSSFeed {
-	title: any;
-	description: any;
-	link: any;
-	image: any;
-	category: any;
-	items: {
-		title: string;
-		created: number;
-		content: string;
-		enclosures: {
-			["@_length"]: string;
-			["@_type"]: string;
-			["@_url"]: string;
-		}[];
-		guids: {
-			["#text"]: string;
-			["@_isPermaLink"]: string;
-		}[];
-		itunes_duration: string;
-	}[];
-}
 
 export function EpisodesList() {
 	const [searchParams, setSearchParams] = useSearchParams();

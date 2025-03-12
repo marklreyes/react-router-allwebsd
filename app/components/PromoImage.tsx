@@ -1,15 +1,5 @@
-import { useContext } from 'react';
 import { useTheme } from "~/context/ThemeContext";
-
-
-interface PromoImageProps {
-	src: string;
-	alt: string;
-	ariaLabel: string;
-	description: string;
-	imageSize?: number;
-	className?: string;
-}
+import type { PromoImageProps } from '~/types/promoImage';
 
 export function PromoImage({
 	src,

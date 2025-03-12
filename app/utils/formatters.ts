@@ -10,9 +10,24 @@ export const formatDate = (timestamp: number) => {
 	  hour12: true,
 	  timeZone: "America/Los_Angeles"
 	}).format(date);
-  };
+};
 
-  export const formatDuration = (duration: string) => {
+export const formatDateTime = (isoString: string) => {
+	const date = new Date(isoString);
+	return new Intl.DateTimeFormat("en-US", {
+		timeZone: "America/Los_Angeles",
+		month: "short",
+		day: "numeric",
+		year: "numeric",
+		hour: "numeric",
+		minute: "2-digit",
+		hour12: true,
+		timeZoneName: "short"
+
+	}).format(date);
+};
+
+export const formatDuration = (duration: string) => {
 	if (/^\d+$/.test(duration)) {
 	  const seconds = Math.floor(parseInt(duration) / 1000);
 	  const minutes = Math.floor(seconds / 60);
@@ -26,9 +41,9 @@ export const formatDate = (timestamp: number) => {
 	}
 
 	return duration;
-  };
+};
 
-  export const createSlug = (title: string): string => {
+export const createSlug = (title: string): string => {
 	return title
 		.toLowerCase()
 		.replace(/<[^>]*>/g, "") // Remove HTML tags
@@ -36,7 +51,7 @@ export const formatDate = (timestamp: number) => {
 		.replace(/\s+/g, "-") // Replace spaces with hyphens
 		.replace(/-+/g, "-") // Remove consecutive hyphens
 		.trim(); // Remove leading/trailing spaces
-  };
+};
 
 export const calculateYearsSince = (startYear: number): number => {
 	return new Date().getFullYear() - startYear;
