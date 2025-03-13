@@ -82,7 +82,7 @@ export function AboutMe() {
 							</div>
 							<div className={`collapse-content ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'}`}>
 								<p className="text-lg leading-relaxed mb-6">
-									As a self-described multi-hyphenate, I'm also a <strong>Podcast Producer</strong>, having written and produced shows featured on Apple Podcasts, Google Podcasts, Spotify, Castbox, and more. If you're looking to pair your web project with a complementary medium, I can bring added value to your team.
+									As a self-described multi-hyphenate, I’m also a <strong>Podcast Producer</strong>, having written and produced over 100+ shows featured on Apple Podcasts, Google Podcasts, Spotify, Castbox, and more. If you’re looking to pair your web project with a complementary medium, consider these attributes and inquire with me directly on how this value-add could work for your organization.
 								</p>
 							</div>
 						</div>
