@@ -44,6 +44,13 @@ npm run dev
 
 Your application will be available at `http://localhost:5173`.
 
+
+## Unit Testing:
+
+```bash
+npm test
+```
+
 ## Building for Production
 
 Create a production build:
@@ -62,12 +69,6 @@ npx netlify-cli serve
 
 ```bash
 npm run build
-```
-
-Unit Testing:
-
-```bash
-npm test
 ```
 
 ## Deployment
