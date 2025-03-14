@@ -64,6 +64,12 @@ npx netlify-cli serve
 npm run build
 ```
 
+Unit Testing:
+
+```bash
+npm test
+```
+
 ## Deployment
 
 This template is preconfigured for deployment to Netlify.
