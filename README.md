@@ -44,24 +44,6 @@ npm run dev
 
 Your application will be available at `http://localhost:5173`.
 
-### Test Netlify Functions
-
-Start the development server with HMR:
-
-```bash
-netlify dev
-```
-
-Your application will be available at `http://localhost:8888` and `http://localhost:5173`.
-
-## Unit Testing
-
-Run a unit test:
-
-```bash
-npm test
-```
-
 ## Building for Production
 
 Create a production build:
@@ -70,17 +52,39 @@ Create a production build:
 npm run build
 ```
 
+## Previewing a Production build
+
+To preview a production build locally, use the [Netlify CLI](https://cli.netlify.com):
+
+```bash
+npx netlify-cli serve
+```
+
+```bash
+npm run build
+```
+
+Unit Testing:
+
+```bash
+npm test
+```
+
 ## Deployment
 
-This template is configured for deployment to Netlify.
+This template is preconfigured for deployment to Netlify.
 
-See <https://docs.netlify.com/welcome/add-new-site/> to add this project as a site
+Follow <https://docs.netlify.com/welcome/add-new-site/> to add this project as a site
 in your Netlify account.
 
 ## Styling
 
 This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
 
+## See also
+
+[Guide: how to deploy a React Router 7 site to Netlify](https://developers.netlify.com/guides/how-to-deploy-a-react-router-7-site-to-netlify/)
+
 ---
 
-Built with ❤️ using [React Router Netlify Template](https://github.com/netlify/react-router-template).
+Built with ❤️ using React Router.
