@@ -10,7 +10,7 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@netlify/functions": "^3.0.0",
+    "@netlify/functions": "^3.0.2",
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.0.2",
     "@tailwindcss/vite": "^4.0.12",
