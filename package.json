@@ -16,7 +16,7 @@
     "@tailwindcss/vite": "^4.0.12",
     "dompurify": "^3.2.4",
     "fast-xml-parser": "^5.0.6",
-    "isbot": "^5.1.17",
+    "isbot": "^5.1.25",
     "netlify-cli": "^19.0.2",
     "node-fetch": "^3.3.2",
     "openai": "^4.85.4",
