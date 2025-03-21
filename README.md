@@ -47,6 +47,7 @@ Your application will be available at `http://localhost:5173`.
 
 ## Unit Testing:
 
+Test all unit tests found in [__tests__](https://github.com/marklreyes/react-router-allwebsd/tree/main/app/__tests__) directory.
 ```bash
 npm test
 ```
@@ -64,7 +65,7 @@ npm run build
 To preview a production build locally, use the [Netlify CLI](https://cli.netlify.com):
 
 ```bash
-npx netlify-cli serve
+npx netlify-cli dev
 ```
 
 ```bash

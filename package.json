@@ -10,13 +10,13 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@netlify/functions": "^3.0.0",
+    "@netlify/functions": "^3.0.4",
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.0.2",
     "@tailwindcss/vite": "^4.0.12",
     "dompurify": "^3.2.4",
     "fast-xml-parser": "^5.0.6",
-    "isbot": "^5.1.17",
+    "isbot": "^5.1.25",
     "netlify-cli": "^19.0.2",
     "node-fetch": "^3.3.2",
     "openai": "^4.85.4",
@@ -33,19 +33,19 @@
     "@react-router/dev": "^7.0.2",
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/react": "^16.2.0",
-    "@types/node": "^22",
+    "@types/node": "^20",
     "@types/node-fetch": "^2.6.12",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@types/sanitize-html": "^2.13.0",
     "autoprefixer": "^10.4.21",
-    "daisyui": "^5.0.3",
+    "daisyui": "^5.0.9",
     "happy-dom": "^17.4.4",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.0.12",
     "typescript": "^5.6.3",
-    "vite": "^5.4.11",
+    "vite": "^6.2.2",
     "vite-tsconfig-paths": "^5.1.2",
-    "vitest": "^3.0.7"
+    "vitest": "^3.0.9"
   }
 }
