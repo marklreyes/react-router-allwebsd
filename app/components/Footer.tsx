@@ -59,7 +59,7 @@ export default function Footer() {
 			<FaYoutube size={24} aria-hidden="true" />
 		  </a>
 		  <a
-			href="//discord.gg/YfaCq2aK"
+			href="//discord.gg/HsVp5R9zFt"
 			target="_blank"
 			rel="noopener noreferrer"
 			className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
