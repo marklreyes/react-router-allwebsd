@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { XMLParser } from "fast-xml-parser";
 import { createSlug } from "~/utils/formatters";
 import type { SearchResult } from "~/types/episode";
+import { trackEvent } from "~/utils/trackEvent";
 
 export default function Search() {
   const { isDarkMode } = useTheme();
@@ -39,10 +40,10 @@ export default function Search() {
           const descriptionTokens = episode.description.toLowerCase().split(/\s+/);
 
           return searchTokens.every(token =>
-            titleTokens.some(word =>
+            titleTokens.some((word: string) =>
               levenshteinDistance(word, token) <= 2
             ) ||
-            descriptionTokens.some(word =>
+            descriptionTokens.some((word: string) =>
               levenshteinDistance(word, token) <= 2
             )
           );
@@ -170,6 +171,16 @@ export default function Search() {
 							? 'rounded-b-lg'
 							: ''
 						} transition-colors duration-200 hover:${isDarkMode ? 'bg-[#F03D86]' : 'bg-[#2F241D]'} hover:text-white`}
+						onClick={() => {
+							// Track event for text click
+							trackEvent("episode_click", {
+								params: {
+									event_category: "Navigation",
+									event_label: `Episode: ${episode.title}`,
+									component: "Search Component"
+								},
+							});
+						}}
 						>
 						<div className="font-medium truncate">{episode.title}</div>
 						</Link>

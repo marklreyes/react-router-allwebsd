@@ -40,28 +40,6 @@ return (
 							height="500"
 							aria-label="Podcast player"
 						></iframe>
-						<ul aria-label="Navigation menu">
-							<li>
-								<NavLink
-									to="/episodes"
-									className={`group flex items-center gap-3 self-stretch p-3 leading-normal ${theme.text} underline hover:no-underline`}
-									aria-label="View all podcast episodes"
-								>
-									<CiHeadphones aria-hidden="true" />
-									<span>View All Episodes</span>
-								</NavLink>
-							</li>
-							<li>
-								<NavLink
-									to="/contact"
-									className={`group flex items-center gap-3 self-stretch p-3 leading-normal ${theme.text} underline hover:no-underline`}
-									aria-label="Contact page"
-								>
-									<CiMail aria-hidden="true" />
-									<span>Contact Me</span>
-								</NavLink>
-							</li>
-						</ul>
 					</nav>
 				</div>
 			</div>

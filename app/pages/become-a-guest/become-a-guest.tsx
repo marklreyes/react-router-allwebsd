@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { PromoImage } from "../../components/PromoImage";
+import { trackEvent } from "~/utils/trackEvent";
 
 export function BecomeAGuest() {
 
@@ -26,6 +27,16 @@ export function BecomeAGuest() {
 							to="/contact"
 							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
 							aria-label="Contact us to become a guest"
+							onClick={
+								// Track event for text click
+								trackEvent("nav_click", {
+									params: {
+										event_category: "Navigation",
+										event_label: `contact me`,
+										component: "Become A Guest Component"
+									},
+								})
+							}
 						>
 							contact me
 						</NavLink>{" "}

@@ -4,6 +4,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import type { EpisodeProps } from "~/types/episode";
 import { createSlug, formatDate, formatDuration } from "~/utils/formatters";
+import { trackEvent } from "~/utils/trackEvent";
 
 export function Episode({ title, created, content, enclosure, itunesDuration, currentPage, index }: EpisodeProps) {
   const { theme, isDarkMode } = useTheme();
@@ -16,7 +17,18 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 
   return (
 		<article className={`${theme.primary} ${theme.text} mb-4 rounded-lg p-6 dark:border-white space-y-4`}>
-			<Link to={`/episodes/${createSlug(title)}`}>
+			<Link to={`/episodes/${createSlug(title)}`}
+				onClick={() => {
+					// Track event for text click
+					trackEvent("episode_click", {
+						params: {
+							event_category: "Navigation",
+							event_label: `Episode: ${title}`,
+							component: "Episode Component"
+						},
+					});
+				}}
+			>
 				<h2
 					className="font-semibold hover:underline cursor-pointer"
 					dangerouslySetInnerHTML={{ __html: title }}

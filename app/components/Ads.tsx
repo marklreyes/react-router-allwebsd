@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
+import { trackEvent } from "~/utils/trackEvent";
 
 export default function Ads() {
 	const { theme } = useTheme();
@@ -69,6 +70,16 @@ export default function Ads() {
 						to="/sponsors"
 						className="w-full border cursor-pointer"
 						aria-label="View sponsorship opportunities"
+						onClick={() => {
+							// Track event for text click
+							trackEvent("nav_click", {
+								params: {
+									event_category: "Navigation",
+									event_label: `Sponsorship`,
+									component: "Ads Component"
+								},
+							});
+						}}
 					>
 						<img
 							src="/images/ALLWEBSD_banner.jpg"

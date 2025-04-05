@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { NavLink } from "react-router-dom";
 import type { ToastProps } from "~/types/toast";
+import { trackEvent } from "~/utils/trackEvent";
 
 export function Toast({
   showToast,
@@ -64,6 +65,19 @@ export function Toast({
 				{link && (
 					<NavLink
 					to={link.to}
+					onClick={
+						() => {
+							// Track event for text click
+							trackEvent("nav_click", {
+								params: {
+									event_category: "Navigation",
+									event_sub_category: "Toast",
+									event_label: `${link.text}`,
+									component: "Toast Component"
+								},
+							});
+						}
+					}
 					className="underline hover:text-white"
 					aria-label={`${link.text} - Navigate to ${link.to}`}
 					>
