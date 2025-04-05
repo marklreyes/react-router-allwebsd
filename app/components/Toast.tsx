@@ -46,7 +46,18 @@ export function Toast({
         `}>
 			<button
 				className={`${theme.background} ${theme.text} hover:bg-[#2F241D] hover:text-white btn btn-circle btn-xs md:btn-sm absolute top-1 right-2 text-white`}
-				onClick={handleClose}
+				onClick={() => {
+					handleClose();
+					// Track event for close button click
+					trackEvent("button_click", {
+						params: {
+							action: "Click",
+							event_category: "Toast",
+							event_label: "Close notification",
+							component: "Toast Component"
+						},
+					});
+				}}
 				aria-label="Close notification"
 			>
 				<span aria-hidden="true">✕</span>

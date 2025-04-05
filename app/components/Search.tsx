@@ -132,7 +132,18 @@ export default function Search() {
 			/>
 
 			<button
-				onClick={() => setIsExpanded(!isExpanded)}
+				onClick={
+					() => {
+						setIsExpanded(!isExpanded);
+						trackEvent("episode_click", {
+							params: {
+								event_category: "Search",
+								event_label: `Search: ${isExpanded ? 'Close' : 'Open'}`,
+								component: "Search Component"
+							},
+						});
+					}
+				}
 				aria-label="Toggle search"
 				className={`absolute right-0 w-8 h-8 rounded-full ${
 				isExpanded ? 'opacity-0' : 'opacity-100'

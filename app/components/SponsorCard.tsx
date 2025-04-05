@@ -1,5 +1,6 @@
 import { useTheme } from "~/context/ThemeContext";
 import type { SponsorCardProps } from "~/types/sponsorCard";
+import { trackEvent } from "~/utils/trackEvent";
 
 export function SponsorCard({
 	title,
@@ -27,6 +28,17 @@ export function SponsorCard({
 		<li className="pt-4">
 		<a
 		  href={subject ? `mailto:mr@marklreyes.com?subject=${subject}` : linkUrl}
+		  onClick={() => {
+			// Track event for button click
+			trackEvent("button_click", {
+			  params: {
+				action: "Click",
+				event_category: "Sponsor",
+				event_label: `Sponsor: ${title}`,
+				component: "SponsorCard Component"
+			  },
+			});
+		  }}
 		  target={!subject ? "_blank" : undefined}
 		  rel={!subject ? "noopener noreferrer" : undefined}
 		  className={`btn btn-outline w-full ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0 ${

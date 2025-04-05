@@ -2,6 +2,7 @@ import { FaFacebook, FaLinkedin, FaCopy } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import { useTheme } from "~/context/ThemeContext";
+import { trackEvent } from "~/utils/trackEvent";
 
 interface ShareButtonsProps {
   title: string;
@@ -40,6 +41,18 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 			<div className="flex gap-2" aria-labelledby="share-label">
 			<a
 				href={shareLinks.twitter}
+				onClick-={
+					trackEvent("button_click", {
+						params: {
+							action: "Click",
+							event_category: "Share",
+							event_label: "Share on X (Twitter)",
+							platform: "X (Twitter)",
+							link_type: "website",
+							component: "ShareButtons Component"
+						}
+					})
+				}
 				target="_blank"
 				rel="noopener noreferrer"
 				className={buttonClasses}
@@ -50,6 +63,18 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 			</a>
 			<a
 				href={shareLinks.facebook}
+				onClick-={
+					trackEvent("button_click", {
+						params: {
+							action: "Click",
+							event_category: "Share",
+							event_label: "Share on Facebook",
+							platform: "Facebook",
+							link_type: "website",
+							component: "ShareButtons Component"
+						}
+					})
+				}
 				target="_blank"
 				rel="noopener noreferrer"
 				className={buttonClasses}
@@ -60,6 +85,18 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 			</a>
 			<a
 				href={shareLinks.linkedin}
+				onClick-={
+					trackEvent("button_click", {
+						params: {
+							action: "Click",
+							event_category: "Share",
+							event_label: "Share on LinkedIn",
+							platform: "LinkedIn",
+							link_type: "website",
+							component: "ShareButtons Component"
+						}
+					})
+				}
 				target="_blank"
 				rel="noopener noreferrer"
 				className={buttonClasses}
@@ -69,7 +106,17 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 				<FaLinkedin className="w-5 h-5" aria-hidden="true" />
 			</a>
 			<button
-				onClick={handleCopyLink}
+				onClick={() => {
+					handleCopyLink();
+					trackEvent("button_click", {
+						params: {
+							action: "Click",
+							event_category: "Share",
+							event_label: "Copy link to clipboard",
+							component: "ShareButtons Component"
+						}
+					});
+				}}
 				className={buttonClasses}
 				title="Copy link"
 				aria-label="Copy link to clipboard"

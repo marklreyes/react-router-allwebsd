@@ -54,7 +54,17 @@ export function Episode({ title, created, content, enclosure, itunesDuration, cu
 			{/* Expandable Content Section */}
 			<div>
 				<button
-					onClick={() => setIsExpanded(!isExpanded)}
+					onClick={() => {
+						setIsExpanded(!isExpanded);
+						trackEvent("button_click", {
+							params: {
+								action: "Click",
+								event_category: "Episode",
+								event_label: `${isExpanded ? 'View Less' : 'View More'}`,
+								component: "Episode Component"
+							}
+						});
+					}}
 					className={`${theme.text} font-semibold focus:outline-hidden mb-2 flex items-center gap-2`}
 					aria-expanded={isExpanded}
 					aria-controls="episode-content"
