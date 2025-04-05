@@ -8,6 +8,7 @@ import { Toast } from "../components/Toast";
 import { VisuallyHidden } from "../components/VisuallyHidden";
 import DOMPurify from "dompurify";
 import { sanitizeInput } from "~/utils/sanitizer";
+import { trackEvent } from "~/utils/trackEvent";
 
 interface Message {
   role: "user" | "assistant" | "system";
@@ -282,6 +283,15 @@ export default function Chat() {
 			<button
 			onClick={() => {
 				handleSendMessage(inputMessage);
+				trackEvent("button_click", {
+					params: {
+						action: "Click",
+						event_category: "Chat",
+						event_label: "Send message",
+						message: inputMessage,
+						component: "Chat Component"
+					},
+				});
 				setInputMessage(""); // Clear input after sending
 			}}
 			disabled={isLoading || !inputMessage.trim()}
@@ -346,7 +356,19 @@ export default function Chat() {
 		<div className="flex justify-center items-center">
 			{messages.length > 0 && (
 				<button
-				onClick={handleClearChat}
+				onClick={() => {
+					handleClearChat();
+					trackEvent("button_click", {
+						params: {
+							action: "Click",
+							event_category: "Chat",
+							event_label: "Clear chat",
+							message: inputMessage,
+							component: "Chat Component"
+						},
+					});
+					setInputMessage(""); // Clear input after sending
+				}}
 				className={`${
 					isDarkMode
 					? "text-[#F03D86]"
