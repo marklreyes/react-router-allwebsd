@@ -49,7 +49,42 @@ export function AboutMe() {
 									With <span>{calculateYearsSince(2007)}</span> years of experience in the industry—<span>{calculateYearsSince(2009)}</span> of those focused on front-end development—I bring a deep understanding of the presentation layer of your web experience. However, before writing a single line of code, I prioritize understanding your core business objectives to ensure my work aligns with your goals.
 								</p>
 								<p className="text-lg leading-relaxed mb-6">
-									I've had the privilege of working with renowned organizations such as Sony Electronics, The Active Network, Bridgepoint Education, and Thermo Fisher Scientific. My contributions have even been spotlighted on <em><a href="https://javascriptweekly.com/" rel="noreferrer noopener" target="_blank" aria-label="Visit JavaScript Weekly website" className={`underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50`}>JavaScript Weekly</a></em> and <em><a href="https://www.marklreyes.com/sleepscore-animated-aura/" target="_blank" aria-label="View SleepScore feature on Today with Hoda & Jenna" className={`underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50`}>Today with Hoda & Jenna</a></em>.
+									I've had the privilege of working with renowned organizations such as Sony Electronics, The Active Network, Bridgepoint Education, and Thermo Fisher Scientific. My contributions have even been spotlighted on <em>
+										<a href="https://javascriptweekly.com/"
+										onClick={trackEvent("text_click", {
+											params: {
+												action: "Click",
+												event_category: "Navigation",
+												event_label: "JavaScript Weekly",
+												platform: "JavaScript Weekly",
+												link_type: "newsletter",
+												component: "About Me Component"
+											}
+										})}
+										rel="noreferrer noopener"
+										target="_blank"
+										aria-label="Visit JavaScript Weekly website"
+										className={`underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50`}
+										>JavaScript Weekly</a>
+										</em>
+										and
+										<em>
+											<a href="https://www.marklreyes.com/sleepscore-animated-aura/"
+											onClick={trackEvent("text_click", {
+												params: {
+													action: "Click",
+													event_category: "Navigation",
+													event_label: "Today with Hoda & Jenna",
+													platform: "Today with Hoda & Jenna",
+													link_type: "news",
+													component: "About Me Component"
+												}
+											})}
+											target="_blank"
+											aria-label="View SleepScore feature on Today with Hoda & Jenna"
+											className={`underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50`}
+											>Today with Hoda & Jenna</a>
+										</em>.
 								</p>
 							</div>
 						</div>
@@ -63,13 +98,13 @@ export function AboutMe() {
 							<div className={`collapse-content ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'}`}>
 								<ul role="list" className="text-lg leading-relaxed mb-6 space-y-4">
 									<li>
-										<span aria-hidden="true">💻 </span><strong>SleepScore Labs:</strong> Developed web applications to help users understand and improve their sleep.
+										<span aria-hidden="true">💻 </span><strong>Kinectify:</strong> As Principal Front-End Engineer, I led front-end development across multiple teams, supporting AML software for the Gaming & Sports Betting industries.
 									</li>
 									<li>
 										<span aria-hidden="true">💻 </span><strong>MTM:</strong> Collaborated with cross-functional teams to create web apps that connect patients and healthcare providers with innovative, cost-effective solutions.
 									</li>
 									<li>
-										<span aria-hidden="true">💻 </span><strong>Kinectify:</strong> As Principal Front-End Engineer, I led front-end development across multiple teams, supporting AML software for the Gaming & Sports Betting industries.
+										<span aria-hidden="true">💻 </span><strong>SleepScore Labs:</strong> Developed web applications to help users understand and improve their sleep.
 									</li>
 								</ul>
 							</div>
@@ -144,6 +179,16 @@ export function AboutMe() {
 									{" "}on this show, please send me an{" "}
 									<a
 										href="mailto:mr@marklreyes.com?subject=ALLWEBSD Appearances"
+										onClick={trackEvent("text_click", {
+											params: {
+												action: "Click",
+												event_category: "Navigation",
+												event_label: "email",
+												platform: "Email",
+												link_type: "email",
+												component: "About Me Component"
+											}
+										})}
 										className={`underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50`}
 										aria-label="Send email about ALLWEBSD appearances"
 									>

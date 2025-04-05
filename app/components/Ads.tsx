@@ -38,6 +38,16 @@ export default function Ads() {
 				<div id="slide1" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide1-tab">
 					<a
 						href="https://sdfutures.org/support-sdff"
+						onClick={trackEvent("image_click", {
+							params: {
+								action: "Click",
+								event_category: "Advertisement",
+								event_label: "San Diego Futures Foundation join the movement and bridge the digital divide",
+								platform: "San Diego Futures Foundation",
+								link_type: "website",
+								component: "Ads Component"
+							}
+						})}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="w-full"
@@ -53,6 +63,16 @@ export default function Ads() {
 				<div id="slide2" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide2-tab">
 					<a
 						href="//courses.theaiexchange.com/courses/prompting-for-ai-ops-bootcamp?ref=2b3231"
+						onClick={trackEvent("image_click", {
+							params: {
+								action: "Click",
+								event_category: "Advertisement",
+								event_label: "Learn the secrets to an ai-powered business.",
+								platform: "AI Exchange",
+								link_type: "website",
+								component: "Ads Component"
+							}
+						})}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="w-full"
@@ -72,10 +92,13 @@ export default function Ads() {
 						aria-label="View sponsorship opportunities"
 						onClick={() => {
 							// Track event for text click
-							trackEvent("nav_click", {
+							trackEvent("image_click", {
 								params: {
-									event_category: "Navigation",
-									event_label: `Sponsorship`,
+									action: "Click",
+									event_category: "Advertisement",
+									event_label: "Advertise your business here and become a gold sponsor today!",
+									platform: "ALLWEBSD",
+									link_type: "website",
 									component: "Ads Component"
 								},
 							});
@@ -100,6 +123,16 @@ export default function Ads() {
 						e.preventDefault();
 						setActiveSlide(1);
 						document.getElementById("slide1")?.scrollIntoView({ behavior: "smooth" });
+						trackEvent("button_click", {
+							params: {
+								action: "Click",
+								event_category: "Advertisement",
+								event_label: "San Diego Futures Foundation join the movement and bridge the digital divide",
+								platform: "San Diego Futures Foundation",
+								link_type: "website",
+								component: "Ads Component"
+							}
+						});
 					}}
 					className={`btn btn-xs ${
 						activeSlide === 1
@@ -118,6 +151,16 @@ export default function Ads() {
 						e.preventDefault();
 						setActiveSlide(2);
 						document.getElementById("slide2")?.scrollIntoView({ behavior: "smooth" });
+						trackEvent("button_click", {
+							params: {
+								action: "Click",
+								event_category: "Advertisement",
+								event_label: "Learn the secrets to an ai-powered business.",
+								platform: "AI Exchange",
+								link_type: "website",
+								component: "Ads Component"
+							}
+						});
 					}}
 					className={`btn btn-xs ${
 						activeSlide === 2
@@ -136,6 +179,16 @@ export default function Ads() {
 						e.preventDefault();
 						setActiveSlide(3);
 						document.getElementById("slide3")?.scrollIntoView({ behavior: "smooth" });
+						trackEvent("button_click", {
+							params: {
+								action: "Click",
+								event_category: "Advertisement",
+								event_label: "Advertise your business here and become a gold sponsor today!",
+								platform: "ALLWEBSD",
+								link_type: "website",
+								component: "Ads Component"
+							}
+						});
 					}}
 					className={`btn btn-xs ${
 						activeSlide === 3
