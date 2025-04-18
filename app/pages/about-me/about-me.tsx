@@ -50,6 +50,7 @@ export function AboutMe() {
 								</p>
 								<p className="text-lg leading-relaxed mb-6">
 									I've had the privilege of working with renowned organizations such as Sony Electronics, The Active Network, Bridgepoint Education, and Thermo Fisher Scientific. My contributions have even been spotlighted on <em>
+										{" "}
 										<a href="https://javascriptweekly.com/"
 										onClick={trackEvent("text_click", {
 											params: {
@@ -67,7 +68,7 @@ export function AboutMe() {
 										className={`underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50`}
 										>JavaScript Weekly</a>
 										</em>
-										and
+										{" "}and{" "}
 										<em>
 											<a href="https://www.marklreyes.com/sleepscore-animated-aura/"
 											onClick={trackEvent("text_click", {

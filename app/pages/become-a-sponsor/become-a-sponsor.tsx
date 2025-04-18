@@ -63,6 +63,7 @@ export function BecomeASponsor() {
 				</p>
 				<p className="text-lg leading-relaxed mb-6">
 					Compliment this effort and consider purchasing a sponsorship for your local San Diego business now. All sponsorships are based on one season (5 episodes). If you're looking for an <em>à la carte</em> option, please
+					{" "}
 					<a href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - à la carte"
 						onClick={trackEvent("text_click", {
 							params: {
@@ -82,6 +83,7 @@ export function BecomeASponsor() {
 				</p>
 				<p className="text-lg leading-relaxed mb-6">
 					For general support of this podcast, a
+					{" "}
 					<a href="//www.buymeacoffee.com/markreyes" onClick={trackEvent("text_click", {
 											params: {
 												action: "Click",

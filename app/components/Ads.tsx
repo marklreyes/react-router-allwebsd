@@ -87,6 +87,34 @@ export default function Ads() {
 				</div>
 				<div id="slide3" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide3-tab">
 					<NavLink
+						to="https://www.sourion.com/?utm_source=allwebsd&utm_medium=banner&utm_campaign=podcast_collab_2025"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="w-full border cursor-pointer"
+						aria-label="Integrate AI without the headache!"
+						onClick={() => {
+							// Track event for text click
+							trackEvent("image_click", {
+								params: {
+									action: "Click",
+									event_category: "Advertisement",
+									event_label: "Integrate AI without the headache!",
+									platform: "SOURION",
+									link_type: "website",
+									component: "Ads Component"
+								},
+							});
+						}}
+					>
+						<img
+							src="/images/SOURION_banner.png"
+							alt="Integrate AI without the headache!"
+							className="w-full h-full object-cover"
+						/>
+					</NavLink>
+				</div>
+				<div id="slide4" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide4-tab">
+					<NavLink
 						to="/sponsors"
 						className="w-full border cursor-pointer"
 						aria-label="View sponsorship opportunities"
@@ -183,8 +211,8 @@ export default function Ads() {
 							params: {
 								action: "Click",
 								event_category: "Advertisement",
-								event_label: "Advertise your business here and become a gold sponsor today!",
-								platform: "ALLWEBSD",
+								event_label: "Integrate AI without the headache!",
+								platform: "SOURION",
 								link_type: "website",
 								component: "Ads Component"
 							}
@@ -200,6 +228,34 @@ export default function Ads() {
 					aria-controls="slide3"
 				>
 					<span className="sr-only">Slide </span>3
+				</button>
+				<button
+					id="slide4-tab"
+					onClick={(e) => {
+						e.preventDefault();
+						setActiveSlide(4);
+						document.getElementById("slide4")?.scrollIntoView({ behavior: "smooth" });
+						trackEvent("button_click", {
+							params: {
+								action: "Click",
+								event_category: "Advertisement",
+								event_label: "Advertise your business here and become a gold sponsor today!",
+								platform: "ALLWEBSD",
+								link_type: "website",
+								component: "Ads Component"
+							}
+						});
+					}}
+					className={`btn btn-xs ${
+						activeSlide === 4
+						? `${theme.secondary} text-white`
+						: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
+					}`}
+					role="tab"
+					aria-selected={activeSlide === 4}
+					aria-controls="slide4"
+				>
+					<span className="sr-only">Slide </span>4
 				</button>
 			</div>
 		</div>
