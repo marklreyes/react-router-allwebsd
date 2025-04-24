@@ -90,22 +90,22 @@ export function AboutMe() {
 							</div>
 						</div>
 
-						{/* Recent Experience Section */}
+						{/* Tech Lead Experience Section */}
 						<div className={`collapse collapse-arrow join-item border bg-base-200 ${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'}`}>
 							<input type="radio" name="about-accordion" />
 							<div className={`collapse-title text-2xl md:text-3xl font-semibold ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'}`}>
-								Recent Experience
+								Tech Lead Experience
 							</div>
 							<div className={`collapse-content ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'}`}>
 								<ul role="list" className="text-lg leading-relaxed mb-6 space-y-4">
 									<li>
-										<span aria-hidden="true">💻 </span><strong>Kinectify:</strong> As Principal Front-End Engineer, I led front-end development across multiple teams, supporting AML software for the Gaming & Sports Betting industries.
+										<span aria-hidden="true">💻 </span><strong>Kinectify:</strong> As Principal Front-End Engineer, I spearheaded front-end architecture and development across cross-functional teams, delivering enterprise AML compliance solutions for the Gaming and Sports Betting industries.
 									</li>
 									<li>
-										<span aria-hidden="true">💻 </span><strong>MTM:</strong> Collaborated with cross-functional teams to create web apps that connect patients and healthcare providers with innovative, cost-effective solutions.
+										<span aria-hidden="true">💻 </span><strong>MTM:</strong> As Senior Front End Software Engineer, I served as the Angular Subject Matter Expert, collaborating with diverse cross-functional teams comprised of back-end and full stack engineers.
 									</li>
 									<li>
-										<span aria-hidden="true">💻 </span><strong>SleepScore Labs:</strong> Developed web applications to help users understand and improve their sleep.
+										<span aria-hidden="true">💻 </span><strong>SleepScore Labs:</strong> As Web Development Lead, I architected and implemented digital solutions for Product and Marketing divisions, delivering technologies that empowered consumers to analyze and enhance their sleep quality.
 									</li>
 								</ul>
 							</div>
@@ -119,7 +119,7 @@ export function AboutMe() {
 							</div>
 							<div className={`collapse-content ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'}`}>
 								<p className="text-lg leading-relaxed mb-6">
-									As a self-described multi-hyphenate, I’m also a <strong>Podcast Producer</strong>, having written and produced over 100+ shows featured on Apple Podcasts, Google Podcasts, Spotify, Castbox, and more. If you’re looking to pair your web project with a complementary medium, consider these attributes and inquire with me directly on how this value-add could work for your organization.
+									I’m also a <strong>Podcast Producer</strong>, having written and produced over 100+ shows featured on Apple Podcasts, Google Podcasts, Spotify, Castbox, and more. If you’re looking to pair your web project with a complementary medium, consider these attributes and inquire with me directly on how this value-add could work for your organization.
 								</p>
 							</div>
 						</div>
