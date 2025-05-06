@@ -15,7 +15,7 @@ export function AboutMe() {
 							👋🏾, I'm Mark!
 					</h1>
 					<PromoImage
-						src="https://avatars3.githubusercontent.com/u/1628070?s=460&v=4"
+						src="640x640_profile_avatar.jpg"
 						alt="Mark L. Reyes profilet"
 						ariaLabel="Profile photo of Mark L. Reyes"
 						description="Hi, I'm Mark! Web Developer, Podcast Producer of AllWebSD"
