@@ -111,11 +111,11 @@ export function AboutMe() {
 							</div>
 						</div>
 
-						{/* Beyond the Code Section */}
+						{/* From Code to Mic Section */}
 						<div className={`collapse collapse-arrow join-item border bg-base-200 ${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'}`}>
 							<input type="radio" name="about-accordion" />
 							<div className={`collapse-title text-2xl md:text-3xl font-semibold ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'}`}>
-								Beyond the Code
+								From Code to Mic
 							</div>
 							<div className={`collapse-content ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'}`}>
 								<p className="text-lg leading-relaxed mb-6">
