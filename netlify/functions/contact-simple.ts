@@ -113,24 +113,39 @@ export const handler: Handler = async (event, context) => {
       messageLength: sanitizedData.message.length
     });
 
-    // Log the contact form submission (for now)
-    // Later you can integrate with email services like SendGrid, Resend, etc.
-    console.log("Form submitted successfully");
-    console.log("Contact details:", {
+    // Submit to Netlify Forms so it appears in the Netlify dashboard
+    const siteUrl = process.env.URL || event.headers.origin || 'https://allwebsd.com';
+
+    // Prepare form data for Netlify Forms submission
+    const netlifyFormData = new URLSearchParams({
+      "form-name": "contact",
       name: sanitizedData.name,
       email: sanitizedData.email,
       subject: sanitizedData.subject,
-      messageLength: sanitizedData.message.length
+      message: sanitizedData.message
     });
 
-    // Here you could integrate with email services like:
-    // - SendGrid
-    // - AWS SES  
-    // - Resend
-    // - Mailgun
-    // - Or save to a database
+    console.log("Submitting to Netlify Forms at:", `${siteUrl}/`);
 
-    console.log("Form submitted successfully to Netlify Forms");
+    // Submit to Netlify Forms
+    const netlifyResponse = await fetch(`${siteUrl}/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: netlifyFormData.toString()
+    });
+
+    console.log("Netlify Forms response status:", netlifyResponse.status);
+
+    if (!netlifyResponse.ok) {
+      const responseText = await netlifyResponse.text();
+      console.log("Netlify Forms response:", responseText);
+      // Don't throw error - just log it and continue
+      console.warn(`Netlify Forms submission failed: ${netlifyResponse.status}`);
+    } else {
+      console.log("Form submitted successfully to Netlify Forms");
+    }
 
     // Return success response
     return {
