@@ -113,7 +113,7 @@ export function ContactMe() {
                                 className="space-y-6"
                             >
                                 {/* Hidden field for Netlify */}
-                                <input type="hidden" name="form-name" value="contact" />
+                                <input type="hidden" name="contact" value="contact" />
 
                                 {/* Honeypot field for spam protection */}
                                 <div style={{ display: 'none' }}>
