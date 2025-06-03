@@ -35,15 +35,15 @@ to = "/assets/:splat"
 status = 200
 force = true
 
-# Serve the static contact.html file for form processing only
+# Serve the static contact.html file for Netlify Forms processing only
 [[redirects]]
 from = "/contact.html"
 to = "/contact.html"
 status = 200
 force = true
 
-# SPA fallback - serve index.html for all routes (but after specific rules above)
+# Handle React Router SSR - send all other routes to the server
 [[redirects]]
 from = "/*"
-to = "/index.html"
+to = "/functions/react-router-server"
 status = 200
