@@ -24,6 +24,9 @@ export function ContactMe() {
             const result = await response.json();
 
             if (response.ok && result.success) {
+                // Reset form before changing state (while form still exists in DOM)
+                e.currentTarget.reset();
+
                 setIsSubmitted(true);
                 trackEvent('Contact Form', {
 					params: {
@@ -35,8 +38,6 @@ export function ContactMe() {
 						component: 'Contact Form'
 					}
 				});
-                // Reset form
-                e.currentTarget.reset();
             } else {
                 throw new Error(result.error || 'Form submission failed');
             }
