@@ -14,7 +14,8 @@ export function ContactMe() {
         const formData = new FormData(e.currentTarget);
 
         try {
-            const response = await fetch("/", {
+            // Using the form name in the fetch URL to match Netlify's form handling endpoint
+            const response = await fetch("/?no-cache=1", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData as any).toString(),
@@ -95,7 +96,7 @@ export function ContactMe() {
                         {/* Left column - Description */}
                         <div className="order-1 lg:order-1">
                             <p className="text-white text-lg leading-relaxed mb-6 lg:mb-0">
-                                Thank you for your interest in reaching out! Whether you have a question, want to discuss a project, or just want to say hello, I'd love to hear from you. Please fill out the form below, and I'll get back to you as soon as possible.
+                                Thank you for your interest in reaching out! Whether you want to sponsor, appear on an episode, or simply say hello, I'd love to hear from you. Please fill out the form below, and I'll get back to you as soon as possible.
                             </p>
                         </div>
 
@@ -188,7 +189,7 @@ export function ContactMe() {
                                                 ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#71BEA9] focus:border-transparent'
                                                 : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-[#FFC425] focus:border-transparent'
                                         }`}
-                                        placeholder="Tell me more about your project or question..."
+                                        placeholder="What's on your mind?"
                                     />
                                 </div>
 
