@@ -42,6 +42,13 @@ to = "/contact.html"
 status = 200
 force = true
 
+# Force /contact route to React Router (prevent static contact.html from being served)
+[[redirects]]
+from = "/contact"
+to = "/functions/react-router-server"
+status = 200
+force = true
+
 # Handle React Router SSR - send all other routes to the server
 [[redirects]]
 from = "/*"
