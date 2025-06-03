@@ -10,6 +10,9 @@ node_bundler = "esbuild"
 memory_size = 1024
 timeout = 30
 
+[functions.submit-contact]
+timeout = 10
+
 [build.environment]
 VITE_RSS_URL = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.xml"
 
