@@ -125,10 +125,10 @@ export const handler: Handler = async (event, context) => {
       message: sanitizedData.message
     });
 
-    console.log("Submitting to Netlify Forms at:", `${siteUrl}/`);
+    console.log("Submitting to Netlify Forms at:", `${siteUrl}/contact.html`);
 
-    // Submit to Netlify Forms
-    const netlifyResponse = await fetch(`${siteUrl}/`, {
+    // Submit to Netlify Forms using the static HTML form page
+    const netlifyResponse = await fetch(`${siteUrl}/contact.html`, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
