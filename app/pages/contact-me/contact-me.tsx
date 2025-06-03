@@ -1,6 +1,7 @@
 import { useTheme } from "~/context/ThemeContext";
 import { trackEvent } from "~/utils/trackEvent";
 import { useState } from "react";
+import { Form } from "react-router-dom";
 
 export function ContactMe() {
     const { isDarkMode } = useTheme();
@@ -104,16 +105,16 @@ export function ContactMe() {
 
                         {/* Right column - Form */}
                         <div className="order-2 lg:order-2">
-                            <form
+                            <Form
                                 name="contact"
-                                method="POST"
+                                method="post"
                                 data-netlify="true"
                                 netlify-honeypot="bot-field"
                                 onSubmit={handleSubmit}
                                 className="space-y-6"
                             >
                                 {/* Hidden field for Netlify */}
-                                <input type="hidden" name="contact" value="contact" />
+                                <input type="hidden" name="form-name" value="contact" />
 
                                 {/* Honeypot field for spam protection */}
                                 <div style={{ display: 'none' }}>
@@ -206,7 +207,7 @@ export function ContactMe() {
                                 >
                                     {isSubmitting ? 'Sending...' : 'Send Message'}
                                 </button>
-                            </form>
+                            </Form>
                         </div>
                     </div>
                 </div>
