@@ -105,7 +105,6 @@ export function ContactMe() {
                         {/* Right column - Form */}
                         <div className="order-2 lg:order-2">
                             <form
-								data-netlify="true"
                                 name="contact"
                                 method="POST"
                                 onSubmit={handleSubmit}
