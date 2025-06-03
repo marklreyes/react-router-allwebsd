@@ -84,6 +84,20 @@ export default function Header() {
 						});
 					}}
 					>Sponsors</NavLink>
+				<NavLink to="/about"
+					className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}
+					onClick={() => {
+						// Track event for text click
+						trackEvent("nav_click", {
+							params: {
+								event_category: "Navigation",
+								event_sub_category: "Desktop",
+								event_label: `About`,
+								component: "Header Component"
+							},
+						});
+					}}
+					>About</NavLink>
 				<NavLink to="/contact"
 					className={({ isActive }) => isActive ? "font-bold text-[#2F241D]" : "text-[#2F241D]"}
 					onClick={() => {
@@ -229,7 +243,7 @@ export default function Header() {
 							params: {
 								event_category: "Navigation",
 								event_sub_category: "Mobile",
-								event_label: `SanDieGPT`,
+								event_label: `Home`,
 								component: "Header Component"
 							},
 						});
@@ -250,7 +264,7 @@ export default function Header() {
 							params: {
 								event_category: "Navigation",
 								event_sub_category: "Mobile",
-								event_label: `SanDieGPT`,
+								event_label: `Episodes`,
 								component: "Header Component"
 							},
 						});
@@ -271,7 +285,7 @@ export default function Header() {
 							params: {
 								event_category: "Navigation",
 								event_sub_category: "Mobile",
-								event_label: `SanDieGPT`,
+								event_label: `Guests`,
 								component: "Header Component"
 							},
 						});
@@ -292,7 +306,7 @@ export default function Header() {
 							params: {
 								event_category: "Navigation",
 								event_sub_category: "Mobile",
-								event_label: `SanDieGPT`,
+								event_label: `Sponsors`,
 								component: "Header Component"
 							},
 						});
@@ -300,6 +314,27 @@ export default function Header() {
 					}}
 					>
 					Sponsors
+					</NavLink>
+					<NavLink
+					to="/about"
+					className={({ isActive }) =>
+						`block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
+					}
+					onClick={() => {
+						setIsOpen(false);
+						// Track event for text click
+						trackEvent("nav_click", {
+							params: {
+								event_category: "Navigation",
+								event_sub_category: "Mobile",
+								event_label: `About`,
+								component: "Header Component"
+							},
+						});
+
+					}}
+					>
+					About
 					</NavLink>
 					<NavLink
 					to="/contact"
@@ -313,7 +348,7 @@ export default function Header() {
 							params: {
 								event_category: "Navigation",
 								event_sub_category: "Mobile",
-								event_label: `SanDieGPT`,
+								event_label: `Contact`,
 								component: "Header Component"
 							},
 						});

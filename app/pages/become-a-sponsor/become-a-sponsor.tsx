@@ -8,9 +8,9 @@ export function BecomeASponsor() {
 			title: "Gold Sponsor",
 			benefits: [
 			"5 Episode Package",
-			"Social Media Posts",
-			"Website Ad Space",
-			"Show Notes Links"
+			"YouTube Posts",
+			"Website Ad Space - Extended",
+			"Show Notes"
 			],
 			icon: "⭐",
 			subject: "ALLWEBSD Sponsorship - Gold Sponsor",
@@ -22,9 +22,9 @@ export function BecomeASponsor() {
 			title: "À La Carte",
 			benefits: [
 			"Single Episode",
-			"Social Media Post",
-			"Website Ad Space",
-			"Custom Package"
+			"YouTube Post",
+			"Website Ad Space - Limited",
+			"Show Notes"
 			],
 			icon: "⭐",
 			subject: "ALLWEBSD Sponsorship - À La Carte",
