@@ -14,14 +14,16 @@ export function ContactMe() {
         const formData = new FormData(e.currentTarget);
 
         try {
-            // Using the form name in the fetch URL to match Netlify's form handling endpoint
-            const response = await fetch("/?no-cache=1", {
+            // Submit to our custom Netlify function that handles form processing
+            const response = await fetch("/.netlify/functions/submit-contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData as any).toString(),
             });
 
-            if (response.ok) {
+            const result = await response.json();
+
+            if (response.ok && result.success) {
                 setIsSubmitted(true);
                 trackEvent('Contact Form', {
 					params: {
@@ -36,7 +38,7 @@ export function ContactMe() {
                 // Reset form
                 e.currentTarget.reset();
             } else {
-                throw new Error('Form submission failed');
+                throw new Error(result.error || 'Form submission failed');
             }
         } catch (error) {
             console.error('Error submitting form:', error);
