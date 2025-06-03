@@ -1,4 +1,4 @@
-import { AboutMe } from "~/pages/about-me/about-me";
+import { ContactMe } from "~/pages/contact-me/contact-me";
 import type { Route } from "./+types/contact";
 
 export function meta({}: Route.MetaArgs) {
@@ -15,6 +15,6 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Contact() {
 	return (
-		<AboutMe />
+		<ContactMe />
 	);
 }
