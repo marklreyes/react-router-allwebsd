@@ -27,3 +27,10 @@ from = "/functions/*"
 to = "/functions/:splat"
 status = 200
 force = true
+
+# Ensure SSR routes don't interfere with function calls
+[[redirects]]
+from = "/contact"
+to = "/contact"
+status = 200
+force = false
