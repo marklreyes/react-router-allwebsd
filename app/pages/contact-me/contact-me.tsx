@@ -1,7 +1,6 @@
 import { useTheme } from "~/context/ThemeContext";
 import { trackEvent } from "~/utils/trackEvent";
 import { useState } from "react";
-import { Form } from "react-router-dom";
 
 export function ContactMe() {
     const { isDarkMode } = useTheme();
@@ -15,8 +14,8 @@ export function ContactMe() {
         const formData = new FormData(e.currentTarget);
 
         try {
-            // Submit to our custom Netlify function that handles form processing
-            const response = await fetch("/.netlify/functions/submit-contact", {
+            // Submit to our reliable custom Netlify function
+            const response = await fetch("/.netlify/functions/contact-simple", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData as any).toString(),
@@ -105,11 +104,9 @@ export function ContactMe() {
 
                         {/* Right column - Form */}
                         <div className="order-2 lg:order-2">
-                            <Form
+                            <form
                                 name="contact"
-                                method="post"
-                                data-netlify="true"
-                                netlify-honeypot="bot-field"
+                                method="POST"
                                 onSubmit={handleSubmit}
                                 className="space-y-6"
                             >
@@ -207,7 +204,7 @@ export function ContactMe() {
                                 >
                                     {isSubmitting ? 'Sending...' : 'Send Message'}
                                 </button>
-                            </Form>
+                            </form>
                         </div>
                     </div>
                 </div>

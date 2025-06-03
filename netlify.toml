@@ -10,7 +10,7 @@ node_bundler = "esbuild"
 memory_size = 1024
 timeout = 30
 
-[functions.submit-contact]
+[functions.contact-simple]
 timeout = 10
 
 [build.environment]
@@ -25,6 +25,13 @@ port = 8888
 [[redirects]]
 from = "/functions/*"
 to = "/functions/:splat"
+status = 200
+force = true
+
+# Assets should be served statically
+[[redirects]]
+from = "/assets/*"
+to = "/assets/:splat"
 status = 200
 force = true
 
