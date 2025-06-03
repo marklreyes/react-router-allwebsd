@@ -35,6 +35,13 @@ to = "/assets/:splat"
 status = 200
 force = true
 
+# Ensure functions are handled before SSR routes
+[[redirects]]
+from = "/functions/*"
+to = "/functions/:splat"
+status = 200
+force = true
+
 # Ensure SSR routes don't interfere with function calls
 [[redirects]]
 from = "/contact"
