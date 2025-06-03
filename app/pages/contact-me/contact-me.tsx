@@ -11,7 +11,9 @@ export function ContactMe() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        const formData = new FormData(e.currentTarget);
+        // Store form reference before async operations
+        const form = e.currentTarget;
+        const formData = new FormData(form);
 
         try {
             // Submit to our reliable custom Netlify function
@@ -24,8 +26,8 @@ export function ContactMe() {
             const result = await response.json();
 
             if (response.ok && result.success) {
-                // Reset form before changing state (while form still exists in DOM)
-                e.currentTarget.reset();
+                // Reset form using stored reference
+                form.reset();
 
                 setIsSubmitted(true);
                 trackEvent('Contact Form', {
