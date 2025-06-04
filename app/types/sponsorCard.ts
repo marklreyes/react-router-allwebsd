@@ -6,4 +6,6 @@ export interface SponsorCardProps {
 	linkText: string;
 	subject?: string;
 	animate?: boolean;
+	// Navigation type - determines whether to use NavLink (internal) or anchor tag (external)
+	navigationType?: 'internal' | 'external';
 }

@@ -1,9 +1,21 @@
+import { NavLink } from "react-router";
 import { SponsorCard } from "~/components/SponsorCard";
 import { trackEvent } from "~/utils/trackEvent";
 
 export function BecomeASponsor() {
 
-	const sponsorCards = [
+	interface SponsorCardData {
+		title: string;
+		benefits: string[];
+		icon: string;
+		subject?: string;
+		linkText: string;
+		navigationType?: "internal" | "external";
+		linkUrl: string;
+		animate?: boolean;
+	}
+
+	const sponsorCards: SponsorCardData[] = [
 		{
 			title: "Gold Sponsor",
 			benefits: [
@@ -15,7 +27,8 @@ export function BecomeASponsor() {
 			icon: "⭐",
 			subject: "ALLWEBSD Sponsorship - Gold Sponsor",
 			linkText: "Learn More",
-			linkUrl: "mailto:mr@markreyes.com?subject=ALLWEBSD Sponsorship - Gold Sponsor",
+			navigationType: "internal",
+			linkUrl: "/contact?subject=ALLWEBSD Sponsorship - Gold Sponsor",
 			animate: true
 		},
 		{
@@ -29,7 +42,8 @@ export function BecomeASponsor() {
 			icon: "⭐",
 			subject: "ALLWEBSD Sponsorship - À La Carte",
 			linkText: "Learn More",
-			linkUrl: "mailto:mr@markreyes.com?subject=ALLWEBSD Sponsorship - À La Carte"
+			navigationType: "internal",
+			linkUrl: "/contact?subject=ALLWEBSD Sponsorship - À La Carte",
 		},
 		{
 			title: "Support",
@@ -64,22 +78,24 @@ export function BecomeASponsor() {
 				<p className="text-lg leading-relaxed mb-6">
 					Compliment this effort and consider purchasing a sponsorship for your local San Diego business now. All sponsorships are based on one season (5 episodes). If you're looking for an <em>à la carte</em> option, please
 					{" "}
-					<a href="mailto:mr@marklreyes.com?subject=ALLWEBSD Sponsorship - à la carte"
-						onClick={trackEvent("text_click", {
-							params: {
-								action: "Click",
-								event_category: "Navigation",
-								event_label: "email",
-								platform: "Email",
-								link_type: "email",
-								component: "Become A Sponsor Component"
-							}
-						})}
+					<NavLink
+						to="/contact"
 						className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
-						aria-label="Email about à la carte sponsorship options"
+						aria-label="More information"
+						onClick={
+							// Track event for text click
+							trackEvent("nav_click", {
+								params: {
+									event_category: "Navigation",
+									event_label: `contact me`,
+									component: "Contact Me Component"
+								},
+							})
+						}
 					>
-						email me today
-					</a>!
+						contact me
+					</NavLink>{" "}
+					today!
 				</p>
 				<p className="text-lg leading-relaxed mb-6">
 					For general support of this podcast, a

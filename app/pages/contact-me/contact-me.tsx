@@ -1,11 +1,22 @@
 import { useTheme } from "~/context/ThemeContext";
 import { trackEvent } from "~/utils/trackEvent";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 export function ContactMe() {
     const { isDarkMode } = useTheme();
+    const [searchParams] = useSearchParams();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [subjectValue, setSubjectValue] = useState("");
+
+    // Parse subject from URL parameters on component mount
+    useEffect(() => {
+        const subjectParam = searchParams.get('subject');
+        if (subjectParam) {
+            setSubjectValue(decodeURIComponent(subjectParam));
+        }
+    }, [searchParams]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -28,6 +39,9 @@ export function ContactMe() {
             if (response.ok && result.success) {
                 // Reset form using stored reference
                 form.reset();
+
+                // Clear the subject value state as well
+                setSubjectValue("");
 
                 setIsSubmitted(true);
                 trackEvent('Contact Form', {
@@ -169,6 +183,8 @@ export function ContactMe() {
                                         id="subject"
                                         name="subject"
                                         required
+                                        value={subjectValue}
+                                        onChange={(e) => setSubjectValue(e.target.value)}
                                         className={`w-full px-4 py-3 rounded-lg border outline-none transition-all ${
                                             isDarkMode
                                                 ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#71BEA9] focus:border-transparent'
