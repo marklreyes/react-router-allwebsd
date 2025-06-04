@@ -103,24 +103,24 @@ export function AboutMe() {
 								>
 									appearances
 								</NavLink>
-								{" "}on this show, please send me an{" "}
-								<a
-									href="mailto:mr@marklreyes.com?subject=ALLWEBSD Appearances"
-									onClick={trackEvent("text_click", {
-										params: {
-											action: "Click",
-											event_category: "Navigation",
-											event_label: "email",
-											platform: "Email",
-											link_type: "email",
-											component: "About Me Component"
-										}
-									})}
+								{" "}on this show, please {" "}
+								<NavLink
+									to="/contact"
 									className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
-									aria-label="Send email about ALLWEBSD appearances"
+									aria-label="More information"
+									onClick={
+										// Track event for text click
+										trackEvent("nav_click", {
+											params: {
+												event_category: "Navigation",
+												event_label: `appearances`,
+												component: "Contact Me Component"
+											},
+										})
+									}
 								>
-									email
-								</a>{" "}
+									contact me
+								</NavLink>{" "}
 								today!
 							</p>
 					</div>
