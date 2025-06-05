@@ -43,7 +43,7 @@ export function AboutMe() {
 							<ul role="list" className="text-lg text-white leading-relaxed mb-6 space-y-4">
 								<li>➣ Led the responsive overhaul of Thermo Fisher’s global web platform.</li>
 								<li>➣ Partnered with colleagues to build Kinectify’s inaugural design system using Storybook, aiding in the modernization of Angular applications across product teams.</li>
-								<li>➣ Produced 100+ podcasts available across major platforms—fostering conversations on tech, lifestyle, and modern societal topics.</li>
+								<li>➣ Produced 100+ podcast episodes available across major platforms—fostering conversations on tech, lifestyle, and modern societal topics.</li>
 							</ul>
 
 						<h2 className="text-xl md:text-2xl font-semibold text-white">Areas of Expertise</h2>
