@@ -30,22 +30,6 @@ export function AboutMe() {
 
 						<hr className="mb-6" />
 
-						<h2 className="text-xl md:text-2xl font-semibold text-white">What He Does</h2>
-							<ul role="list" className="text-lg text-white leading-relaxed mb-6 space-y-4">
-								<li>➣ Designs and develops front-end experiences using modern stacks like React, Angular, and Astro.</li>
-								<li>➣ Creates and optimizes websites for performance, UX, and accessibility.</li>
-								<li>➣ Consults on web development, podcast production, and OpenAI integrations via marklreyes.com.</li>
-								<li>➣ Hosts the AllWebSD podcast, highlighting San Diego’s tech community and advocating for mindful tech practices and meaningful conversations.</li>
-								<li>➣ Produces and co-hosts The Puff Provisions Podcast, delivering insightful content that blends humor and real-life experiences to discuss topics like wellness, family, and the role of cannabis in modern society.</li>
-							</ul>
-
-						<h2 className="text-xl md:text-2xl font-semibold text-white">Experience Highlights</h2>
-							<ul role="list" className="text-lg text-white leading-relaxed mb-6 space-y-4">
-								<li>➣ Led the responsive overhaul of Thermo Fisher’s global web platform.</li>
-								<li>➣ Partnered with colleagues to build Kinectify’s inaugural design system using Storybook, aiding in the modernization of Angular applications across product teams.</li>
-								<li>➣ Produced 100+ podcast episodes available across major platforms—fostering conversations on tech, lifestyle, and modern societal topics.</li>
-							</ul>
-
 						<h2 className="text-xl md:text-2xl font-semibold text-white">Areas of Expertise</h2>
 						<p className="text-white text-lg leading-relaxed mb-6">
 							Web Development · UI Engineering · Design Systems · Podcast Production · Digital Strategy · Data Visualization · WordPress & Shopify · Performance Optimization · Teaching & Mentorship
@@ -58,16 +42,34 @@ export function AboutMe() {
 
 						<h2 className="text-xl md:text-2xl font-semibold text-white">Why AllWebSD?</h2>
 							<p className="text-white text-lg leading-relaxed mb-6">
-									I originally made this podcast in hopes of reaching out to others within the web development field&mdash;to let you know that I'm in the trenches with you when it comes to code. I get excited host how our profession moves forward rapidly but at the same time I'd be lying if I said I've never been confused about it as well. I felt compelled to process my thoughts through audio.
+								AllWebSD is a podcast created by Mark Reyes, a seasoned Front-End Engineer and digital storyteller, as a space to reflect on the fast-moving world of web development. What started as a personal outlet to unpack the excitement—and at times, the confusion—of working in tech quickly grew into something bigger.
 							</p>
 							<p className="text-white text-lg leading-relaxed mb-6">
-								That said, over time, the podcast has evolved into a channel where professionals inside of San Diego can also share their experiences, thoughts and ideas with the world. I've been fortunate to have guests on the show who have showcased their businesses and insights with me and I'm grateful that all of this can be brought back to you.
+								Today, AllWebSD is a platform for candid conversations with professionals across San Diego’s tech landscape. Through insightful interviews and behind-the-scenes stories, the podcast highlights local talent, shares lessons learned, and celebrates the evolving culture of building for the web.
 							</p>
 							<p className="text-white text-lg leading-relaxed mb-6">
-								I hope you enjoy these segments and please feel free to provide feedback.
+								Whether you’re deep in the trenches of front-end code or just curious about the human side of digital work, AllWebSD offers an honest, thoughtful take on what it means to be part of this ever-changing industry.
 							</p>
 							<p className="text-white text-lg leading-relaxed mb-6">
-								For questions,{" "}
+								For{" "}
+								<NavLink
+									to="/guests"
+									className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+									aria-label="Information about becoming a guest"
+									onClick={
+										// Track event for text click
+										trackEvent("nav_click", {
+											params: {
+												event_category: "Navigation",
+												event_label: `guest inquiries`,
+												component: "About Me Component"
+											},
+										})
+									}
+								>
+									guest inquiries
+								</NavLink>
+								{" "}or{" "}
 								<NavLink
 									to="/sponsors"
 									className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
@@ -85,25 +87,7 @@ export function AboutMe() {
 								>
 									sponsorships
 								</NavLink>
-								{" "}or{" "}
-								<NavLink
-									to="/guests"
-									className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
-									aria-label="Information about becoming a guest"
-									onClick={
-										// Track event for text click
-										trackEvent("nav_click", {
-											params: {
-												event_category: "Navigation",
-												event_label: `appearances`,
-												component: "About Me Component"
-											},
-										})
-									}
-								>
-									appearances
-								</NavLink>
-								{" "}on this show, please {" "}
+								{" "}or feedback, Mark welcomes you to{" "}
 								<NavLink
 									to="/contact"
 									className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
@@ -113,15 +97,15 @@ export function AboutMe() {
 										trackEvent("nav_click", {
 											params: {
 												event_category: "Navigation",
-												event_label: `appearances`,
-												component: "Contact Me Component"
+												event_label: `reach out`,
+												component: "About Me Component"
 											},
 										})
 									}
 								>
-									contact me
-								</NavLink>{" "}
-								today!
+									reach out
+								</NavLink>
+								{" "}and join the conversation.
 							</p>
 					</div>
 				</div>
