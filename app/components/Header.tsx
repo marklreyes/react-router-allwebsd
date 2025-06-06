@@ -16,7 +16,20 @@ export default function Header() {
 			<div className="container mx-auto flex justify-between items-center">
 			{/* Logo */}
 			<div className={`w-32 ${isDarkMode ? `${theme.background}` : `${theme.background}`} p-2 rounded-sm`}>
-				<NavLink to="/" aria-label="Home">
+				<NavLink to="/"
+				aria-label="Home"
+				onClick={() => {
+					// Track event for text click
+					trackEvent("nav_click", {
+						params: {
+							event_category: "Navigation",
+							event_sub_category: "Desktop",
+							event_label: `Logo`,
+							component: "Header Component"
+						},
+					});
+				}}
+				>
 				<img
 					src={logoAllWebSD}
 					alt="AllWebSD Logo"

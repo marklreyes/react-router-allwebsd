@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
 import type GuestData from "~/types/guestData";
+import { trackEvent } from "~/utils/trackEvent";
 
 interface GuestCardProps {
   guest: GuestData;
@@ -58,9 +59,22 @@ export function GuestCard({ guest }: GuestCardProps) {
 
   // If episodeUrl exists and is not empty, wrap in NavLink
   return guest.episodeUrl ? (
-    <NavLink to={guest.episodeUrl}>
-      {CardContent}
-    </NavLink>
+	<NavLink
+		to={guest.episodeUrl}
+		onClick={() => {
+			// Track event for text click
+			trackEvent("guest_click", {
+				params: {
+					event_category: "Navigation",
+					event_sub_category: "Guest",
+					event_label: `Guest: ${guest.organization}`,
+					component: "Guest Card Component"
+				},
+			});
+		}}
+		>
+		{CardContent}
+	</NavLink>
   ) : (
     CardContent
   );
