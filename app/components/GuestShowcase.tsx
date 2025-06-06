@@ -1,4 +1,3 @@
-import { useTheme } from "~/context/ThemeContext";
 import { GuestCard } from "~/components/GuestCard";
 import type GuestData from "~/types/guestData";
 
