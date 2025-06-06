@@ -3,7 +3,6 @@ import { GuestCard } from "~/components/GuestCard";
 import type GuestData from "~/types/guestData";
 
 export function GuestShowcase() {
-  const { isDarkMode } = useTheme();
 
   const guests: GuestData[] = [
     {
