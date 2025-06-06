@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { PromoImage } from "../../components/PromoImage";
+import { GuestShowcase } from "../../components/GuestShowcase";
 import { trackEvent } from "~/utils/trackEvent";
 
 export function BecomeAGuest() {
@@ -17,6 +18,11 @@ export function BecomeAGuest() {
 						ariaLabel="AllWebSD promotional t-shirt"
 						description="Join as a guest and receive a complimentary AllWebSD t-shirt"
 					/>
+
+					<GuestShowcase />
+
+					<hr className="mb-6" />
+
 					<p className="text-white text-lg leading-relaxed mb-6">
 						Yep, it's that easy! Tech enthusiasts across San Diego, this microphone is your home. When likes and shares aren't enough, stop by and let your voice be heard. I'm here to foster innovation through conversation.
 					</p>
@@ -42,6 +48,7 @@ export function BecomeAGuest() {
 						</NavLink>{" "}
 						today!
 					</p>
+
 				</article>
 			</div>
 		</main>
