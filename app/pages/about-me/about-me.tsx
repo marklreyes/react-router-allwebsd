@@ -1,11 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { PromoImage } from "../../components/PromoImage";
 import { useTheme } from "~/context/ThemeContext";
-import { calculateYearsSince } from "~/utils/formatters";
 import { trackEvent } from "~/utils/trackEvent";
 
 export function AboutMe() {
-	const { isDarkMode } = useTheme();
 
 	return (
 		<main className="flex items-center justify-center">
@@ -22,7 +20,7 @@ export function AboutMe() {
 					/>
 					<div>
 						<p className="text-white text-lg leading-relaxed mb-6 font-semibold">
-							Mark is a Front-End Engineer, Podcast Producer, and Advocate with {calculateYearsSince(2007)} years of experience crafting dynamic web experiences and scalable UI systems.
+							Mark is a Front-End Engineer, Podcast Producer, and Advocate crafting dynamic web experiences and scalable UI systems.
 						</p>
 						<p className="text-white text-lg leading-relaxed mb-6">
 							His journey began in web marketing, but his passion for design systems, JavaScript frameworks, and tech storytelling quickly evolved into a multifaceted career that spans development, digital strategy, and audio production. Today, he helps companies—from Fortune 500s to startups—deliver performant, accessible, and engaging digital products that align with real business goals.
