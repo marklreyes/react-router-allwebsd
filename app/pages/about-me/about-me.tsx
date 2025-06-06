@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { PromoImage } from "../../components/PromoImage";
-import { useTheme } from "~/context/ThemeContext";
 import { trackEvent } from "~/utils/trackEvent";
 
 export function AboutMe() {
