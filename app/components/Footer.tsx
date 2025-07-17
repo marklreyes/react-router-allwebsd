@@ -1,4 +1,4 @@
-import { FaDiscord, FaGithub, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
 import { useTheme } from "~/context/ThemeContext";
 
@@ -48,6 +48,15 @@ export default function Footer() {
 			aria-label="Support on Buy Me a Coffee"
 		  >
 			<SiBuymeacoffee size={24} aria-hidden="true" />
+		  </a>
+		  <a
+			href="//www.linkedin.com/company/allwebsd/"
+			target="_blank"
+			rel="noopener noreferrer"
+			className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
+			aria-label="Visit our LinkedIn page"
+		  >
+			<FaLinkedin size={24} aria-hidden="true" />
 		  </a>
 		  <a
 			href="//youtube.com/@allwebsd"
