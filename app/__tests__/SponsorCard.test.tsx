@@ -18,6 +18,12 @@ vi.mock("~/utils/trackEvent", () => ({
   trackEvent: vi.fn()
 }));
 
+// Mock react-icons
+vi.mock("react-icons/hi", () => ({
+  HiOutlineSparkles: () => null,
+  HiOutlineCurrencyDollar: () => null
+}));
+
 // Clean up DOM after each test
 beforeEach(() => {
   cleanup();
@@ -48,7 +54,7 @@ describe("SponsorCard Navigation Toggle", () => {
         linkUrl: "https://example.com"
       });
 
-      const link = screen.getByText("Learn More");
+      const link = screen.getByRole('link', { name: /Learn More for Test Sponsor/i });
       expect(link.tagName).toBe("A");
       expect(link.getAttribute("href")).toBe("https://example.com");
       expect(link.getAttribute("target")).toBe("_blank");
@@ -62,7 +68,7 @@ describe("SponsorCard Navigation Toggle", () => {
         navigationType: "external"
       });
 
-      const link = screen.getByText("Learn More");
+      const link = screen.getByRole('link', { name: /Learn More for Test Sponsor/i });
       expect(link.tagName).toBe("A");
       expect(link.getAttribute("href")).toBe("https://example.com");
       expect(link.getAttribute("target")).toBe("_blank");
@@ -78,7 +84,7 @@ describe("SponsorCard Navigation Toggle", () => {
         navigationType: "internal"
       });
 
-      const link = screen.getByText("Learn More");
+      const link = screen.getByRole('link', { name: /Learn More for Test Sponsor/i });
       // NavLink gets rendered as an anchor tag but without target/rel attributes
       expect(link.tagName).toBe("A");
       expect(link.getAttribute("href")).toBe("/contact");
@@ -94,7 +100,7 @@ describe("SponsorCard Navigation Toggle", () => {
         navigationType: "internal"
       });
 
-      const link = screen.getByText("Learn More");
+      const link = screen.getByRole('link', { name: /Learn More for Test Sponsor/i });
       expect(link.getAttribute("href")).toBe("/contact");
       expect(link.getAttribute("href")).not.toContain("mailto:");
       expect(link.getAttribute("target")).toBeNull();
