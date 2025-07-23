@@ -29,7 +29,7 @@ export function Toast({
 
   return (
 		<div
-			className="toast toast-end w-full max-w-xs md:max-w-md z-50"
+			className="toast max-md:toast-middle max-md:toast-center md:toast-bottom md:toast-end w-full max-w-xs md:max-w-md z-50"
 			role="alert"
 			aria-live="polite"
 		>

@@ -2,6 +2,8 @@ import { useTheme } from "~/context/ThemeContext";
 import type { SponsorCardProps } from "~/types/sponsorCard";
 import { trackEvent } from "~/utils/trackEvent";
 import { NavLink } from "react-router-dom";
+import { getOutlineButtonClasses } from "~/utils/buttonClasses";
+import { HiOutlineSparkles } from "react-icons/hi";
 
 export function SponsorCard({
 	title,
@@ -13,7 +15,7 @@ export function SponsorCard({
 	animate = false,
 	navigationType = 'external' // Default to external for backward compatibility
   }: SponsorCardProps) {
-	const { theme } = useTheme();
+	const { theme, isDarkMode } = useTheme();
 
 	// Shared event tracking function
 	const handleClick = () => {
@@ -27,10 +29,11 @@ export function SponsorCard({
 		});
 	};
 
-	// Shared button classes
-	const buttonClasses = `btn btn-outline w-full ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white transition-colors duration-200 border-0 ${
-		animate ? 'animate-shake' : ''
-	}`;
+	// Generate button classes using utility
+	const buttonClasses = getOutlineButtonClasses(theme, isDarkMode, {
+		fullWidth: true,
+		animate
+	});
 
 	// Determine link properties
 	const href = subject ? `mailto:mr@marklreyes.com?subject=${subject}` : linkUrl;
@@ -58,7 +61,10 @@ export function SponsorCard({
 							aria-label={ariaLabel}
 							role="link"
 						>
-							{linkText}
+							<span className="flex items-center gap-2">
+								<HiOutlineSparkles className="w-5 h-5" />
+								{linkText}
+							</span>
 						</NavLink>
 					) : (
 						<a
@@ -69,7 +75,10 @@ export function SponsorCard({
 							className={buttonClasses}
 							aria-label={ariaLabel}
 						>
-							{linkText}
+							<span className="flex items-center gap-2">
+								<HiOutlineSparkles className="w-5 h-5" />
+								{linkText}
+							</span>
 						</a>
 					)}
 				</li>

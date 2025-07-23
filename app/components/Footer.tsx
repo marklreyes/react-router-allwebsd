@@ -25,7 +25,7 @@ export default function Footer() {
 		  </p>
 		  <p>
 			<small>
-			  This podcast is maintained by{" "}
+			  This domain is maintained by{" "}
 			  <a
 				target="_blank"
 				href="//www.marklreyes.com/category/personal-log/podcast-projects/"
@@ -41,13 +41,13 @@ export default function Footer() {
 		</div>
 		<nav className="flex justify-center gap-4" aria-label="Social media links">
 		  <a
-			href="//buymeacoffee.com/markreyes"
+			href="//discord.gg/HsVp5R9zFt"
 			target="_blank"
 			rel="noopener noreferrer"
 			className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
-			aria-label="Support on Buy Me a Coffee"
+			aria-label="Join our Discord server"
 		  >
-			<SiBuymeacoffee size={24} aria-hidden="true" />
+			<FaDiscord size={24} aria-hidden="true" />
 		  </a>
 		  <a
 			href="//www.linkedin.com/company/allwebsd/"
@@ -59,6 +59,15 @@ export default function Footer() {
 			<FaLinkedin size={24} aria-hidden="true" />
 		  </a>
 		  <a
+			href="//buymeacoffee.com/markreyes"
+			target="_blank"
+			rel="noopener noreferrer"
+			className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
+			aria-label="Support on Buy Me a Coffee"
+		  >
+			<SiBuymeacoffee size={24} aria-hidden="true" />
+		  </a>
+		  <a
 			href="//youtube.com/@allwebsd"
 			target="_blank"
 			rel="noopener noreferrer"
@@ -66,15 +75,6 @@ export default function Footer() {
 			aria-label="Visit our YouTube channel"
 		  >
 			<FaYoutube size={24} aria-hidden="true" />
-		  </a>
-		  <a
-			href="//discord.gg/HsVp5R9zFt"
-			target="_blank"
-			rel="noopener noreferrer"
-			className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
-			aria-label="Join our Discord server"
-		  >
-			<FaDiscord size={24} aria-hidden="true" />
 		  </a>
 		  <a
 			href="//github.com/marklreyes/react-router-allwebsd"
