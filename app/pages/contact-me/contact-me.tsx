@@ -1,10 +1,12 @@
 import { useTheme } from "~/context/ThemeContext";
 import { trackEvent } from "~/utils/trackEvent";
+import { getOutlineButtonClasses } from "~/utils/buttonClasses";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { HiOutlineMail, HiOutlineRefresh } from "react-icons/hi";
 
 export function ContactMe() {
-    const { isDarkMode } = useTheme();
+    const { isDarkMode, theme } = useTheme();
     const [searchParams] = useSearchParams();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -88,11 +90,9 @@ export function ContactMe() {
                         </p>
                         <button
                             onClick={() => setIsSubmitted(false)}
-                            className={`py-3 px-6 rounded-lg font-medium transition-all duration-200 ${
-                                isDarkMode
-                                    ? 'bg-[#71BEA9] hover:bg-[#5da89a] text-white'
-                                    : 'bg-[#FFC425] hover:bg-[#e6b022] text-[#2F241D]'
-                            }`}
+                            className={getOutlineButtonClasses(theme, isDarkMode, {
+                                customClasses: 'py-3 font-medium'
+                            })}
                         >
                             Send Another Message
                         </button>
@@ -215,13 +215,19 @@ export function ContactMe() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 ${
-                                        isDarkMode
-                                            ? 'bg-[#71BEA9] hover:bg-[#5da89a] text-white disabled:bg-gray-600'
-                                            : 'bg-[#FFC425] hover:bg-[#e6b022] text-[#2F241D] disabled:bg-gray-400'
-                                    } focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:cursor-not-allowed`}
+                                    className={`${getOutlineButtonClasses(theme, isDarkMode, {
+                                        fullWidth: true,
+                                        customClasses: 'py-3 font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:hover:bg-gray-400'
+                                    })}`}
                                 >
-                                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                                    <span className="flex items-center justify-center gap-2">
+                                        {isSubmitting ? (
+                                            <HiOutlineRefresh className="w-5 h-5 animate-spin" />
+                                        ) : (
+                                            <HiOutlineMail className="w-5 h-5" />
+                                        )}
+                                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                                    </span>
                                 </button>
                             </form>
                         </div>
