@@ -22,7 +22,7 @@ export function AboutMe() {
 							Mark is a Front-End Engineer, Podcast Producer, and Advocate crafting dynamic web experiences and scalable UI systems.
 						</p>
 						<p className="text-white text-lg leading-relaxed mb-6">
-							His journey began in web marketing, but his passion for design systems, JavaScript frameworks, and tech storytelling quickly evolved into a multifaceted career that spans development, digital strategy, and audio production. Today, he helps companies—from Fortune 500s to startups—deliver performant, accessible, and engaging digital products that align with real business goals.
+							He started in web marketing, but his passion for design systems, JavaScript frameworks, and tech storytelling grew into a career spanning development, digital strategy, and audio production. Today, he helps companies—from Fortune 500s to startups—deliver performant, accessible digital products that align with real goals.
 						</p>
 
 						<hr className="mb-6" />
@@ -32,7 +32,7 @@ export function AboutMe() {
 							Web Development · UI Engineering · Design Systems · Podcast Production · Digital Strategy · Data Visualization · WordPress & Shopify · Performance Optimization · Teaching & Mentorship
 						</p>
 						<p className="text-white text-lg leading-relaxed mb-6">
-							Outside of work, Mark is a dedicated Brazilian Jiu-Jitsu practitioner and volunteer coach at Gracie Barra, holding a brown belt under Magid Hage. He mentors students on and off the mats, emphasizing discipline, resilience, and continuous learning. Above all, he values quality time with his family, finding balance and inspiration through shared moments and everyday adventures.
+							Outside of work, Mark is a Brazilian Jiu-Jitsu practitioner and volunteer coach at Gracie Barra (brown belt under Magid Hage). He mentors students on and off the mats and values time with family, finding balance and inspiration through everyday moments.
 						</p>
 
 						<hr className="mb-6" />
@@ -42,7 +42,7 @@ export function AboutMe() {
 								AllWebSD is a podcast created by Mark Reyes, a seasoned Front-End Engineer and digital storyteller, as a space to reflect on the fast-moving world of web development. What started as a personal outlet to unpack the excitement—and at times, the confusion—of working in tech quickly grew into something bigger.
 							</p>
 							<p className="text-white text-lg leading-relaxed mb-6">
-								Today, AllWebSD is a platform for candid conversations with professionals across San Diego’s tech landscape. Through insightful interviews and behind-the-scenes stories, the podcast highlights local talent, shares lessons learned, and celebrates the evolving culture of building for the web.
+								Today, AllWebSD is a platform for candid conversations with professionals across San Diego’s tech landscape. Through insightful interviews and behind-the-scenes stories, the podcast highlights local talent, shares lessons learned, and celebrates the evolving culture of building for digital experiences.
 							</p>
 							<p className="text-white text-lg leading-relaxed mb-6">
 								Whether you’re deep in the trenches of front-end code or just curious about the human side of digital work, AllWebSD offers an honest, thoughtful take on what it means to be part of this ever-changing industry.
