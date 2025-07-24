@@ -45,7 +45,7 @@ export function HeroBanner() {
 				{/* Call to Action Button */}
 				<div className="mt-6 flex justify-center">
 					<a
-						href="http://discord.gg/HsVp5R9zFt"
+						href="https://discord.gg/HsVp5R9zFt"
 						onClick={handleClick}
 						target="_blank"
 						rel="noopener noreferrer"
