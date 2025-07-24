@@ -2,7 +2,7 @@
 
 <a href="https://www.allwebsd.com" rel="AllWebSD.com">![Image of AllWebSD](https://github.com/marklreyes/react-router-allwebsd/blob/main/public/logo-allwebsd.png)</a>
 
-Just a web developer storytelling out of America's Finest City.
+Just a Web Developer storytelling and community building out of America's Finest City.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cdacf90b-85f2-43ec-9490-d6290ee48524/deploy-status)](https://app.netlify.com/sites/eclectic-liger-1fa28e/deploys)
 

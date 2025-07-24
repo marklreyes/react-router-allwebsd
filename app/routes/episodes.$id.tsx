@@ -99,7 +99,7 @@ export function meta({ data, params }: EpisodeMetaProps) {
 
 	if (!data) {
 		return [
-			{ title: "Episode Not Found | Web Developer storytelling out of America's Finest City | AllWebSD.com", override: true },
+			{ title: "Episode Not Found | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com", override: true },
 			{ name: "description", content: "The requested episode could not be found.", override: true },
 			{ property: "og:image", content: `${baseUrl}/images/allwebsd-share.jpg`, override: true },
 			{ name: "twitter:image", content: `${baseUrl}/images/allwebsd-share.jpg`, override: true }
@@ -112,7 +112,7 @@ export function meta({ data, params }: EpisodeMetaProps) {
 	}).substring(0, 160);
 
 	return [
-		{ title: `${data.title} | Web Developer storytelling out of America's Finest City | AllWebSD.com`, override: true },
+		{ title: `${data.title} | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com`, override: true },
 		{ name: "description", content: cleanContent, override: true },
 		{ property: "og:title", content: data.title, override: true },
 		{ property: "og:description", content: cleanContent, override: true },
