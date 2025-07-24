@@ -30,10 +30,10 @@ const MAX_STORED_MESSAGES = 10;
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "Chat with SanDieGPT | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
+		{ title: "Chat with SanDieGPT | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com" },
 		{ name: "description", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." },
 		{ name: "twitter:card", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." },
-		{ property: "og:title", content: "Chat with SanDieGPT | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
+		{ property: "og:title", content: "Chat with SanDieGPT | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com" },
 		{ property: "og:type", content: "website" },
 		{ property: "og:url", content: "https://www.allwebsd.com/chat" },
 		{ property: "og:description", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." }

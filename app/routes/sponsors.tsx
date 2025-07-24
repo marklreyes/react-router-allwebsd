@@ -3,13 +3,13 @@ import type { Route } from "./+types/sponsors";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Sponsors | Web Developer storytelling out of America's Finest City | AllWebSD.com" },
+    { title: "Sponsors | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com" },
 	{ name: "description", content: "Just a web developer podcasting out of America's Finest City!" },
-	{ name: "twitter:card", content: "Just a web developer storytelling out of America's Finest City!" },
-	{ property: "og:title", content: "Just a web developer storytelling out of America's Finest City!" },
+	{ name: "twitter:card", content: "Just a Web Developer storytelling and community building out of America's Finest City!" },
+	{ property: "og:title", content: "Just a Web Developer storytelling and community building out of America's Finest City!" },
 	{ property: "og:type", content: "website" },
 	{ property: "og:url", content: "https://www.allwebsd.com" },
-	{ property: "og:description", content: "Just a web developer storytelling out of America's Finest City!" },
+	{ property: "og:description", content: "Just a Web Developer storytelling and community building out of America's Finest City!" },
   ];
 }
 

@@ -57,7 +57,7 @@ export function HeroBanner() {
 					>
 						<span className="flex items-center gap-2">
 							<HiUserGroup className="w-5 h-5" />
-							Join Now
+							Join Free
 						</span>
 					</a>
 				</div>
