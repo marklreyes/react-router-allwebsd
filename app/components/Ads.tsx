@@ -37,6 +37,31 @@ export default function Ads() {
 			>
 				<div id="slide1" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide1-tab">
 					<a
+						href="//doitwithai.io/"
+						onClick={trackEvent("image_click", {
+							params: {
+								action: "Click",
+								event_category: "Advertisement",
+								event_label: "Build fast. Build smart.",
+								platform: "Do It With AI",
+								link_type: "website",
+								component: "Ads Component"
+							}
+						})}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="w-full"
+						aria-label="Visit Do It With AI"
+					>
+						<img
+							src="/images/doitwithai_banner.jpg"
+							alt="Build fast. Build smart."
+							className="w-full h-full object-cover"
+						/>
+					</a>
+				</div>
+				<div id="slide2" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide2-tab">
+					<a
 						href="https://sdfutures.org/support-sdff"
 						onClick={trackEvent("image_click", {
 							params: {
@@ -60,60 +85,7 @@ export default function Ads() {
 						/>
 					</a>
 				</div>
-				<div id="slide2" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide2-tab">
-					<a
-						href="//courses.theaiexchange.com/courses/prompting-for-ai-ops-bootcamp?ref=2b3231"
-						onClick={trackEvent("image_click", {
-							params: {
-								action: "Click",
-								event_category: "Advertisement",
-								event_label: "Learn the secrets to an ai-powered business.",
-								platform: "AI Exchange",
-								link_type: "website",
-								component: "Ads Component"
-							}
-						})}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="w-full"
-						aria-label="Visit AI Exchange Courses"
-					>
-						<img
-							src="/images/AIX_banner.jpg"
-							alt="Learn the secrets to an ai-powered business."
-							className="w-full h-full object-cover"
-						/>
-					</a>
-				</div>
-				<div id="slide3" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide3-tab">
-					<NavLink
-						to="https://www.sourion.com/?utm_source=allwebsd&utm_medium=banner&utm_campaign=podcast_collab_2025"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="w-full border cursor-pointer"
-						aria-label="Integrate AI without the headache!"
-						onClick={() => {
-							// Track event for text click
-							trackEvent("image_click", {
-								params: {
-									action: "Click",
-									event_category: "Advertisement",
-									event_label: "Integrate AI without the headache!",
-									platform: "SOURION",
-									link_type: "website",
-									component: "Ads Component"
-								},
-							});
-						}}
-					>
-						<img
-							src="/images/SOURION_banner.png"
-							alt="Integrate AI without the headache!"
-							className="w-full h-full object-cover"
-						/>
-					</NavLink>
-				</div>
-				<div id="slide4" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide4-tab">
+				<div id="slide3" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide4-tab">
 					<NavLink
 						to="/sponsors"
 						className="w-full border cursor-pointer"
@@ -149,14 +121,14 @@ export default function Ads() {
 					id="slide1-tab"
 					onClick={(e) => {
 						e.preventDefault();
-						setActiveSlide(1);
+						setActiveSlide(2);
 						document.getElementById("slide1")?.scrollIntoView({ behavior: "smooth" });
 						trackEvent("button_click", {
 							params: {
 								action: "Click",
 								event_category: "Advertisement",
-								event_label: "San Diego Futures Foundation join the movement and bridge the digital divide",
-								platform: "San Diego Futures Foundation",
+								event_label: "Build fast. Build smart.",
+								platform: "Do It With AI",
 								link_type: "website",
 								component: "Ads Component"
 							}
@@ -177,14 +149,14 @@ export default function Ads() {
 					id="slide2-tab"
 					onClick={(e) => {
 						e.preventDefault();
-						setActiveSlide(2);
+						setActiveSlide(1);
 						document.getElementById("slide2")?.scrollIntoView({ behavior: "smooth" });
 						trackEvent("button_click", {
 							params: {
 								action: "Click",
 								event_category: "Advertisement",
-								event_label: "Learn the secrets to an ai-powered business.",
-								platform: "AI Exchange",
+								event_label: "San Diego Futures Foundation join the movement and bridge the digital divide",
+								platform: "San Diego Futures Foundation",
 								link_type: "website",
 								component: "Ads Component"
 							}
@@ -228,34 +200,6 @@ export default function Ads() {
 					aria-controls="slide3"
 				>
 					<span className="sr-only">Slide </span>3
-				</button>
-				<button
-					id="slide4-tab"
-					onClick={(e) => {
-						e.preventDefault();
-						setActiveSlide(4);
-						document.getElementById("slide4")?.scrollIntoView({ behavior: "smooth" });
-						trackEvent("button_click", {
-							params: {
-								action: "Click",
-								event_category: "Advertisement",
-								event_label: "Advertise your business here and become a gold sponsor today!",
-								platform: "ALLWEBSD",
-								link_type: "website",
-								component: "Ads Component"
-							}
-						});
-					}}
-					className={`btn btn-xs ${
-						activeSlide === 4
-						? `${theme.secondary} text-white`
-						: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
-					}`}
-					role="tab"
-					aria-selected={activeSlide === 4}
-					aria-controls="slide4"
-				>
-					<span className="sr-only">Slide </span>4
 				</button>
 			</div>
 		</div>
