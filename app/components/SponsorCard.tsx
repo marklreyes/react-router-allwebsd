@@ -4,6 +4,7 @@ import { trackEvent } from "~/utils/trackEvent";
 import { NavLink } from "react-router-dom";
 import { getOutlineButtonClasses } from "~/utils/buttonClasses";
 import { HiOutlineSparkles } from "react-icons/hi";
+import { SiBuymeacoffee } from "react-icons/si";
 
 export function SponsorCard({
 	title,
@@ -40,6 +41,10 @@ export function SponsorCard({
 	const ariaLabel = `${linkText} for ${title}`;
 	const useNavLink = navigationType === 'internal';
 
+	// Determine which icon to use based on the URL
+	const isBuyMeACoffeeLink = linkUrl?.includes('buymeacoffee') || href?.includes('buymeacoffee');
+	const IconComponent = isBuyMeACoffeeLink ? SiBuymeacoffee : HiOutlineSparkles;
+
 	return (
 		<div className="bg-white rounded-lg p-6 shadow-lg" role="article">
 			<h2 className={`${theme.text} text-2xl font-bold mb-4`} id={`sponsor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
@@ -62,7 +67,7 @@ export function SponsorCard({
 							role="link"
 						>
 							<span className="flex items-center gap-2">
-								<HiOutlineSparkles className="w-5 h-5" />
+								<IconComponent className="w-5 h-5" />
 								{linkText}
 							</span>
 						</NavLink>
@@ -76,7 +81,7 @@ export function SponsorCard({
 							aria-label={ariaLabel}
 						>
 							<span className="flex items-center gap-2">
-								<HiOutlineSparkles className="w-5 h-5" />
+								<IconComponent className="w-5 h-5" />
 								{linkText}
 							</span>
 						</a>
