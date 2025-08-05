@@ -95,7 +95,6 @@ export function Toast({
 					{link.text}
 					</NavLink>
 				)}
-				{link && "!"}
 				</span>
 			</div>
 			</div>

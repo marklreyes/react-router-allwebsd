@@ -30,10 +30,10 @@ const MAX_STORED_MESSAGES = 10;
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "Chat with SanDieGPT | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com" },
+		{ title: "Chat with SanDieGPT | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com" },
 		{ name: "description", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." },
 		{ name: "twitter:card", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." },
-		{ property: "og:title", content: "Chat with SanDieGPT | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com" },
+		{ property: "og:title", content: "Chat with SanDieGPT | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com" },
 		{ property: "og:type", content: "website" },
 		{ property: "og:url", content: "https://www.allwebsd.com/chat" },
 		{ property: "og:description", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." }
@@ -179,15 +179,15 @@ export default function Chat() {
 			showToast={showToast}
 			setShowToast={setShowToast}
 			icon={<RiRobot2Fill />}
-			message="This AI feature is powered by grit and caffeine."
+			message="Your support helps keep"
 			link={{
 				to: "/sponsors",
-				text: "Please support now"
+				text: "this AI assistant running smoothly!"
 			}}
 		/>
 
 		<p className="text-[#2F241D] mb-6">
-		Ask me anything about San Diego! From local attractions and beaches to restaurants
+		Ask me anything about San Diego! From businesses, local attractions and beaches to restaurants
 		and cultural events, I'm here to help you explore America's Finest City!
 		</p>
 

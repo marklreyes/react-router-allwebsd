@@ -6,7 +6,7 @@ export function DefaultMeta() {
 	return (
 	  <>
 		{/* Standard Meta Tags */}
-		<meta property="og:site_name" content="AllWebSD.com | Web Developer storytelling and community building out of America's Finest City" />
+		<meta property="og:site_name" content="AllWebSD.com | Web Developer storytelling, teaching and community building out of America's Finest City" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content={`${baseUrl}/images/allwebsd-share.jpg`} />
 		<meta property="og:image:width" content="1200" />

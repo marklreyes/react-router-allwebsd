@@ -55,7 +55,7 @@ export function BecomeASponsor() {
 			],
 			icon: "☕",
 			linkUrl: "//www.buymeacoffee.com/markreyes",
-			linkText: "Support Now"
+			linkText: "Buy Me A Coffee",
 		}
 	];
 
