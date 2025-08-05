@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { useParams, type LoaderFunctionArgs } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
 import { GiSadCrab } from "react-icons/gi";
@@ -8,6 +8,8 @@ import { useRSSFeed } from "~/hooks/useRSSFeed";
 import type { EpisodeMetaProps } from "~/types/episode";
 import { XMLParser } from "fast-xml-parser";
 import sanitizeHtml from "sanitize-html";
+import { Toast } from "../components/Toast";
+import { SiBuymeacoffee } from "react-icons/si";
 
 // Lazy load components with error boundaries
 const ShareButtons = lazy(() =>
@@ -99,7 +101,7 @@ export function meta({ data, params }: EpisodeMetaProps) {
 
 	if (!data) {
 		return [
-			{ title: "Episode Not Found | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com", override: true },
+			{ title: "Episode Not Found | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com", override: true },
 			{ name: "description", content: "The requested episode could not be found.", override: true },
 			{ property: "og:image", content: `${baseUrl}/images/allwebsd-share.jpg`, override: true },
 			{ name: "twitter:image", content: `${baseUrl}/images/allwebsd-share.jpg`, override: true }
@@ -112,7 +114,7 @@ export function meta({ data, params }: EpisodeMetaProps) {
 	}).substring(0, 160);
 
 	return [
-		{ title: `${data.title} | Web Developer storytelling and community building out of America's Finest City | AllWebSD.com`, override: true },
+		{ title: `${data.title} | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com`, override: true },
 		{ name: "description", content: cleanContent, override: true },
 		{ property: "og:title", content: data.title, override: true },
 		{ property: "og:description", content: cleanContent, override: true },
@@ -129,6 +131,7 @@ export default function EpisodeDetails() {
   const { id } = useParams();
   const { theme, isDarkMode } = useTheme();
   const { episode, loading, error } = useRSSFeed(id);
+	const [showToast, setShowToast] = useState(true);
 
   if (loading) {
     return (
@@ -140,14 +143,26 @@ export default function EpisodeDetails() {
 
   if (error || !episode) {
     return (
-      <div className={`${theme.primary} ${theme.text} flex items-center gap-2 p-4 rounded-lg p-6`}>
+      <div className={`${theme.primary} ${theme.text} flex items-center gap-2 rounded-lg p-6`}>
         <GiSadCrab /> Error: {error || "Episode not found"}
       </div>
     );
   }
 
   return (
-    <div className={`${theme.primary} ${theme.text} container mx-auto p-4 space-y-4 rounded-lg p-6`}>
+    <div className={`${theme.primary} ${theme.text} container mx-auto space-y-4 rounded-lg p-6`}>
+			<Toast
+				role="status"
+				aria-live="polite"
+				showToast={showToast}
+				setShowToast={setShowToast}
+				icon={<SiBuymeacoffee />}
+				message="Your support helps keep"
+				link={{
+					to: "/sponsors",
+					text: "this platform running smoothly!"
+				}}
+			/>
       <h1
         className="text-2xl font-bold mb-4"
         dangerouslySetInnerHTML={{ __html: episode.title }}
