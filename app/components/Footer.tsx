@@ -1,6 +1,8 @@
-import { FaDiscord, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
 import { useTheme } from "~/context/ThemeContext";
+import { BiSolidDonateHeart } from "react-icons/bi";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
 	  const { isDarkMode } = useTheme();
@@ -28,7 +30,7 @@ export default function Footer() {
 			  This domain is maintained by{" "}
 			  <a
 				target="_blank"
-				href="//www.marklreyes.com/category/personal-log/podcast-projects/"
+				href="//marklreyes.com/about/"
 				className="text-[#2F241D] hover:text-[#FFC425] hover:underline transition-colors font-semibold"
 				rel="noopener noreferrer"
 				aria-label="Visit Mark L. Reyes' podcast projects page"
@@ -59,15 +61,6 @@ export default function Footer() {
 			<FaLinkedin size={24} aria-hidden="true" />
 		  </a>
 		  <a
-			href="//buymeacoffee.com/markreyes"
-			target="_blank"
-			rel="noopener noreferrer"
-			className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
-			aria-label="Support on Buy Me a Coffee"
-		  >
-			<SiBuymeacoffee size={24} aria-hidden="true" />
-		  </a>
-		  <a
 			href="//youtube.com/@allwebsd"
 			target="_blank"
 			rel="noopener noreferrer"
@@ -76,15 +69,13 @@ export default function Footer() {
 		  >
 			<FaYoutube size={24} aria-hidden="true" />
 		  </a>
-		  <a
-			href="//github.com/marklreyes/react-router-allwebsd"
-			target="_blank"
-			rel="noopener noreferrer"
+		  <NavLink
+			to="/sponsors"
 			className={`${isDarkMode ? `text-[#F03D86] hover:text-[#71BEA9]` : `text-[#2F241D] hover:text-[#FFC425]`} transition-colors`}
-			aria-label="View source code on GitHub"
+			aria-label="View sponsor opportunities"
 		  >
-			<FaGithub size={24} aria-hidden="true" />
-		  </a>
+			<BiSolidDonateHeart size={24} aria-hidden="true" />
+		  </NavLink>
 		</nav>
 	  </div>
 	</footer>
