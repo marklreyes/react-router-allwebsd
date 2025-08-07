@@ -1,11 +1,10 @@
 [build]
 command = "react-router build"
 publish = "build/client"
+functions = "netlify/functions"
 
 [functions]
 node_bundler = "esbuild"
-directory = "netlify/functions"
-included_files = ["build/server/**"]
 
 [functions.fetch-openai]
 memory_size = 1024
@@ -18,7 +17,7 @@ timeout = 10
 VITE_RSS_URL = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.xml"
 
 [dev]
-command = "react-router dev"
+functions = "netlify/functions"
 publish = "build/client"
 port = 8888
 
@@ -28,7 +27,7 @@ to = "/functions/:splat"
 status = 200
 force = true
 
-# Assets should be served statically
+# Assets should be served statically - MUST come before catch-all
 [[redirects]]
 from = "/assets/*"
 to = "/assets/:splat"
@@ -49,8 +48,10 @@ to = "/functions/react-router-server"
 status = 200
 force = true
 
-# Handle React Router SSR - send all other routes to the server
+# Handle React Router SSR - send all other routes to the server (MUST be last)
 [[redirects]]
 from = "/*"
 to = "/functions/react-router-server"
 status = 200
+conditions = {Path = "!/assets/*"}
+force = false
