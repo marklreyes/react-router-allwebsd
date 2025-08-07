@@ -46,6 +46,7 @@ export default function Weather() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
   const NETLIFY_FUNCTION_URL = "/.netlify/functions/fetch-weather";
   const REFRESH_INTERVAL = 900000; // 15 minutes
@@ -59,6 +60,7 @@ export default function Weather() {
         }
         const data = await response.json();
         setWeather(data);
+        setLastUpdated(new Date()); // Set to current time when we fetch
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to fetch weather");
       } finally {
@@ -133,7 +135,9 @@ export default function Weather() {
 				<dt className="flex items-center gap-2">
 					<WiTime8 aria-hidden="true" />Updated
 				</dt>
-				<dd>{formatDateTime(weather.current.time)}</dd>
+				<dd>
+					{lastUpdated ? formatDateTime(lastUpdated.toISOString()) : 'Just now'}
+				</dd>
 				</div>
 			</dl>
 			</div>

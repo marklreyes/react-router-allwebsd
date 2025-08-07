@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { NavLink } from "react-router-dom";
 import type { ToastProps } from "~/types/toast";
@@ -12,12 +12,15 @@ export function Toast({
   link
 }: ToastProps) {
   const { theme, isDarkMode } = useTheme();
+  const [isInitialized, setIsInitialized] = useState(false);
 
-	useEffect(() => {
+  useEffect(() => {
+    // Check sessionStorage immediately on mount
     const toastState = sessionStorage.getItem("toastClosed");
     if (toastState === "true") {
       setShowToast(false);
     }
+    setIsInitialized(true);
   }, [setShowToast]);
 
   const handleClose = () => {
@@ -25,7 +28,8 @@ export function Toast({
     sessionStorage.setItem("toastClosed", "true");
   };
 
-  if (!showToast) return null;
+  // Don't render anything until we've checked sessionStorage
+  if (!isInitialized || !showToast) return null;
 
   return (
 		<div
