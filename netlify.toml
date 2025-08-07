@@ -5,6 +5,7 @@ functions = "netlify/functions"
 
 [functions]
 node_bundler = "esbuild"
+included_files = ["build/server/**"]
 
 [functions.fetch-openai]
 memory_size = 1024
@@ -17,9 +18,13 @@ timeout = 10
 VITE_RSS_URL = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.xml"
 
 [dev]
+command = "react-router dev"
 functions = "netlify/functions"
 publish = "build/client"
 port = 8888
+
+# For local production testing, manually override with:
+# npx netlify dev --dir build/client --port 8888
 
 [[redirects]]
 from = "/functions/*"
