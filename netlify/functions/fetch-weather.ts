@@ -17,7 +17,7 @@ export const handler: Handler = async () => {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Cache-Control': 'public, max-age=60' // 1 minute cache instead of 5
+        'Cache-Control': 'public, max-age=300' // 5 minutes cache
       },
       body: JSON.stringify(data)
     };
