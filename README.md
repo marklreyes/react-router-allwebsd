@@ -64,10 +64,17 @@ npm run build
 
 To preview a production build locally, use the [Netlify CLI](https://cli.netlify.com):
 
+**Option 1 - Serve production build directly:**
+```bash
+npx netlify dev --dir build/client --port 8888
+```
+
+**Option 2 - Use default dev command (may have asset serving issues):**
 ```bash
 npx netlify-cli dev
 ```
 
+Make sure to build first:
 ```bash
 npm run build
 ```
