@@ -1,10 +1,11 @@
 [build]
 command = "react-router build"
 publish = "build/client"
-functions = "netlify/functions"
 
 [functions]
 node_bundler = "esbuild"
+directory = "netlify/functions"
+included_files = ["build/server/**"]
 
 [functions.fetch-openai]
 memory_size = 1024
@@ -18,8 +19,7 @@ VITE_RSS_URL = "http://rss.castbox.fm/everest/cc803d4a973f4758b2eafb046573d642.x
 
 [dev]
 command = "react-router dev"
-functions = "netlify/functions"
-publish = "public"
+publish = "build/client"
 port = 8888
 
 [[redirects]]
