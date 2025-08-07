@@ -1,4 +1,4 @@
-import type { Handler } from "@netlify/functions";
+import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 import OpenAI from "openai";
 
 // Add timeout constant
@@ -22,7 +22,7 @@ const timeoutPromise = (ms: number) => {
   });
 };
 
-export const handler: Handler = async (event) => {
+export const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   try {
     if (event.httpMethod !== "POST") {
       return { statusCode: 405, body: JSON.stringify({ error: "Method Not Allowed" }) };

@@ -1,7 +1,6 @@
-import type { Handler } from "@netlify/functions";
-import fetch from "node-fetch";
+import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 
-export const handler: Handler = async () => {
+export const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   const RSS_URL = process.env.VITE_RSS_URL;
 
   if (!RSS_URL) {
@@ -16,6 +15,11 @@ export const handler: Handler = async () => {
 
   try {
     const response = await fetch(RSS_URL);
+
+    if (!response.ok) {
+      throw new Error(`RSS feed request failed with status ${response.status}`);
+    }
+
     const xmlData = await response.text();
 
     // Validate that we received XML data

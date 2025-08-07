@@ -1,6 +1,6 @@
-import type { Handler } from "@netlify/functions";
+import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 
-export const handler: Handler = async (event, context) => {
+export const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   // Add CORS headers for all responses
   const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
