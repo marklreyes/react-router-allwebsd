@@ -7,7 +7,10 @@ vi.mock("react-router-dom", () => ({
   useSearchParams: () => [
     new URLSearchParams("?page=1"),
     vi.fn()
-  ]
+  ],
+  NavLink: ({ children, to, ...props }: any) => (
+    <a href={to} {...props}>{children}</a>
+  )
 }));
 
 vi.mock("~/context/ThemeContext", () => ({

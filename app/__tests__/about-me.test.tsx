@@ -45,7 +45,7 @@ describe("AboutMe Component", () => {
     expect(heading).toBeDefined();
 
     // Assert that the h1 contains the expected text
-		expect(heading.textContent).toBe("👋🏾, I'm Mark!");
+		expect(heading.textContent).toBe("About AllWebSD");
 
   });
 });
