@@ -15,6 +15,9 @@ export default defineConfig({
   test: {
     environment: 'happy-dom'
   },
+  ssr: {
+    noExternal: ['react-router-dom', 'react-router', '@react-router/node']
+  },
 	build: {
     rollupOptions: {
       output: {
