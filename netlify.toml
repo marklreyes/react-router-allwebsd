@@ -6,6 +6,9 @@ functions = "netlify/functions"
 [functions]
 node_bundler = "esbuild"
 included_files = ["build/server/**"]
+# Configure Node.js to resolve ESM modules properly
+[functions.nodejs_compat_mode]
+esm = true
 
 [functions.fetch-openai]
 memory_size = 1024
