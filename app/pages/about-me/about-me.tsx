@@ -191,10 +191,10 @@ export function AboutMe() {
 							</div>
 							<div className="space-y-4 text-center lg:text-left">
 								<p className="text-white text-base leading-relaxed font-semibold">
-									Mark is a Front-End Engineer, Podcast Producer, and Advocate crafting dynamic web experiences and scalable UI systems.
+									I’m a Digital Technologist blending code, storytelling, and culture — building digital experiences that are performant, accessible, and human-centered.
 								</p>
 								<p className="text-white text-base leading-relaxed">
-									He created this platform to foster digital experiences and connect with the San Diego tech community through AllWebSD.
+									I created this platform to foster digital experiences and connect with the San Diego tech community through AllWebSD.
 								</p>
 								<p className="text-white text-base leading-relaxed">
 									Thanks for being part of this journey—every listen, share, and conversation helps grow our community!
