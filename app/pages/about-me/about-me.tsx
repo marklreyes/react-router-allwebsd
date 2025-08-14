@@ -108,7 +108,7 @@ export function AboutMe() {
 										>
 											LinkedIn
 										</a>
-										{" "}for insights, trends, and updates in tech—with a blend of San Diego relevance and broader takeaways.
+										{" "}for tech news, trends, and insights—crafted in San Diego, shared with innovators and creatives everywhere.
 									</p>
 									<p>
 										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
