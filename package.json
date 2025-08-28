@@ -17,7 +17,7 @@
     "dompurify": "^3.2.4",
     "fast-xml-parser": "^5.2.3",
     "isbot": "^5.1.27",
-    "netlify-cli": "^23.1.1",
+    "netlify-cli": "^23.4.1",
     "openai": "^5.10.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
