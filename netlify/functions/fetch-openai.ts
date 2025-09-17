@@ -49,7 +49,7 @@ export const handler: Handler = async (event: HandlerEvent, context: HandlerCont
     // Race between OpenAI call and timeout
     const completion = await Promise.race([
       openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         messages: [
           {
             role: "system",
