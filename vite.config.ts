@@ -16,7 +16,13 @@ export default defineConfig({
     environment: 'happy-dom'
   },
   ssr: {
-    noExternal: ['react-router-dom', 'react-router', '@react-router/node']
+    // Bundle all React Router and Netlify plugin packages
+    noExternal: [
+      'react-router-dom',
+      'react-router',
+      '@react-router/node',
+      '@netlify/vite-plugin-react-router'
+    ]
   },
 	build: {
     rollupOptions: {
