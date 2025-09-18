@@ -3,13 +3,13 @@ import type { Route } from "./+types/contact";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "About | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com" },
-        { name: "description", content: "Learn about Mark Reyes, a web developer sharing stories and insights from San Diego, California. Discover his journey in tech and passion for storytelling." },
-		{ name: "twitter:card", content: "Contact Mark to schedule time on air, sponsor the show, consultations or a coffee!" },
-        { property: "og:title", content: "About Mark Reyes | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com" },
+		{ title: "About | AllWebSD Podcast & Community" },
+        { name: "description", content: "Learn the story behind AllWebSD, a podcast rooted in San Diego and open to all creators—from no-code to full-code." },
+		{ name: "twitter:card", content: "Learn the story behind AllWebSD, a podcast rooted in San Diego and open to all creators—from no-code to full-code." },
+        { property: "og:title", content: "About AllWebSD" },
 		{ property: "og:type", content: "website" },
         { property: "og:url", content: "https://www.allwebsd.com/about" },
-        { property: "og:description", content: "Learn about Mark Reyes, a web developer sharing stories and insights from San Diego, California. Discover his journey in tech and passion for storytelling." },
+        { property: "og:description", content: "Discover the story and mission of AllWebSD—sharing real conversations and community for web creators everywhere." },
 	];
 }
 

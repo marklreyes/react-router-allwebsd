@@ -3,13 +3,13 @@ import { Welcome } from "../pages/welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "Home | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com" },
-		{ name: "description", content: "Just a Web Developer storytelling, teaching and community building out of America's Finest City!" },
-		{ name: "twitter:card", content: "Just a Web Developer storytelling, teaching and community building out of America's Finest City!" },
-		{ property: "og:title", content: "Home | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com" },
+		{ title: "AllWebSD Podcast | Stories for No-Code to Full-Code Creators" },
+		{ name: "description", content: "Conversations with no-code, low-code, and full-code creators. Rooted in San Diego, open to the world." },
+		{ name: "twitter:card", content: "Conversations with no-code, low-code, and full-code creators. Rooted in San Diego, open to the world." },
+		{ property: "og:title", content: "AllWebSD | Web Creator Stories & Community" },
 		{ property: "og:type", content: "website" },
 		{ property: "og:url", content: "https://www.allwebsd.com" },
-		{ property: "og:description", content: "Just a Web Developer storytelling, teaching and community building out of America's Finest City!" }
+		{ property: "og:description", content: "A podcast sharing stories, insights, and community for web creators—no-code to full-code, from San Diego and beyond." }
 	];
 }
 
