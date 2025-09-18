@@ -30,13 +30,13 @@ const MAX_STORED_MESSAGES = 10;
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "Chat with SanDieGPT | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com" },
-		{ name: "description", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." },
-		{ name: "twitter:card", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." },
-		{ property: "og:title", content: "Chat with SanDieGPT | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com" },
+		{ title: "Chat with SanDieGPT | San Diego-focused AI Assistant" },
+		{ name: "description", content: "SanDieGPT is AllWebSD’s AI chatbot — your go-to assistant for concise, factual info about San Diego. Playful yet precise. No guesswork, just answers." },
+		{ name: "twitter:card", content: "SanDieGPT is AllWebSD’s AI chatbot — your go-to assistant for concise, factual info about San Diego. Playful yet precise. No guesswork, just answers." },
+		{ property: "og:title", content: "Chat with SanDieGPT — AllWebSD" },
 		{ property: "og:type", content: "website" },
 		{ property: "og:url", content: "https://www.allwebsd.com/chat" },
-		{ property: "og:description", content: "Chat with SanDieGPT, an AI assistant focused on San Diego information and recommendations." }
+		{ property: "og:description", content: "Need a quick San Diego fact or recommendation? SanDieGPT delivers concise, accurate answers with a touch of local flair — all without making things up." }
 	];
 }
 
