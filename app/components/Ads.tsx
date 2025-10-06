@@ -37,7 +37,7 @@ export default function Ads() {
 			>
 				<div id="slide1" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide1-tab">
 					<a
-						href="//doitwithai.io/"
+						href="//doitwithai.io/training?utm_source=allwebsd&utm_medium=adbanner&utm_campaign=tutorial_collab_2025"
 						onClick={trackEvent("image_click", {
 							params: {
 								action: "Click",
