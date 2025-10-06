@@ -10,5 +10,6 @@ export default [
 		route("about", "routes/about.tsx"),
 		route("contact", "routes/contact.tsx"),
 		route("chat", "routes/chat.tsx"),
+		route("do-it-with-ai", "routes/doitwithai.tsx"),
 	]),
 ] satisfies RouteConfig;
