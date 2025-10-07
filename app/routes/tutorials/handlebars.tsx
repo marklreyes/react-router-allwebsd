@@ -1,0 +1,72 @@
+import * as React from "react";
+import TutorialLayout, { CodeBlock, VideoEmbed } from "../../components/TutorialLayout";
+
+export default function HandlebarsTutorial() {
+  return (
+    <TutorialLayout
+      title="Handlebars Templates"
+      subtitle="Reusable AI prompt templates"
+      iconLabel="HBS"
+      estTime="20 minutes"
+      level="Beginner"
+      toc={[
+        { id: "prerequisites", label: "Prerequisites" },
+        { id: "video", label: "Video" },
+        { id: "variables", label: "Variables" },
+        { id: "loops", label: "Loops" },
+        { id: "conditions", label: "Conditions" },
+        { id: "resources", label: "Additional Resources" },
+      ]}
+  nextPrev={{ prev: { label: "JSON", to: "/do-it-with-ai/json" } }}
+    >
+      <section id="prerequisites" className="space-y-3">
+        <h2 className="text-xl font-semibold">Prerequisites</h2>
+        <ul className="list-disc ml-6 space-y-1">
+          <li>
+            Familiar with basic placeholders like <code>{"{{name}}"}</code> (no prior Handlebars needed).
+          </li>
+          <li>Optional: a MindStudio project where you can paste a template.</li>
+          <li>Optional: a small sample dataset to test loops and conditions.</li>
+        </ul>
+      </section>
+  <hr className="my-8 border-t border-white/20" />
+
+      <section id="video" className="space-y-3">
+        <h2 className="text-xl font-semibold">Video</h2>
+        <p>Quick tour of Handlebars placeholders, loops, and conditions.</p>
+        <VideoEmbed videoId={"sgITSK1sI_k"} title="Handlebars – Video Walkthrough" />
+  </section>
+  <hr className="my-8 border-t border-white/20" />
+
+      <section id="variables" className="space-y-3">
+        <h2 className="text-xl font-semibold">Variables</h2>
+        <CodeBlock language="hbs" code={`Hello, {{name}}!`} />
+  </section>
+  <hr className="my-8 border-t border-white/20" />
+      <section id="loops" className="space-y-3">
+        <h2 className="text-xl font-semibold">Loops</h2>
+        <CodeBlock language="hbs" code={`<ul>\n{{#each items}}\n  <li>{{this}}</li>\n{{/each}}\n</ul>`} />
+  </section>
+  <hr className="my-8 border-t border-white/20" />
+      <section id="conditions" className="space-y-3">
+        <h2 className="text-xl font-semibold">Conditions</h2>
+        <CodeBlock language="hbs" code={`{{#if isMember}}Welcome back!{{else}}Join us!{{/if}}`} />
+  </section>
+
+      <section id="resources" className="space-y-3">
+        <h2 className="text-xl font-semibold">Additional Resources</h2>
+        <ul className="list-disc ml-6 space-y-1">
+          <li>
+            Handlebars docs: <a href="https://handlebarsjs.com/guide/" target="_blank" rel="noopener noreferrer" className="underline">Official Guide</a>
+          </li>
+          <li>
+            Built-in helpers: <a href="https://handlebarsjs.com/guide/builtin-helpers.html" target="_blank" rel="noopener noreferrer" className="underline">if, each, etc.</a>
+          </li>
+          <li>
+            Templates in practice: <a href="https://handlebarsjs.com/guide/expressions.html" target="_blank" rel="noopener noreferrer" className="underline">Expressions</a>
+          </li>
+        </ul>
+      </section>
+    </TutorialLayout>
+  );
+}
