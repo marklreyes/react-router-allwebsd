@@ -65,6 +65,9 @@ export default function HandlebarsTutorial() {
         <h2 className="text-xl font-semibold">Additional Resources</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>
+            MindStudio University: <a href="https://university.mindstudio.ai/docs/building-ai-agents/variables#special-handlebars-methods-in-mindstudio" target="_blank" rel="noopener noreferrer" className="underline">Special Handlebars Methods in MindStudio</a>
+          </li>
+          <li>
             Handlebars docs: <a href="https://handlebarsjs.com/guide/" target="_blank" rel="noopener noreferrer" className="underline">Official Guide</a>
           </li>
           <li>
