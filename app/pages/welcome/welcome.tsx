@@ -1,12 +1,8 @@
-import { useState } from "react";
-import { Toast } from "../../components/Toast";
 import { HeroBanner } from "../../components/HeroBanner";
-import { SiBuymeacoffee } from "react-icons/si";
 import { useTheme } from "../../context/ThemeContext";
 import { GuestShowcase } from "~/components/GuestShowcase";
 
 export function Welcome() {
-	const [showToast, setShowToast] = useState(true);
 	const { theme } = useTheme();
 
 	return (
@@ -15,18 +11,7 @@ export function Welcome() {
 			<main className="flex items-center justify-center">
 				<div className="flex-1 flex flex-col items-center gap-16 min-h-0">
 					<div className="w-full">
-						<Toast
-							role="status"
-							aria-live="polite"
-							showToast={showToast}
-							setShowToast={setShowToast}
-							icon={<SiBuymeacoffee />}
-							message="Your support helps keep"
-							link={{
-								to: "/sponsors",
-								text: "this platform running smoothly!"
-							}}
-						/>
+
 
 						{/* Two-column layout for desktop, stacked for mobile */}
 						<div className="flex flex-col lg:flex-row gap-8">
