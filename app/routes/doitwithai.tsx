@@ -66,7 +66,7 @@ export default function DoItWithAI() {
 						Start here: the building blocks for MindStudio
 					</h2>
 					<p className={`mt-4 max-w-2xl mx-auto text-xl text-gray-200`}>
-						Learn HTML, Markdown, JSON, and Handlebars—then apply them to prompts, templates, and data flows in MindStudio.
+						Follow this path—start with HTML, then Markdown, JSON, and finally Handlebars—and apply each to prompts, templates, and data flows in MindStudio.
 					</p>
 				</div>
 
@@ -337,7 +337,7 @@ export default function DoItWithAI() {
 						Ready to Become an AI Agent Builder?
 					</h2>
 					<p className="mt-4 text-lg leading-6 text-gray-200">
-						We don't just teach AI concepts, we help you unlock your creativity. Whether you're starting from scratch or ready to level up, our 3-step training path will get you there.
+						They don't just teach AI concepts, they help you unlock your creativity. Whether you're starting from scratch or ready to level up, their 3-step training path will get you there.
 					</p>
 					<a
 						href="https://doitwithai.io/training?utm_source=allwebsd&utm_medium=landingpage&utm_campaign=tutorial_collab_2025"
