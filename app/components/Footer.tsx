@@ -1,11 +1,25 @@
 import { FaDiscord, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { Toast } from "./Toast";
+import { SiBuymeacoffee } from "react-icons/si";
 
 export default function Footer() {
+  const [showToast, setShowToast] = useState(true);
   return (
 	<footer className="bg-white border-t border-gray-200 py-8" role="contentinfo">
 	  <div className="max-w-7xl mx-auto px-4">
+		{/* Global toast */}
+		<Toast
+		  role="status"
+		  aria-live="polite"
+		  showToast={showToast}
+		  setShowToast={setShowToast}
+		  icon={<SiBuymeacoffee />}
+		  message="Your support helps keep"
+		  link={{ to: "/sponsors", text: "this platform running smoothly!" }}
+		/>
 		<div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-secondary">
 		  {/* Left column (1/3): Tagline */}
 		  <div className="md:col-span-1 text-center md:text-left">
