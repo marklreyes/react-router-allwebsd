@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState } from 'react';
+import { Suspense, lazy } from 'react';
 import { useParams, type LoaderFunctionArgs } from "react-router-dom";
 import { useTheme } from "~/context/ThemeContext";
 import { GiSadCrab } from "react-icons/gi";
@@ -8,8 +8,6 @@ import { useRSSFeed } from "~/hooks/useRSSFeed";
 import type { EpisodeMetaProps } from "~/types/episode";
 import { XMLParser } from "fast-xml-parser";
 import sanitizeHtml from "sanitize-html";
-import { Toast } from "../components/Toast";
-import { SiBuymeacoffee } from "react-icons/si";
 
 // Lazy load components with error boundaries
 const ShareButtons = lazy(() =>
@@ -131,11 +129,10 @@ export default function EpisodeDetails() {
   const { id } = useParams();
   const { theme, isDarkMode } = useTheme();
   const { episode, loading, error } = useRSSFeed(id);
-	const [showToast, setShowToast] = useState(true);
 
   if (loading) {
     return (
-      <div className={`${theme.primary} ${theme.text} flex items-center gap-2 p-4 rounded-lg p-6`}>
+  <div className={`${theme.primary} ${theme.text} flex items-center gap-2 rounded-lg p-6`}>
         <TbLoader3 className="animate-spin" /> Loading episode...
       </div>
     );
@@ -143,7 +140,7 @@ export default function EpisodeDetails() {
 
   if (error || !episode) {
     return (
-      <div className={`${theme.primary} ${theme.text} flex items-center gap-2 rounded-lg p-6`}>
+  <div className={`${theme.primary} ${theme.text} flex items-center gap-2 rounded-lg p-6`}>
         <GiSadCrab /> Error: {error || "Episode not found"}
       </div>
     );
@@ -151,18 +148,6 @@ export default function EpisodeDetails() {
 
   return (
     <div className={`${theme.primary} ${theme.text} container mx-auto space-y-4 rounded-lg p-6`}>
-			<Toast
-				role="status"
-				aria-live="polite"
-				showToast={showToast}
-				setShowToast={setShowToast}
-				icon={<SiBuymeacoffee />}
-				message="Your support helps keep"
-				link={{
-					to: "/sponsors",
-					text: "this platform running smoothly!"
-				}}
-			/>
       <h1
         className="text-2xl font-bold mb-4"
         dangerouslySetInnerHTML={{ __html: episode.title }}
