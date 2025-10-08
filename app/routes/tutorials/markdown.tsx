@@ -78,7 +78,7 @@ export default function MarkdownTutorial() {
             Tables: <a href="https://www.markdownguide.org/extended-syntax/#tables" target="_blank" rel="noopener noreferrer" className="underline">Extended syntax</a>
           </li>
           <li>
-            MDN: <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Markdown" target="_blank" rel="noopener noreferrer" className="underline">What is Markdown?</a>
+            MDN: <a href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Howto/Markdown_in_MDN" target="_blank" rel="noopener noreferrer" className="underline">How to write in Markdown</a>
           </li>
         </ul>
       </section>
