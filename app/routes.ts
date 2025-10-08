@@ -11,5 +11,10 @@ export default [
 		route("contact", "routes/contact.tsx"),
 		route("chat", "routes/chat.tsx"),
 		route("do-it-with-ai", "routes/doitwithai.tsx"),
+		// Tutorial detail pages
+		route("do-it-with-ai/html", "routes/tutorials/html.tsx"),
+		route("do-it-with-ai/markdown", "routes/tutorials/markdown.tsx"),
+		route("do-it-with-ai/json", "routes/tutorials/json.tsx"),
+		route("do-it-with-ai/handlebars", "routes/tutorials/handlebars.tsx"),
 	]),
 ] satisfies RouteConfig;
