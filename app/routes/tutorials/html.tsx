@@ -71,6 +71,9 @@ export default function HtmlTutorial() {
         <h2 className="text-xl font-semibold">Additional Resources</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>
+            MindStudio University: <a href="https://university.mindstudio.ai/docs/building-ai-agents/interface-designer" target="_blank" rel="noopener noreferrer" className="underline">Interface Designer</a>
+          </li>
+          <li>
             MDN Web Docs: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer" className="underline">HTML elements</a>
           </li>
           <li>

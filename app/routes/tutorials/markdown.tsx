@@ -69,6 +69,9 @@ export default function MarkdownTutorial() {
         <h2 className="text-xl font-semibold">Additional Resources</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>
+            MindStudio University: <a href="https://university.mindstudio.ai/docs/building-ai-agents/writing-prompts" target="_blank" rel="noopener noreferrer" className="underline">Writing Prompts</a>
+          </li>
+          <li>
             Basic syntax: <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreferrer" className="underline">Markdown Guide</a>
           </li>
           <li>
