@@ -1,5 +1,13 @@
 import * as React from "react";
-import TutorialLayout, { CodeBlock, VideoEmbed } from "../../components/TutorialLayout";
+import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
+
+export function meta() {
+  return tutorialMeta({
+    title: "JSON Simplified",
+    description: "Understand objects, arrays, and types to structure data for tools and APIs.",
+    path: "/do-it-with-ai/json",
+  });
+}
 
 export default function JsonTutorial() {
   return (
@@ -23,8 +31,7 @@ export default function JsonTutorial() {
         <h2 className="text-xl font-semibold">Prerequisites</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>Comfort reading simple key/value data (no coding required).</li>
-          <li>Optional: access to a MindStudio project with tools/webhooks.</li>
-          <li>Optional: a free API test tool like curl or Postman for exploration.</li>
+          <li>MindStudio Starter plan to access data sources.</li>
         </ul>
       </section>
   <hr className="my-8 border-t border-white/20" />

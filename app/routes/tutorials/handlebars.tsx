@@ -1,5 +1,13 @@
 import * as React from "react";
-import TutorialLayout, { CodeBlock, VideoEmbed } from "../../components/TutorialLayout";
+import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
+
+export function meta() {
+  return tutorialMeta({
+    title: "Handlebars Templates",
+    description: "Use variables, loops, and conditions to build reusable AI prompt templates.",
+    path: "/do-it-with-ai/handlebars",
+  });
+}
 
 export default function HandlebarsTutorial() {
   return (
@@ -25,7 +33,7 @@ export default function HandlebarsTutorial() {
           <li>
             Familiar with basic placeholders like <code>{"{{name}}"}</code> (no prior Handlebars needed).
           </li>
-          <li>Optional: a MindStudio project where you can paste a template.</li>
+          <li>MindStudio Starter plan, so you can create an agent and paste a template.</li>
           <li>Optional: a small sample dataset to test loops and conditions.</li>
         </ul>
       </section>
