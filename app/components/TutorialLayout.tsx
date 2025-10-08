@@ -127,6 +127,41 @@ export function VideoEmbed({ videoId, title }: { videoId?: string; title?: strin
   );
 }
 
+// Helper to build meta tags for tutorial pages
+export function tutorialMeta({
+  title,
+  description,
+  path,
+  image,
+}: {
+  title: string;
+  description?: string;
+  path: string; // absolute path starting with '/'
+  image?: string;
+}) {
+  const baseUrl = process.env.NODE_ENV === "development"
+    ? "http://localhost:8888"
+    : "https://allwebsd.com";
+
+  const pageTitle = `${title} | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com`;
+  const desc = description ?? "Beginner-friendly tutorials to apply HTML, Markdown, JSON, and Handlebars in real workflows.";
+  const img = image ?? `${baseUrl}/images/allwebsd-share.jpg`;
+  const url = `${baseUrl}${path}`;
+
+  return [
+    { title: pageTitle, override: true },
+    { name: "description", content: desc, override: true },
+    { property: "og:title", content: title, override: true },
+    { property: "og:description", content: desc, override: true },
+    { property: "og:url", content: url, override: true },
+    { property: "og:image", content: img, override: true },
+    { name: "twitter:card", content: "summary_large_image", override: true },
+    { name: "twitter:title", content: title, override: true },
+    { name: "twitter:description", content: desc, override: true },
+    { name: "twitter:image", content: img, override: true },
+  ];
+}
+
 export default function TutorialLayout({
   title,
   subtitle,

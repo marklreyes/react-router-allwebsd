@@ -1,5 +1,13 @@
 import * as React from "react";
-import TutorialLayout, { CodeBlock, VideoEmbed } from "../../components/TutorialLayout";
+import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
+
+export function meta() {
+  return tutorialMeta({
+    title: "HTML Basics",
+    description: "Format outputs for pages and chat UIs with simple, reusable HTML patterns.",
+    path: "/do-it-with-ai/html",
+  });
+}
 
 export default function HtmlTutorial() {
   return (
@@ -25,7 +33,7 @@ export default function HtmlTutorial() {
         <ul className="list-disc ml-6 space-y-1">
           <li>A modern browser (Chrome, Edge, or Safari).</li>
           <li>No coding experience required—basic copy/paste is enough.</li>
-          <li>Optional: a MindStudio project to paste the HTML output into a page or chat block.</li>
+          <li>MindStudio Starter plan, so you can create an agent and paste HTML output.</li>
         </ul>
       </section>
   <hr className="my-8 border-t border-white/20" />

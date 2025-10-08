@@ -1,5 +1,13 @@
 import * as React from "react";
-import TutorialLayout, { CodeBlock, VideoEmbed } from "../../components/TutorialLayout";
+import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
+
+export function meta() {
+  return tutorialMeta({
+    title: "Markdown Magic",
+    description: "Write readable prompts and summaries quickly with Markdown basics.",
+    path: "/do-it-with-ai/markdown",
+  });
+}
 
 export default function MarkdownTutorial() {
   return (
@@ -25,7 +33,7 @@ export default function MarkdownTutorial() {
         <ul className="list-disc ml-6 space-y-1">
           <li>A modern browser and a text editor (or the MindStudio prompt editor).</li>
           <li>No coding experience required.</li>
-          <li>Optional: a MindStudio project to paste prompts and summaries.</li>
+          <li>MindStudio Starter plan, so you can create an agent and paste prompts and summaries.</li>
         </ul>
       </section>
   <hr className="my-8 border-t border-white/20" />
