@@ -10,8 +10,8 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@netlify/functions": "^4.2.6",
-    "@react-router/node": "^7.7.0",
+    "@netlify/functions": "^4.2.7",
+    "@react-router/node": "^7.9.3",
     "@react-router/serve": "^7.7.0",
     "@tailwindcss/vite": "^4.1.4",
     "dompurify": "^3.2.4",
@@ -24,7 +24,7 @@
     "react-icons": "^5.4.0",
     "react-markdown": "^10.0.0",
     "react-router": "^7.9.3",
-    "react-router-dom": "^7.8.0",
+    "react-router-dom": "^7.9.3",
     "sanitize-html": "^2.16.0"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "happy-dom": "^18.0.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5.6.3",
+    "typescript": "^5.9.3",
     "vite": "^7.1.5",
     "vite-tsconfig-paths": "^5.1.2",
     "vitest": "^3.1.2"

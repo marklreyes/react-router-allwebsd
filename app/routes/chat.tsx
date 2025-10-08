@@ -4,9 +4,7 @@ import { useTheme } from "~/context/ThemeContext";
 import type { Route } from "./+types/contact";
 import ReactMarkdown from "react-markdown";
 import { RiRobot2Fill } from "react-icons/ri";
-import { Toast } from "../components/Toast";
 import { VisuallyHidden } from "../components/VisuallyHidden";
-import DOMPurify from "dompurify";
 import { sanitizeInput } from "~/utils/sanitizer";
 import { trackEvent } from "~/utils/trackEvent";
 
@@ -17,16 +15,6 @@ interface Message {
 
 const MAX_MESSAGE_LENGTH = 800; // Reduced from 1000 to better align with 300 token limit
 const MAX_STORED_MESSAGES = 10;
-
-// export const sanitizeInput = (input: string): string => {
-// 	if (!input) return "";
-// 	// At the beginning of the function
-// 	return DOMPurify.sanitize(input.trim(), {
-// 		ALLOWED_TAGS: [], // No HTML tags allowed
-// 		ALLOWED_ATTR: [], // No attributes allowed
-// 		FORBID_CONTENTS: ['script', 'style', 'iframe', 'object', 'embed', 'form']
-// 	}).slice(0, MAX_MESSAGE_LENGTH).trim();
-// };
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -61,7 +49,6 @@ export default function Chat() {
   const [isLoading, setIsLoading] = useState(false);
   const [lastMessageTime, setLastMessageTime] = useState(0);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [showToast, setShowToast] = useState(true);
 
   // Rate limit configuration
   const RATE_LIMIT_MS = 1000; // 1 second between messages
@@ -173,21 +160,9 @@ export default function Chat() {
 		<h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">
 				SanDieGPT Chat
 		</h1>
-		<Toast
-			role="status"
-			aria-live="polite"
-			showToast={showToast}
-			setShowToast={setShowToast}
-			icon={<RiRobot2Fill />}
-			message="Your support helps keep"
-			link={{
-				to: "/sponsors",
-				text: "this AI assistant running smoothly!"
-			}}
-		/>
 
 		<p className="text-[#2F241D] mb-6">
-		Ask me anything about San Diego! From businesses, local attractions and beaches to restaurants
+		Ask me anything about San Diego! From businesses, tech scene, local attractions and beaches to restaurants
 		and cultural events, I'm here to help you explore America's Finest City!
 		</p>
 

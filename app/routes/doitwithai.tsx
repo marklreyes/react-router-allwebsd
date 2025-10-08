@@ -1,5 +1,6 @@
 import type { Route } from "./+types/doitwithai";
 import { useTheme } from "../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -65,7 +66,7 @@ export default function DoItWithAI() {
 						Start here: the building blocks for MindStudio
 					</h2>
 					<p className={`mt-4 max-w-2xl mx-auto text-xl text-gray-200`}>
-						Learn HTML, Markdown, JSON, and Handlebars—then apply them to prompts, templates, and data flows in MindStudio.
+						Follow this path—start with HTML, then Markdown, JSON, and finally Handlebars—and apply each to prompts, templates, and data flows in MindStudio.
 					</p>
 				</div>
 
@@ -113,9 +114,9 @@ export default function DoItWithAI() {
 									</svg>
 									15 minutes • Beginner friendly
 								</div>
-								<button className={`mt-4 w-full ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link to="/do-it-with-ai/html" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
 									Start HTML Tutorial
-								</button>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -157,9 +158,9 @@ export default function DoItWithAI() {
 									</svg>
 									12 minutes • No coding required
 								</div>
-								<button className={`mt-4 w-full ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link to="/do-it-with-ai/markdown" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
 									Start Markdown Tutorial
-								</button>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -212,9 +213,9 @@ export default function DoItWithAI() {
 									</svg>
 									18 minutes • Visual examples
 								</div>
-								<button className={`mt-4 w-full ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link to="/do-it-with-ai/json" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
 									Start JSON Tutorial
-								</button>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -262,9 +263,9 @@ export default function DoItWithAI() {
 									</svg>
 									20 minutes • Interactive examples
 								</div>
-								<button className={`mt-4 w-full ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link to="/do-it-with-ai/handlebars" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
 									Start Handlebars Tutorial
-								</button>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -336,7 +337,7 @@ export default function DoItWithAI() {
 						Ready to Become an AI Agent Builder?
 					</h2>
 					<p className="mt-4 text-lg leading-6 text-gray-200">
-						We don't just teach AI concepts, we help you unlock your creativity. Whether you're starting from scratch or ready to level up, our 3-step training path will get you there.
+						They don't just teach AI concepts, they help you unlock your creativity. Whether you're starting from scratch or ready to level up, their 3-step training path will get you there.
 					</p>
 					<a
 						href="https://doitwithai.io/training?utm_source=allwebsd&utm_medium=landingpage&utm_campaign=tutorial_collab_2025"
