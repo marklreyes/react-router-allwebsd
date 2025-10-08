@@ -6,8 +6,6 @@ import { XMLParser } from "fast-xml-parser";
 import { Pagination } from "~/components/Pagination";
 import { useSearchParams } from "react-router-dom";
 import type { RSSFeed } from "~/types/episode";
-import { Toast } from "../../components/Toast";
-import { SiBuymeacoffee } from "react-icons/si";
 
 export function EpisodesList() {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -16,7 +14,6 @@ export function EpisodesList() {
 	const [rssData, setRssData] = useState<RSSFeed | null>(null);
 	const itemsPerPage = 5;
 	const { theme } = useTheme();
-	const [showToast, setShowToast] = useState(true);
 
 	// Get current page from URL or default to 1
 	const currentPage = Number(searchParams.get("page")) || 1;
@@ -96,18 +93,7 @@ export function EpisodesList() {
 
 	return (
 		<main className="w-full" role="main">
-			<Toast
-				role="status"
-				aria-live="polite"
-				showToast={showToast}
-				setShowToast={setShowToast}
-				icon={<SiBuymeacoffee />}
-				message="Your support helps keep"
-				link={{
-					to: "/sponsors",
-					text: "this platform running smoothly!"
-				}}
-			/>
+
 			<h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
 				Episodes List
 			</h1>
@@ -130,7 +116,6 @@ export function EpisodesList() {
 								created={item.created}
 								content={item.content}
 								enclosure={item.enclosures?.[0]}
-								guid={item.guids?.[0]}
 								itunesDuration={item.itunes_duration}
 								currentPage={currentPage}
 								index={index}

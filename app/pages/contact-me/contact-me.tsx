@@ -4,8 +4,6 @@ import { getOutlineButtonClasses } from "~/utils/buttonClasses";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { HiOutlineMail, HiOutlineRefresh } from "react-icons/hi";
-import { Toast } from "../../components/Toast";
-import { SiBuymeacoffee } from "react-icons/si";
 
 export function ContactMe() {
     const { isDarkMode, theme } = useTheme();
@@ -13,7 +11,6 @@ export function ContactMe() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [subjectValue, setSubjectValue] = useState("");
-	const [showToast, setShowToast] = useState(true);
 
     // Parse subject from URL parameters on component mount
     useEffect(() => {
@@ -85,18 +82,6 @@ export function ContactMe() {
             <main className="flex items-center justify-center px-4 py-8">
                 <div className="flex-1 flex flex-col items-center gap-16 min-h-0 max-w-6xl">
                     <div className="w-full">
-						<Toast
-							role="status"
-							aria-live="polite"
-							showToast={showToast}
-							setShowToast={setShowToast}
-							icon={<SiBuymeacoffee />}
-							message="Your support helps keep"
-							link={{
-								to: "/sponsors",
-								text: "this platform running smoothly!"
-							}}
-						/>
 						<div className="text-center">
 							<h1 className="text-3xl md:text-4xl font-bold text-white mb-8">
 								Thank You!
@@ -123,18 +108,6 @@ export function ContactMe() {
         <main className="flex items-center justify-center px-4 py-8">
             <div className="flex-1 flex flex-col items-center gap-16 min-h-0 max-w-6xl">
                 <div className="w-full">
-					<Toast
-						role="status"
-						aria-live="polite"
-						showToast={showToast}
-						setShowToast={setShowToast}
-						icon={<SiBuymeacoffee />}
-						message="Your support helps keep"
-						link={{
-							to: "/sponsors",
-							text: "this platform running smoothly!"
-						}}
-					/>
                     <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
                         Contact Me
                     </h1>
