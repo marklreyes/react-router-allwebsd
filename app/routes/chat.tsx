@@ -187,7 +187,7 @@ export default function Chat() {
 		/>
 
 		<p className="text-[#2F241D] mb-6">
-		Ask me anything about San Diego! From businesses, local attractions and beaches to restaurants
+		Ask me anything about San Diego! From businesses, tech scene, local attractions and beaches to restaurants
 		and cultural events, I'm here to help you explore America's Finest City!
 		</p>
 
