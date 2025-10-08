@@ -19,7 +19,7 @@ export default function JsonTutorial() {
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
-        { id: "video", label: "Video" },
+        { id: "watch-json-simplified", label: "Watch JSON Simplified" },
         { id: "objects", label: "Objects" },
         { id: "arrays", label: "Arrays" },
         { id: "types", label: "Types" },
@@ -36,9 +36,9 @@ export default function JsonTutorial() {
       </section>
   <hr className="my-8 border-t border-white/20" />
 
-      <section id="video" className="space-y-3">
-        <h2 className="text-xl font-semibold">Video</h2>
-        <p>See how JSON structures map to real workflows.</p>
+      <section id="watch-json-simplified" className="space-y-3">
+        <h2 className="text-xl font-semibold">Watch JSON Simplified</h2>
+        <p>Add a JSON structure and how it maps to real workflows.</p>
         <VideoEmbed videoId={undefined} title="JSON Simplified – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />

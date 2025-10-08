@@ -19,7 +19,7 @@ export default function HandlebarsTutorial() {
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
-        { id: "video", label: "Video" },
+        { id: "watch-handlebars-templates", label: "Watch Handlebars Templates" },
         { id: "variables", label: "Variables" },
         { id: "loops", label: "Loops" },
         { id: "conditions", label: "Conditions" },
@@ -39,10 +39,10 @@ export default function HandlebarsTutorial() {
       </section>
   <hr className="my-8 border-t border-white/20" />
 
-      <section id="video" className="space-y-3">
-        <h2 className="text-xl font-semibold">Video</h2>
-        <p>Quick tour of Handlebars placeholders, loops, and conditions.</p>
-        <VideoEmbed videoId={"sgITSK1sI_k"} title="Handlebars – Video Walkthrough" />
+      <section id="watch-handlebars-templates" className="space-y-3">
+        <h2 className="text-xl font-semibold">Watch Handlebars Templates</h2>
+        <p>Quick tour of Handlebars and how it manages dynamic content.</p>
+		<VideoEmbed url="https://youtu.be/sgITSK1sI_k?si=825K2DTqRMOo8u05" title="Handlebars – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 
