@@ -117,7 +117,7 @@ export function VideoEmbed({ videoId, url, title, start, copyLabel }: { videoId?
       // Extract video id from different URL forms
       if (host === "youtu.be") {
         id = u.pathname.replace(/^\//, "");
-      } else if (host.endsWith("youtube.com")) {
+      }  else if (host === "youtube.com" || host === "www.youtube.com") {
         if (u.pathname.startsWith("/watch")) {
           id = u.searchParams.get("v") ?? undefined;
         } else if (u.pathname.startsWith("/embed/")) {
