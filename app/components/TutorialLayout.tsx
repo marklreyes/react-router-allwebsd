@@ -102,25 +102,142 @@ export function CodeBlock({ code, language, filename }: { code: string; language
   );
 }
 
-export function VideoEmbed({ videoId, title }: { videoId?: string; title?: string }) {
+export function VideoEmbed({ videoId, url, title, start, copyLabel }: { videoId?: string; url?: string; title?: string; start?: number; copyLabel?: string }) {
   const { isDarkMode } = useTheme();
+
+  // Parse a provided YouTube URL to extract videoId and timestamp
+  const parseYouTube = (input?: string): { id?: string; t?: number } => {
+    if (!input) return {};
+    try {
+      const u = new URL(input);
+      const host = u.hostname.replace(/^www\./, "");
+      let id: string | undefined;
+      let tSec: number | undefined;
+
+      // Extract video id from different URL forms
+      if (host === "youtu.be") {
+        id = u.pathname.replace(/^\//, "");
+      }  else if (host === "youtube.com" || host === "www.youtube.com") {
+        if (u.pathname.startsWith("/watch")) {
+          id = u.searchParams.get("v") ?? undefined;
+        } else if (u.pathname.startsWith("/embed/")) {
+          id = u.pathname.split("/")[2];
+        }
+      }
+
+      // Extract timestamp from t or start
+      const tParam = u.searchParams.get("t") || u.searchParams.get("start");
+      if (tParam) {
+        tSec = toSeconds(tParam);
+      }
+
+      return { id, t: tSec };
+    } catch {
+      return {};
+    }
+  };
+
+  // Convert YouTube time formats like "90", "90s", or "1h2m3s" to seconds
+  const toSeconds = (t: string): number => {
+    // Numeric or numeric with trailing 's'
+    const numeric = t.match(/^\d+$/) || t.match(/^(\d+)s$/i);
+    if (numeric) {
+      const n = parseInt(numeric[1] ?? t, 10);
+      return isNaN(n) ? 0 : n;
+    }
+    // h/m/s format like 1h2m3s, 15m30s, 45s
+    const re = /(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/i;
+    const m = t.match(re);
+    if (m) {
+      const h = parseInt(m[1] ?? "0", 10) || 0;
+      const mnt = parseInt(m[2] ?? "0", 10) || 0;
+      const s = parseInt(m[3] ?? "0", 10) || 0;
+      return h * 3600 + mnt * 60 + s;
+    }
+    return 0;
+  };
+
+  const parsed = parseYouTube(url);
+  const finalId = videoId ?? parsed.id;
+  const finalStart = typeof start === "number" ? start : parsed.t;
+
+  // Build embed and share URLs
+  const embedSrc = finalId
+    ? `https://www.youtube.com/embed/${finalId}${finalStart && finalStart > 0 ? `?start=${finalStart}` : ""}`
+    : undefined;
+
+  const watchUrl = finalId
+    ? `https://www.youtube.com/watch?v=${finalId}${finalStart && finalStart > 0 ? `&t=${finalStart}s` : ""}`
+    : undefined;
+
+  const [copied, setCopied] = React.useState(false);
+
+  const formatTime = (s?: number) => {
+    if (!s || s <= 0) return undefined;
+    const hours = Math.floor(s / 3600);
+    const minutes = Math.floor((s % 3600) / 60);
+    const seconds = Math.floor(s % 60);
+    const hh = hours > 0 ? `${hours}:` : "";
+    const mm = hours > 0 ? String(minutes).padStart(2, "0") : String(minutes);
+    const ss = String(seconds).padStart(2, "0");
+    return `${hh}${mm}:${ss}`;
+  };
+
+  const timeLabel = formatTime(finalStart);
+
+  const onCopy = async () => {
+    if (!watchUrl) return;
+    try {
+      await navigator.clipboard.writeText(watchUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // no-op
+    }
+  };
+
   return (
-    <div className={`relative w-full overflow-hidden rounded-md border ${isDarkMode ? "border-[#2F241D] bg-[#2F241D]" : "border-gray-200 bg-gray-50"}`}>
-      {/* 16:9 aspect ratio */}
-      <div className="pt-[56.25%]" />
-      {videoId ? (
-        <iframe
-          className="absolute inset-0 w-full h-full"
-          src={`https://www.youtube.com/embed/${videoId}`}
-          title={title ?? "Tutorial video"}
-          frameBorder={0}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      ) : (
-        <div className={`absolute inset-0 flex items-center justify-center text-sm ${isDarkMode ? "text-gray-200" : "text-gray-700"}`}>
-          <span>Video coming soon. Add a YouTube videoId to VideoEmbed.</span>
+    <div>
+      <div className={`relative w-full overflow-hidden rounded-md border ${isDarkMode ? "border-[#2F241D] bg-[#2F241D]" : "border-gray-200 bg-gray-50"}`}>
+        {/* 16:9 aspect ratio */}
+        <div className="pt-[56.25%]" />
+        {finalId ? (
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src={embedSrc}
+            title={title ?? "Tutorial video"}
+            frameBorder={0}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        ) : (
+          <div className={`absolute inset-0 flex items-center justify-center text-sm ${isDarkMode ? "text-gray-200" : "text-gray-700"}`}>
+            <span>Video coming soon. Add a YouTube videoId or URL to VideoEmbed.</span>
+          </div>
+        )}
+      </div>
+
+      {/* Copy link helper */}
+      {finalId && (
+        <div className="mt-2 flex items-center justify-end gap-2">
+          <button
+            type="button"
+            onClick={onCopy}
+            className={
+              `rounded px-2 py-1 text-xs font-medium transition-colors ` +
+              (isDarkMode
+                ? `bg-[#F03D86] text-white hover:bg-[#d63570]`
+                : `bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]`)
+            }
+            aria-label={timeLabel ? `Copy YouTube link starting at ${timeLabel}` : `Copy YouTube link`}
+          >
+            {copied
+              ? `Copied`
+              : copyLabel ?? (timeLabel ? `Copy link to ${timeLabel}` : `Copy video link`)}
+          </button>
+          {/* Optional raw URL display for debugging; keep hidden unless needed */}
+          {/* <span className={`text-xs ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>{watchUrl}</span> */}
         </div>
       )}
     </div>

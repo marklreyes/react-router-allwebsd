@@ -19,7 +19,7 @@ export default function HtmlTutorial() {
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
-        { id: "video", label: "Video" },
+        { id: "watch-html-basics", label: "Watch HTML Basics" },
         { id: "headings", label: "Headings" },
         { id: "lists", label: "Lists" },
         { id: "links", label: "Links" },
@@ -38,9 +38,9 @@ export default function HtmlTutorial() {
       </section>
   <hr className="my-8 border-t border-white/20" />
 
-      <section id="video" className="space-y-3">
-        <h2 className="text-xl font-semibold">Video</h2>
-        <p>Watch a quick walkthrough of HTML basics.</p>
+      <section id="watch-html-basics" className="space-y-3">
+        <h2 className="text-xl font-semibold">Watch HTML Basics</h2>
+        <p>Learn how to apply the basics of HTML into your MindStudio project.</p>
         <VideoEmbed videoId={undefined} title="HTML Basics – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />

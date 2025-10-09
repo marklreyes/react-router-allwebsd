@@ -19,7 +19,7 @@ export default function MarkdownTutorial() {
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
-        { id: "video", label: "Video" },
+        { id: "watch-markdown-magic", label: "Watch Markdown Magic" },
         { id: "headings", label: "Headings" },
         { id: "lists", label: "Lists" },
         { id: "links", label: "Links" },
@@ -38,9 +38,9 @@ export default function MarkdownTutorial() {
       </section>
   <hr className="my-8 border-t border-white/20" />
 
-      <section id="video" className="space-y-3">
-        <h2 className="text-xl font-semibold">Video</h2>
-        <p>A short demo of writing and previewing Markdown.</p>
+      <section id="watch-markdown-magic" className="space-y-3">
+        <h2 className="text-xl font-semibold">Watch Markdown Magic</h2>
+        <p>Learn how to apply the basics of Markdown as prompts within your MindStudio project.</p>
         <VideoEmbed videoId={undefined} title="Markdown – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
@@ -68,6 +68,9 @@ export default function MarkdownTutorial() {
       <section id="resources" className="space-y-3">
         <h2 className="text-xl font-semibold">Additional Resources</h2>
         <ul className="list-disc ml-6 space-y-1">
+          <li>
+            MindStudio University: <a href="https://university.mindstudio.ai/1-core-building-principles/writing-good-prompts" target="_blank" rel="noopener noreferrer" className="underline">Writing Good Prompts</a>
+          </li>
           <li>
             MindStudio University: <a href="https://university.mindstudio.ai/docs/building-ai-agents/writing-prompts" target="_blank" rel="noopener noreferrer" className="underline">Writing Prompts</a>
           </li>
