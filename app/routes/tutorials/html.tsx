@@ -35,6 +35,7 @@ export default function HtmlTutorial() {
           <li>A modern browser (Chrome, Edge, or Safari).</li>
           <li>No coding experience required—basic copy/paste is enough.</li>
           <li>MindStudio Starter plan, so you can create an agent and paste HTML output.</li>
+					<li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
         </ul>
       </section>
   <hr className="my-8 border-t border-white/20" />

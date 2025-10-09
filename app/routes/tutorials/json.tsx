@@ -33,6 +33,7 @@ export default function JsonTutorial() {
         <ul className="list-disc ml-6 space-y-1">
           <li>Comfort reading simple key/value data (no coding required).</li>
           <li>MindStudio Starter plan to access data sources.</li>
+          <li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
         </ul>
       </section>
   <hr className="my-8 border-t border-white/20" />
