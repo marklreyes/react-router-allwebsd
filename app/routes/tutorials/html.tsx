@@ -20,6 +20,7 @@ export default function HtmlTutorial() {
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
         { id: "watch-html-basics", label: "Watch HTML Basics" },
+        { id: "quick-setup", label: "Quick Setup" },
         { id: "headings", label: "Headings" },
         { id: "lists", label: "Lists" },
         { id: "links", label: "Links" },
@@ -45,6 +46,18 @@ export default function HtmlTutorial() {
   </section>
   <hr className="my-8 border-t border-white/20" />
 
+      <section id="quick-setup" className="space-y-3">
+        <h2 className="text-xl font-semibold">Quick Setup</h2>
+        <ol className="list-decimal ml-6 space-y-1">
+          <li>Step 1 placeholder text</li>
+          <li>Step 2 placeholder text</li>
+          <li>Step 3 placeholder text</li>
+          <li>Step 4 placeholder text</li>
+          <li>Step 5 placeholder text</li>
+        </ol>
+      </section>
+  <hr className="my-8 border-t border-white/20" />
+
       <section id="headings" className="space-y-3">
         <h2 className="text-xl font-semibold">Headings</h2>
         <p>Use headings to structure your output.</p>
@@ -66,6 +79,7 @@ export default function HtmlTutorial() {
         <h2 className="text-xl font-semibold">Images</h2>
         <CodeBlock language="html" code={`<img src="/images/example.png" alt="Example" />`} />
   </section>
+  <hr className="my-8 border-t border-white/20" />
 
       <section id="resources" className="space-y-3">
         <h2 className="text-xl font-semibold">Additional Resources</h2>

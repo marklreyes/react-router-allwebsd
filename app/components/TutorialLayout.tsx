@@ -38,23 +38,121 @@ export function Badge({ children }: { children: React.ReactNode }) {
 
 function Toc({ items }: { items: TocItem[] }) {
   const { isDarkMode } = useTheme();
-  if (!items?.length) return null;
+  const [activeId, setActiveId] = React.useState<string>("");
+
+  React.useEffect(() => {
+    if (!items?.length) return;
+
+    // Check for initial hash in URL and set active state
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash && items.some(item => item.id === initialHash)) {
+      setActiveId(initialHash);
+
+      // Scroll to the hash target after a short delay to ensure content is rendered
+      setTimeout(() => {
+        const element = document.getElementById(initialHash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // If no hash, set the first item as active by default
+      setActiveId(items[0].id);
+    }
+
+    // Listen for hash changes (when clicking TOC links or h2 headings)
+    const handleHashChange = () => {
+      const currentHash = window.location.hash.replace('#', '');
+      if (currentHash && items.some(item => item.id === currentHash)) {
+        setActiveId(currentHash);
+        // Also scroll to the element to ensure it's in view
+        setTimeout(() => {
+          const element = document.getElementById(currentHash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 50);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Simple scroll-based detection with throttling
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          // Don't update active state if we have a hash in URL (let hash take priority)
+          const currentHash = window.location.hash.replace('#', '');
+          if (currentHash && items.some(item => item.id === currentHash)) {
+            // Hash is present and valid, don't override with scroll detection
+            ticking = false;
+            return;
+          }
+
+          const scrollPosition = window.scrollY + 100; // Offset for header
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+
+          // Find the section that's currently in view
+          let currentSection = items[0].id; // Default to first
+
+          for (const item of items) {
+            const element = document.getElementById(item.id);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              const elementTop = rect.top + window.scrollY;
+
+              if (scrollPosition >= elementTop) {
+                currentSection = item.id;
+              }
+            }
+          }
+
+          // Only override with last section if we're truly at the very bottom (within 10px)
+          const atVeryBottom = scrollPosition + windowHeight >= documentHeight - 10;
+          if (atVeryBottom) {
+            currentSection = items[items.length - 1].id;
+          }
+
+          setActiveId(currentSection);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [items]);  if (!items?.length) return null;
+
   return (
     <nav aria-label="On this page">
       <h2 className={`text-sm font-semibold text-white`}>On this page</h2>
       <ul className="mt-3 space-y-2">
-        {items.map((item) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              className={
-                `block text-sm transition-colors text-gray-200 hover:text-white`
-              }
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+        {items.map((item) => {
+          const isActive = activeId === item.id;
+          return (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className={
+                  `block text-sm transition-colors border-l-2 pl-3 py-1 ${
+                    isActive
+                      ? isDarkMode
+                        ? "border-[#FFC425] text-[#FFC425] font-medium"
+                        : "border-[#FFC425] text-[#FFC425] font-medium"
+                      : "border-transparent text-gray-200 hover:text-white hover:border-gray-400"
+                  }`
+                }
+              >
+                {item.label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
@@ -364,16 +462,29 @@ export default function TutorialLayout({
         ) : null}
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Desktop TOC */}
+          {/* Desktop TOC - Fixed height with independent scroll */}
           <aside className="hidden lg:block lg:col-span-3">
             <div className="sticky top-6">
-              {toc?.length ? <Toc items={toc} /> : null}
+              <div className="max-h-[calc(100vh-8rem)] overflow-y-auto pr-2">
+                {toc?.length ? <Toc items={toc} /> : null}
+              </div>
             </div>
           </aside>
 
-          {/* Main content */}
-          <main className="lg:col-span-9 space-y-8 text-white">
-            {children}
+          {/* Main content - Independent scroll */}
+          <main className="lg:col-span-9 space-y-8 text-white [&_h2]:cursor-pointer [&_h2]:hover:text-[#FFC425] [&_h2]:transition-colors">
+            <div onClick={(e) => {
+              // Handle clicks on h2 elements to create deep links
+              const target = e.target as HTMLElement;
+              if (target.tagName === 'H2') {
+                const section = target.closest('section');
+                if (section && section.id) {
+                  window.location.hash = section.id;
+                }
+              }
+            }}>
+              {children}
+            </div>
 
             {/* Prev/Next */}
             {(nextPrev?.prev || nextPrev?.next) && (
