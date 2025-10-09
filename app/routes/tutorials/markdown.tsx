@@ -3,8 +3,8 @@ import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../compo
 
 export function meta() {
   return tutorialMeta({
-    title: "Markdown Magic",
-    description: "Write readable prompts and summaries quickly with Markdown basics.",
+    title: "Markdown — “Give Zordon a Voice”",
+    description: "Make prompts and summaries easy to scan with Markdown basics.",
     path: "/do-it-with-ai/markdown",
   });
 }
@@ -12,14 +12,14 @@ export function meta() {
 export default function MarkdownTutorial() {
   return (
     <TutorialLayout
-      title="Markdown Magic"
-      subtitle="Readable prompts and summaries"
+      title="Markdown — “Give Zordon a Voice”"
+      subtitle="Make prompts and summaries easy to scan"
       iconLabel="MD"
       estTime="12 minutes"
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
-        { id: "watch-markdown-magic", label: "Watch Markdown Magic" },
+        { id: "watch-markdown-magic", label: "Watch Markdown — “Give Zordon a Voice”" },
         { id: "quick-setup", label: "Quick Setup" },
         { id: "headings", label: "Headings" },
         { id: "lists", label: "Lists" },
@@ -40,7 +40,7 @@ export default function MarkdownTutorial() {
   <hr className="my-8 border-t border-white/20" />
 
       <section id="watch-markdown-magic" className="space-y-3">
-        <h2 className="text-xl font-semibold">Watch Markdown Magic</h2>
+        <h2 className="text-xl font-semibold">Watch Markdown — “Give Zordon a Voice”</h2>
         <p>Learn how to apply the basics of Markdown as prompts within your MindStudio project.</p>
         <VideoEmbed videoId={undefined} title="Markdown – Video Walkthrough" />
   </section>

@@ -3,8 +3,8 @@ import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../compo
 
 export function meta() {
   return tutorialMeta({
-    title: "HTML Basics",
-    description: "Format outputs for pages and chat UIs with simple, reusable HTML patterns.",
+    title: "HTML — “Summon the Command Console”",
+    description: "Format mission briefings for chat and UI panels with simple, reusable HTML patterns.",
     path: "/do-it-with-ai/html",
   });
 }
@@ -12,14 +12,14 @@ export function meta() {
 export default function HtmlTutorial() {
   return (
     <TutorialLayout
-      title="HTML Basics"
-      subtitle="Format outputs for pages and chat UIs"
+      title="HTML — “Summon the Command Console”"
+      subtitle="Format mission briefings for chat and UI panels"
       iconLabel="HTML"
       estTime="15 minutes"
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
-        { id: "watch-html-basics", label: "Watch HTML Basics" },
+        { id: "watch-html-basics", label: "Watch HTML — “Summon the Command Console”" },
         { id: "quick-setup", label: "Quick Setup" },
         { id: "headings", label: "Headings" },
         { id: "lists", label: "Lists" },
@@ -40,9 +40,9 @@ export default function HtmlTutorial() {
   <hr className="my-8 border-t border-white/20" />
 
       <section id="watch-html-basics" className="space-y-3">
-        <h2 className="text-xl font-semibold">Watch HTML Basics</h2>
+        <h2 className="text-xl font-semibold">Watch HTML — “Summon the Command Console”</h2>
         <p>Learn how to apply the basics of HTML into your MindStudio project.</p>
-        <VideoEmbed videoId={undefined} title="HTML Basics – Video Walkthrough" />
+        <VideoEmbed videoId={undefined} title="HTML — “Summon the Command Console” – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 

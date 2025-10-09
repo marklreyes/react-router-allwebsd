@@ -3,7 +3,7 @@ import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../compo
 
 export function meta() {
   return tutorialMeta({
-    title: "Handlebars Templates",
+    title: "Handlebars — “Form the Megazord”",
     description: "Use variables, loops, and conditions to build reusable AI prompt templates.",
     path: "/do-it-with-ai/handlebars",
   });
@@ -12,14 +12,14 @@ export function meta() {
 export default function HandlebarsTutorial() {
   return (
     <TutorialLayout
-      title="Handlebars Templates"
-      subtitle="Reusable AI prompt templates"
+      title="Handlebars — “Form the Megazord”"
+      subtitle="Create reusable, dynamic AI templates"
       iconLabel="HBS"
       estTime="20 minutes"
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
-        { id: "watch-handlebars-templates", label: "Watch Handlebars Templates" },
+        { id: "watch-handlebars-templates", label: "Watch Handlebars — “Form the Megazord”" },
         { id: "quick-setup", label: "Quick Setup" },
         { id: "variables", label: "Variables" },
         { id: "loops", label: "Loops" },
@@ -41,7 +41,7 @@ export default function HandlebarsTutorial() {
   <hr className="my-8 border-t border-white/20" />
 
       <section id="watch-handlebars-templates" className="space-y-3">
-        <h2 className="text-xl font-semibold">Watch Handlebars Templates</h2>
+        <h2 className="text-xl font-semibold">Watch Handlebars — “Form the Megazord”</h2>
         <p>Quick tour of Handlebars and how it manages dynamic content.</p>
 		<VideoEmbed url="https://youtu.be/sgITSK1sI_k?si=825K2DTqRMOo8u05" title="Handlebars – Video Walkthrough" />
   </section>
