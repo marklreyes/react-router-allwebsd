@@ -32,7 +32,7 @@ export function AboutMe() {
 								<ul className="space-y-3 mb-6">
 									<li className="flex items-start">
 										<span className="text-[#FFC425] mr-2">•</span>
-										Want to connect locally with fellow digital professionals, makers, and business owners.
+										Want to connect locally with fellow digital professionals, creators, and business owners.
 									</li>
 									<li className="flex items-start">
 										<span className="text-[#FFC425] mr-2">•</span>

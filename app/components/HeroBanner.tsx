@@ -40,7 +40,7 @@ export function HeroBanner() {
 						? 'bg-[#71BEA9] bg-opacity-80'
 						: 'bg-[#FFC425] bg-opacity-90'
 				}`}>
-					Join San Diego’s digital professionals, small‑business owners, non-profits, and industry newcomers. Share your story, swap insights, and build connections that move your career forward!
+					Join San Diego’s digital professionals, small‑business owners, non-profits, creators, and industry newcomers. Share your story, swap insights, and build connections that move your career forward!
 				</p>
 				{/* Call to Action Button */}
 				<div className="mt-6 flex justify-center">
