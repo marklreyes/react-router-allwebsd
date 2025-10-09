@@ -42,8 +42,8 @@ export default function DoItWithAI() {
 							Do It With AI
 						</h1>
 						<p className={`mt-3 max-w-md mx-auto text-base ${isDarkMode ? 'text-[#2F241D]' : 'text-gray-600'} sm:text-lg md:mt-5 md:text-xl md:max-w-3xl`}>
-							Learn essential web technologies that pair well with low-code platforms like MindStudio. Designed for beginners.
-							No coding experience required!
+							Morph your ideas into powerful AI Agents — no coding required.
+							Learn essential web skills to supercharge MindStudio.
 						</p>
 						<div className="mt-8 flex justify-center">
 							<div className="inline-flex rounded-md shadow">
@@ -63,10 +63,10 @@ export default function DoItWithAI() {
 			<div id="tutorial-cards-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 				<div className="text-center mb-12">
 					<h2 className={`text-3xl font-extrabold text-white sm:text-4xl`}>
-						Start here: the building blocks for MindStudio
+						Assemble your Agent powers, one skill at a time.
 					</h2>
 					<p className={`mt-4 max-w-2xl mx-auto text-xl text-gray-200`}>
-						Follow this path—start with HTML, then Markdown, JSON, and finally Handlebars—and apply each to prompts, templates, and data flows in MindStudio.
+						Follow the Ranger path: start with HTML, level up with Markdown, unlock JSON, and fuse it all with Handlebars—bringing your prompts, templates, and data flows to life in MindStudio.
 					</p>
 				</div>
 
@@ -83,16 +83,16 @@ export default function DoItWithAI() {
 								</div>
 								<div className="ml-4">
 									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
-										HTML Basics
+										HTML — “Summon the Command Console”
 									</h3>
 									<p className={`text-sm ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
-										Format outputs for pages and chat UIs
+										Format mission briefings for chat and UI panels
 									</p>
 								</div>
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Learn essential HTML to structure AI responses and pages in MindStudio. Use headings, lists, links, and images so outputs render cleanly across chat and UI blocks.
+									Learn essential HTML to shape how your agent speaks and looks. Structure mission briefings with headings, lists, links, and images so responses render cleanly across chat and UI blocks in MindStudio.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
@@ -133,16 +133,16 @@ export default function DoItWithAI() {
 								</div>
 								<div className="ml-4">
 									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
-										Markdown Magic
+										Markdown — “Give Zordon a Voice”
 									</h3>
 									<p className={`text-sm ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
-										Readable prompts and summaries
+										Make prompts and summaries easy to scan
 									</p>
 								</div>
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Use Markdown to structure system prompts, tool docs, and chat summaries so they’re easy to scan and reuse inside MindStudio projects.
+									Use Markdown to format system prompts, tool docs, and chat summaries. Make your agent’s output clear, scannable, and easy to reuse across different MindStudio missions.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
@@ -177,16 +177,16 @@ export default function DoItWithAI() {
 								</div>
 								<div className="ml-4">
 									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
-										JSON Simplified
+										JSON — “Activate the Data Crystals”
 									</h3>
 									<p className={`text-sm ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
-										Workflow-ready data structures
+										Power workflows with structured mission data
 									</p>
 								</div>
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Model inputs, tool parameters, and API/webhook payloads in JSON so MindStudio can validate, route, and automate reliably.
+									Model inputs, tool parameters, and API/webhook payloads with JSON to give your agent structured intelligence. This lets MindStudio validate, route, and automate reliably.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
@@ -232,16 +232,16 @@ export default function DoItWithAI() {
 								</div>
 								<div className="ml-4">
 									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
-										Handlebars Templates
+										Handlebars — “Form the Megazord”
 									</h3>
 									<p className={`text-sm ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
-										Reusable AI prompt templates
+										Create reusable, dynamic AI templates
 									</p>
 								</div>
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Build prompts, emails, and UI content that swap variables, loop lists, and conditionally render for different users—ready to plug into MindStudio.
+									Build dynamic prompts, emails, and UI content that swap variables, loop lists, and render conditionally for different users. Plug it straight into MindStudio for powerful, personalized experiences.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>

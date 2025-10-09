@@ -3,7 +3,7 @@ import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../compo
 
 export function meta() {
   return tutorialMeta({
-    title: "JSON Simplified",
+    title: "JSON — “Activate the Data Crystals”",
     description: "Understand objects, arrays, and types to structure data for tools and APIs.",
     path: "/do-it-with-ai/json",
   });
@@ -12,14 +12,14 @@ export function meta() {
 export default function JsonTutorial() {
   return (
     <TutorialLayout
-      title="JSON Simplified"
-      subtitle="Workflow-ready data structures"
+      title="JSON — “Activate the Data Crystals”"
+      subtitle="Power workflows with structured mission data"
       iconLabel="JSON"
       estTime="18 minutes"
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
-        { id: "watch-json-simplified", label: "Watch JSON Simplified" },
+        { id: "watch-json-simplified", label: "Watch JSON — “Activate the Data Crystals”" },
         { id: "quick-setup", label: "Quick Setup" },
         { id: "objects", label: "Objects" },
         { id: "arrays", label: "Arrays" },
@@ -38,9 +38,9 @@ export default function JsonTutorial() {
   <hr className="my-8 border-t border-white/20" />
 
       <section id="watch-json-simplified" className="space-y-3">
-        <h2 className="text-xl font-semibold">Watch JSON Simplified</h2>
+        <h2 className="text-xl font-semibold">Watch JSON — “Activate the Data Crystals”</h2>
         <p>Add a JSON structure and how it maps to real workflows.</p>
-        <VideoEmbed videoId={undefined} title="JSON Simplified – Video Walkthrough" />
+        <VideoEmbed videoId={undefined} title="JSON — “Activate the Data Crystals” – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 
