@@ -20,6 +20,7 @@ export default function HandlebarsTutorial() {
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
         { id: "watch-handlebars-templates", label: "Watch Handlebars Templates" },
+        { id: "quick-setup", label: "Quick Setup" },
         { id: "variables", label: "Variables" },
         { id: "loops", label: "Loops" },
         { id: "conditions", label: "Conditions" },
@@ -46,6 +47,18 @@ export default function HandlebarsTutorial() {
   </section>
   <hr className="my-8 border-t border-white/20" />
 
+      <section id="quick-setup" className="space-y-3">
+        <h2 className="text-xl font-semibold">Quick Setup</h2>
+        <ol className="list-decimal ml-6 space-y-1">
+          <li>Step 1 placeholder text</li>
+          <li>Step 2 placeholder text</li>
+          <li>Step 3 placeholder text</li>
+          <li>Step 4 placeholder text</li>
+          <li>Step 5 placeholder text</li>
+        </ol>
+      </section>
+  <hr className="my-8 border-t border-white/20" />
+
       <section id="variables" className="space-y-3">
         <h2 className="text-xl font-semibold">Variables</h2>
         <CodeBlock language="hbs" code={`Hello, {{name}}!`} />
@@ -60,6 +73,7 @@ export default function HandlebarsTutorial() {
         <h2 className="text-xl font-semibold">Conditions</h2>
         <CodeBlock language="hbs" code={`{{#if isMember}}Welcome back!{{else}}Join us!{{/if}}`} />
   </section>
+  <hr className="my-8 border-t border-white/20" />
 
       <section id="resources" className="space-y-3">
         <h2 className="text-xl font-semibold">Additional Resources</h2>

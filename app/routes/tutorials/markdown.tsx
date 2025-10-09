@@ -20,6 +20,7 @@ export default function MarkdownTutorial() {
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
         { id: "watch-markdown-magic", label: "Watch Markdown Magic" },
+        { id: "quick-setup", label: "Quick Setup" },
         { id: "headings", label: "Headings" },
         { id: "lists", label: "Lists" },
         { id: "links", label: "Links" },
@@ -45,6 +46,18 @@ export default function MarkdownTutorial() {
   </section>
   <hr className="my-8 border-t border-white/20" />
 
+      <section id="quick-setup" className="space-y-3">
+        <h2 className="text-xl font-semibold">Quick Setup</h2>
+        <ol className="list-decimal ml-6 space-y-1">
+          <li>Step 1 placeholder text</li>
+          <li>Step 2 placeholder text</li>
+          <li>Step 3 placeholder text</li>
+          <li>Step 4 placeholder text</li>
+          <li>Step 5 placeholder text</li>
+        </ol>
+      </section>
+  <hr className="my-8 border-t border-white/20" />
+
       <section id="headings" className="space-y-3">
         <h2 className="text-xl font-semibold">Headings</h2>
         <CodeBlock language="md" code={`# Title\n\n## Section`} />
@@ -64,6 +77,7 @@ export default function MarkdownTutorial() {
         <h2 className="text-xl font-semibold">Tables</h2>
         <CodeBlock language="md" code={`| Name | Price |\n| --- | ---: |\n| Item | $10 |`} />
   </section>
+  <hr className="my-8 border-t border-white/20" />
 
       <section id="resources" className="space-y-3">
         <h2 className="text-xl font-semibold">Additional Resources</h2>

@@ -20,6 +20,7 @@ export default function JsonTutorial() {
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
         { id: "watch-json-simplified", label: "Watch JSON Simplified" },
+        { id: "quick-setup", label: "Quick Setup" },
         { id: "objects", label: "Objects" },
         { id: "arrays", label: "Arrays" },
         { id: "types", label: "Types" },
@@ -43,6 +44,18 @@ export default function JsonTutorial() {
   </section>
   <hr className="my-8 border-t border-white/20" />
 
+      <section id="quick-setup" className="space-y-3">
+        <h2 className="text-xl font-semibold">Quick Setup</h2>
+        <ol className="list-decimal ml-6 space-y-1">
+          <li>Step 1 placeholder text</li>
+          <li>Step 2 placeholder text</li>
+          <li>Step 3 placeholder text</li>
+          <li>Step 4 placeholder text</li>
+          <li>Step 5 placeholder text</li>
+        </ol>
+      </section>
+  <hr className="my-8 border-t border-white/20" />
+
       <section id="objects" className="space-y-3">
         <h2 className="text-xl font-semibold">Objects</h2>
         <CodeBlock language="json" code={`{\n  \"tool\": \"send_email\",\n  \"params\": { \"to\": \"user@example.com\" }\n}`} />
@@ -58,6 +71,7 @@ export default function JsonTutorial() {
         <p>Numbers, strings, booleans, null.</p>
         <CodeBlock language="json" code={`{ \"count\": 3, \"name\": \"Alice\", \"active\": true, \"note\": null }`} />
   </section>
+  <hr className="my-8 border-t border-white/20" />
 
       <section id="resources" className="space-y-3">
         <h2 className="text-xl font-semibold">Additional Resources</h2>
