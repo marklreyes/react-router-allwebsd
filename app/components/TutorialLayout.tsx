@@ -36,7 +36,7 @@ export function Badge({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Toc({ items }: { items: TocItem[] }) {
+function Toc({ items, showHeading = true }: { items: TocItem[]; showHeading?: boolean }) {
   const { isDarkMode } = useTheme();
   const [activeId, setActiveId] = React.useState<string>("");
 
@@ -130,8 +130,8 @@ function Toc({ items }: { items: TocItem[] }) {
 
   return (
     <nav aria-label="On this page">
-      <h2 className={`text-sm font-semibold text-white`}>On this page</h2>
-      <ul className="mt-3 space-y-2">
+      {showHeading && <h2 className={`text-sm font-semibold text-white`}>On this page</h2>}
+      <ul className={`${showHeading ? 'mt-3' : ''} space-y-2`}>
         {items.map((item) => {
           const isActive = activeId === item.id;
           return (
@@ -456,7 +456,7 @@ export default function TutorialLayout({
           <details className="lg:hidden mb-6">
             <summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? "text-white" : "text-[#2F241D]"}`}>On this page</summary>
             <div className="mt-2">
-              <Toc items={toc} />
+              <Toc items={toc} showHeading={false} />
             </div>
           </details>
         ) : null}
@@ -466,7 +466,7 @@ export default function TutorialLayout({
           <aside className="hidden lg:block lg:col-span-3">
             <div className="sticky top-6">
               <div className="max-h-[calc(100vh-8rem)] overflow-y-auto pr-2">
-                {toc?.length ? <Toc items={toc} /> : null}
+                {toc?.length ? <Toc items={toc} showHeading={true} /> : null}
               </div>
             </div>
           </aside>
