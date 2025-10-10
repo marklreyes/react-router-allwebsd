@@ -22,6 +22,14 @@ export function meta({}: Route.MetaArgs) {
 export default function DoItWithAI() {
 	const { theme, isDarkMode } = useTheme();
 
+	// Background images for hero section by theme
+	// TODO: Replace heroImageDark with a real dark-mode asset when available
+	const heroImageLight = "/images/mmpr_allwebsd_color.jpg";
+	const heroImageDark = "/images/mmpr_full_color.jpg";
+	const heroBgStyle = {
+		backgroundImage: `url('${isDarkMode ? heroImageDark : heroImageLight}')`,
+	} as const;
+
 	const scrollToTutorials = () => {
 		const tutorialSection = document.getElementById('tutorial-cards-section');
 		if (tutorialSection) {
@@ -35,13 +43,18 @@ export default function DoItWithAI() {
 	return (
 		<div className={`min-h-screen ${isDarkMode ? 'bg-gradient-to-br from-[#F03D86] to-[#71BEA9]' : 'bg-gradient-to-br from-[#2F241D] to-[#FFC425]'}`}>
 			{/* Hero Section */}
-			<div className={`${isDarkMode ? 'bg-[#71BEA9]' : 'bg-white'} shadow-lg`}>
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+			<div
+				className="relative shadow-lg bg-no-repeat bg-cover bg-top"
+				style={heroBgStyle}
+			>
+				{/* Overlay for readability */}
+				<div className={`absolute inset-0 ${isDarkMode ? 'bg-black/50' : 'bg-black/40'}`} />
+				<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
 					<div className="text-center">
-						<h1 className={`text-4xl font-bold ${isDarkMode ? 'text-[#2F241D]' : 'text-[#2F241D]'} sm:text-5xl md:text-6xl`}>
+						<h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">
 							Do It With AI
 						</h1>
-						<p className={`mt-3 max-w-md mx-auto text-base ${isDarkMode ? 'text-[#2F241D]' : 'text-gray-600'} sm:text-lg md:mt-5 md:text-xl md:max-w-3xl`}>
+						<p className="mt-3 max-w-md mx-auto text-base text-white/90 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
 							Morph your ideas into powerful AI Agents — no coding required.
 							Learn essential web skills to supercharge MindStudio.
 						</p>
@@ -57,7 +70,7 @@ export default function DoItWithAI() {
 						</div>
 					</div>
 				</div>
-			</div>
+				</div>
 
 			{/* Tutorial Cards Section */}
 			<div id="tutorial-cards-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
