@@ -1,5 +1,5 @@
-import * as React from "react";
 import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
+import { MindStudioLink } from "../../components/MindStudioLink";
 
 export function meta() {
   return tutorialMeta({
@@ -32,7 +32,7 @@ export default function JsonTutorial() {
         <h2 className="text-xl font-semibold">Prerequisites</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>Comfort reading simple key/value data (no coding required).</li>
-          <li>MindStudio Starter plan to access data sources.</li>
+          <li><MindStudioLink /> Starter plan to access data sources.</li>
           <li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
         </ul>
       </section>

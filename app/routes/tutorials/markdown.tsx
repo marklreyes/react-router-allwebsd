@@ -1,5 +1,5 @@
-import * as React from "react";
 import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
+import { MindStudioLink } from "../../components/MindStudioLink";
 
 export function meta() {
   return tutorialMeta({
@@ -34,7 +34,7 @@ export default function MarkdownTutorial() {
         <ul className="list-disc ml-6 space-y-1">
           <li>A modern browser and a text editor (or the MindStudio prompt editor).</li>
           <li>No coding experience required.</li>
-          <li>MindStudio Starter plan, so you can create an agent and paste prompts and summaries.</li>
+          <li><MindStudioLink /> Starter plan, so you can create an agent and paste prompts and summaries.</li>
           <li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
         </ul>
       </section>
