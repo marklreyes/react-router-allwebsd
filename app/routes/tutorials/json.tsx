@@ -48,11 +48,10 @@ export default function JsonTutorial() {
       <section id="quick-setup" className="space-y-3">
         <h2 className="text-xl font-semibold">Quick Setup</h2>
         <ol className="list-decimal ml-6 space-y-1">
-          <li>Step 1 placeholder text</li>
-          <li>Step 2 placeholder text</li>
-          <li>Step 3 placeholder text</li>
-          <li>Step 4 placeholder text</li>
-          <li>Step 5 placeholder text</li>
+          <li>First, review <em>formattedAnswer</em>, which is what we aspire the final output to look like.</li>
+          <li>Then, review the file <code>rangers.json</code>, which is the starting data point for the LLM to reference.</li>
+          <li>Next, revisit the “Query Data Source” block and upload the json file (rangers.json) which contains information about each ranger.</li>
+          <li>After that, add a prompt in markdown format to the “Query Data Source” block.</li>
         </ol>
       </section>
   <hr className="my-8 border-t border-white/20" />
@@ -60,20 +59,20 @@ export default function JsonTutorial() {
       <section id="objects" className="space-y-3">
         <h2 className="text-xl font-semibold">Objects</h2>
 				<p>Use objects to represent complex data structures.</p>
-        <CodeBlock language="json" code={`{\n  \"tool\": \"send_email\",\n  \"params\": { \"to\": \"user@example.com\" }\n}`} />
+        <CodeBlock language="json" code={`{\n  \"summary\": \"string\",\n  \"rangers\": [\n    { \"alias\": \"Red Ranger\" },\n    { \"alias\": \"Pink Ranger\" }\n  ]\n}`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="arrays" className="space-y-3">
         <h2 className="text-xl font-semibold">Arrays</h2>
 				<p>Use arrays to represent ordered lists of items.</p>
-        <CodeBlock language="json" code={`[\n  { \"id\": 1 },\n  { \"id\": 2 }\n]`} />
+        <CodeBlock language="json" code={`[\n  { \"alias\": \"Black Ranger\" },\n  { \"alias\": \"Blue Ranger\" }\n]`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
-      <section id="types" className="space-y-3">
-        <h2 className="text-xl font-semibold">Types</h2>
-        <p>JSON supports various data types including numbers, strings, booleans, and null.</p>
-        <CodeBlock language="json" code={`{ \"count\": 3, \"name\": \"Alice\", \"active\": true, \"note\": null }`} />
-  </section>
+			<section id="types" className="space-y-3">
+				<h2 className="text-xl font-semibold">Types</h2>
+				<p>JSON supports various data types including numbers, strings, booleans, and null.</p>
+				<CodeBlock language="json" code={`{\n  \"count\": 5,\n  \"name\": \"Trini Kwan\",\n  \"active\": true,\n  \"note\": null\n}`} />
+			</section>
   <hr className="my-8 border-t border-white/20" />
 
       <section id="resources" className="space-y-3">
