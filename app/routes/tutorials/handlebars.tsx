@@ -1,5 +1,5 @@
-import * as React from "react";
 import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
+import { MindStudioLink } from "../../components/MindStudioLink";
 
 export function meta() {
   return tutorialMeta({
@@ -34,7 +34,7 @@ export default function HandlebarsTutorial() {
           <li>
             Familiar with basic placeholders like <code>{"{{name}}"}</code> (no prior Handlebars needed).
           </li>
-          <li>MindStudio Starter plan, so you can create an agent and paste a template.</li>
+          <li><MindStudioLink /> Starter plan, so you can create an agent and paste a template.</li>
           <li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
           <li>Optional: a small sample dataset to test loops and conditions.</li>
         </ul>
@@ -69,13 +69,13 @@ export default function HandlebarsTutorial() {
       <section id="loops" className="space-y-3">
         <h2 className="text-xl font-semibold">Loops</h2>
 				<p>Use loops to iterate over lists of items.</p>
-        <CodeBlock language="hbs" code={`<ul>\n{{#each items}}\n  <li>{{this}}</li>\n{{/each}}\n</ul>`} />
+        <CodeBlock language="hbs" code={`<ul>\n{{#each formattedAnswer.rangers}}\n  <li>{{name}}</li>\n{{/each}}\n</ul>`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="conditions" className="space-y-3">
         <h2 className="text-xl font-semibold">Conditions</h2>
 				<p>Use conditions to control content based on logic.</p>
-        <CodeBlock language="hbs" code={`{{#if isMember}}Welcome back!{{else}}Join us!{{/if}}`} />
+        <CodeBlock language="hbs" code={` {{#if alias}}<p><strong>Alias:</strong> {{alias}}</p>{{/if}}`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
 

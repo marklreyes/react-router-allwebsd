@@ -1,6 +1,7 @@
 import type { Route } from "./+types/doitwithai";
 import { useTheme } from "../context/ThemeContext";
 import { Link } from "react-router-dom";
+import { MindStudioLink } from "../components/MindStudioLink";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -79,7 +80,7 @@ export default function DoItWithAI() {
 						Assemble your Agent powers, one skill at a time.
 					</h2>
 					<p className={`mt-4 max-w-2xl mx-auto text-xl text-gray-200`}>
-						Follow the Ranger path: start with HTML, level up with Markdown, unlock JSON, and fuse it all with Handlebars—bringing your prompts, templates, and data flows to life in MindStudio.
+						Follow the Ranger path: start with HTML, level up with Markdown, unlock JSON, and fuse it all with Handlebars—bringing your prompts, templates, and data flows to life in <MindStudioLink />.
 					</p>
 				</div>
 
