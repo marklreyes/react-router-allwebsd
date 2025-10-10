@@ -73,11 +73,13 @@ export default function HtmlTutorial() {
   <hr className="my-8 border-t border-white/20" />
       <section id="links" className="space-y-3">
         <h2 className="text-xl font-semibold">Links</h2>
+				<p>Use links to connect to other resources.</p>
         <CodeBlock language="html" code={`<a href="https://example.com" target="_blank" rel="noopener">View</a>`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="images" className="space-y-3">
         <h2 className="text-xl font-semibold">Images</h2>
+				<p>Use images to enhance your content.</p>
         <CodeBlock language="html" code={`<img src="/images/example.png" alt="Example" />`} />
   </section>
   <hr className="my-8 border-t border-white/20" />

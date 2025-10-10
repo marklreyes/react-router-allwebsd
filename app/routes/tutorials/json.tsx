@@ -59,17 +59,19 @@ export default function JsonTutorial() {
 
       <section id="objects" className="space-y-3">
         <h2 className="text-xl font-semibold">Objects</h2>
+				<p>Use objects to represent complex data structures.</p>
         <CodeBlock language="json" code={`{\n  \"tool\": \"send_email\",\n  \"params\": { \"to\": \"user@example.com\" }\n}`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="arrays" className="space-y-3">
         <h2 className="text-xl font-semibold">Arrays</h2>
+				<p>Use arrays to represent ordered lists of items.</p>
         <CodeBlock language="json" code={`[\n  { \"id\": 1 },\n  { \"id\": 2 }\n]`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="types" className="space-y-3">
         <h2 className="text-xl font-semibold">Types</h2>
-        <p>Numbers, strings, booleans, null.</p>
+        <p>JSON supports various data types including numbers, strings, booleans, and null.</p>
         <CodeBlock language="json" code={`{ \"count\": 3, \"name\": \"Alice\", \"active\": true, \"note\": null }`} />
   </section>
   <hr className="my-8 border-t border-white/20" />

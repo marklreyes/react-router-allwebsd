@@ -62,16 +62,19 @@ export default function HandlebarsTutorial() {
 
       <section id="variables" className="space-y-3">
         <h2 className="text-xl font-semibold">Variables</h2>
+				<p>Use variables to store and reuse values.</p>
         <CodeBlock language="hbs" code={`Hello, {{name}}!`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="loops" className="space-y-3">
         <h2 className="text-xl font-semibold">Loops</h2>
+				<p>Use loops to iterate over lists of items.</p>
         <CodeBlock language="hbs" code={`<ul>\n{{#each items}}\n  <li>{{this}}</li>\n{{/each}}\n</ul>`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="conditions" className="space-y-3">
         <h2 className="text-xl font-semibold">Conditions</h2>
+				<p>Use conditions to control content based on logic.</p>
         <CodeBlock language="hbs" code={`{{#if isMember}}Welcome back!{{else}}Join us!{{/if}}`} />
   </section>
   <hr className="my-8 border-t border-white/20" />

@@ -61,21 +61,25 @@ export default function MarkdownTutorial() {
 
       <section id="headings" className="space-y-3">
         <h2 className="text-xl font-semibold">Headings</h2>
+				<p>Use headings to structure your content.</p>
         <CodeBlock language="md" code={`# Title\n\n## Section`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="lists" className="space-y-3">
         <h2 className="text-xl font-semibold">Lists</h2>
+				<p>Use lists to present items clearly.</p>
         <CodeBlock language="md" code={`- One\n- Two`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="links" className="space-y-3">
         <h2 className="text-xl font-semibold">Links</h2>
+				<p>Use links to connect to other resources.</p>
         <CodeBlock language="md" code={`[View](https://example.com)`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="tables" className="space-y-3">
         <h2 className="text-xl font-semibold">Tables</h2>
+				<p>Use tables to present data in a structured format.</p>
         <CodeBlock language="md" code={`| Name | Price |\n| --- | ---: |\n| Item | $10 |`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
