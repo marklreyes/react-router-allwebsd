@@ -50,35 +50,37 @@ export default function HtmlTutorial() {
       <section id="quick-setup" className="space-y-3">
         <h2 className="text-xl font-semibold">Quick Setup</h2>
         <ol className="list-decimal ml-6 space-y-1">
-          <li>Step 1 placeholder text</li>
-          <li>Step 2 placeholder text</li>
-          <li>Step 3 placeholder text</li>
-          <li>Step 4 placeholder text</li>
-          <li>Step 5 placeholder text</li>
+          <li>First, add a “User Input” block.</li>
+          <li>Then, assign the variable a name, mission_briefing (save as Long Text so we can write as much as we want) and we’ll use this later down in the workflow.</li>
+          <li>Next, go to Optional Settings and switch the Interface to Custom, clicking the pencil icon.</li>
+          <li>After that, let the fun begin. Vibe code and prompt the Interface Designer.</li>
+          <li>Finally, click the compile button.</li>
         </ol>
       </section>
   <hr className="my-8 border-t border-white/20" />
 
       <section id="headings" className="space-y-3">
         <h2 className="text-xl font-semibold">Headings</h2>
-        <p>Use headings to structure your output.</p>
-        <CodeBlock language="html" code={`<h1>Title</h1>\n<h2>Section</h2>`} />
+        <p>Use headings to structure your output. Ensure only one h1 is present per page.</p>
+        <CodeBlock language="html" code={`<h1>Ranger Command Console</h1>\n<h2>Section</h2>`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="lists" className="space-y-3">
         <h2 className="text-xl font-semibold">Lists</h2>
         <p>Present items clearly.</p>
-        <CodeBlock language="html" code={`<ul>\n  <li>One</li>\n  <li>Two</li>\n</ul>`} />
+        <CodeBlock language="html" code={`<ul>\n  <li>Red Ranger</li>\n  <li>Blue Ranger</li>\n  <li>Pink Ranger</li>\n  <li>Black Ranger</li>\n  <li>Yellow Ranger</li>\n</ul>`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="links" className="space-y-3">
         <h2 className="text-xl font-semibold">Links</h2>
-        <CodeBlock language="html" code={`<a href="https://example.com" target="_blank" rel="noopener">View</a>`} />
+				<p>Use links to connect to other resources.</p>
+        <CodeBlock language="html" code={`<a href="https://allwebsd.com" target="_blank" rel="noopener">Listen Now</a>`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="images" className="space-y-3">
         <h2 className="text-xl font-semibold">Images</h2>
-        <CodeBlock language="html" code={`<img src="/images/example.png" alt="Example" />`} />
+				<p>Use images to enhance your content.</p>
+        <CodeBlock language="html" code={`<img src="/images/logo.png" alt="Company Logo" />`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
 

@@ -51,27 +51,30 @@ export default function HandlebarsTutorial() {
       <section id="quick-setup" className="space-y-3">
         <h2 className="text-xl font-semibold">Quick Setup</h2>
         <ol className="list-decimal ml-6 space-y-1">
-          <li>Step 1 placeholder text</li>
-          <li>Step 2 placeholder text</li>
-          <li>Step 3 placeholder text</li>
-          <li>Step 4 placeholder text</li>
-          <li>Step 5 placeholder text</li>
+          <li>First, add a “Generate Asset” block and assign a source type, HTML Template.</li>
+          <li>Then, head to your favorite editor (VS Code w/ CoPilot, Cursor, etc.) or chat (ChatGPT) and let’s vibe code a template which will capture and display the output from the previous variable, formattedAnswer.</li>
+          <li>Next, take the Output of your vibe code session and paste it into the HTML Template field of  the Generate Asset” block.</li>
+          <li>After that, modify Output Behavior to “Save to variable” and the Output Variable should be called its_morphin_time. Format should be in HTML.</li>
+          <li>Finally, add a “Display Content” block and in the Message field reference the previous variable using double curly braces, <code>{"{{its_morphin_time}}"}</code>. On Settings, save Output Behavior to ‘Display to user” with a Display Type of “HTML”.</li>
         </ol>
       </section>
   <hr className="my-8 border-t border-white/20" />
 
       <section id="variables" className="space-y-3">
         <h2 className="text-xl font-semibold">Variables</h2>
+				<p>Use variables to store and reuse values.</p>
         <CodeBlock language="hbs" code={`Hello, {{name}}!`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="loops" className="space-y-3">
         <h2 className="text-xl font-semibold">Loops</h2>
+				<p>Use loops to iterate over lists of items.</p>
         <CodeBlock language="hbs" code={`<ul>\n{{#each items}}\n  <li>{{this}}</li>\n{{/each}}\n</ul>`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="conditions" className="space-y-3">
         <h2 className="text-xl font-semibold">Conditions</h2>
+				<p>Use conditions to control content based on logic.</p>
         <CodeBlock language="hbs" code={`{{#if isMember}}Welcome back!{{else}}Join us!{{/if}}`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
