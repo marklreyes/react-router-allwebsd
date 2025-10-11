@@ -12,12 +12,12 @@ export function meta({}: Route.MetaArgs) {
 	{ name: "twitter:card", content: "summary_large_image" },
 	{ name: "twitter:title", content: "Do It With AI Tutorials | AllWebSD" },
 	{ name: "twitter:description", content: "Beginner-friendly tutorials: HTML, Markdown, JSON, and Handlebars for MindStudio prompts, templates, and workflows. No code required." },
-	{ name: "twitter:image", content: "https://www.allwebsd.com/allwebsd-diwai-share-V2.jpg" },
+	{ name: "twitter:image", content: "https://allwebsd.com/images/allwebsd-diwai-share-V2.jpg" },
 	{ property: "og:title", content: "Do It With AI Tutorials | AllWebSD" },
 	{ property: "og:type", content: "website" },
 	{ property: "og:url", content: "https://www.allwebsd.com/doitwithai" },
 	{ property: "og:description", content: "Beginner-friendly tutorials: HTML, Markdown, JSON, and Handlebars for MindStudio prompts, templates, and workflows. No code required." },
-	{ property: "og:image", content: "https://www.allwebsd.com/allwebsd-diwai-share-V2.jpg" },
+	{ property: "og:image", content: "https://allwebsd.com/images/allwebsd-diwai-share-V2.jpg" },
 	{ property: "og:image:alt", content: "AllWebSD Do It With AI tutorials banner" },
   ];
 }
