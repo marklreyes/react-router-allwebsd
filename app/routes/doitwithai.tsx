@@ -122,7 +122,7 @@ export default function DoItWithAI() {
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Learn essential HTML to shape how your agent speaks and looks. Structure mission briefings with headings, lists, links, and images so responses render cleanly across chat and UI blocks in MindStudio.
+									Learn essential HTML to shape how your agent's looks. Structure mission briefings with headings, lists, links, and images so responses render cleanly throughout a workflow.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
@@ -186,7 +186,7 @@ export default function DoItWithAI() {
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Use Markdown to format system prompts, tool docs, and chat summaries. Make your agent’s output clear, scannable, and easy to reuse across different MindStudio missions.
+									Use Markdown to format system prompts and chat summaries. Make your agent’s output clear, scannable, and easy to reuse across different workflow blocks.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
@@ -242,7 +242,7 @@ export default function DoItWithAI() {
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Model inputs, tool parameters, and data sources as JSON to give your agent structured intelligence. This lets MindStudio validate, route, and automate reliably.
+									Model inputs and data sources as JSON to give your agent structured intelligence. This lets MindStudio validate, route, and automate reliably.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
@@ -306,7 +306,7 @@ export default function DoItWithAI() {
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Build dynamic prompts, emails, and UI content that swap variables, loop lists, and render conditionally for different users. Plug it straight into MindStudio for powerful, personalized experiences.
+									Build dynamic prompts and UI content that swap variables, loop lists, and render conditionally for different users. Plug it straight into MindStudio for powerful, personalized experiences.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
