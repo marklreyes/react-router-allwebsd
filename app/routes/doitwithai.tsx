@@ -12,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 	{ name: "twitter:card", content: "summary_large_image" },
 	{ name: "twitter:title", content: "Do It With AI Tutorials | AllWebSD" },
 	{ name: "twitter:description", content: "Beginner-friendly tutorials: HTML, Markdown, JSON, and Handlebars for MindStudio prompts, templates, and workflows. No code required." },
-	{ name: "twitter:image", content: "https://www.allwebsd.com/images/allwebsd-diwai-share-V2.jpg" },
+	{ name: "twitter:image", content: "https://allwebsd.com/images/allwebsd-diwai-share-V2.jpg" },
 	{ property: "og:title", content: "Do It With AI Tutorials | AllWebSD" },
 	{ property: "og:type", content: "website" },
 	{ property: "og:url", content: "https://allwebsd.com/do-it-with-ai" },
@@ -28,7 +28,6 @@ export default function DoItWithAI() {
 	const { theme, isDarkMode } = useTheme();
 
 	// Background images for hero section by theme
-	// TODO: Replace heroImageDark with a real dark-mode asset when available
 	const heroImageLight = "/images/mmpr_allwebsd_color.jpg";
 	const heroImageDark = "/images/mmpr_full_color.jpg";
 	const heroBgStyle = {
