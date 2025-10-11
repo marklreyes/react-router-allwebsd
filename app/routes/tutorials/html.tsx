@@ -43,7 +43,7 @@ export default function HtmlTutorial() {
       <section id="watch-html-basics" className="space-y-3">
         <h2 className="text-xl font-semibold">Watch HTML — “Summon the Command Console”</h2>
         <p>Learn how to apply the basics of HTML into your MindStudio project.</p>
-        <VideoEmbed url="https://youtu.be/nw5Thf1h-nI" title="HTML — “Summon the Command Console” – Video Walkthrough" />
+        <VideoEmbed url="https://youtu.be/RPCpTFSkLDE?si=-LJ4mEjc5Z0Hmq3d" title="HTML — “Summon the Command Console” – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 
