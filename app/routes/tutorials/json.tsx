@@ -1,5 +1,6 @@
 import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
 import { MindStudioLink } from "../../components/MindStudioLink";
+import { trackEvent } from "../../utils/trackEvent";
 
 export function meta() {
   return tutorialMeta({
@@ -32,7 +33,15 @@ export default function JsonTutorial() {
         <h2 className="text-xl font-semibold">Prerequisites</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>Comfort reading simple key/value data (no coding required).</li>
-          <li><MindStudioLink /> Starter plan to access data sources.</li>
+          <li><MindStudioLink onClick={trackEvent("mindstudio_link_click", {
+            params: {
+              tutorial_name: "JSON",
+              link_location: "Prerequisites Section",
+              event_category: "External Link",
+              event_label: "MindStudio Starter Plan Link",
+              component: "JSON Tutorial Prerequisites"
+            }
+          })} /> Starter plan to access data sources.</li>
           <li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
         </ul>
       </section>
@@ -79,16 +88,72 @@ export default function JsonTutorial() {
         <h2 className="text-xl font-semibold">Additional Resources</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>
-            MindStudio University: <a href="https://university.mindstudio.ai/2-workflow-mastery/working-with-structured-data-json" target="_blank" rel="noopener noreferrer" className="underline">Working with Structured Data (JSON)</a>
+            MindStudio University: <a
+              href="https://university.mindstudio.ai/2-workflow-mastery/working-with-structured-data-json"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "JSON",
+                  resource_name: "MindStudio University Working with Structured Data",
+                  event_category: "External Resource",
+                  event_label: "Working with Structured Data Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Working with Structured Data (JSON)</a>
           </li>
           <li>
-            JSON syntax: <a href="https://www.json.org/json-en.html" target="_blank" rel="noopener noreferrer" className="underline">json.org</a>
+            JSON syntax: <a
+              href="https://www.json.org/json-en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "JSON",
+                  resource_name: "JSON.org Official Site",
+                  event_category: "External Resource",
+                  event_label: "JSON.org Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >json.org</a>
           </li>
           <li>
-            JSON Schema (for validation ideas): <a href="https://json-schema.org/" target="_blank" rel="noopener noreferrer" className="underline">json-schema.org</a>
+            JSON Schema (for validation ideas): <a
+              href="https://json-schema.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "JSON",
+                  resource_name: "JSON Schema Official Site",
+                  event_category: "External Resource",
+                  event_label: "JSON Schema Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >json-schema.org</a>
           </li>
           <li>
-            MDN: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON" target="_blank" rel="noopener noreferrer" className="underline">Working with JSON</a>
+            MDN: <a
+              href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "JSON",
+                  resource_name: "MDN Working with JSON",
+                  event_category: "External Resource",
+                  event_label: "MDN JSON Tutorial Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Working with JSON</a>
           </li>
         </ul>
       </section>

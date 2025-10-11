@@ -1,5 +1,6 @@
 import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
 import { MindStudioLink } from "../../components/MindStudioLink";
+import { trackEvent } from "../../utils/trackEvent";
 
 export function meta() {
   return tutorialMeta({
@@ -34,7 +35,15 @@ export default function MarkdownTutorial() {
         <ul className="list-disc ml-6 space-y-1">
           <li>A modern browser and a text editor (or the MindStudio prompt editor).</li>
           <li>No coding experience required.</li>
-          <li><MindStudioLink /> Starter plan, so you can create an agent and paste prompts and summaries.</li>
+          <li><MindStudioLink onClick={trackEvent("mindstudio_link_click", {
+            params: {
+              tutorial_name: "Markdown",
+              link_location: "Prerequisites Section",
+              event_category: "External Link",
+              event_label: "MindStudio Starter Plan Link",
+              component: "Markdown Tutorial Prerequisites"
+            }
+          })} /> Starter plan, so you can create an agent and paste prompts and summaries.</li>
           <li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
         </ul>
       </section>
@@ -88,22 +97,106 @@ export default function MarkdownTutorial() {
         <h2 className="text-xl font-semibold">Additional Resources</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>
-            MindStudio University: <a href="https://university.mindstudio.ai/1-core-building-principles/writing-good-prompts" target="_blank" rel="noopener noreferrer" className="underline">Writing Good Prompts</a>
+            MindStudio University: <a
+              href="https://university.mindstudio.ai/1-core-building-principles/writing-good-prompts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Markdown",
+                  resource_name: "MindStudio University Writing Good Prompts",
+                  event_category: "External Resource",
+                  event_label: "Writing Good Prompts Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Writing Good Prompts</a>
           </li>
           <li>
-            MindStudio University: <a href="https://university.mindstudio.ai/docs/building-ai-agents/writing-prompts" target="_blank" rel="noopener noreferrer" className="underline">Writing Prompts</a>
+            MindStudio University: <a
+              href="https://university.mindstudio.ai/docs/building-ai-agents/writing-prompts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Markdown",
+                  resource_name: "MindStudio University Writing Prompts",
+                  event_category: "External Resource",
+                  event_label: "Writing Prompts Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Writing Prompts</a>
           </li>
           <li>
-            Basic syntax: <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreferrer" className="underline">Markdown Guide</a>
+            Basic syntax: <a
+              href="https://www.markdownguide.org/basic-syntax/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Markdown",
+                  resource_name: "Markdown Guide Basic Syntax",
+                  event_category: "External Resource",
+                  event_label: "Markdown Guide Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Markdown Guide</a>
           </li>
           <li>
-            Tables: <a href="https://www.markdownguide.org/extended-syntax/#tables" target="_blank" rel="noopener noreferrer" className="underline">Extended syntax</a>
+            Tables: <a
+              href="https://www.markdownguide.org/extended-syntax/#tables"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Markdown",
+                  resource_name: "Markdown Guide Extended Syntax Tables",
+                  event_category: "External Resource",
+                  event_label: "Extended Syntax Tables Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Extended syntax</a>
           </li>
           <li>
-            Markdown Live Preview: <a href="https://markdownlivepreview.com/" target="_blank" rel="noopener noreferrer" className="underline">Live Preview</a>
+            Markdown Live Preview: <a
+              href="https://markdownlivepreview.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Markdown",
+                  resource_name: "Markdown Live Preview Tool",
+                  event_category: "External Resource",
+                  event_label: "Live Preview Tool Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Live Preview</a>
           </li>
           <li>
-            MDN: <a href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Howto/Markdown_in_MDN" target="_blank" rel="noopener noreferrer" className="underline">How to write in Markdown</a>
+            MDN: <a
+              href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Howto/Markdown_in_MDN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Markdown",
+                  resource_name: "MDN How to Write in Markdown",
+                  event_category: "External Resource",
+                  event_label: "MDN Markdown Tutorial Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >How to write in Markdown</a>
           </li>
         </ul>
       </section>
