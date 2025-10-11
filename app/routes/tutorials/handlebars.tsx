@@ -15,7 +15,7 @@ export default function HandlebarsTutorial() {
       title="Handlebars — “Form the Megazord”"
       subtitle="Create reusable, dynamic AI templates"
       iconLabel="HBS"
-      estTime="20 minutes"
+      estTime="10 minutes"
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
@@ -44,7 +44,7 @@ export default function HandlebarsTutorial() {
       <section id="watch-handlebars-templates" className="space-y-3">
         <h2 className="text-xl font-semibold">Watch Handlebars — “Form the Megazord”</h2>
         <p>Quick tour of Handlebars and how it manages dynamic content.</p>
-		<VideoEmbed url="https://youtu.be/sgITSK1sI_k?si=825K2DTqRMOo8u05" title="Handlebars – Video Walkthrough" />
+		<VideoEmbed url="https://youtu.be/nw5Thf1h-nI?t=444" title="Handlebars – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 
