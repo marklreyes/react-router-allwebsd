@@ -28,4 +28,24 @@
 		<loc>https://allwebsd.com/chat</loc>
 		<lastmod>2025-03-26</lastmod>
 	</url>
+	<url>
+		<loc>https://allwebsd.com/doitwithai</loc>
+		<lastmod>2025-10-10</lastmod>
+	</url>
+	<url>
+		<loc>https://allwebsd.com/doitwithai/html</loc>
+		<lastmod>2025-10-10</lastmod>
+	</url>
+	<url>
+		<loc>https://allwebsd.com/doitwithai/markdown</loc>
+		<lastmod>2025-10-10</lastmod>
+	</url>
+	<url>
+		<loc>https://allwebsd.com/doitwithai/json</loc>
+		<lastmod>2025-10-10</lastmod>
+	</url>
+	<url>
+		<loc>https://allwebsd.com/doitwithai/handlebars</loc>
+		<lastmod>2025-10-10</lastmod>
+	</url>
 </urlset>
