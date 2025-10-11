@@ -53,7 +53,7 @@ export default function HandlebarsTutorial() {
       <section id="watch-handlebars-templates" className="space-y-3">
         <h2 className="text-xl font-semibold">Watch Handlebars — “Form the Megazord”</h2>
         <p>Quick tour of Handlebars and how it manages dynamic content.</p>
-		<VideoEmbed url="https://youtu.be/nw5Thf1h-nI?t=444" title="Handlebars – Video Walkthrough" />
+		<VideoEmbed url="https://youtu.be/RPCpTFSkLDE?si=IBZILaQNamn_LQcI&t=446" title="Handlebars – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 

@@ -52,7 +52,7 @@ export default function MarkdownTutorial() {
       <section id="watch-markdown-magic" className="space-y-3">
         <h2 className="text-xl font-semibold">Watch Markdown — “Give Zordon a Voice”</h2>
         <p>Learn how to apply the basics of Markdown as prompts within your MindStudio project.</p>
-        <VideoEmbed url="https://youtu.be/nw5Thf1h-nI?t=197" title="Markdown – Video Walkthrough" />
+        <VideoEmbed url="https://youtu.be/RPCpTFSkLDE?si=wLHTtC8eUtlnX1Ky&t=198" title="Markdown – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 
