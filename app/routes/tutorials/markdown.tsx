@@ -15,7 +15,7 @@ export default function MarkdownTutorial() {
       title="Markdown — “Give Zordon a Voice”"
       subtitle="Make prompts and summaries easy to scan"
       iconLabel="MD"
-      estTime="12 minutes"
+      estTime="2 minutes"
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
@@ -43,7 +43,7 @@ export default function MarkdownTutorial() {
       <section id="watch-markdown-magic" className="space-y-3">
         <h2 className="text-xl font-semibold">Watch Markdown — “Give Zordon a Voice”</h2>
         <p>Learn how to apply the basics of Markdown as prompts within your MindStudio project.</p>
-        <VideoEmbed videoId={undefined} title="Markdown – Video Walkthrough" />
+        <VideoEmbed url="https://youtu.be/nw5Thf1h-nI?t=197" title="Markdown – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 
@@ -53,7 +53,7 @@ export default function MarkdownTutorial() {
           <li>First, add a “Query Data Source” block as a placeholder, setting the Variable Name to <em>answer</em> with Max Results of 5. We’ll circle back on the Query Template on the next round.</li>
           <li>Then, add two “Generate Text” blocks, labeling each block as “Review The Answer” and “Format The Answer”.</li>
           <li>Next, add a block prompt in markdown format to “Review The Answer” so you can interact with the LLM behind the scenes before heading into the next block. Save the output to a variable called <em>evaluation</em>. We’ll use that variable later down the road in the next few blocks.</li>
-          <li>After that, add a block prompt to “Format The Answer” so you can interact with the LLM again for this specific prompt.</li>
+          <li>After that, add a block prompt to “Format The Answer” so you can interact with the LLM again for this specific task.</li>
           <li>Finally, save the output to a variable called <em>formattedAnswer</em> and provide a sample output in JSON, which you can freely shape in a way you’d understand.</li>
         </ol>
       </section>

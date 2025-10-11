@@ -10,12 +10,12 @@ export function meta({}: Route.MetaArgs) {
 	{ name: "twitter:card", content: "summary_large_image" },
 	{ name: "twitter:title", content: "Do It With AI Tutorials | AllWebSD" },
 	{ name: "twitter:description", content: "Beginner-friendly tutorials: HTML, Markdown, JSON, and Handlebars for MindStudio prompts, templates, and workflows. No code required." },
-	{ name: "twitter:image", content: "https://www.allwebsd.com/allwebsd-share.jpg" },
+	{ name: "twitter:image", content: "https://www.allwebsd.com/allwebsd-diwai-share-V2.jpg" },
 	{ property: "og:title", content: "Do It With AI Tutorials | AllWebSD" },
 	{ property: "og:type", content: "website" },
 	{ property: "og:url", content: "https://www.allwebsd.com/doitwithai" },
 	{ property: "og:description", content: "Beginner-friendly tutorials: HTML, Markdown, JSON, and Handlebars for MindStudio prompts, templates, and workflows. No code required." },
-	{ property: "og:image", content: "https://www.allwebsd.com/allwebsd-share.jpg" },
+	{ property: "og:image", content: "https://www.allwebsd.com/allwebsd-diwai-share-V2.jpg" },
 	{ property: "og:image:alt", content: "AllWebSD Do It With AI tutorials banner" },
   ];
 }
@@ -126,7 +126,7 @@ export default function DoItWithAI() {
 									<svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 										<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
 									</svg>
-									15 minutes • Beginner friendly
+									3 minutes • Beginner friendly
 								</div>
 								<Link to="/do-it-with-ai/html" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
 									Start HTML Tutorial
@@ -170,7 +170,7 @@ export default function DoItWithAI() {
 									<svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 										<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
 									</svg>
-									12 minutes • No coding required
+									2 minutes • No coding required
 								</div>
 								<Link to="/do-it-with-ai/markdown" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
 									Start Markdown Tutorial
@@ -200,7 +200,7 @@ export default function DoItWithAI() {
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Model inputs, tool parameters, and API/webhook payloads with JSON to give your agent structured intelligence. This lets MindStudio validate, route, and automate reliably.
+									Model inputs, tool parameters, and data sources as JSON to give your agent structured intelligence. This lets MindStudio validate, route, and automate reliably.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
@@ -225,7 +225,7 @@ export default function DoItWithAI() {
 									<svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 										<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
 									</svg>
-									18 minutes • Visual examples
+									2 minutes • Visual examples
 								</div>
 								<Link to="/do-it-with-ai/json" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
 									Start JSON Tutorial
@@ -275,7 +275,7 @@ export default function DoItWithAI() {
 									<svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 										<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
 									</svg>
-									20 minutes • Interactive examples
+									10 minutes • Interactive examples
 								</div>
 								<Link to="/do-it-with-ai/handlebars" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
 									Start Handlebars Tutorial

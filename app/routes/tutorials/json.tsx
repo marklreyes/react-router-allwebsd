@@ -15,7 +15,7 @@ export default function JsonTutorial() {
       title="JSON — “Activate the Data Crystals”"
       subtitle="Power workflows with structured mission data"
       iconLabel="JSON"
-      estTime="18 minutes"
+      estTime="2 minutes"
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
@@ -41,7 +41,7 @@ export default function JsonTutorial() {
       <section id="watch-json-simplified" className="space-y-3">
         <h2 className="text-xl font-semibold">Watch JSON — “Activate the Data Crystals”</h2>
         <p>Add a JSON structure and how it maps to real workflows.</p>
-        <VideoEmbed videoId={undefined} title="JSON — “Activate the Data Crystals” – Video Walkthrough" />
+        <VideoEmbed url="https://youtu.be/nw5Thf1h-nI?t=318" title="JSON — “Activate the Data Crystals” – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 
