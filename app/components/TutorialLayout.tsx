@@ -347,7 +347,6 @@ export function tutorialMeta({
   title,
   description,
   path,
-  image,
 }: {
   title: string;
   description?: string;
@@ -360,7 +359,8 @@ export function tutorialMeta({
 
   const pageTitle = `${title} | Web Developer storytelling, teaching and community building out of America's Finest City | AllWebSD.com`;
   const desc = description ?? "Beginner-friendly tutorials to apply HTML, Markdown, JSON, and Handlebars in real workflows.";
-  const img = image ?? `${baseUrl}/images/allwebsd-share.jpg`;
+
+  const img = `${baseUrl}/images/allwebsd-diwai-share-V2.jpg`;
   const url = `${baseUrl}${path}`;
 
   return [
