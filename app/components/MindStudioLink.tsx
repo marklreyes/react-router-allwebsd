@@ -3,9 +3,10 @@ import React from "react";
 interface MindStudioLinkProps {
   className?: string;
   children?: React.ReactNode;
+  onClick?: (event?: React.MouseEvent | MouseEvent) => void;
 }
 
-export function MindStudioLink({ className = "", children = "MindStudio" }: MindStudioLinkProps) {
+export function MindStudioLink({ className = "", children = "MindStudio", onClick }: MindStudioLinkProps) {
   const baseStyles = "underline hover:no-underline transition-colors duration-200";
   const themeStyles = "text-[#FFC425] hover:text-white";
 
@@ -15,6 +16,7 @@ export function MindStudioLink({ className = "", children = "MindStudio" }: Mind
       target="_blank"
       rel="noopener noreferrer"
       className={`${baseStyles} ${themeStyles} ${className}`}
+      onClick={onClick}
     >
       {children}
     </a>

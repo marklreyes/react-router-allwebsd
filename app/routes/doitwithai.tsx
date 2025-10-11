@@ -2,6 +2,8 @@ import type { Route } from "./+types/doitwithai";
 import { useTheme } from "../context/ThemeContext";
 import { Link } from "react-router-dom";
 import { MindStudioLink } from "../components/MindStudioLink";
+import { getOutlineButtonClasses } from "../utils/buttonClasses";
+import { trackEvent } from "../utils/trackEvent";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -39,6 +41,15 @@ export default function DoItWithAI() {
 				block: 'start'
 			});
 		}
+		// Track the scroll action
+		trackEvent("start_learning_click", {
+			params: {
+				action: "scroll_to_tutorials",
+				event_category: "Hero Button",
+				event_label: "Start Learning Button Click",
+				component: "DoItWithAI Landing Page"
+			}
+		})();
 	};
 
 	return (
@@ -63,7 +74,11 @@ export default function DoItWithAI() {
 							<div className="inline-flex rounded-md shadow">
 								<button
 									onClick={scrollToTutorials}
-									className={`inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md ${isDarkMode ? 'text-white bg-[#F03D86] hover:bg-[#d63570]' : 'text-white bg-[#2F241D] hover:bg-[#1f1814]'}`}
+									className={getOutlineButtonClasses(theme, isDarkMode, {
+										size: 'lg',
+										customClasses: 'font-semibold',
+										animate: true,
+									})}
 								>
 									Start Learning
 								</button>
@@ -112,13 +127,15 @@ export default function DoItWithAI() {
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
 									<div className="mt-2">
 										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
-											<code>{`<div class="message">
-  <h2>Order Summary</h2>
-  <ul>
-    <li><strong>Total:</strong> $42.10</li>
-  </ul>
-  <a href="https://example.com" target="_blank" rel="noopener">View details</a>
-</div>`}</code>
+<code>{`
+<ul>
+  <li>Red Ranger</li>
+  <li>Blue Ranger</li>
+  <li>Pink Ranger</li>
+  <li>Black Ranger</li>
+  <li>Yellow Ranger</li>
+</ul>
+`}</code>
 										</pre>
 									</div>
 								</details>
@@ -128,7 +145,19 @@ export default function DoItWithAI() {
 									</svg>
 									3 minutes • Beginner friendly
 								</div>
-								<Link to="/do-it-with-ai/html" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link
+									to="/do-it-with-ai/html"
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									onClick={trackEvent("tutorial_card_click", {
+										params: {
+											tutorial_name: "HTML",
+											tutorial_title: "Summon the Command Console",
+											event_category: "Tutorial Navigation",
+											event_label: "HTML Tutorial Card Click",
+											component: "Tutorial Cards Section"
+										}
+									})}
+								>
 									Start HTML Tutorial
 								</Link>
 							</div>
@@ -162,7 +191,7 @@ export default function DoItWithAI() {
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
 									<div className="mt-2">
 										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
-											<code>{`# Support Request\n\n- Name: Jane Doe\n- Issue: Login failed\n- Priority: High\n\n[View ticket](https://example.com/tickets/123)`}</code>
+											<code>{`# Instructions\n\n- First, summarize the mission goal in 1 sentence.`}</code>
 										</pre>
 									</div>
 								</details>
@@ -172,7 +201,19 @@ export default function DoItWithAI() {
 									</svg>
 									2 minutes • No coding required
 								</div>
-								<Link to="/do-it-with-ai/markdown" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link
+									to="/do-it-with-ai/markdown"
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									onClick={trackEvent("tutorial_card_click", {
+										params: {
+											tutorial_name: "Markdown",
+											tutorial_title: "Give Zordon a Voice",
+											event_category: "Tutorial Navigation",
+											event_label: "Markdown Tutorial Card Click",
+											component: "Tutorial Cards Section"
+										}
+									})}
+								>
 									Start Markdown Tutorial
 								</Link>
 							</div>
@@ -206,18 +247,15 @@ export default function DoItWithAI() {
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
 									<div className="mt-2">
 										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
-											<code>{`{
-  "tool": "send_email",
-  "params": {
-    "to": "user@example.com",
-    "subject": "Order Confirmation",
-    "body": "Your order has shipped."
-  },
-  "metadata": {
-    "workflowId": "order-flow",
-    "retry": false
-  }
-}`}</code>
+<code>{`
+	{
+		"alias": "Red Ranger",
+		"name": "Jason Lee Scott",
+		"trait": "Leadership",
+		"weapon": "Power Sword",
+		"zord": "Tyrannosaurus"
+	}
+`}</code>
 										</pre>
 									</div>
 								</details>
@@ -227,7 +265,19 @@ export default function DoItWithAI() {
 									</svg>
 									2 minutes • Visual examples
 								</div>
-								<Link to="/do-it-with-ai/json" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link
+									to="/do-it-with-ai/json"
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									onClick={trackEvent("tutorial_card_click", {
+										params: {
+											tutorial_name: "JSON",
+											tutorial_title: "Activate the Data Crystals",
+											event_category: "Tutorial Navigation",
+											event_label: "JSON Tutorial Card Click",
+											component: "Tutorial Cards Section"
+										}
+									})}
+								>
 									Start JSON Tutorial
 								</Link>
 							</div>
@@ -261,13 +311,17 @@ export default function DoItWithAI() {
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
 									<div className="mt-2">
 										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
-											<code>{`<ul>
-{{#each products}}
-  <li>
-    {{name}} - {{#if inStock}}In stock{{else}}Out of stock{{/if}}
-  </li>
-{{/each}}
-</ul>`}</code>
+<code>{`
+	{{#each formattedAnswer.rangers}}
+		<dt>{{name}}</dt>
+		<dd>
+			{{#if alias}}<p><strong>Alias:</strong> {{alias}}</p>{{/if}}
+			{{#if trait}}<p><strong>Trait:</strong> {{trait}}</p>{{/if}}
+			{{#if weapon}}<p><strong>Weapon:</strong> {{weapon}}</p>{{/if}}
+			{{#if zord}}<p><strong>Zord:</strong> {{zord}}</p>{{/if}}
+		</dd>
+	{{/each}}
+`}</code>
 										</pre>
 									</div>
 								</details>
@@ -277,7 +331,19 @@ export default function DoItWithAI() {
 									</svg>
 									10 minutes • Interactive examples
 								</div>
-								<Link to="/do-it-with-ai/handlebars" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link
+									to="/do-it-with-ai/handlebars"
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									onClick={trackEvent("tutorial_card_click", {
+										params: {
+											tutorial_name: "Handlebars",
+											tutorial_title: "Form the Megazord",
+											event_category: "Tutorial Navigation",
+											event_label: "Handlebars Tutorial Card Click",
+											component: "Tutorial Cards Section"
+										}
+									})}
+								>
 									Start Handlebars Tutorial
 								</Link>
 							</div>
@@ -358,6 +424,15 @@ export default function DoItWithAI() {
 						target="_blank"
 						rel="noopener noreferrer"
 						className={`mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md ${isDarkMode ? 'text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]' : 'text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]'} sm:w-auto`}
+						onClick={trackEvent("external_link_click", {
+							params: {
+								destination: "doitwithai.io/training",
+								link_type: "CTA Button",
+								event_category: "External Navigation",
+								event_label: "Begin Your Learning Adventure Click",
+								component: "Call to Action Section"
+							}
+						})}
 					>
 						Begin Your Learning Adventure
 					</a>

@@ -1,5 +1,6 @@
 import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
 import { MindStudioLink } from "../../components/MindStudioLink";
+import { trackEvent } from "../../utils/trackEvent";
 
 export function meta() {
   return tutorialMeta({
@@ -34,7 +35,15 @@ export default function HandlebarsTutorial() {
           <li>
             Familiar with basic placeholders like <code>{"{{name}}"}</code> (no prior Handlebars needed).
           </li>
-          <li><MindStudioLink /> Starter plan, so you can create an agent and paste a template.</li>
+          <li><MindStudioLink onClick={trackEvent("mindstudio_link_click", {
+            params: {
+              tutorial_name: "Handlebars",
+              link_location: "Prerequisites Section",
+              event_category: "External Link",
+              event_label: "MindStudio Starter Plan Link",
+              component: "Handlebars Tutorial Prerequisites"
+            }
+          })} /> Starter plan, so you can create an agent and paste a template.</li>
           <li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
           <li>Optional: a small sample dataset to test loops and conditions.</li>
         </ul>
@@ -83,16 +92,72 @@ export default function HandlebarsTutorial() {
         <h2 className="text-xl font-semibold">Additional Resources</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>
-            MindStudio University: <a href="https://university.mindstudio.ai/docs/building-ai-agents/variables#special-handlebars-methods-in-mindstudio" target="_blank" rel="noopener noreferrer" className="underline">Special Handlebars Methods in MindStudio</a>
+            MindStudio University: <a
+              href="https://university.mindstudio.ai/docs/building-ai-agents/variables#special-handlebars-methods-in-mindstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Handlebars",
+                  resource_name: "MindStudio University Special Handlebars Methods",
+                  event_category: "External Resource",
+                  event_label: "Special Handlebars Methods Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Special Handlebars Methods in MindStudio</a>
           </li>
           <li>
-            Handlebars docs: <a href="https://handlebarsjs.com/guide/" target="_blank" rel="noopener noreferrer" className="underline">Official Guide</a>
+            Handlebars docs: <a
+              href="https://handlebarsjs.com/guide/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Handlebars",
+                  resource_name: "Handlebars Official Guide",
+                  event_category: "External Resource",
+                  event_label: "Official Guide Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Official Guide</a>
           </li>
           <li>
-            Built-in helpers: <a href="https://handlebarsjs.com/guide/builtin-helpers.html" target="_blank" rel="noopener noreferrer" className="underline">if, each, etc.</a>
+            Built-in helpers: <a
+              href="https://handlebarsjs.com/guide/builtin-helpers.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Handlebars",
+                  resource_name: "Handlebars Built-in Helpers",
+                  event_category: "External Resource",
+                  event_label: "Built-in Helpers Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >if, each, etc.</a>
           </li>
           <li>
-            Templates in practice: <a href="https://handlebarsjs.com/guide/expressions.html" target="_blank" rel="noopener noreferrer" className="underline">Expressions</a>
+            Templates in practice: <a
+              href="https://handlebarsjs.com/guide/expressions.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "Handlebars",
+                  resource_name: "Handlebars Expressions",
+                  event_category: "External Resource",
+                  event_label: "Expressions Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Expressions</a>
           </li>
         </ul>
       </section>
