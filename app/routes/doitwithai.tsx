@@ -28,8 +28,8 @@ export default function DoItWithAI() {
 	const { theme, isDarkMode } = useTheme();
 
 	// Background images for hero section by theme
-	const heroImageLight = "/images/mmpr_allwebsd_color.jpg";
-	const heroImageDark = "/images/mmpr_full_color.jpg";
+	const heroImageLight = "/images/mmpr_allwebsd_tron_color_v2.jpg";
+	const heroImageDark = "/images/mmpr_tron_color.jpg";
 	const heroBgStyle = {
 		backgroundImage: `url('${isDarkMode ? heroImageDark : heroImageLight}')`,
 	} as const;
