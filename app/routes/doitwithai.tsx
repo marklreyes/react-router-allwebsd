@@ -1,6 +1,9 @@
 import type { Route } from "./+types/doitwithai";
 import { useTheme } from "../context/ThemeContext";
 import { Link } from "react-router-dom";
+import { MindStudioLink } from "../components/MindStudioLink";
+import { getOutlineButtonClasses } from "../utils/buttonClasses";
+import { trackEvent } from "../utils/trackEvent";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,13 +12,15 @@ export function meta({}: Route.MetaArgs) {
 	{ name: "twitter:card", content: "summary_large_image" },
 	{ name: "twitter:title", content: "Do It With AI Tutorials | AllWebSD" },
 	{ name: "twitter:description", content: "Beginner-friendly tutorials: HTML, Markdown, JSON, and Handlebars for MindStudio prompts, templates, and workflows. No code required." },
-	{ name: "twitter:image", content: "https://www.allwebsd.com/allwebsd-share.jpg" },
+	{ name: "twitter:image", content: "https://allwebsd.com/images/allwebsd-diwai-share-V2.jpg" },
 	{ property: "og:title", content: "Do It With AI Tutorials | AllWebSD" },
 	{ property: "og:type", content: "website" },
-	{ property: "og:url", content: "https://www.allwebsd.com/doitwithai" },
+	{ property: "og:url", content: "https://allwebsd.com/do-it-with-ai" },
 	{ property: "og:description", content: "Beginner-friendly tutorials: HTML, Markdown, JSON, and Handlebars for MindStudio prompts, templates, and workflows. No code required." },
-	{ property: "og:image", content: "https://www.allwebsd.com/allwebsd-share.jpg" },
+	{ property: "og:image", content: "https://allwebsd.com/images/allwebsd-diwai-share-V2.jpg" },
 	{ property: "og:image:alt", content: "AllWebSD Do It With AI tutorials banner" },
+	{ property: "og:image:width", content: "1200" },
+	{ property: "og:image:height", content: "630" },
   ];
 }
 
@@ -23,7 +28,6 @@ export default function DoItWithAI() {
 	const { theme, isDarkMode } = useTheme();
 
 	// Background images for hero section by theme
-	// TODO: Replace heroImageDark with a real dark-mode asset when available
 	const heroImageLight = "/images/mmpr_allwebsd_color.jpg";
 	const heroImageDark = "/images/mmpr_full_color.jpg";
 	const heroBgStyle = {
@@ -38,6 +42,15 @@ export default function DoItWithAI() {
 				block: 'start'
 			});
 		}
+		// Track the scroll action
+		trackEvent("start_learning_click", {
+			params: {
+				action: "scroll_to_tutorials",
+				event_category: "Hero Button",
+				event_label: "Start Learning Button Click",
+				component: "DoItWithAI Landing Page"
+			}
+		})();
 	};
 
 	return (
@@ -62,7 +75,11 @@ export default function DoItWithAI() {
 							<div className="inline-flex rounded-md shadow">
 								<button
 									onClick={scrollToTutorials}
-									className={`inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md ${isDarkMode ? 'text-white bg-[#F03D86] hover:bg-[#d63570]' : 'text-white bg-[#2F241D] hover:bg-[#1f1814]'}`}
+									className={getOutlineButtonClasses(theme, isDarkMode, {
+										size: 'lg',
+										customClasses: 'font-semibold',
+										animate: true,
+									})}
 								>
 									Start Learning
 								</button>
@@ -79,7 +96,7 @@ export default function DoItWithAI() {
 						Assemble your Agent powers, one skill at a time.
 					</h2>
 					<p className={`mt-4 max-w-2xl mx-auto text-xl text-gray-200`}>
-						Follow the Ranger path: start with HTML, level up with Markdown, unlock JSON, and fuse it all with Handlebars—bringing your prompts, templates, and data flows to life in MindStudio.
+						Follow the Ranger path: start with HTML, level up with Markdown, unlock JSON, and fuse it all with Handlebars—bringing your prompts, templates, and data flows to life in <MindStudioLink />.
 					</p>
 				</div>
 
@@ -111,13 +128,15 @@ export default function DoItWithAI() {
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
 									<div className="mt-2">
 										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
-											<code>{`<div class="message">
-  <h2>Order Summary</h2>
-  <ul>
-    <li><strong>Total:</strong> $42.10</li>
-  </ul>
-  <a href="https://example.com" target="_blank" rel="noopener">View details</a>
-</div>`}</code>
+<code>{`
+<ul>
+  <li>Red Ranger</li>
+  <li>Blue Ranger</li>
+  <li>Pink Ranger</li>
+  <li>Black Ranger</li>
+  <li>Yellow Ranger</li>
+</ul>
+`}</code>
 										</pre>
 									</div>
 								</details>
@@ -125,9 +144,21 @@ export default function DoItWithAI() {
 									<svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 										<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
 									</svg>
-									15 minutes • Beginner friendly
+									3 minutes • Beginner friendly
 								</div>
-								<Link to="/do-it-with-ai/html" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link
+									to="/do-it-with-ai/html"
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									onClick={trackEvent("tutorial_card_click", {
+										params: {
+											tutorial_name: "HTML",
+											tutorial_title: "Summon the Command Console",
+											event_category: "Tutorial Navigation",
+											event_label: "HTML Tutorial Card Click",
+											component: "Tutorial Cards Section"
+										}
+									})}
+								>
 									Start HTML Tutorial
 								</Link>
 							</div>
@@ -161,7 +192,7 @@ export default function DoItWithAI() {
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
 									<div className="mt-2">
 										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
-											<code>{`# Support Request\n\n- Name: Jane Doe\n- Issue: Login failed\n- Priority: High\n\n[View ticket](https://example.com/tickets/123)`}</code>
+											<code>{`# Instructions\n\n- First, summarize the mission goal in 1 sentence.`}</code>
 										</pre>
 									</div>
 								</details>
@@ -169,9 +200,21 @@ export default function DoItWithAI() {
 									<svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 										<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
 									</svg>
-									12 minutes • No coding required
+									2 minutes • No coding required
 								</div>
-								<Link to="/do-it-with-ai/markdown" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link
+									to="/do-it-with-ai/markdown"
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									onClick={trackEvent("tutorial_card_click", {
+										params: {
+											tutorial_name: "Markdown",
+											tutorial_title: "Give Zordon a Voice",
+											event_category: "Tutorial Navigation",
+											event_label: "Markdown Tutorial Card Click",
+											component: "Tutorial Cards Section"
+										}
+									})}
+								>
 									Start Markdown Tutorial
 								</Link>
 							</div>
@@ -199,24 +242,21 @@ export default function DoItWithAI() {
 							</div>
 							<div className="mt-4">
 								<p className={`${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-									Model inputs, tool parameters, and API/webhook payloads with JSON to give your agent structured intelligence. This lets MindStudio validate, route, and automate reliably.
+									Model inputs, tool parameters, and data sources as JSON to give your agent structured intelligence. This lets MindStudio validate, route, and automate reliably.
 								</p>
 								<details className="mt-3">
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
 									<div className="mt-2">
 										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
-											<code>{`{
-  "tool": "send_email",
-  "params": {
-    "to": "user@example.com",
-    "subject": "Order Confirmation",
-    "body": "Your order has shipped."
-  },
-  "metadata": {
-    "workflowId": "order-flow",
-    "retry": false
-  }
-}`}</code>
+<code>{`
+	{
+		"alias": "Red Ranger",
+		"name": "Jason Lee Scott",
+		"trait": "Leadership",
+		"weapon": "Power Sword",
+		"zord": "Tyrannosaurus"
+	}
+`}</code>
 										</pre>
 									</div>
 								</details>
@@ -224,9 +264,21 @@ export default function DoItWithAI() {
 									<svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 										<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
 									</svg>
-									18 minutes • Visual examples
+									2 minutes • Visual examples
 								</div>
-								<Link to="/do-it-with-ai/json" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link
+									to="/do-it-with-ai/json"
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									onClick={trackEvent("tutorial_card_click", {
+										params: {
+											tutorial_name: "JSON",
+											tutorial_title: "Activate the Data Crystals",
+											event_category: "Tutorial Navigation",
+											event_label: "JSON Tutorial Card Click",
+											component: "Tutorial Cards Section"
+										}
+									})}
+								>
 									Start JSON Tutorial
 								</Link>
 							</div>
@@ -260,13 +312,17 @@ export default function DoItWithAI() {
 									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
 									<div className="mt-2">
 										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
-											<code>{`<ul>
-{{#each products}}
-  <li>
-    {{name}} - {{#if inStock}}In stock{{else}}Out of stock{{/if}}
-  </li>
-{{/each}}
-</ul>`}</code>
+<code>{`
+	{{#each formattedAnswer.rangers}}
+		<dt>{{name}}</dt>
+		<dd>
+			{{#if alias}}<p><strong>Alias:</strong> {{alias}}</p>{{/if}}
+			{{#if trait}}<p><strong>Trait:</strong> {{trait}}</p>{{/if}}
+			{{#if weapon}}<p><strong>Weapon:</strong> {{weapon}}</p>{{/if}}
+			{{#if zord}}<p><strong>Zord:</strong> {{zord}}</p>{{/if}}
+		</dd>
+	{{/each}}
+`}</code>
 										</pre>
 									</div>
 								</details>
@@ -274,9 +330,21 @@ export default function DoItWithAI() {
 									<svg className="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 										<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
 									</svg>
-									20 minutes • Interactive examples
+									10 minutes • Interactive examples
 								</div>
-								<Link to="/do-it-with-ai/handlebars" className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}>
+								<Link
+									to="/do-it-with-ai/handlebars"
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									onClick={trackEvent("tutorial_card_click", {
+										params: {
+											tutorial_name: "Handlebars",
+											tutorial_title: "Form the Megazord",
+											event_category: "Tutorial Navigation",
+											event_label: "Handlebars Tutorial Card Click",
+											component: "Tutorial Cards Section"
+										}
+									})}
+								>
 									Start Handlebars Tutorial
 								</Link>
 							</div>
@@ -357,6 +425,15 @@ export default function DoItWithAI() {
 						target="_blank"
 						rel="noopener noreferrer"
 						className={`mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md ${isDarkMode ? 'text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]' : 'text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]'} sm:w-auto`}
+						onClick={trackEvent("external_link_click", {
+							params: {
+								destination: "doitwithai.io/training",
+								link_type: "CTA Button",
+								event_category: "External Navigation",
+								event_label: "Begin Your Learning Adventure Click",
+								component: "Call to Action Section"
+							}
+						})}
 					>
 						Begin Your Learning Adventure
 					</a>

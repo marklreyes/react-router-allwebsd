@@ -1,5 +1,6 @@
-import * as React from "react";
 import TutorialLayout, { CodeBlock, VideoEmbed, tutorialMeta } from "../../components/TutorialLayout";
+import { MindStudioLink } from "../../components/MindStudioLink";
+import { trackEvent } from "../../utils/trackEvent";
 
 export function meta() {
   return tutorialMeta({
@@ -15,7 +16,7 @@ export default function JsonTutorial() {
       title="JSON — “Activate the Data Crystals”"
       subtitle="Power workflows with structured mission data"
       iconLabel="JSON"
-      estTime="18 minutes"
+      estTime="2 minutes"
       level="Beginner"
       toc={[
         { id: "prerequisites", label: "Prerequisites" },
@@ -32,7 +33,15 @@ export default function JsonTutorial() {
         <h2 className="text-xl font-semibold">Prerequisites</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>Comfort reading simple key/value data (no coding required).</li>
-          <li>MindStudio Starter plan to access data sources.</li>
+          <li><MindStudioLink onClick={trackEvent("mindstudio_link_click", {
+            params: {
+              tutorial_name: "JSON",
+              link_location: "Prerequisites Section",
+              event_category: "External Link",
+              event_label: "MindStudio Starter Plan Link",
+              component: "JSON Tutorial Prerequisites"
+            }
+          })} /> Starter plan to access data sources.</li>
           <li>Watched at least one episode of Mighty Morphin Power Rangers.</li>
         </ul>
       </section>
@@ -41,53 +50,110 @@ export default function JsonTutorial() {
       <section id="watch-json-simplified" className="space-y-3">
         <h2 className="text-xl font-semibold">Watch JSON — “Activate the Data Crystals”</h2>
         <p>Add a JSON structure and how it maps to real workflows.</p>
-        <VideoEmbed videoId={undefined} title="JSON — “Activate the Data Crystals” – Video Walkthrough" />
+        <VideoEmbed url="https://youtu.be/nw5Thf1h-nI?t=318" title="JSON — “Activate the Data Crystals” – Video Walkthrough" />
   </section>
   <hr className="my-8 border-t border-white/20" />
 
       <section id="quick-setup" className="space-y-3">
         <h2 className="text-xl font-semibold">Quick Setup</h2>
         <ol className="list-decimal ml-6 space-y-1">
-          <li>Step 1 placeholder text</li>
-          <li>Step 2 placeholder text</li>
-          <li>Step 3 placeholder text</li>
-          <li>Step 4 placeholder text</li>
-          <li>Step 5 placeholder text</li>
+          <li>First, review <em>formattedAnswer</em>, which is what we aspire the final output to look like.</li>
+          <li>Then, review the file <code>rangers.json</code>, which is the starting data point for the LLM to reference.</li>
+          <li>Next, revisit the “Query Data Source” block and upload the json file (rangers.json) which contains information about each ranger.</li>
+          <li>After that, add a prompt in markdown format to the “Query Data Source” block.</li>
         </ol>
       </section>
   <hr className="my-8 border-t border-white/20" />
 
       <section id="objects" className="space-y-3">
         <h2 className="text-xl font-semibold">Objects</h2>
-        <CodeBlock language="json" code={`{\n  \"tool\": \"send_email\",\n  \"params\": { \"to\": \"user@example.com\" }\n}`} />
+				<p>Use objects to represent complex data structures.</p>
+        <CodeBlock language="json" code={`{\n  \"summary\": \"string\",\n  \"rangers\": [\n    { \"alias\": \"Red Ranger\" },\n    { \"alias\": \"Pink Ranger\" }\n  ]\n}`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
       <section id="arrays" className="space-y-3">
         <h2 className="text-xl font-semibold">Arrays</h2>
-        <CodeBlock language="json" code={`[\n  { \"id\": 1 },\n  { \"id\": 2 }\n]`} />
+				<p>Use arrays to represent ordered lists of items.</p>
+        <CodeBlock language="json" code={`[\n  { \"alias\": \"Black Ranger\" },\n  { \"alias\": \"Blue Ranger\" }\n]`} />
   </section>
   <hr className="my-8 border-t border-white/20" />
-      <section id="types" className="space-y-3">
-        <h2 className="text-xl font-semibold">Types</h2>
-        <p>Numbers, strings, booleans, null.</p>
-        <CodeBlock language="json" code={`{ \"count\": 3, \"name\": \"Alice\", \"active\": true, \"note\": null }`} />
-  </section>
+			<section id="types" className="space-y-3">
+				<h2 className="text-xl font-semibold">Types</h2>
+				<p>JSON supports various data types including numbers, strings, booleans, and null.</p>
+				<CodeBlock language="json" code={`{\n  \"count\": 5,\n  \"name\": \"Trini Kwan\",\n  \"active\": true,\n  \"note\": null\n}`} />
+			</section>
   <hr className="my-8 border-t border-white/20" />
 
       <section id="resources" className="space-y-3">
         <h2 className="text-xl font-semibold">Additional Resources</h2>
         <ul className="list-disc ml-6 space-y-1">
           <li>
-            MindStudio University: <a href="https://university.mindstudio.ai/2-workflow-mastery/working-with-structured-data-json" target="_blank" rel="noopener noreferrer" className="underline">Working with Structured Data (JSON)</a>
+            MindStudio University: <a
+              href="https://university.mindstudio.ai/2-workflow-mastery/working-with-structured-data-json"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "JSON",
+                  resource_name: "MindStudio University Working with Structured Data",
+                  event_category: "External Resource",
+                  event_label: "Working with Structured Data Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Working with Structured Data (JSON)</a>
           </li>
           <li>
-            JSON syntax: <a href="https://www.json.org/json-en.html" target="_blank" rel="noopener noreferrer" className="underline">json.org</a>
+            JSON syntax: <a
+              href="https://www.json.org/json-en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "JSON",
+                  resource_name: "JSON.org Official Site",
+                  event_category: "External Resource",
+                  event_label: "JSON.org Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >json.org</a>
           </li>
           <li>
-            JSON Schema (for validation ideas): <a href="https://json-schema.org/" target="_blank" rel="noopener noreferrer" className="underline">json-schema.org</a>
+            JSON Schema (for validation ideas): <a
+              href="https://json-schema.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "JSON",
+                  resource_name: "JSON Schema Official Site",
+                  event_category: "External Resource",
+                  event_label: "JSON Schema Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >json-schema.org</a>
           </li>
           <li>
-            MDN: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON" target="_blank" rel="noopener noreferrer" className="underline">Working with JSON</a>
+            MDN: <a
+              href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={trackEvent("external_resource_click", {
+                params: {
+                  tutorial_name: "JSON",
+                  resource_name: "MDN Working with JSON",
+                  event_category: "External Resource",
+                  event_label: "MDN JSON Tutorial Link",
+                  component: "Additional Resources Section"
+                }
+              })}
+            >Working with JSON</a>
           </li>
         </ul>
       </section>
