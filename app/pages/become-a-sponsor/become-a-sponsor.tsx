@@ -71,6 +71,7 @@ export function BecomeASponsor() {
 					<SponsorCard key={index} {...card} />
 				))}
 				</section>
+				<hr className="mb-6" />
 				<article className="text-white">
 				<p className="text-lg leading-relaxed mb-6">
 					Everything you see here is hand-rolled by me. From website maintenance, booking, content creation, pre/post production and more. Rest assured that a lot of <em>TLC</em> goes into making each episode.
