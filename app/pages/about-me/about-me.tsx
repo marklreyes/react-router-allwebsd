@@ -97,7 +97,7 @@ export function AboutMe() {
 									</p>
 									<p>
 										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
-										COMING SOON: exclusive digital resources and mentorship for those building AI Agents.
+										Free tutorials for those building AI Agents.
 									</p>
 								</div>
 
@@ -164,17 +164,17 @@ export function AboutMe() {
 
 						{/* Right column - About Mark (takes 1/3 of space on desktop) */}
 						<div className="order-2 lg:order-2 lg:col-span-1">
-							<h2 className="text-xl md:text-2xl font-semibold text-white mb-4 text-center lg:text-left">
+							<h2 className="text-xl md:text-2xl font-semibold text-white mb-4 text-left">
 								👋🏾, I'm Mark!
 							</h2>
-							<div className="flex justify-center lg:justify-start mb-6">
+							<div className="flex justify-start mb-6">
 								<img
 									src="/images/640x640_profile_avatar.jpg"
 									alt="Mark Reyes, Host of AllWebSD Podcast"
 									className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-[#FFC425] shadow-lg object-cover"
 								/>
 							</div>
-							<div className="space-y-4 text-center lg:text-left">
+							<div className="space-y-4 text-left">
 								<p className="text-white text-base leading-relaxed font-semibold">
 									I’m a Digital Technologist blending code, storytelling, and culture — building digital experiences that are performant, accessible, and human-centered.
 								</p>

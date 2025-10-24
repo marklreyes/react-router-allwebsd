@@ -322,11 +322,11 @@ export default function Header() {
 				role="navigation"
 				aria-label="Mobile navigation"
 				>
-				<nav className={`${isDarkMode ? `border-[#F03D86]` : `border-[#2F241D]`} flex flex-col items-center p-4 space-y-4 border-b`}>
+				<nav className={`${isDarkMode ? `border-[#F03D86]` : `border-[#2F241D]`} flex flex-col items-start p-4 space-y-4 border-b`}>
 					<NavLink
 					to="/"
 					className={({ isActive }) =>
-						`block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
+						`block w-full text-left py-2 ${isActive ? "font-bold" : ""}`
 					}
 					onClick={() => {
 						setIsOpen(false);
@@ -347,7 +347,7 @@ export default function Header() {
 					<NavLink
 					to="/episodes"
 					className={({ isActive }) =>
-						`block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
+						`block w-full text-left py-2 ${isActive ? "font-bold" : ""}`
 					}
 					onClick={() => {
 						setIsOpen(false);
@@ -368,7 +368,7 @@ export default function Header() {
 					<NavLink
 					to="/guests"
 					className={({ isActive }) =>
-						`block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
+						`block w-full text-left py-2 ${isActive ? "font-bold" : ""}`
 					}
 					onClick={() => {
 						setIsOpen(false);
@@ -389,7 +389,7 @@ export default function Header() {
 					<NavLink
 					to="/sponsors"
 					className={({ isActive }) =>
-						`block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
+						`block w-full text-left py-2 ${isActive ? "font-bold" : ""}`
 					}
 					onClick={() => {
 						setIsOpen(false);
@@ -426,7 +426,7 @@ export default function Header() {
 									},
 								});
 							}}
-							className="flex items-center justify-center w-full py-2 focus:outline-none"
+							className="flex items-center justify-start w-full py-2 focus:outline-none"
 							aria-expanded={tutorialsDropdownOpen}
 						>
 							Tutorials
@@ -443,7 +443,7 @@ export default function Header() {
 								<NavLink
 									to="/do-it-with-ai"
 									className={({ isActive }) =>
-										`block w-full text-center py-2 pl-4 ${isActive ? "font-bold" : ""} text-sm`
+										`block w-full text-left py-2 pl-4 ${isActive ? "font-bold" : ""} text-sm`
 									}
 									onClick={() => {
 										setIsOpen(false);
@@ -468,7 +468,7 @@ export default function Header() {
 					<NavLink
 					to="/about"
 					className={({ isActive }) =>
-						`block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
+						`block w-full text-left py-2 ${isActive ? "font-bold" : ""}`
 					}
 					onClick={() => {
 						setIsOpen(false);
@@ -489,7 +489,7 @@ export default function Header() {
 					<NavLink
 					to="/contact"
 					className={({ isActive }) =>
-						`block w-full text-center py-2 ${isActive ? "font-bold" : ""}`
+						`block w-full text-left py-2 ${isActive ? "font-bold" : ""}`
 					}
 					onClick={() => {
 						setIsOpen(false);
@@ -510,7 +510,7 @@ export default function Header() {
 					<NavLink
 					to="/chat"
 					className={({ isActive }) =>
-						`flex items-center justify-center gap-2 w-full py-2 ${isActive ? "font-bold" : ""}`
+						`flex items-center justify-start gap-2 w-full py-2 ${isActive ? "font-bold" : ""}`
 					}
 					onClick={() => {
 						setIsOpen(false);
