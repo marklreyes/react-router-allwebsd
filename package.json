@@ -13,7 +13,7 @@
     "@netlify/functions": "^5.0.1",
     "@react-router/node": "^7.9.3",
     "@react-router/serve": "^7.7.0",
-    "@tailwindcss/vite": "^4.1.4",
+    "@tailwindcss/vite": "^4.1.16",
     "dompurify": "^3.2.4",
     "fast-xml-parser": "^5.2.3",
     "isbot": "^5.1.31",
@@ -28,7 +28,7 @@
     "sanitize-html": "^2.16.0"
   },
   "devDependencies": {
-    "@netlify/vite-plugin-react-router": "^1.0.1",
+    "@netlify/vite-plugin-react-router": "^2.0.1",
     "@react-router/dev": "^7.9.3",
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/react": "^16.3.0",
@@ -40,7 +40,7 @@
     "daisyui": "^5.3.10",
     "happy-dom": "^20.0.8",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.14",
+    "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3",
     "vite": "^7.1.5",
     "vite-tsconfig-paths": "^5.1.2",
