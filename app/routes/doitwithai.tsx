@@ -410,35 +410,6 @@ export default function DoItWithAI() {
 					</div>
 				</div>
 			</div>
-
-			{/* Call to Action Section */}
-			<div className={`${isDarkMode ? 'bg-[#2F241D]' : 'bg-[#2F241D]'}`}>
-				<div className="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-					<h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-						Ready to Become an AI Agent Builder?
-					</h2>
-					<p className="mt-4 text-lg leading-6 text-gray-200">
-						They don't just teach AI concepts, they help you unlock your creativity. Whether you're starting from scratch or ready to level up, their 3-step training path will get you there.
-					</p>
-					<a
-						href="https://doitwithai.io/training?utm_source=allwebsd&utm_medium=landingpage&utm_campaign=tutorial_collab_2025"
-						target="_blank"
-						rel="noopener noreferrer"
-						className={`mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md ${isDarkMode ? 'text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]' : 'text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]'} sm:w-auto`}
-						onClick={trackEvent("external_link_click", {
-							params: {
-								destination: "doitwithai.io/training",
-								link_type: "CTA Button",
-								event_category: "External Navigation",
-								event_label: "Begin Your Learning Adventure Click",
-								component: "Call to Action Section"
-							}
-						})}
-					>
-						Begin Your Learning Adventure
-					</a>
-				</div>
-			</div>
 		</div>
 	);
 }
