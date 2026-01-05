@@ -37,31 +37,6 @@ export default function Ads() {
 			>
 				<div id="slide1" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide1-tab">
 					<a
-						href="//doitwithai.io/training?utm_source=allwebsd&utm_medium=adbanner&utm_campaign=tutorial_collab_2025"
-						onClick={trackEvent("image_click", {
-							params: {
-								action: "Click",
-								event_category: "Advertisement",
-								event_label: "Build fast. Build smart.",
-								platform: "Do It With AI",
-								link_type: "website",
-								component: "Ads Component"
-							}
-						})}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="w-full"
-						aria-label="Visit Do It With AI"
-					>
-						<img
-							src="/images/doitwithai_banner.jpg"
-							alt="Build fast. Build smart."
-							className="w-full h-full object-cover"
-						/>
-					</a>
-				</div>
-				<div id="slide2" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide2-tab">
-					<a
 						href="https://sdfutures.org/support-sdff"
 						onClick={trackEvent("image_click", {
 							params: {
@@ -85,7 +60,7 @@ export default function Ads() {
 						/>
 					</a>
 				</div>
-				<div id="slide3" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide4-tab">
+				<div id="slide2" className="carousel-item w-full" role="tabpanel" aria-labelledby="slide2-tab">
 					<NavLink
 						to="/sponsors"
 						className="w-full border cursor-pointer"
@@ -172,34 +147,6 @@ export default function Ads() {
 					aria-controls="slide2"
 				>
 					<span className="sr-only">Slide </span>2
-				</button>
-				<button
-					id="slide3-tab"
-					onClick={(e) => {
-						e.preventDefault();
-						setActiveSlide(3);
-						document.getElementById("slide3")?.scrollIntoView({ behavior: "smooth" });
-						trackEvent("button_click", {
-							params: {
-								action: "Click",
-								event_category: "Advertisement",
-								event_label: "Integrate AI without the headache!",
-								platform: "SOURION",
-								link_type: "website",
-								component: "Ads Component"
-							}
-						});
-					}}
-					className={`btn btn-xs ${
-						activeSlide === 3
-						? `${theme.secondary} text-white`
-						: `${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
-					}`}
-					role="tab"
-					aria-selected={activeSlide === 3}
-					aria-controls="slide3"
-				>
-					<span className="sr-only">Slide </span>3
 				</button>
 			</div>
 		</div>
