@@ -1,6 +1,5 @@
 import type { Route } from "./+types/datastructures";
-import TutorialLayout, { tutorialMeta, CodeBlock, VideoEmbed, type TocItem, type NavItem } from "../components/TutorialLayout";
-import { trackEvent } from "../utils/trackEvent";
+import TutorialLayout, { tutorialMeta, CodeBlock, VideoEmbed, type TocItem } from "../components/TutorialLayout";
 
 export function meta({}: Route.MetaArgs) {
   return tutorialMeta({
