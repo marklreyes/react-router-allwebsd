@@ -9,7 +9,7 @@ import { MdCode, MdOutlinePodcasts } from "react-icons/md";
 export function HeroBannerCarousel() {
     const { isDarkMode, theme } = useTheme();
     const [activeSlide, setActiveSlide] = useState(0);
-    const totalSlides = 2;
+    const totalSlides = 3;
 
     // Shared event tracking function
     const handleClick = (label: string) => {
@@ -106,11 +106,60 @@ export function HeroBannerCarousel() {
                     </a>
                 </div>
             </div>
-        </div>
+        </div>,
 
+        // Slide 3 - Tutorials Focus
+        <div key="slide3" className="relative z-10 text-white px-4 md:px-8 max-w-4xl text-center mx-auto py-6 md:py-10 lg:py-16">
+            <div className="px-6 md:px-10 lg:px-16">
+                <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight px-4 py-2 rounded-lg inline-block text-[#2F241D] ${
+                    isDarkMode
+                        ? 'bg-[#71BEA9] bg-opacity-80'
+                        : 'bg-[#FFC425] bg-opacity-90'
+                }`}>
+                    Free AllWebSD Tutorials
+                </h2>
+                <p className={`text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto px-6 py-3 rounded-lg text-[#2F241D] ${
+                    isDarkMode
+                        ? 'bg-[#71BEA9] bg-opacity-80'
+                        : 'bg-[#FFC425] bg-opacity-90'
+                }`}>
+                    Master essential web skills and data structures through Power Rangers-themed tutorials. From HTML and AI workflows to JavaScript fundamentals—all completely free!
+                </p>
+                <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+                    <a
+                        href="/do-it-with-ai"
+                        onClick={() => handleClick("Do It With AI Tutorials")}
+                        className={getOutlineButtonClasses(theme, isDarkMode, {
+                            size: 'lg',
+                            customClasses: 'font-semibold',
+                            animate: true,
+                        })}
+                    >
+                        <span className="flex items-center gap-2">
+                            <MdCode className="w-5 h-5" />
+                            Do It With AI
+                        </span>
+                    </a>
+                    <a
+                        href="/data-structures"
+                        onClick={() => handleClick("Data Structures Tutorial")}
+                        className={getOutlineButtonClasses(theme, isDarkMode, {
+                            size: 'lg',
+                            customClasses: 'font-semibold',
+                            animate: true,
+                        })}
+                    >
+                        <span className="flex items-center gap-2">
+                            <MdCode className="w-5 h-5" />
+                            Data Structures
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
     ];
 
-    return(
+    return (
         <div className="w-full relative overflow-hidden mb-4 rounded-lg shadow-lg min-h-[300px] md:min-h-[400px] lg:min-h-[500px]">
             {/* Carousel container */}
             <div
@@ -139,6 +188,18 @@ export function HeroBannerCarousel() {
                     }}
                 >
                     {slideContents[1]}
+                </div>
+
+                {/* Slide 3 */}
+                <div
+                    className="w-full min-h-[300px] md:min-h-[400px] lg:min-h-[500px] flex-shrink-0 bg-gray-800 flex items-center justify-center bg-cover bg-center"
+                    style={{
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundImage: "url('/images/AllWebSD_Business_Hero_Banner.png')"
+                    }}
+                >
+                    {slideContents[2]}
                 </div>
 
             </div>
