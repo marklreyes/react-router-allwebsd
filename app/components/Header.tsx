@@ -64,20 +64,6 @@ export default function Header() {
 			{/* Desktop Navigation and Theme Toggle */}
 			<div className="hidden lg:flex items-center gap-4">
 				<nav aria-label="Main navigation" className="flex items-center">
-				<NavLink to="/"
-					className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}
-					onClick={() => {
-						// Track event for text click
-						trackEvent("nav_click", {
-							params: {
-								event_category: "Navigation",
-								event_sub_category: "Desktop",
-								event_label: `Home`,
-								component: "Header Component"
-							},
-						});
-					}}
-					>Home</NavLink>
 				<NavLink to="/episodes"
 					className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}
 					onClick={() => {
@@ -152,6 +138,26 @@ export default function Header() {
 					{/* Dropdown Menu */}
 					{tutorialsDropdownOpen && (
 						<div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg z-50 min-w-[200px]">
+							<NavLink
+								to="/data-structures"
+								className={({ isActive }) =>
+									`block px-4 py-2 text-[#2F241D] hover:bg-gray-50 ${isActive ? 'font-bold bg-gray-50' : ''}`
+								}
+								onClick={() => {
+									setTutorialsDropdownOpen(false);
+									// Track event for tutorial link click
+									trackEvent("nav_click", {
+										params: {
+											event_category: "Navigation",
+											event_sub_category: "Desktop",
+											event_label: "Data Structures",
+											component: "Header Component - Tutorials Dropdown"
+										},
+									});
+								}}
+							>
+								Data Structures
+							</NavLink>
 							<NavLink
 								to="/do-it-with-ai"
 								className={({ isActive }) =>
@@ -324,27 +330,6 @@ export default function Header() {
 				>
 				<nav className={`${isDarkMode ? `border-[#F03D86]` : `border-[#2F241D]`} flex flex-col items-start p-4 space-y-4 border-b`}>
 					<NavLink
-					to="/"
-					className={({ isActive }) =>
-						`block w-full text-left py-2 ${isActive ? "font-bold" : ""}`
-					}
-					onClick={() => {
-						setIsOpen(false);
-						// Track event for text click
-						trackEvent("nav_click", {
-							params: {
-								event_category: "Navigation",
-								event_sub_category: "Mobile",
-								event_label: `Home`,
-								component: "Header Component"
-							},
-						});
-
-					}}
-					>
-					Home
-					</NavLink>
-					<NavLink
 					to="/episodes"
 					className={({ isActive }) =>
 						`block w-full text-left py-2 ${isActive ? "font-bold" : ""}`
@@ -440,6 +425,27 @@ export default function Header() {
 						{/* Mobile Dropdown Content */}
 						{tutorialsDropdownOpen && (
 							<div className="w-full pl-4">
+								<NavLink
+									to="/data-structures"
+									className={({ isActive }) =>
+										`block w-full text-left py-2 pl-4 ${isActive ? "font-bold" : ""} text-sm`
+									}
+									onClick={() => {
+										setIsOpen(false);
+										setTutorialsDropdownOpen(false);
+										// Track event for tutorial link click
+										trackEvent("nav_click", {
+											params: {
+												event_category: "Navigation",
+												event_sub_category: "Mobile",
+												event_label: "Data Structures",
+												component: "Header Component - Tutorials Dropdown"
+											},
+										});
+									}}
+								>
+									Data Structures
+								</NavLink>
 								<NavLink
 									to="/do-it-with-ai"
 									className={({ isActive }) =>

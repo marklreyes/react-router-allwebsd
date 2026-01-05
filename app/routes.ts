@@ -10,6 +10,7 @@ export default [
 		route("about", "routes/about.tsx"),
 		route("contact", "routes/contact.tsx"),
 		route("chat", "routes/chat.tsx"),
+		route("data-structures", "routes/datastructures.tsx"),
 		route("do-it-with-ai", "routes/doitwithai.tsx"),
 		// Tutorial detail pages
 		route("do-it-with-ai/html", "routes/tutorials/html.tsx"),
