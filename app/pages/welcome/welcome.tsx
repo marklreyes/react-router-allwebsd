@@ -1,4 +1,4 @@
-import { HeroBanner } from "../../components/HeroBanner";
+import { HeroBannerCarousel } from "../../components/HeroBannerCarousel";
 import { useTheme } from "../../context/ThemeContext";
 import { GuestShowcase } from "~/components/GuestShowcase";
 
@@ -7,7 +7,7 @@ export function Welcome() {
 
 	return (
 		<>
-			<HeroBanner />
+			<HeroBannerCarousel />
 			<main className="flex items-center justify-center">
 				<div className="flex-1 flex flex-col items-center gap-16 min-h-0">
 					<div className="w-full">
