@@ -17,8 +17,8 @@ export default function Footer() {
 		  showToast={showToast}
 		  setShowToast={setShowToast}
 		  icon={<SiBuymeacoffee />}
-		  message="Your support helps keep"
-		  link={{ to: "/sponsors", text: "this platform running smoothly!" }}
+		  message="Quick pause on AllWebSD. Support its return and consider a "
+		  link={{ to: "/sponsors", text: "sponsorship!" }}
 		/>
 		<div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-secondary">
 		  {/* Left column (1/3): Tagline */}
