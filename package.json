@@ -15,7 +15,7 @@
     "@react-router/serve": "^7.7.0",
     "@tailwindcss/vite": "^4.1.16",
     "dompurify": "^3.2.4",
-    "fast-xml-parser": "^5.2.3",
+    "fast-xml-parser": "^5.3.6",
     "isbot": "^5.1.31",
     "netlify-cli": "^23.5.1",
     "openai": "^6.15.0",
