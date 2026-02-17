@@ -4,7 +4,7 @@
 
 Just a Web Developer storytelling, teaching and community building out of America's Finest City.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cdacf90b-85f2-43ec-9490-d6290ee48524/deploy-status)](https://app.netlify.com/sites/eclectic-liger-1fa28e/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cdacf90b-85f2-43ec-9490-d6290ee48524/deploy-status)](https://app.netlify.com/projects/allwebsd/deploys)
 
 ## Features
 
