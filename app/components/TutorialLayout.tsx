@@ -27,7 +27,7 @@ export function Badge({ children }: { children: React.ReactNode }) {
       className={
         `inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ` +
         (isDarkMode
-          ? "bg-[#2F241D] text-gray-100 border border-[#2F241D]"
+          ? "bg-[#122231] text-gray-100 border border-[#122231]"
           : "bg-gray-100 text-gray-800 border border-gray-200")
       }
     >
@@ -142,8 +142,8 @@ function Toc({ items, showHeading = true }: { items: TocItem[]; showHeading?: bo
                   `block text-sm transition-colors border-l-2 pl-3 py-1 ${
                     isActive
                       ? isDarkMode
-                        ? "border-[#FFC425] text-[#FFC425] font-medium"
-                        : "border-[#FFC425] text-[#FFC425] font-medium"
+                        ? "border-[#F6BF31] text-[#F6BF31] font-medium"
+                        : "border-[#F6BF31] text-[#F6BF31] font-medium"
                       : "border-transparent text-gray-200 hover:text-white hover:border-gray-400"
                   }`
                 }
@@ -173,7 +173,7 @@ export function CodeBlock({ code, language, filename }: { code: string; language
   };
 
   return (
-    <div className={`relative border rounded-md overflow-hidden ${isDarkMode ? "border-[#2F241D] bg-[#2F241D]" : "border-gray-200 bg-gray-50"}`}>
+    <div className={`relative border rounded-md overflow-hidden ${isDarkMode ? "border-[#122231] bg-[#122231]" : "border-gray-200 bg-gray-50"}`}>
       <div className="flex items-center justify-between px-3 py-2 text-xs">
         <div className={`truncate ${isDarkMode ? "text-gray-200" : "text-gray-700"}`}>
           {filename ?? (language ? `${language}` : "code")}
@@ -184,7 +184,7 @@ export function CodeBlock({ code, language, filename }: { code: string; language
           className={
             `rounded px-2 py-1 transition-colors ` +
             (isDarkMode
-              ? `bg-[#F03D86] text-white hover:bg-[#d63570]`
+              ? `bg-[#D12A72] text-white hover:bg-[#b8235f]`
               : `bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]`)
           }
         >
@@ -296,7 +296,7 @@ export function VideoEmbed({ videoId, url, title, start, copyLabel }: { videoId?
 
   return (
     <div>
-      <div className={`relative w-full overflow-hidden rounded-md border ${isDarkMode ? "border-[#2F241D] bg-[#2F241D]" : "border-gray-200 bg-gray-50"}`}>
+      <div className={`relative w-full overflow-hidden rounded-md border ${isDarkMode ? "border-[#122231] bg-[#122231]" : "border-gray-200 bg-gray-50"}`}>
         {/* 16:9 aspect ratio */}
         <div className="pt-[56.25%]" />
         {finalId ? (
@@ -325,7 +325,7 @@ export function VideoEmbed({ videoId, url, title, start, copyLabel }: { videoId?
             className={
               `rounded px-2 py-1 text-xs font-medium transition-colors ` +
               (isDarkMode
-                ? `bg-[#F03D86] text-white hover:bg-[#d63570]`
+                ? `bg-[#D12A72] text-white hover:bg-[#b8235f]`
                 : `bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]`)
             }
             aria-label={timeLabel ? `Copy YouTube link starting at ${timeLabel}` : `Copy YouTube link`}
@@ -392,9 +392,9 @@ export default function TutorialLayout({
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? "bg-gradient-to-br from-[#F03D86] to-[#71BEA9]" : "bg-gradient-to-br from-[#2F241D] to-[#FFC425]"}`}>
+    <div className={`min-h-screen ${isDarkMode ? "bg-gradient-to-br from-[#D12A72] to-[#52B9BE]" : "bg-gradient-to-br from-[#2F241D] to-[#FFC425]"}`}>
       {/* Header */}
-      <div className={`${isDarkMode ? "bg-[#71BEA9]" : "bg-white"} shadow-lg`}>
+      <div className={`${isDarkMode ? "bg-[#52B9BE]" : "bg-white"} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Breadcrumb */}
           <Breadcrumb
@@ -409,14 +409,14 @@ export default function TutorialLayout({
           />
           <div className="flex items-start gap-4 md:items-center md:gap-6">
             {iconLabel && (
-              <div className={`h-12 w-12 ${isDarkMode ? "bg-[#FFC425]" : "bg-[#FFC425] bg-opacity-20"} rounded-lg flex items-center justify-center shrink-0`}>
-                <span className="text-[#2F241D] font-bold text-sm">{iconLabel}</span>
+              <div className={`h-12 w-12 ${isDarkMode ? "bg-[#F6BF31]" : "bg-[#F6BF31] bg-opacity-20"} rounded-lg flex items-center justify-center shrink-0`}>
+                <span className="text-[#122231] font-bold text-sm">{iconLabel}</span>
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <h1 className={`text-2xl sm:text-3xl md:text-4xl font-bold ${isDarkMode ? "text-[#2F241D]" : "text-[#2F241D]"}`}>{title}</h1>
+              <h1 className={`text-2xl sm:text-3xl md:text-4xl font-bold ${isDarkMode ? "text-white" : "text-[#2F241D]"}`}>{title}</h1>
               {subtitle && (
-                <p className={`mt-2 ${isDarkMode ? "text-[#2F241D]" : "text-gray-600"}`}>{subtitle}</p>
+                <p className={`mt-2 ${isDarkMode ? "text-white" : "text-gray-600"}`}>{subtitle}</p>
               )}
               {(estTime || level) && (
                 <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -431,14 +431,14 @@ export default function TutorialLayout({
                   href={cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`hidden md:inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors ${isDarkMode ? "text-white bg-[#F03D86] hover:bg-[#d63570]" : "text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]"}`}
+                  className={`hidden md:inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors ${isDarkMode ? "text-white bg-[#D12A72] hover:bg-[#b8235f]" : "text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]"}`}
                 >
                   {cta.label}
                 </a>
               ) : (
                 <Link
                   to={cta.href}
-                  className={`hidden md:inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors ${isDarkMode ? "text-white bg-[#F03D86] hover:bg-[#d63570]" : "text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]"}`}
+                  className={`hidden md:inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors ${isDarkMode ? "text-white bg-[#D12A72] hover:bg-[#b8235f]" : "text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]"}`}
                 >
                   {cta.label}
                 </Link>
@@ -446,7 +446,7 @@ export default function TutorialLayout({
             )}
           </div>
         </div>
-        <div className="h-2 bg-[#FFC425]" />
+        <div className="h-2 bg-[#F6BF31]" />
       </div>
 
       {/* Body */}
@@ -454,7 +454,7 @@ export default function TutorialLayout({
         {/* Mobile TOC */}
         {toc?.length ? (
           <details className="lg:hidden mb-6">
-            <summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? "text-white" : "text-[#2F241D]"}`}>On this page</summary>
+            <summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? "text-white" : "text-[#122231]"}`}>On this page</summary>
             <div className="mt-2">
               <Toc items={toc} showHeading={false} />
             </div>
@@ -472,7 +472,7 @@ export default function TutorialLayout({
           </aside>
 
           {/* Main content - Independent scroll */}
-          <main className="lg:col-span-9 space-y-8 text-white [&_h2]:cursor-pointer [&_h2]:hover:text-[#FFC425] [&_h2]:transition-colors">
+          <main className="lg:col-span-9 space-y-8 text-white [&_h2]:cursor-pointer [&_h2]:hover:text-[#F6BF31] [&_h2]:transition-colors">
             <div onClick={(e) => {
               // Handle clicks on h2 elements to create deep links
               const target = e.target as HTMLElement;
@@ -488,11 +488,11 @@ export default function TutorialLayout({
 
             {/* Prev/Next */}
             {(nextPrev?.prev || nextPrev?.next) && (
-              <div className="pt-6 mt-10 border-t border-gray-200 dark:border-[#2F241D] flex items-center justify-between">
+              <div className="pt-6 mt-10 border-t border-gray-200 dark:border-[#122231] flex items-center justify-between">
                 {nextPrev?.prev ? (
                   <Link
                     to={nextPrev.prev.to}
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-colors ${isDarkMode ? "text-white bg-[#2F241D] hover:bg-[#1f1814]" : "text-[#2F241D] bg-gray-100 hover:bg-gray-200"}`}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-colors ${isDarkMode ? "text-white bg-[#122231] hover:bg-[#0f1b28]" : "text-[#2F241D] bg-gray-100 hover:bg-gray-200"}`}
                   >
                     <span aria-hidden>←</span>
                     {nextPrev.prev.label}
@@ -502,7 +502,7 @@ export default function TutorialLayout({
                 {nextPrev?.next ? (
                   <Link
                     to={nextPrev.next.to}
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-colors ${isDarkMode ? "text-white bg-[#F03D86] hover:bg-[#d63570]" : "text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]"}`}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-colors ${isDarkMode ? "text-white bg-[#D12A72] hover:bg-[#b8235f]" : "text-[#2F241D] bg-[#FFC425] hover:bg-[#e6b021]"}`}
                   >
                     {nextPrev.next.label}
                     <span aria-hidden>→</span>

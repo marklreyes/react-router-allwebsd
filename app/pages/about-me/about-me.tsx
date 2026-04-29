@@ -31,32 +31,32 @@ export function AboutMe() {
 								<h3 className="text-xl font-semibold text-white mb-4">Join us if you:</h3>
 								<ul className="space-y-3 mb-6">
 									<li className="flex items-start">
-										<span className="text-[#FFC425] mr-2">•</span>
+										<span className="text-[#F6BF31] mr-2">•</span>
 										Want to connect locally with fellow digital professionals, creators, and business owners.
 									</li>
 									<li className="flex items-start">
-										<span className="text-[#FFC425] mr-2">•</span>
+										<span className="text-[#F6BF31] mr-2">•</span>
 										Are curious about the human side of digital work.
 									</li>
 									<li className="flex items-start">
-										<span className="text-[#FFC425] mr-2">•</span>
+										<span className="text-[#F6BF31] mr-2">•</span>
 										Are experimenting with new tools like MindStudio and want guidance.
 									</li>
 									<li className="flex items-start">
-										<span className="text-[#FFC425] mr-2">•</span>
+										<span className="text-[#F6BF31] mr-2">•</span>
 										Believe community can be a competitive advantage.
 									</li>
 								</ul>
 
 								<div className="space-y-3 mb-6">
 									<p>
-										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
+										<span className="text-[#F6BF31] mr-2 text-xl">👉</span>
 										Join our free{" "}
 										<a
 											href="http://discord.gg/HsVp5R9zFt"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+											className="text-[#F6BF31] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#F6BF31] focus:ring-opacity-50"
 											aria-label="Join AllWebSD Discord community"
 											onClick={() =>
 												trackEvent("external_link_click", {
@@ -101,7 +101,7 @@ export function AboutMe() {
 									</p>
 								</div>
 
-								<p className="font-semibold text-[#FFC425] mb-6">
+								<p className="font-semibold text-[#F6BF31] mb-6">
 									We're building something together—don't miss it.
 								</p>
 

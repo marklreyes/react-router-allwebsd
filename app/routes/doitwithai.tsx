@@ -54,7 +54,7 @@ export default function DoItWithAI() {
 	};
 
 	return (
-		<div className={`min-h-screen ${isDarkMode ? 'bg-gradient-to-br from-[#F03D86] to-[#71BEA9]' : 'bg-gradient-to-br from-[#2F241D] to-[#FFC425]'}`}>
+		<div className={`min-h-screen ${isDarkMode ? 'bg-gradient-to-br from-[#D12A72] to-[#52B9BE]' : 'bg-gradient-to-br from-[#122231] to-[#F6BF31]'}`}>
 			{/* Hero Section */}
 			<div
 				className="relative shadow-lg bg-no-repeat bg-cover bg-top"
@@ -102,17 +102,17 @@ export default function DoItWithAI() {
 
 				<div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
 					{/* HTML Tutorial Card */}
-					<div className={`${isDarkMode ? 'bg-[#71BEA9]' : 'bg-white'} overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
-						<div className="bg-[#FFC425] h-2"></div>
+									<div className={`${isDarkMode ? 'bg-[#52B9BE]' : 'bg-white'} overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
+						<div className="bg-[#F6BF31] h-2"></div>
 						<div className="p-6">
 							<div className="flex items-center">
 								<div className="flex-shrink-0">
-									<div className={`h-12 w-12 ${isDarkMode ? 'bg-[#FFC425]' : 'bg-[#FFC425] bg-opacity-20'} rounded-lg flex items-center justify-center`}>
-										<span className="text-[#2F241D] font-bold text-xl">HTML</span>
+											<div className={`h-12 w-12 ${isDarkMode ? 'bg-[#F6BF31]' : 'bg-[#F6BF31] bg-opacity-20'} rounded-lg flex items-center justify-center`}>
+												<span className="text-[#122231] font-bold text-xl">HTML</span>
 									</div>
 								</div>
 								<div className="ml-4">
-									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
+									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>
 										HTML — “Summon the Command Console”
 									</h3>
 									<p className={`text-sm ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -125,9 +125,9 @@ export default function DoItWithAI() {
 									Learn essential HTML to shape how your agent's looks. Structure mission briefings with headings, lists, links, and images so responses render cleanly throughout a workflow.
 								</p>
 								<details className="mt-3">
-									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
+									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>View example</summary>
 									<div className="mt-2">
-										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
+										<pre className={`${isDarkMode ? 'bg-[#122231] text-gray-100 border-[#122231]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
 <code>{`
 <ul>
   <li>Red Ranger</li>
@@ -148,7 +148,7 @@ export default function DoItWithAI() {
 								</div>
 								<Link
 									to="/do-it-with-ai/html"
-									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#D12A72] text-white hover:bg-[#d63570]' : 'bg-[#F6BF31] text-[#122231] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
 									onClick={trackEvent("tutorial_card_click", {
 										params: {
 											tutorial_name: "HTML",
@@ -166,17 +166,17 @@ export default function DoItWithAI() {
 					</div>
 
 					{/* Markdown Tutorial Card */}
-					<div className={`${isDarkMode ? 'bg-[#71BEA9]' : 'bg-white'} overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
-						<div className="bg-[#FFC425] h-2"></div>
+					<div className={`${isDarkMode ? 'bg-[#52B9BE]' : 'bg-white'} overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
+						<div className="bg-[#F6BF31] h-2"></div>
 						<div className="p-6">
 							<div className="flex items-center">
 								<div className="flex-shrink-0">
-									<div className={`h-12 w-12 ${isDarkMode ? 'bg-[#FFC425]' : 'bg-[#FFC425] bg-opacity-20'} rounded-lg flex items-center justify-center`}>
-										<span className="text-[#2F241D] font-bold text-sm">MD</span>
+									<div className={`h-12 w-12 ${isDarkMode ? 'bg-[#F6BF31]' : 'bg-[#F6BF31] bg-opacity-20'} rounded-lg flex items-center justify-center`}>
+										<span className="text-[#122231] font-bold text-sm">MD</span>
 									</div>
 								</div>
 								<div className="ml-4">
-									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
+									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>
 										Markdown — “Give Zordon a Voice”
 									</h3>
 									<p className={`text-sm ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -189,9 +189,9 @@ export default function DoItWithAI() {
 									Use Markdown to format system prompts and chat summaries. Make your agent’s output clear, scannable, and easy to reuse across different workflow blocks.
 								</p>
 								<details className="mt-3">
-									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>View example</summary>
+									<summary className={`cursor-pointer text-sm font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>View example</summary>
 									<div className="mt-2">
-										<pre className={`${isDarkMode ? 'bg-[#2F241D] text-gray-100 border-[#2F241D]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
+										<pre className={`${isDarkMode ? 'bg-[#122231] text-gray-100 border-[#122231]' : 'bg-gray-50 text-gray-800 border-gray-200'} border rounded-md p-4 overflow-auto text-xs`}>
 											<code>{`# Instructions\n\n- First, summarize the mission goal in 1 sentence.`}</code>
 										</pre>
 									</div>
@@ -204,7 +204,7 @@ export default function DoItWithAI() {
 								</div>
 								<Link
 									to="/do-it-with-ai/markdown"
-									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#D12A72] text-white hover:bg-[#d63570]' : 'bg-[#F6BF31] text-[#122231] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
 									onClick={trackEvent("tutorial_card_click", {
 										params: {
 											tutorial_name: "Markdown",
@@ -222,17 +222,17 @@ export default function DoItWithAI() {
 					</div>
 
 					{/* JSON Tutorial Card */}
-					<div className={`${isDarkMode ? 'bg-[#71BEA9]' : 'bg-white'} overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
-						<div className="bg-[#FFC425] h-2"></div>
+					<div className={`${isDarkMode ? 'bg-[#52B9BE]' : 'bg-white'} overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
+						<div className="bg-[#F6BF31] h-2"></div>
 						<div className="p-6">
 							<div className="flex items-center">
 								<div className="flex-shrink-0">
-									<div className={`h-12 w-12 ${isDarkMode ? 'bg-[#FFC425]' : 'bg-[#FFC425] bg-opacity-20'} rounded-lg flex items-center justify-center`}>
-										<span className="text-[#2F241D] font-bold text-sm">JSON</span>
+										<div className={`h-12 w-12 ${isDarkMode ? 'bg-[#F6BF31]' : 'bg-[#F6BF31] bg-opacity-20'} rounded-lg flex items-center justify-center`}>
+											<span className="text-[#122231] font-bold text-sm">JSON</span>
 									</div>
 								</div>
 								<div className="ml-4">
-									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
+										<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>
 										JSON — “Activate the Data Crystals”
 									</h3>
 									<p className={`text-sm ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -268,7 +268,7 @@ export default function DoItWithAI() {
 								</div>
 								<Link
 									to="/do-it-with-ai/json"
-									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#D12A72] text-white hover:bg-[#d63570]' : 'bg-[#F6BF31] text-[#122231] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
 									onClick={trackEvent("tutorial_card_click", {
 										params: {
 											tutorial_name: "JSON",
@@ -286,17 +286,17 @@ export default function DoItWithAI() {
 					</div>
 
 					{/* Handlebars Tutorial Card */}
-					<div className={`${isDarkMode ? 'bg-[#71BEA9]' : 'bg-white'} overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
-						<div className="bg-[#FFC425] h-2"></div>
+					<div className={`${isDarkMode ? 'bg-[#52B9BE]' : 'bg-white'} overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
+						<div className="bg-[#F6BF31] h-2"></div>
 						<div className="p-6">
 							<div className="flex items-center">
 								<div className="flex-shrink-0">
-									<div className={`h-12 w-12 ${isDarkMode ? 'bg-[#FFC425]' : 'bg-[#FFC425] bg-opacity-20'} rounded-lg flex items-center justify-center`}>
-										<span className="text-[#2F241D] font-bold text-sm">HBS</span>
+										<div className={`h-12 w-12 ${isDarkMode ? 'bg-[#F6BF31]' : 'bg-[#F6BF31] bg-opacity-20'} rounded-lg flex items-center justify-center`}>
+											<span className="text-[#122231] font-bold text-sm">HBS</span>
 									</div>
 								</div>
 								<div className="ml-4">
-									<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
+										<h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>
 										Handlebars — “Form the Megazord”
 									</h3>
 									<p className={`text-sm ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -334,7 +334,7 @@ export default function DoItWithAI() {
 								</div>
 								<Link
 									to="/do-it-with-ai/handlebars"
-									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#F03D86] text-white hover:bg-[#d63570]' : 'bg-[#FFC425] text-[#2F241D] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
+									className={`mt-4 w-full inline-flex items-center justify-center ${isDarkMode ? 'bg-[#D12A72] text-white hover:bg-[#d63570]' : 'bg-[#F6BF31] text-[#122231] hover:bg-[#e6b021]'} px-4 py-2 rounded-md font-medium transition-colors duration-200`}
 									onClick={trackEvent("tutorial_card_click", {
 										params: {
 											tutorial_name: "Handlebars",
@@ -354,10 +354,10 @@ export default function DoItWithAI() {
 			</div>
 
 			{/* Features Section */}
-			<div className={`${isDarkMode ? 'bg-[#F03D86]' : 'bg-white'}`}>
+			<div className={`${isDarkMode ? 'bg-[#D12A72]' : 'bg-white'}`}>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 					<div className="text-center">
-						<h2 className={`text-3xl font-extrabold ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
+						<h2 className={`text-3xl font-extrabold ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>
 							Why these skills matter in MindStudio
 						</h2>
 						<p className={`mt-4 max-w-2xl mx-auto text-xl ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -372,7 +372,7 @@ export default function DoItWithAI() {
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
 								</svg>
 							</div>
-							<h3 className={`mt-4 text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
+							<h3 className={`mt-4 text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>
 								Content that renders well (HTML + Markdown)
 							</h3>
 							<p className={`mt-2 text-base ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -381,12 +381,12 @@ export default function DoItWithAI() {
 						</div>
 
 						<div className="text-center">
-							<div className={`flex items-center justify-center h-12 w-12 rounded-md ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'} text-[#2F241D] mx-auto`}>
+							<div className={`flex items-center justify-center h-12 w-12 rounded-md ${isDarkMode ? 'bg-[#52B9BE]' : 'bg-[#F6BF31]'} text-[#122231] mx-auto`}>
 								<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
 								</svg>
 							</div>
-							<h3 className={`mt-4 text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
+							<h3 className={`mt-4 text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>
 								Data MindStudio understands (JSON)
 							</h3>
 							<p className={`mt-2 text-base ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -395,12 +395,12 @@ export default function DoItWithAI() {
 						</div>
 
 						<div className="text-center">
-							<div className={`flex items-center justify-center h-12 w-12 rounded-md ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'} text-[#2F241D] mx-auto`}>
+							<div className={`flex items-center justify-center h-12 w-12 rounded-md ${isDarkMode ? 'bg-[#52B9BE]' : 'bg-[#F6BF31]'} text-[#122231] mx-auto`}>
 								<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 								</svg>
 							</div>
-							<h3 className={`mt-4 text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#2F241D]'}`}>
+							<h3 className={`mt-4 text-lg font-medium ${isDarkMode ? 'text-white' : 'text-[#122231]'}`}>
 								Reusable dynamic templates (Handlebars)
 							</h3>
 							<p className={`mt-2 text-base ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>

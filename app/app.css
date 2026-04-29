@@ -22,7 +22,12 @@
 }
 
 :root {
-  --background-primary: #2F241D;
+  --background-primary: #122231;
+  --text-primary: #FFFFFF;
+  --accent-teal: #52B9BE;
+  --accent-pink: #D12A72;
+  --accent-gold: #F6BF31;
+  --accent-orange: #EE7316;
 }
 
 html,

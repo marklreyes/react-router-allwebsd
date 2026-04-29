@@ -84,7 +84,7 @@ export default function DataStructures() {
 			<VideoEmbed url="https://youtu.be/ZKR7ZfJfTwA" title="AllWebSD.com: Mighty Morphin Data Structures, Part 1" />
 
 			<div className="mt-6">
-			<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Key Characteristics</h3>
+			<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Key Characteristics</h3>
 			<ul className="text-gray-200 space-y-2">
 			<li><strong>Linked List:</strong> Each element points to the next, efficient insertion/deletion</li>
 			<li><strong>Array:</strong> Elements stored in contiguous memory, fast indexed access</li>
@@ -94,7 +94,7 @@ export default function DataStructures() {
 			</div>
 			</div>
 
-			<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Example: Linked List and Array of Rangers</h3>
+			<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Example: Linked List and Array of Rangers</h3>
 			<CodeBlock language="javascript" code={`// Linked list - a collection of items where each item points to the next one in the list.
 const linkedListOfRangers = {
 	head: {
@@ -142,7 +142,7 @@ const arrayOfRangers = ['Zack', 'Kimberly', 'Billy', 'Trini', 'Jason'];`} />
 				<VideoEmbed url="https://www.youtube.com/watch?v=3CNubmgdFmc" title="AllWebSD.com: Mighty Morphin Data Structures, Part 2" />
 
 				<div className="mt-6">
-				<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Key Characteristics</h3>
+				<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Key Characteristics</h3>
 				<ul className="text-gray-200 space-y-2">
 				<li><strong>Power Assignment:</strong> Each Ranger gets specific attributes (name, color, zord, weapon)</li>
 				<li><strong>Descriptive Access:</strong> Use meaningful keys instead of numeric positions</li>
@@ -152,7 +152,7 @@ const arrayOfRangers = ['Zack', 'Kimberly', 'Billy', 'Trini', 'Jason'];`} />
 				</div>
 				</div>
 
-				<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Example: Array of Objects</h3>
+				<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Example: Array of Objects</h3>
 				<CodeBlock language="javascript" code={`// Considering the previous array, let's turn this into a hybrid data structure.
 const arrayOfRangers = [
 	{
@@ -226,7 +226,7 @@ const zack = {
 					<VideoEmbed url="https://www.youtube.com/watch?v=w9KROYE0Jts" title="AllWebSD.com: Mighty Morphin Data Structures, Part 3" />
 
 					<div className="mt-6">
-					<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Key Characteristics</h3>
+					<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Key Characteristics</h3>
 					<ul className="text-gray-200 space-y-2">
 					<li><strong>Enqueue Enemies:</strong> Rita adds Putties to the front of the battle line (unshift operation)</li>
 					<li><strong>Dequeue Defeats:</strong> Rangers remove defeated enemies from the back (pop operation)</li>
@@ -236,7 +236,7 @@ const zack = {
 					</div>
 					</div>
 
-					<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Example: Queue Creation</h3>
+					<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Example: Queue Creation</h3>
 					<CodeBlock language="javascript" code={`function createQueue() {
 	// Store our items in an array held in closure.
 	const queue = [];
@@ -294,7 +294,7 @@ const zack = {
 						<VideoEmbed url="https://www.youtube.com/watch?v=MQD6cJkKIYo" title="AllWebSD.com: Mighty Morphin Data Structures, Part 4" />
 
 						<div className="mt-6">
-						<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Key Characteristics</h3>
+						<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Key Characteristics</h3>
 						<ul className="text-gray-200 space-y-2">
 						<li><strong>Dual Priority System:</strong> High priority (Rita's magic wand) and low priority (regular Putties) queues</li>
 						<li><strong>Emergency First:</strong> High priority threats always processed before low priority ones</li>
@@ -304,7 +304,7 @@ const zack = {
 						</div>
 						</div>
 
-						<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Example: Priority Queue Creation</h3>
+						<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Example: Priority Queue Creation</h3>
 						<CodeBlock language="javascript" code={`function createPriorityQueue() {
 // Make two queues held in closure to determine priority.
   const highPriorityQueue = createQueue();
@@ -367,7 +367,7 @@ const zack = {
 							<VideoEmbed url="https://www.youtube.com/watch?v=QyThH77KZ2k" title="AllWebSD.com: Mighty Morphin Data Structures, Part 5" />
 
 							<div className="mt-6">
-							<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Key Characteristics</h3>
+							<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Key Characteristics</h3>
 							<ul className="text-gray-200 space-y-2">
 							<li><strong>LIFO Assembly:</strong> Last DinoZord added is first to connect (Last In, First Out)</li>
 							<li><strong>Push Zords:</strong> Add DinoZords to the top of the assembly stack</li>
@@ -377,7 +377,7 @@ const zack = {
 							</div>
 							</div>
 
-							<h3 className="text-xl font-semibold text-[#FFC425] mb-4">Example: Create Stack</h3>
+							<h3 className="text-xl font-semibold text-[#F6BF31] mb-4">Example: Create Stack</h3>
 							<CodeBlock language="javascript" code={`function createStack() {
 	// Store our items in an array held in closure.
 	const stack = [];
