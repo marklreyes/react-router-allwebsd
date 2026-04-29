@@ -6,9 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FFC425',
-        secondary: '#2F241D',
-        darkBg: '#71BEA9',
+        primary: '#F6BF31', // marigold (gold)
+        secondary: '#D12A72', // fireberry (pink)
+        darkBg: '#122231', // obsidian (dark navy)
+        accent: '#52B9BE', // aqua (teal)
+        orange: '#EE7316', // fireberry (orange)
       },
       fontFamily: {
         sans: [

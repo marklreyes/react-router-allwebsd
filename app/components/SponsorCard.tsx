@@ -46,11 +46,11 @@ export function SponsorCard({
 	const IconComponent = isBuyMeACoffeeLink ? SiBuymeacoffee : HiOutlineSparkles;
 
 	return (
-		<div className="bg-white rounded-lg p-6 shadow-lg" role="article">
+		<div className={`${isDarkMode ? 'bg-[#D12A72]' : 'bg-white'} rounded-lg p-6 shadow-lg`} role="article">
 			<h2 className={`${theme.text} text-2xl font-bold mb-4`} id={`sponsor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
 				{title}
 			</h2>
-			<ul className="space-y-3" aria-labelledby={`sponsor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+			<ul className="space-y-3" aria-labelledby={	`sponsor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
 				{benefits.map((benefit, index) => (
 					<li key={index} className={`${theme.text}`} aria-label={`Benefit: ${benefit}`}>
 						<span className="mr-2" aria-hidden="true">{icon}</span>

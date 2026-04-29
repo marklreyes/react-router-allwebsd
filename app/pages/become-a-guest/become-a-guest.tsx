@@ -31,7 +31,7 @@ export function BecomeAGuest() {
 						To make an appearance, please{" "}
 						<NavLink
 							to="/contact"
-							className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+							className="text-[#F6BF31] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#F6BF31] focus:ring-opacity-50"
 							aria-label="Contact us to become a guest"
 							onClick={
 								// Track event for text click

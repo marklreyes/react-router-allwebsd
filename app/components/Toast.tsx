@@ -33,7 +33,7 @@ export function Toast({
 
   return (
 		<div
-			className="toast toast-end toast-center w-full max-w-xs md:max-w-md z-50"
+			className="toast toast-center w-full max-w-xs md:max-w-md z-50"
 			role="alert"
 			aria-live="polite"
 		>
@@ -46,10 +46,10 @@ export function Toast({
           md:p-4
           relative
           border
-          ${isDarkMode ? 'border-[#F03D86]' : 'border-[#2F241D]'}
+          ${isDarkMode ? 'border-[#D12A72]' : 'border-[#122231]'}
         `}>
 			<button
-				className={`${theme.background} ${theme.text} hover:bg-[#2F241D] hover:text-white btn btn-circle btn-xs md:btn-sm absolute top-1 right-2 text-white`}
+				className={`${theme.background} ${theme.text} hover:bg-[#122231] hover:text-white btn btn-circle btn-xs md:btn-sm absolute top-1 right-2 text-white`}
 				onClick={() => {
 					handleClose();
 					// Track event for close button click

@@ -52,7 +52,7 @@ export function getButtonClasses(
     secondary: isDarkMode
       ? 'bg-[#71BEA9] text-white hover:bg-teal-600'
       : 'bg-[#FFC425] text-[#2F241D] hover:bg-yellow-400',
-    outline: `btn-outline ${theme.primary} ${theme.text} hover:bg-[#2F241D] hover:text-white`
+    outline: `btn-outline ${theme.primary} ${theme.text} hover:bg-[#122231] hover:text-white`
   };
 
   // Additional classes
