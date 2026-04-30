@@ -23,7 +23,7 @@ export function GuestCard({ guest }: GuestCardProps) {
         <div
           className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-24 lg:h-24 xl:w-20 xl:h-20 rounded-full ring ring-offset-base-100 ring-offset-2 transition-all duration-300 group-hover:ring-4 ${
             isDarkMode
-              ? 'ring-[#71BEA9] group-hover:ring-[#71BEA9]'
+              ? 'ring-[#52B9BE] group-hover:ring-[#52B9BE]'
               : 'ring-[#FFC425] group-hover:ring-[#FFC425]'
           }`}
         >
@@ -47,7 +47,7 @@ export function GuestCard({ guest }: GuestCardProps) {
         <div
           className={`badge badge-outline text-xs transition-colors duration-200 ${
             isDarkMode
-              ? 'border-[#71BEA9] text-[#71BEA9] group-hover:bg-[#71BEA9] group-hover:text-white'
+              ? 'border-[#52B9BE] text-[#52B9BE] group-hover:bg-[#52B9BE] group-hover:text-white'
               : 'border-[#FFC425] text-[#FFC425] group-hover:bg-[#FFC425] group-hover:text-[#2F241D]'
           }`}
         >

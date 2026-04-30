@@ -118,7 +118,7 @@ const linkedListOfRangers = {
 // Array - has quick gets when searching for an index.
 const arrayOfRangers = ['Zack', 'Kimberly', 'Billy', 'Trini', 'Jason'];`} />
 
-				<div className="mt-6 p-4 bg-[#71BEA9] bg-opacity-20 border border-[#71BEA9] rounded-lg">
+				<div className="mt-6 p-4 bg-[#52B9BE] bg-opacity-20 border border-[#52B9BE] rounded-lg">
 				<h4 className="font-semibold mb-2 text-gray-900">💡 Best Use Cases</h4>
 				<ul className="text-gray-900 space-y-1">
 				<li><strong>Linked Lists:</strong> When you frequently add/remove team members (dynamic roster changes)</li>
@@ -270,7 +270,7 @@ const zack = {
 	}
 } `} />
 
-						<div className="mt-6 p-4 bg-[#71BEA9] bg-opacity-20 border border-[#71BEA9] rounded-lg">
+						<div className="mt-6 p-4 bg-[#52B9BE] bg-opacity-20 border border-[#52B9BE] rounded-lg">
 						<h4 className="font-semibold mb-2 text-gray-900">⚡ Best Use Cases</h4>
 						<ul className="text-gray-900 space-y-1">
 						<li><strong>Battle Planning:</strong> Queue up enemies to fight in order (Putties first, then Goldar)</li>
@@ -416,7 +416,7 @@ const zack = {
 }
 `} />
 
-								<div className="mt-6 p-4 bg-[#71BEA9] bg-opacity-20 border border-[#71BEA9] rounded-lg">
+								<div className="mt-6 p-4 bg-[#52B9BE] bg-opacity-20 border border-[#52B9BE] rounded-lg">
 								<h4 className="font-semibold mb-2 text-gray-900">🌳 Best Use Cases</h4>
 								<ul className="text-gray-900 space-y-1">
 								<li>• <strong>MegaZord Assembly:</strong> Stack DinoZords in formation order, activate when all 5 are ready</li>
