@@ -30,14 +30,14 @@ export function HeroBanner() {
 			<div className="relative z-10 text-white px-4 md:px-8 max-w-4xl text-center">
 				<h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight px-4 py-2 rounded-lg inline-block text-[#2F241D] ${
 					isDarkMode
-						? 'bg-[#71BEA9] bg-opacity-80'
+						? 'bg-[#52B9BE] bg-opacity-80'
 						: 'bg-[#FFC425] bg-opacity-90'
 				}`}>
 					Welcome to AllWebSD
 				</h2>
 				<p className={`text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto px-6 py-3 rounded-lg text-[#2F241D] ${
 					isDarkMode
-						? 'bg-[#71BEA9] bg-opacity-80'
+						? 'bg-[#52B9BE] bg-opacity-80'
 						: 'bg-[#FFC425] bg-opacity-90'
 				}`}>
 					Join San Diego’s digital professionals, small‑business owners, non-profits, creators, and industry newcomers. Share your story, swap insights, and build connections that move your career forward!

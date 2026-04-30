@@ -367,7 +367,7 @@ export default function DoItWithAI() {
 
 					<div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						<div className="text-center">
-							<div className={`flex items-center justify-center h-12 w-12 rounded-md ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'} text-[#2F241D] mx-auto`}>
+							<div className={`flex items-center justify-center h-12 w-12 rounded-md ${isDarkMode ? 'bg-[#52B9BE]' : 'bg-[#FFC425]'} text-[#2F241D] mx-auto`}>
 								<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
 								</svg>

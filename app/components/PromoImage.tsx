@@ -31,7 +31,7 @@ export function PromoImage({
         src={imageSrc}
         alt={alt}
         aria-label={ariaLabel}
-        className={`rounded-full shadow-lg object-cover border-3 ${isDarkMode ? 'border-[#71BEA9]' : 'border-[#FFC425]'}`}
+        className={`rounded-full shadow-lg object-cover border-3 ${isDarkMode ? 'border-[#52B9BE]' : 'border-[#FFC425]'}`}
         style={{ width: `${imageSize}px`, height: `${imageSize}px` }}
         loading="lazy"
       />

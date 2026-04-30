@@ -97,7 +97,7 @@ export function AboutMe() {
 									</p>
 									<p>
 										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
-										Free tutorials for those building AI Agents.
+										Free tutorials for those interested in working with software or AI Agents.
 									</p>
 								</div>
 
