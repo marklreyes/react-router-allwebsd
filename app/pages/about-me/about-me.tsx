@@ -51,7 +51,6 @@ export function AboutMe() {
 								<div className="space-y-3 mb-6">
 									<p>
 										<span className="text-[#F6BF31] mr-2 text-xl">👉</span>
-										Join our free{" "}
 										<a
 											href="http://discord.gg/HsVp5R9zFt"
 											target="_blank"
@@ -68,13 +67,12 @@ export function AboutMe() {
 												})
 											}
 										>
-											Discord
+											<strong>Join our Discord</strong>
 										</a>
-										{" "}to swap ideas, showcase projects, and build meaningful relationships in a supportive local network.
+										:{" "} Network, share projects, and collaborate with local pros.
 									</p>
 									<p>
 										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
-										Follow us on{" "}
 										<a
 											href="https://www.linkedin.com/company/allwebsd"
 											target="_blank"
@@ -91,13 +89,13 @@ export function AboutMe() {
 												})
 											}
 										>
-											LinkedIn
+											<strong>Follow on LinkedIn</strong>
 										</a>
-										{" "}for tech news, trends, and insights—crafted in San Diego, shared with innovators and creatives everywhere.
+										:{" "}Get San Diego-crafted tech news and industry insights.
 									</p>
 									<p>
 										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
-										Free tutorials for those interested in working with software or AI Agents.
+										<strong>Free Tutorials</strong>: Master software development and AI Agent workflows.
 									</p>
 								</div>
 
