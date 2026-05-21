@@ -35,7 +35,7 @@ export default function Header() {
 	}, [isOpen]);
 
   return (
-		<header className="bg-white text-base-100 p-4" role="banner">
+		<header className="bg-white dark:bg-darkBg text-base-100 p-4" role="banner">
 			<div className="container mx-auto flex justify-between items-center">
 			{/* Logo */}
 			<div className={`w-32 ${isDarkMode ? `${theme.background}` : `${theme.background}`} p-2 rounded-sm`}>
@@ -65,7 +65,7 @@ export default function Header() {
 			<div className="hidden lg:flex items-center gap-4">
 				<nav aria-label="Main navigation" className="flex items-center">
 				<NavLink to="/episodes"
-					className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}
+				className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D] dark:text-white" : "mr-4 text-[#2F241D] dark:text-white"}
 					onClick={() => {
 						// Track event for text click
 						trackEvent("nav_click", {
@@ -79,7 +79,7 @@ export default function Header() {
 					}}
 					>Episodes</NavLink>
 				<NavLink to="/guests"
-					className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}
+				className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D] dark:text-white" : "mr-4 text-[#2F241D] dark:text-white"}
 					onClick={() => {
 						// Track event for text click
 						trackEvent("nav_click", {
@@ -93,7 +93,7 @@ export default function Header() {
 					}}
 					>Guests</NavLink>
 				<NavLink to="/sponsors"
-					className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}
+				className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D] dark:text-white" : "mr-4 text-[#2F241D] dark:text-white"}
 					onClick={() => {
 						// Track event for text click
 						trackEvent("nav_click", {
@@ -123,7 +123,7 @@ export default function Header() {
 								},
 							});
 						}}
-						className="flex items-center text-[#2F241D] hover:font-bold focus:outline-none"
+						className="flex items-center text-[#2F241D] dark:text-white hover:font-bold focus:outline-none"
 						aria-expanded={tutorialsDropdownOpen}
 						aria-label="Tutorials menu"
 					>
@@ -137,7 +137,7 @@ export default function Header() {
 
 					{/* Dropdown Menu */}
 					{tutorialsDropdownOpen && (
-						<div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg z-50 min-w-[200px]">
+						<div className="absolute top-full left-0 mt-1 bg-white dark:bg-darkBg border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50 min-w-[200px]">
 							<NavLink
 								to="/data-structures"
 								className={({ isActive }) =>
@@ -183,7 +183,7 @@ export default function Header() {
 				</div>
 
 				<NavLink to="/about"
-					className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D]" : "mr-4 text-[#2F241D]"}
+					className={({ isActive }) => isActive ? "mr-4 font-bold text-[#2F241D] dark:text-white" : "mr-4 text-[#2F241D] dark:text-white"}
 					onClick={() => {
 						// Track event for text click
 						trackEvent("nav_click", {
@@ -197,7 +197,7 @@ export default function Header() {
 					}}
 					>About</NavLink>
 				<NavLink to="/contact"
-					className={({ isActive }) => isActive ? "font-bold text-[#2F241D]" : "text-[#2F241D]"}
+					className={({ isActive }) => isActive ? "font-bold text-[#2F241D] dark:text-white" : "text-[#2F241D] dark:text-white"}
 					onClick={() => {
 						// Track event for text click
 						trackEvent("nav_click", {
@@ -212,7 +212,7 @@ export default function Header() {
 					>Contact</NavLink>
 				<NavLink
 					to="/chat"
-					className={({ isActive }) => `flex items-center gap-2 ml-4 ${isActive ? "font-bold text-[#2F241D]" : "text-[#2F241D]"}`}
+					className={({ isActive }) => `flex items-center gap-2 ml-4 ${isActive ? "font-bold text-[#2F241D] dark:text-white" : "text-[#2F241D] dark:text-white"}`}
 					aria-label="SanDieGPT Chat"
 					onClick={() => {
 						// Track event for text click
@@ -228,7 +228,7 @@ export default function Header() {
 				>
 					<RiRobot2Fill
 					className={`w-5 h-5 ${
-						isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'
+					isDarkMode ? 'text-secondary' : 'text-[#2F241D]'
 					} transition-all duration-200`}
 					aria-hidden="true"
 					/>
@@ -298,7 +298,7 @@ export default function Header() {
 						},
 					});
 				}}
-				className={`${theme.text} hover:text-[#2F241D]`}
+				className={`${theme.text} hover:text-[#2F241D] dark:hover:text-accent`}
 				aria-expanded={isOpen}
 				aria-label="Toggle navigation menu"
 				>
@@ -328,7 +328,7 @@ export default function Header() {
 				role="navigation"
 				aria-label="Mobile navigation"
 				>
-				<nav className={`${isDarkMode ? `border-[#F03D86]` : `border-[#2F241D]`} flex flex-col items-start p-4 space-y-4 border-b`}>
+				<nav className={`${isDarkMode ? `border-secondary` : `border-[#2F241D]`} flex flex-col items-start p-4 space-y-4 border-b`}>
 					<NavLink
 					to="/episodes"
 					className={({ isActive }) =>
@@ -535,7 +535,7 @@ export default function Header() {
 					>
 					<RiRobot2Fill
 					className={`w-5 h-5 ${
-						isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'
+					isDarkMode ? 'text-secondary' : 'text-[#2F241D]'
 					} transition-all duration-200`}
 					aria-hidden="true"
 					/>
