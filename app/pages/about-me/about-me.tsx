@@ -40,7 +40,7 @@ export function AboutMe() {
 									</li>
 									<li className="flex items-start">
 										<span className="text-[#F6BF31] mr-2">•</span>
-										Are experimenting with new tools like MindStudio and want guidance.
+										Are experimenting with new AI technologies and want guidance.
 									</li>
 									<li className="flex items-start">
 										<span className="text-[#F6BF31] mr-2">•</span>
