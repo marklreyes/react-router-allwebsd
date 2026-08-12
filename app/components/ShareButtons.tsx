@@ -31,8 +31,8 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 
   const buttonClasses = `p-2 rounded-full ${
     isDarkMode
-      ? 'hover:bg-[#F03D86] hover:text-white'
-      : 'hover:bg-[#2F241D] hover:text-white'
+      ? 'hover:bg-[#D12A72] hover:text-white'
+      : 'hover:bg-[#122231] hover:text-white'
   } transition-colors`;
 
   return (

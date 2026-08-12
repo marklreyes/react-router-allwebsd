@@ -81,7 +81,7 @@ export function BecomeASponsor() {
 					{" "}
 					<NavLink
 						to="/contact"
-						className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+						className="text-[#F6BF31] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#F6BF31] focus:ring-opacity-50"
 						aria-label="More information"
 						onClick={
 							// Track event for text click
@@ -111,7 +111,7 @@ export function BecomeASponsor() {
 												component: "About Me Component"
 											}
 										})}
-						className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+						className="text-[#F6BF31] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#F6BF31] focus:ring-opacity-50"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Support on Buy Me a Coffee">cup of coffee</a> is always appreciated!
