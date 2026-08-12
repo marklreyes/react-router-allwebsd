@@ -117,7 +117,7 @@ export default function Search() {
 					: 'w-8 h-8 px-0 bg-opacity-0'
 				} border rounded-full ${
 				isDarkMode
-					? 'bg-[#71BEA9] placeholder-[#2F241D] text-[#2F241D] focus:border-[#F03D86]'
+					? 'bg-[#52B9BE] placeholder-[#2F241D] text-[#2F241D] focus:border-[#F03D86]'
 					: 'bg-[#FFC425] placeholder-[#2F241D] text-[#2F241D] focus:border-[#2F241D]'
 				} focus:outline-hidden focus:ring-1 ${
 				isDarkMode ? 'focus:ring-[#F03D86]' : 'focus:ring-[#2F241D]'
@@ -147,7 +147,7 @@ export default function Search() {
 				aria-label="Toggle search"
 				className={`absolute right-0 w-8 h-8 rounded-full ${
 				isExpanded ? 'opacity-0' : 'opacity-100'
-				} ${isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'} flex items-center justify-center`}
+				} ${isDarkMode ? 'bg-[#52B9BE]' : 'bg-[#FFC425]'} flex items-center justify-center`}
 			>
 				<FaMagnifyingGlass
 				className={`${isDarkMode ? 'text-[#F03D86]' : 'text-[#2F241D]'} w-4 h-4`}
@@ -162,7 +162,7 @@ export default function Search() {
 				role="region"
 				aria-label="Search results"
 				className={`absolute top-full left-0 w-96 -ml-24 mt-1 rounded-lg shadow-lg overflow-hidden ${
-					isDarkMode ? 'bg-[#71BEA9]' : 'bg-[#FFC425]'
+					isDarkMode ? 'bg-[#52B9BE]' : 'bg-[#FFC425]'
 				} z-50`}
 				>
 				{isLoading ? (
