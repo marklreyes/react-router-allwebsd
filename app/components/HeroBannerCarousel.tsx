@@ -39,14 +39,14 @@ export function HeroBannerCarousel() {
             <div className="px-6 md:px-10 lg:px-16">
                 <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight px-4 py-2 rounded-lg inline-block text-[#2F241D] ${
                     isDarkMode
-                        ? 'bg-[#71BEA9] bg-opacity-80'
+                        ? 'bg-[#52B9BE] bg-opacity-80'
                         : 'bg-[#FFC425] bg-opacity-90'
                 }`}>
                     Welcome to AllWebSD
                 </h2>
                 <p className={`text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto px-6 py-3 rounded-lg text-[#2F241D] ${
                     isDarkMode
-                        ? 'bg-[#71BEA9] bg-opacity-80'
+                        ? 'bg-[#52B9BE] bg-opacity-80'
                         : 'bg-[#FFC425] bg-opacity-90'
                 }`}>
                     Join San Diego's digital professionals, small‑business owners, non-profits, and industry newcomers. Share your story, swap insights, and build connections that move your career forward!
@@ -77,14 +77,14 @@ export function HeroBannerCarousel() {
             <div className="px-6 md:px-10 lg:px-16">
                 <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight px-4 py-2 rounded-lg inline-block text-[#2F241D] ${
                     isDarkMode
-                        ? 'bg-[#71BEA9] bg-opacity-80'
+                        ? 'bg-[#52B9BE] bg-opacity-80'
                         : 'bg-[#FFC425] bg-opacity-90'
                 }`}>
                     AllWebSD Podcast
                 </h2>
                 <p className={`text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto px-6 py-3 rounded-lg text-[#2F241D] ${
                     isDarkMode
-                        ? 'bg-[#71BEA9] bg-opacity-80'
+                        ? 'bg-[#52B9BE] bg-opacity-80'
                         : 'bg-[#FFC425] bg-opacity-90'
                 }`}>
                     Listen to our latest episodes featuring local tech experts, business leaders, and industry innovators. Get inspired with actionable insights and behind-the-scenes stories from San Diego's digital community.
@@ -113,14 +113,14 @@ export function HeroBannerCarousel() {
             <div className="px-6 md:px-10 lg:px-16">
                 <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight px-4 py-2 rounded-lg inline-block text-[#2F241D] ${
                     isDarkMode
-                        ? 'bg-[#71BEA9] bg-opacity-80'
+                        ? 'bg-[#52B9BE] bg-opacity-80'
                         : 'bg-[#FFC425] bg-opacity-90'
                 }`}>
                     Free AllWebSD Tutorials
                 </h2>
                 <p className={`text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto px-6 py-3 rounded-lg text-[#2F241D] ${
                     isDarkMode
-                        ? 'bg-[#71BEA9] bg-opacity-80'
+                        ? 'bg-[#52B9BE] bg-opacity-80'
                         : 'bg-[#FFC425] bg-opacity-90'
                 }`}>
                     Master essential web skills and data structures through Power Rangers-themed tutorials. From HTML and AI workflows to JavaScript fundamentals—all completely free!

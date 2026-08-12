@@ -31,32 +31,31 @@ export function AboutMe() {
 								<h3 className="text-xl font-semibold text-white mb-4">Join us if you:</h3>
 								<ul className="space-y-3 mb-6">
 									<li className="flex items-start">
-										<span className="text-[#FFC425] mr-2">•</span>
+										<span className="text-[#F6BF31] mr-2">•</span>
 										Want to connect locally with fellow digital professionals, creators, and business owners.
 									</li>
 									<li className="flex items-start">
-										<span className="text-[#FFC425] mr-2">•</span>
+										<span className="text-[#F6BF31] mr-2">•</span>
 										Are curious about the human side of digital work.
 									</li>
 									<li className="flex items-start">
-										<span className="text-[#FFC425] mr-2">•</span>
-										Are experimenting with new tools like MindStudio and want guidance.
+										<span className="text-[#F6BF31] mr-2">•</span>
+										Are experimenting with new AI technologies and want guidance.
 									</li>
 									<li className="flex items-start">
-										<span className="text-[#FFC425] mr-2">•</span>
+										<span className="text-[#F6BF31] mr-2">•</span>
 										Believe community can be a competitive advantage.
 									</li>
 								</ul>
 
 								<div className="space-y-3 mb-6">
 									<p>
-										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
-										Join our free{" "}
+										<span className="text-[#F6BF31] mr-2 text-xl">👉</span>
 										<a
 											href="http://discord.gg/HsVp5R9zFt"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="text-[#FFC425] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#FFC425] focus:ring-opacity-50"
+											className="text-[#F6BF31] hover:text-white underline hover:no-underline transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#F6BF31] focus:ring-opacity-50"
 											aria-label="Join AllWebSD Discord community"
 											onClick={() =>
 												trackEvent("external_link_click", {
@@ -68,13 +67,12 @@ export function AboutMe() {
 												})
 											}
 										>
-											Discord
+											<strong>Join our Discord</strong>
 										</a>
-										{" "}to swap ideas, showcase projects, and build meaningful relationships in a supportive local network.
+										:{" "} Network, share projects, and collaborate with local pros.
 									</p>
 									<p>
 										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
-										Follow us on{" "}
 										<a
 											href="https://www.linkedin.com/company/allwebsd"
 											target="_blank"
@@ -91,17 +89,17 @@ export function AboutMe() {
 												})
 											}
 										>
-											LinkedIn
+											<strong>Follow on LinkedIn</strong>
 										</a>
-										{" "}for tech news, trends, and insights—crafted in San Diego, shared with innovators and creatives everywhere.
+										:{" "}Get San Diego-crafted tech news and industry insights.
 									</p>
 									<p>
 										<span className="text-[#FFC425] mr-2 text-xl">👉</span>
-										Free tutorials for those building AI Agents.
+										<strong>Free Tutorials</strong>: Master software development and AI Agent workflows.
 									</p>
 								</div>
 
-								<p className="font-semibold text-[#FFC425] mb-6">
+								<p className="font-semibold text-[#F6BF31] mb-6">
 									We're building something together—don't miss it.
 								</p>
 

@@ -161,7 +161,7 @@ export default function Chat() {
 				SanDieGPT Chat
 		</h1>
 
-		<p className="text-[#2F241D] mb-6">
+		<p className={`${isDarkMode ? "text-white" : "text-[#122231]"} mb-6`}>
 		Ask me anything about San Diego! From businesses, tech scene, local attractions and beaches to restaurants
 		and cultural events, I'm here to help you explore America's Finest City!
 		</p>
@@ -170,7 +170,7 @@ export default function Chat() {
 
 		<div
         className={`flex flex-col space-y-4 mb-4 overflow-y-auto rounded-lg p-4 bg-white border h-[400px] md:h-[500px] ${
-		isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"
+		isDarkMode ? "border-[#D12A72]" : "border-[#122231]"
 		}`}
         role="log"
         aria-label="Chat messages"
@@ -181,7 +181,7 @@ export default function Chat() {
 			role="img"
             aria-label="AI Assistant Icon"
 			className={`w-12 h-12 ${
-				isDarkMode ? "text-[#F03D86]" : "text-[#2F241D]"
+				isDarkMode ? "text-[#D12A72]" : "text-[#122231]"
 			} mb-4 ${
 				isLoading ? "animate-bounce" : ""
 			} transition-all duration-200`}
@@ -199,8 +199,8 @@ export default function Chat() {
             </VisuallyHidden>
 			<div className={`max-w-[80%] break-words ${
 				message.role === "user"
-				? `${isDarkMode ? "bg-[#F03D86]" : "bg-[#2F241D]"} text-white rounded-l-2xl rounded-tr-2xl`
-				: `${isDarkMode ? "bg-[#71BEA9]" : "bg-[#FFC425]"} text-[#2F241D] rounded-r-2xl rounded-tl-2xl`
+				? `${isDarkMode ? "bg-[#D12A72]" : "bg-[#122231]"} text-white rounded-l-2xl rounded-tr-2xl`
+				: `${isDarkMode ? "bg-[#52B9BE]" : "bg-[#F6BF31]"} ${isDarkMode ? "text-white" : "text-[#122231]"} rounded-r-2xl rounded-tl-2xl`
 			} p-4 shadow-md`}
 			>
 				<ReactMarkdown>{message.content}</ReactMarkdown>
@@ -210,13 +210,13 @@ export default function Chat() {
 		<div ref={messagesEndRef} aria-hidden="true" />
 		</div>
 
-		<hr className={`${isDarkMode ? "border-[#F03D86]" : "border-[#2F241D]"} mx-auto mt-4 mb-4`} />
+		<hr className={`${isDarkMode ? "border-[#D12A72]" : "border-[#122231]"} mx-auto mt-4 mb-4`} />
 
 		{errorMessage && (
 		<div
           className={`${
-			isDarkMode ? "bg-[#F03D86]/10" : "bg-[#2F241D]/10"
-		} text-[#2F241D] p-2 rounded-lg text-sm text-center`}
+			isDarkMode ? "bg-[#D12A72]/10" : "bg-[#122231]/10"
+		} ${isDarkMode ? "text-white" : "text-[#122231]"} p-2 rounded-lg text-sm text-center`}
           role="alert"
           aria-live="assertive"
         >
@@ -248,8 +248,8 @@ export default function Chat() {
 			disabled={isLoading}
 			className={`w-full p-2 rounded-lg bg-white ${
 			isDarkMode
-				? "border-[#F03D86] placeholder-[#2F241D] text-[#2F241D] focus:border-[#F03D86] focus:ring-[#F03D86]"
-				: "border-[#2F241D] placeholder-[#2F241D] text-[#2F241D] focus:border-[#2F241D] focus:ring-[#2F241D]"
+				? "border-[#D12A72] placeholder-[#122231] text-[#122231] focus:border-[#D12A72] focus:ring-[#D12A72]"
+				: "border-[#122231] placeholder-[#122231] text-[#122231] focus:border-[#122231] focus:ring-[#122231]"
 			} border focus:outline-hidden focus:ring-1 ${isLoading ? "opacity-50" : ""}`}
 			aria-label="Message input"
             aria-describedby="char-count"
@@ -281,8 +281,8 @@ export default function Chat() {
 			}
 			className={`w-full sm:w-auto ${
 			isDarkMode
-				? "bg-[#F03D86] text-white"
-				: "bg-[#2F241D] text-white"
+				? "bg-[#D12A72] text-white"
+				: "bg-[#122231] text-white"
 			} px-4 py-2 rounded-lg transition-all duration-200 border-0 flex items-center justify-center gap-2 ${
 			isLoading || !inputMessage.trim()
 				? "opacity-50 cursor-not-allowed"
@@ -321,7 +321,7 @@ export default function Chat() {
 			</button>
 		</div>
 		<div
-          className="text-xs text-right text-[#2F241D]"
+          className={`text-xs text-right ${isDarkMode ? "text-white" : "text-[#122231]"}`}
           id="char-count"
           aria-live="polite"
         >
@@ -346,8 +346,8 @@ export default function Chat() {
 				}}
 				className={`${
 					isDarkMode
-					? "text-[#F03D86]"
-					: "text-[#2F241D]"
+				? "text-[#D12A72]"
+				: "text-[#122231]"
 				} text-sm font-semibold hover:underline transition-colors duration-200`}
 				aria-label="Clear chat history"
 				title="Clear all messages"
