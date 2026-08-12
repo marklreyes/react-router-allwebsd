@@ -151,7 +151,7 @@ export function ContactMe() {
                                         required
                                         className={`w-full px-4 py-3 rounded-lg border outline-none transition-all ${
                                             isDarkMode
-                                                ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#71BEA9] focus:border-transparent'
+                                                ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#52B9BE] focus:border-transparent'
                                                 : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-[#FFC425] focus:border-transparent'
                                         }`}
                                         placeholder="Your full name"
@@ -169,7 +169,7 @@ export function ContactMe() {
                                         required
                                         className={`w-full px-4 py-3 rounded-lg border outline-none transition-all ${
                                             isDarkMode
-                                                ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#71BEA9] focus:border-transparent'
+                                                ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#52B9BE] focus:border-transparent'
                                                 : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-[#FFC425] focus:border-transparent'
                                         }`}
                                         placeholder="your.email@example.com"
@@ -189,7 +189,7 @@ export function ContactMe() {
                                         onChange={(e) => setSubjectValue(e.target.value)}
                                         className={`w-full px-4 py-3 rounded-lg border outline-none transition-all ${
                                             isDarkMode
-                                                ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#71BEA9] focus:border-transparent'
+                                                ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#52B9BE] focus:border-transparent'
                                                 : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-[#FFC425] focus:border-transparent'
                                         }`}
                                         placeholder="What's this about?"
@@ -207,7 +207,7 @@ export function ContactMe() {
                                         rows={6}
                                         className={`w-full px-4 py-3 rounded-lg border outline-none transition-all resize-vertical ${
                                             isDarkMode
-                                                ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#71BEA9] focus:border-transparent'
+                                                ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#52B9BE] focus:border-transparent'
                                                 : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-[#FFC425] focus:border-transparent'
                                         }`}
                                         placeholder="What's on your mind?"

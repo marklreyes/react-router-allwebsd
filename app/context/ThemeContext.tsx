@@ -21,11 +21,11 @@ const lightTheme = {
 };
 
 const darkTheme = {
-  background: "bg-[#F03D86]", // pink
-  text: "text-[#2F241D]", // brown
-  primary: "bg-[#71BEA9]", // mint
-  secondary: "bg-[#F03D86]", // pink
-  accent: "bg-[#FFC425]" // gold
+  background: "bg-[#122231]", // obsidian (dark navy)
+  text: "text-white", // white for accessibility
+  primary: "bg-[#52B9BE]", // aqua (teal)
+  secondary: "bg-[#D12A72]", // fireberry (pink)
+  accent: "bg-[#F6BF31]" // marigold (gold)
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
